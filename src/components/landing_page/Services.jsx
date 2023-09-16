@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 import { FaArrowRight } from "react-icons/fa";
 
 const Services = () => {
@@ -7,21 +8,21 @@ const Services = () => {
       name: "Product Development",
       subtitle:
         "Embark on a journey of innovation with our product development expertise. Let your ideas flourish and take shape in the tech world.",
-      image: "./LandingPage/Product Development.svg",
+      image: "./landing-page/Product Development.svg",
       link: "/",
     },
     {
       name: "Business Consulting",
       subtitle:
         "Navigate your business's success path with our expert business consulting services. Let us guide you through strategy, innovation, and growth.",
-      image: "./LandingPage/Business Consulting.svg",
+      image: "./landing-page/Business Consulting.svg",
       link: "/",
     },
     {
       name: "Digital Transformation",
       subtitle:
         "Embark on a journey of digital evolution with our transformative solutions. Harness the power of technology to revolutionize your business.",
-      image: "./LandingPage/Digital Transformation.svg",
+      image: "./landing-page/Digital Transformation.svg",
       link: "/",
     },
   ];
@@ -32,21 +33,16 @@ const Services = () => {
           <div className="flex flex-col gap-[20px] items-center">
             <div className="flex items-center gap-[10px]">
               <div className="w-[18px]">
-                <img src="./LandingPage/Pin.svg" alt="pin" />
+                <img src="./Pin.svg" alt="pin" />
               </div>
               <div className="text-maroon text-base font-[600] leading-loose">
                 SERVICES
               </div>
             </div>
 
-            <div className="flex gap-[10px]">
-              <div className="text-slate-950 text-4xl font-[600] leading-[44px]">
-                Our Provided
+            <div className="text-slate-950 text-4xl font-[600] leading-[44px]">
+                Our Provided <span className="text-red-950">Services</span>
               </div>
-              <div className="text-red-950 text-4xl font-[600] leading-[44px]">
-                Services
-              </div>
-            </div>
           </div>
 
         <div className="flex items-center justify-center gap-[40px]">
@@ -68,10 +64,10 @@ const Services = () => {
                   {service.subtitle}
                 </div>
 
-                <div className="mt-[16px] flex items-center justify-center gap-[10px] text-maroon">
+                <Link href={service.link} className="mt-[16px] flex items-center justify-center gap-[10px] text-maroon">
                   <div className="font-[500] leading-loose">Explore More</div>
                   <FaArrowRight />
-                </div>
+                </Link>
               </div>
             );
           })}

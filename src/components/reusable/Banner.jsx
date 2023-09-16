@@ -2,10 +2,17 @@ import React from "react";
 import Nav from "@/src/components/reusable/Nav";
 import Button from "@/src/components/reusable/Button";
 
-const Banner = ({ image, active, firstText, secondText, subtitle }) => {
+const Banner = ({
+  image,
+  active,
+  firstText,
+  secondText,
+  subtitle,
+  hideExplore,
+}) => {
   return (
     <div className="relative">
-      <img src="./shadow.svg" alt="" className="absolute top-0 left-0 -z-10" />
+      <img src="./shadow.svg" alt="" className="absolute top-0 left-0 -z-10 w-full" />
       <Nav active={active} />
       <div className="mt-[96px] pb-[150px] px-[200px]">
         <div className="flex items-start justify-between">
@@ -28,9 +35,11 @@ const Banner = ({ image, active, firstText, secondText, subtitle }) => {
                 <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md">
                   Get In Touch
                 </Button>
-                <Button style="text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">
-                  Explore More
-                </Button>
+                {!hideExplore && (
+                  <Button style="text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">
+                    Explore More
+                  </Button>
+                )}
               </div>
             </div>
           </div>

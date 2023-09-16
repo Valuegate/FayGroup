@@ -23,16 +23,16 @@ const WorkInterest = () => {
         </div>
 
         <div className="absolute bottom-[20%] left-[45%]">
-          <img src="./LandingPage/Arrow.svg" alt="" />
+          <img src="./landing-page/Arrow.svg" alt="arrow" />
         </div>
 
         <div>
-          <img src="./LandingPage/Wave.svg" alt="wave" />
+          <img src="./landing-page/Wave.svg" alt="wave" />
         </div>
       </div>
 
       <div className="absolute right-[15%] bottom-0">
-        <img src="./LandingPage/Guy.svg" alt="guy" />
+        <img src="./landing-page/Guy.svg" alt="guy" />
       </div>
     </div>
   );

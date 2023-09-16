@@ -7,7 +7,7 @@ const Purpose = () => {
       <div className="flex flex-col gap-[12px]">
         <div className="flex items-center gap-[10px]">
           <div className="w-[18px]">
-            <img src="./LandingPage/Pin.svg" alt="pin" />
+            <img src="./Pin.svg" alt="pin" />
           </div>
           <div className="text-maroon text-base font-[600] leading-loose">
             ACHIEVE MORE
@@ -16,9 +16,7 @@ const Purpose = () => {
 
         <div className="text-slate-950 text-4xl font-[600] leading-[48px] w-[320px]">
           Purpose of a convoy is to keep{" "}
-          <div className="text-red-950 text-4xl font-[600] leading-[48px]">
-            FayGroup
-          </div>
+          <span className="text-red-950">FayGroup</span>
         </div>
       </div>
 

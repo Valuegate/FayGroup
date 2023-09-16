@@ -6,14 +6,14 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 const MainInformation = ({ image }) => {
   return (
     <div className="relative">
-      <img src="./shadow.svg" alt="" className="absolute top-0 left-0 -z-10" />
+      <img src="./shadow.svg" alt="" className="absolute top-0 left-0 -z-10 w-full" />
       <Nav/>
       <div className="mt-[96px] pb-[150px]">
         <div className="flex items-start justify-start mx-[200px]">
           <div className="w-[50%] flex flex-col">
             <div className="flex items-center">
               <div>
-                <img src="./LandingPage/Welcome.svg" alt="welcome" />
+                <img src="./landing-page/Welcome.svg" alt="welcome" />
               </div>
 
               <div className="bg-extraDarkRed rounded-[40px] py-3 px-5">
@@ -22,11 +22,11 @@ const MainInformation = ({ image }) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-[32px] mt-[10px]">
+            <div className="flex flex-col gap-[32px] mt-[5%]">
               <div className="w-full flex-shrink">
                 <p className="text-slate-950 text-[64px] font-[500] leading-[88px]">
                   Grow your Business with{" "}
-                  <span className="text-red-950 text-[64px] font-[500] leading-[88px] ">
+                  <span className="text-red-950 text-[64px] font-[500] leading-[88px]">
                     Our Solutions
                   </span>
                 </p>

@@ -18,16 +18,16 @@ const Nav = ({ active = 0 }) => {
     },
     {
       name: "Features",
-      link: "/",
+      link: "/features",
       icon: <FaCaretDown />,
     },
     {
       name: "Our Works",
-      link: "/",
+      link: "/our-works",
     },
     {
       name: "Blogs",
-      link: "/",
+      link: "/blog",
     },
     {
       name: "About Us",
@@ -35,7 +35,7 @@ const Nav = ({ active = 0 }) => {
     },
     {
       name: "Contact Us",
-      link: "/",
+      link: "/contact-us",
     },
   ];
 

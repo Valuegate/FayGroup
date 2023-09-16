@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Footer = ({ active = 0 }) => {
+const Footer = ({ active = -1 }) => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex px-[200px] gap-[135px] items-start justify-start">
@@ -29,7 +29,7 @@ const Footer = ({ active = 0 }) => {
               Home
             </Link>
             <Link
-              href="/"
+              href="/features"
               className={`${
                 active == 1 ? "text-maroon" : "text-slate-950"
               } text-base font-normal leading-loose`}
@@ -37,9 +37,9 @@ const Footer = ({ active = 0 }) => {
               Features
             </Link>
             <Link
-              href="/"
+              href="/our-works"
               className={`${
-                active == 2 ? "text-pmaroon" : "text-slate-950"
+                active == 2 ? "text-maroon" : "text-slate-950"
               } text-base font-normal leading-loose`}
             >
               Our Works

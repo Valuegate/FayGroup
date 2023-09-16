@@ -4,32 +4,32 @@ const Team = () => {
   const members = [
     {
       name: "Adegunju Micheal",
-      image: "./About/Dev.png",
+      image: "./Dev.png",
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: "./About/Dev.png",
+      image: "./Dev.png",
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: "./About/Dev.png",
+      image: "./Dev.png",
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: "./About/Dev.png",
+      image: "./Dev.png",
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: "./About/Dev.png",
+      image: "./Dev.png",
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: "./About/Dev.png",
+      image: "./Dev.png",
       role: "Senior Front-End Engineer",
     },
   ];
@@ -39,7 +39,7 @@ const Team = () => {
       <div className="flex flex-col gap-[20px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[18px]">
-            <img src="./LandingPage/Pin.svg" alt="pin" />
+            <img src="./Pin.svg" alt="pin" />
           </div>
           <div className="text-maroon text-base font-[600] leading-loose">
             Our Team
@@ -56,15 +56,15 @@ const Team = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-1">
+      <div className="grid grid-cols-3 gap-1 w-[80%]">
         {members.map((member, i) => {
           return (
-            <div key={i} className="flex flex-col items-center justify-start">
+            <div key={i} className="flex flex-col w-[80%] items-center justify-start">
               <img src={member.image} alt="Member Image"/>
-              <div className="text-slate-950 text-2xl font-[600] leading-9">
+              <div className="text-slate-950 text-2xl font-medium leading-9">
                 {member.name}
               </div>
-              <div className="text-slate-950 text-medium font-[500] leading-9">
+              <div className="text-slate-950 text-medium font-normal leading-9">
                 {member.role}
               </div>
             </div>

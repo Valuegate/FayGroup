@@ -13,9 +13,9 @@ const Projects = () => {
   ];
 
   const projects = [
-    "./LandingPage/Project 1.png",
-    "./LandingPage/Project 2.png",
-    "./LandingPage/Project 3.png",
+    "./landing-page/Project 1.png",
+    "./landing-page/Project 2.png",
+    "./landing-page/Project 3.png",
   ];
 
   return (
@@ -23,7 +23,7 @@ const Projects = () => {
       <div className="flex flex-col gap-[20px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[18px]">
-            <img src="./LandingPage/Pin.svg" alt="pin" />
+            <img src="./Pin.svg" alt="pin" />
           </div>
           <div className="text-maroon text-base font-[600] leading-loose">
             Portfolio
@@ -54,7 +54,7 @@ const Projects = () => {
           );
         })}
       </div>
-      <div className="flex gap-[40px] py-[67px] items-center px-[200px]">
+      <div className="flex gap-[40px] mt-[20px] mb-[67px] items-center px-[200px]">
         {projects.map((project, i) => {
           return (
             <div

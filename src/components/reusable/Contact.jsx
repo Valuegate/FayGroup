@@ -1,14 +1,13 @@
 import React from "react";
 
-import Button from "@/src/components/reusable/Button";
-
 const Contact = () => {
+
   return (
     <div className="flex w-full items-center mb-[200px]">
-      <div className="flex flex-col w-[50%] ml-[200px]">
+      <div className="flex flex-col w-[50%] pl-[100px]">
         <div className="flex items-center gap-[10px] mt-[16px]">
           <div className="w-[18px]">
-            <img src="./LandingPage/Pin.svg" alt="pin" />
+            <img src="./Pin.svg" alt="pin" />
           </div>
           <div className="text-maroon text-base font-[600] leading-loose">
             CONTACT US
@@ -33,7 +32,7 @@ const Contact = () => {
         <div className="flex flex-col gap-[20px] items-start mt-[20px]">
           <div className="flex gap-[20px] items-center justify-start">
             <div>
-              <img src="./LandingPage/Call.svg" alt="" />
+              <img src="./landing-page/Call.svg" alt="" />
             </div>
 
             <div className=" text-slate-950 text-base font-normal leading-loose">
@@ -42,7 +41,7 @@ const Contact = () => {
           </div>
           <div className="flex gap-[20px] items-center justify-start">
             <div>
-              <img src="./LandingPage/Message.svg" alt="" />
+              <img src="./landing-page/Message.svg" alt="" />
             </div>
             <div className=" text-slate-950 text-base font-normal leading-loose">
               faygroup@gmail.com
@@ -52,7 +51,7 @@ const Contact = () => {
       </div>
 
       <div className="w-[50%] h-auto">
-        <img src="./LandingPage/Contact.svg" alt="" />
+        <img src="./landing-page/Contact.svg" alt="" />
       </div>
     </div>
   );

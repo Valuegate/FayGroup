@@ -9,13 +9,13 @@ const Listen = () => {
         className="absolute top-0 left-0 -z-10 w-full h-[500px]"
       />
       <div className="w-[50%] h-auto">
-        <img src="./LandingPage/Listen.svg" alt="" />
+        <img src="./landing-page/Listen.svg" alt="" />
       </div>
 
-      <div className="flex flex-col w-[50%]">
+      <div className="flex flex-col w-[50%] pr-[100px]">
         <div className="flex items-center gap-[10px] mt-[16px]">
           <div className="w-[18px]">
-            <img src="./LandingPage/Pin.svg" alt="pin" />
+            <img src="./Pin.svg" alt="pin" />
           </div>
           <div className="text-maroon text-base font-[600] leading-loose">
             TESTIMONIALS
@@ -42,7 +42,7 @@ const Listen = () => {
 
         <div className="mt-[29px] flex gap-[20px] items-start">
           <div>
-            <img src="./LandingPage/Client Image.svg" alt="client" />
+            <img src="./landing-page/Client Image.svg" alt="client" />
           </div>
 
           <div className="flex flex-col justify-between items-start">
@@ -54,16 +54,16 @@ const Listen = () => {
             </div>
           </div>
           <div>
-            <img src="./LandingPage/Stars.svg" alt="client" />
+            <img src="./landing-page/Stars.svg" alt="client" />
           </div>
         </div>
 
         <div className="mt-[35px] flex gap-[20px]">
           <div>
-            <img src="./LandingPage/Left Arrow.svg" alt="arrow" />
+            <img src="./landing-page/Left Arrow.svg" alt="arrow" />
           </div>
           <div>
-            <img src="./LandingPage/Right Arrow.svg" alt="arrow" />
+            <img src="./landing-page/Right Arrow.svg" alt="arrow" />
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import AboutPage from "@/src/components/about/AboutPage";
 
 
-export default function Home() {
+export default function About() {
   return (
    <AboutPage/> 
   )

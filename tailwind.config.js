@@ -22,6 +22,9 @@ module.exports = {
         "pale" : "#E49F5E",
         "blandGrey" : "#D9D9D9",
       },
+      fontFamily: {
+        body: ["Poppins"]
+      }
     },
   },
   plugins: [],
