@@ -8,10 +8,9 @@ const FeaturesPage = () => {
   return (
     <>
       <Banner active={1} image="./Features/Features.svg" />
-
       <Contact />
-    <WorkInterest />
-    <Footer active={1}/>
+      <WorkInterest />
+      <Footer active={1} />
     </>
   );
 };

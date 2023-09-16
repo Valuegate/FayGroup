@@ -41,9 +41,9 @@ const Nav = ({ active = 0 }) => {
 
   return (
     <nav className="flex justify-between px-[200px] py-[32px] items-center bg-transparent">
-      <div>
+      <Link href={"/"}>
         <img src="./Logo.svg" />
-      </div>
+      </Link>
 
       <div className="flex w-3/5 justify-evenly">
         {navs.map((nav, i) => {
