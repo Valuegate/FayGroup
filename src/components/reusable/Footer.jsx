@@ -29,7 +29,7 @@ const Footer = ({ active = -1 }) => {
               Home
             </Link>
             <Link
-              href="/features"
+              href="/features/product-development"
               className={`${
                 active == 1 ? "text-maroon" : "text-slate-950"
               } text-base font-normal leading-loose`}

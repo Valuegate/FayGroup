@@ -13,20 +13,22 @@ const TextWithImage = ({
   includeButton,
   left,
   right,
-  cropImage,
+  useRedBackground,
 }) => {
   return (
-    <div className="flex w-full items-center relative mt-[5%]">
-      <img src="./shadow.svg" alt="" className="absolute top-0 left-0 -z-10" />
-
+    <div
+      className={`flex w-full gap-[10%] items-center ${
+        useRedBackground && useRedBackground && "bg-pink-50"
+      } py-[5%] px-[10%]`}
+    >
       {left && (
-        <div className={`w-[50%] ${cropImage ? "h-[400px]" : "h-auto"}`}>
+        <div className="w-[50%]">
           <img src={image} alt="image" />
         </div>
       )}
 
-      <div className="flex flex-col w-[50%] px-[100px]">
-        <div className="flex items-center gap-[10px] mt-[16px]">
+      <div className="flex flex-col w-[50%]">
+        <div className="flex items-center gap-[15px]">
           <div className="w-[18px]">
             <img src="./Pin.svg" alt="pin" />
           </div>
@@ -35,26 +37,30 @@ const TextWithImage = ({
           </div>
         </div>
 
+        <div className="mt-[3%]" />
+
         <div className="text-slate-950 text-4xl font-[600] leading-[48px]">
           {preRedText} <span className="text-red-950">{redText}</span>{" "}
           {postRedText}
         </div>
 
-        <div className="text-slate-950 text-base font-normal leading-loose mt-[10%]">
+        <div className="mt-[5%]" />
+
+        <div className="text-slate-950 text-base font-normal leading-loose">
           {content}
         </div>
 
         {children}
 
         {includeButton && (
-          <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md w-[160px]">
+          <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md w-[160px] hover:bg-extraDarkRed">
             Get In Touch
           </Button>
         )}
       </div>
 
       {right && (
-        <div className={`w-[50%] ${cropImage ? "h-[400px]" : "h-auto"}`}>
+        <div className="w-[50%]">
           <img src={image} alt="image" />
         </div>
       )}

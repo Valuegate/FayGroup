@@ -21,7 +21,7 @@ const Projects = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col gap-[20px] items-center">
-        <div className="flex items-center gap-[10px]">
+        <div className="flex items-center gap-[15px]">
           <div className="w-[18px]">
             <img src="./Pin.svg" alt="pin" />
           </div>
@@ -46,7 +46,7 @@ const Projects = () => {
             <div
               key={i}
               className={`opacity-80 text-center ${
-                i == 0 ? "text-extraDarkRed" : "text-slate-950"
+                i == 0 ? "text-maroon font-[700]" : "text-slate-950"
               } text-base font-normal leading-loose`}
             >
               {titles}
@@ -66,7 +66,7 @@ const Projects = () => {
           );
         })}
       </div>
-      <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md flex gap-2 items-center">
+      <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md flex gap-2 items-center hover:bg-extraDarkRed">
         Get In Touch
         <FaArrowRight />
       </Button>

@@ -2,14 +2,19 @@ import Nav from "@/src/components/reusable/Nav";
 import Button from "@/src/components/reusable/Button";
 import React from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import HeroImage from "./HeroImage";
 
-const MainInformation = ({ image }) => {
+const MainInformation = () => {
   return (
     <div className="relative">
-      <img src="./shadow.svg" alt="" className="absolute top-0 left-0 -z-10 w-full" />
-      <Nav/>
-      <div className="mt-[96px] pb-[150px]">
-        <div className="flex items-start justify-start mx-[200px]">
+      <img
+        src="./shadow.svg"
+        alt=""
+        className="absolute top-0 left-0 -z-10 w-full"
+      />
+      <Nav />
+      <div className="mt-[5%] mb-[10%]">
+        <div className="flex gap-[10%] items-start justify-start mx-[10%]">
           <div className="w-[50%] flex flex-col">
             <div className="flex items-center">
               <div>
@@ -38,7 +43,7 @@ const MainInformation = ({ image }) => {
               </div>
 
               <div className="flex justify-start items-center gap-[20px]">
-                <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md">
+                <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed">
                   Get In Touch
                 </Button>
                 <Button style="text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">
@@ -47,12 +52,7 @@ const MainInformation = ({ image }) => {
               </div>
             </div>
           </div>
-
-          <img
-            src={image}
-            alt=""
-            className="absolute top-[96px] right-[0] -z-10 w-[50%]"
-          />
+          <HeroImage />
         </div>
       </div>
     </div>

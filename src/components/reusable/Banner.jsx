@@ -32,7 +32,7 @@ const Banner = ({
               </div>
 
               <div className="flex justify-start items-center gap-[20px]">
-                <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md">
+                <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed">
                   Get In Touch
                 </Button>
                 {!hideExplore && (

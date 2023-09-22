@@ -50,7 +50,7 @@ const Intro = () => {
         </div>
 
         <div className="flex justify-start items-center gap-[20px] mt-[25px]">
-          <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md">
+          <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed">
             Get In Touch
           </Button>
           <Button style="text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">

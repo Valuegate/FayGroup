@@ -17,6 +17,7 @@ module.exports = {
         "poopBrown" : "#45050D",
         "fancyRed" : "#EB2027",
         "sunYellow" : "#F9EC23",
+        "weirdYellow": "#C2B917",
         "maroon": "#A2393F",
         "extraDarkRed" : "#470912",
         "pale" : "#E49F5E",

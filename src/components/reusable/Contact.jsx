@@ -3,9 +3,9 @@ import React from "react";
 const Contact = () => {
 
   return (
-    <div className="flex w-full items-center mb-[200px]">
-      <div className="flex flex-col w-[50%] pl-[100px]">
-        <div className="flex items-center gap-[10px] mt-[16px]">
+    <div className="flex w-full items-center py-[5%] px-[10%] gap-[10%]">
+      <div className="flex flex-col w-[50%]">
+        <div className="flex items-center gap-[15px] mt-[16px]">
           <div className="w-[18px]">
             <img src="./Pin.svg" alt="pin" />
           </div>
@@ -13,6 +13,8 @@ const Contact = () => {
             CONTACT US
           </div>
         </div>
+
+        <div className="mt-[3%]" />
 
         <div className="flex gap-[10px] items-center w-full">
           <div className="text-slate-950 text-4xl font-[600] leading-[48px]">
@@ -22,6 +24,8 @@ const Contact = () => {
             Contact Us
           </div>
         </div>
+
+        <div className="mt-[5%]" />
 
         <div className="w-[557px] text-slate-950 text-base font-normal leading-loose">
           Don't hesitate to contact us with your questions, ideas, or

@@ -1,9 +1,9 @@
 'use client'
 
-import WorksPage from "@/src/components/our-works/Works";
+import WorksPage from '@/src/components/our-works/Works'
 
-export default function Features() {
+export default function Works() {
   return (
-   <WorksPage/> 
+  <WorksPage/>
   )
 }

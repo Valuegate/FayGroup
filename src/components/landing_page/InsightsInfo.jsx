@@ -10,13 +10,13 @@ const InsightsInfo = () => {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center">
-          <div className="text-extraDarkRed text-2xl font-[600] leading-9">90%</div>
+          <div className="text-maroon text-2xl font-[600] leading-9">98%</div>
             <div className="text-slate-950 text-base font-normal leading-loose">
               Happy Clients
             </div>
           </div>
           <div className="flex flex-col items-center justify-center">
-          <div className="text-sunYellow text-2xl font-[600] leading-9">100%</div>
+          <div className="text-weirdYellow text-2xl font-[600] leading-9">100%</div>
             <div className="text-slate-950 text-base font-normal leading-loose">
               Client Satisfaction
             </div>

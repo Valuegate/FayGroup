@@ -31,7 +31,7 @@ const Services = () => {
     <div className="pt-[100px] pb-[150px] flex flex-col w-full items-center">
       <div className="flex flex-col gap-[60px]">
           <div className="flex flex-col gap-[20px] items-center">
-            <div className="flex items-center gap-[10px]">
+            <div className="flex items-center gap-[15px]">
               <div className="w-[18px]">
                 <img src="./Pin.svg" alt="pin" />
               </div>
