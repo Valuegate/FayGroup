@@ -94,7 +94,7 @@ const Dropdown = () => {
 
             <div className="mt-[5%]" />
 
-            <Link href={"/"}>
+            <Link href={"/features/product-development"}>
               <div className="flex flex-col">
                 <div className="flex justify-start items-start gap-5">
                   <img

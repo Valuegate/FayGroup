@@ -3,6 +3,7 @@ import Banner from "@/src/components/reusable//Banner";
 import Footer from "@/src/components/reusable/Footer";
 import WorkInterest from "@/src/components/reusable/WorkInterest";
 import Contact from "@/src/components/reusable/Contact";
+import Image from "next/image";
 
 const ProductPage = () => {
   return (
@@ -10,7 +11,7 @@ const ProductPage = () => {
       <div className="flex flex-col gap-10 items-start">
         <div className="flex items-center gap-[10px]">
           <div className="w-[18px]">
-            <img src="./Pin.svg" alt="pin" />
+            <img src="/public/Pin.svg" alt="pin" />
           </div>
           <div className="text-maroon text-base font-[600] leading-loose">
             PRODUCT DEVELOPMENT
@@ -26,7 +27,7 @@ const ProductPage = () => {
           }
         />
       </div>
-
+ 
       <Contact />
       <WorkInterest />
       <Footer active={1} />
