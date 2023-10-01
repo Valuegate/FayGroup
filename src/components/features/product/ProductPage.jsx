@@ -29,7 +29,7 @@ const ProductPage = () => {
           hidePinText={false}
         />
       </div>
-      <div className="h-[150px]" />
+      <div className="h-[150px] " />
       <WorkedWith />
       <div className="h-[100px]" />
       <Standout />
