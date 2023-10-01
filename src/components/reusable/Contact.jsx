@@ -50,7 +50,7 @@ const Contact = () => {
               <Image src={Message} alt="Message" />
             </div>
             <p className=" text-slate-950 text-base font-normal leading-loose">
-              faygroup@gmail.com
+              info@mbfaygroup.com
             </p>
           </div>
         </div>

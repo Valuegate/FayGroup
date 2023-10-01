@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 import Logo from "@/public/assets/Logo.svg";
-import Image from 'next/image';
+import Image from "next/image";
 
 const Footer = ({ active = -1 }) => {
   return (
@@ -113,10 +113,10 @@ const Footer = ({ active = -1 }) => {
               Get In Touch
             </div>
             <div className="text-slate-950 text-base font-normal leading-loose">
-              Faygroup@gmail.com
+              info@mbfaygroup.com
             </div>
             <div className="text-slate-950 text-base font-normal leading-loose">
-              +234 902 429 9483
+              +370 608 769 51
             </div>
           </div>
         </div>
