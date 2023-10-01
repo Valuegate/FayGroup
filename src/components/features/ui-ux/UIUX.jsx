@@ -1,16 +1,55 @@
-import React from 'react'
+import React from "react";
+import Footer from "../../reusable/Footer";
+import WorkInterest from "../../reusable/WorkInterest";
+import Contact from "../../reusable/Contact";
+import Intro from "../Intro";
+import Listen from "../../reusable/Listen";
 
-import Pin from "@/public/assets/Pin.svg"
-import Image from 'next/image'
+import TextWithImage from "../../reusable/TextWithImage";
+
+import Elevate from "@/public/assets/ui-ux/Rectangle 1.png";
+import Services from "./Services";
+
+import One from "@/public/assets/ui-ux/Ellipse 10.png";
+import Two from "@/public/assets/ui-ux/Ellipse 11.png";
+import Three from "@/public/assets/ui-ux/Ellipse 12.png";
+import Four from "@/public/assets/ui-ux/Ellipse 13.png";
+import WorkedWith from "../../reusable/WorkedWith";
+import Design from "./Design";
+import Projects from "./Projects";
 
 const UIUX = () => {
   return (
-    <div>
-        
-        
+    <>
+      <Intro
+        One={One}
+        Two={Two}
+        Three={Three}
+        Four={Four}
+        pinText={"UI/UX DESIGN"}
+        preRedSubtitle={"Experience"}
+        redSubtitle={"UI/UX Excellence"}
+        postRedSubtitle={"at FayGroup"}
+        content={
+          "Get access to seamless navigation and stunning designs that will leave your users delighted"
+        }
+      />
+      <WorkedWith />
+      <div className="h-[100px]" />
+      <Design />
+      <div className="h-[100px]" />
+      <Services />
+      <div className="h-[100px]" />
+      <Projects />
+      <div className="h-[100px]" />
+      <Listen />
+      <div className="h-[100px]" />
+      <Contact />
+      <div className="h-[100px]" />
+      <WorkInterest />
+      <Footer active={1} />
+    </>
+  );
+};
 
-    </div>
-  )
-}
-
-export default UIUX
+export default UIUX;

@@ -36,23 +36,23 @@ const TextWithImage = ({
           <div className="w-[18px]">
             <Image src={Pin} alt="pin" />
           </div>
-          <div className="text-maroon text-base font-[600] leading-loose">
+          <p className="text-maroon text-base font-[600] leading-loose">
             {pinText}
-          </div>
+          </p>
         </div>
 
         <div className="mt-[3%]" />
 
-        <div className="text-slate-950 text-4xl font-[600] leading-[48px]">
+        <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
           {preRedText} <span className="text-red-950">{redText}</span>{" "}
           {postRedText}
-        </div>
+        </p>
 
         <div className="mt-[5%]" />
 
-        <div className="text-slate-950 text-base font-normal leading-loose">
+        <p className="text-slate-950 text-base font-normal leading-loose">
           {content}
-        </div>
+        </p>
 
         {children}
 
