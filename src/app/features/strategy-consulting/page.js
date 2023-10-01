@@ -1,7 +1,7 @@
 'use client';
 
-import SoftwarePage from "@/src/components/features/software/Software";
+import Strategy from "@/src/components/features/strategy/Strategy";
 
-export default function SoftwareDevelopmentPage() {
-  return <SoftwarePage />
+export default function StrategyPage() {
+  return <Strategy />
 }

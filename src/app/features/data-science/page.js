@@ -1,7 +1,7 @@
 'use client';
 
-import SoftwarePage from "@/src/components/features/software/Software";
+import Data from "@/src/components/features/data/Data";
 
-export default function SoftwareDevelopmentPage() {
-  return <SoftwarePage />
+export default function DataPage() {
+  return <Data />
 }

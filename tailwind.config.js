@@ -28,7 +28,8 @@ module.exports = {
         "msRed": "#FFEFF0",
         "seBlue": "#F1F1FF",
         "deYellow": "#FCFBE7",
-        "scBlue": "#EDF6FF"
+        "scBlue": "#EDF6FF",
+        "palePink": "#FFE3E5",
       },
       fontFamily: {
         body: ["Poppins"]

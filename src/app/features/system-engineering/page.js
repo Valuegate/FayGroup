@@ -1,7 +1,7 @@
 'use client';
 
-import SoftwarePage from "@/src/components/features/software/Software";
+import System from "@/src/components/features/system/System";
 
-export default function SoftwareDevelopmentPage() {
-  return <SoftwarePage />
+export default function SystemPage() {
+  return <System />
 }
