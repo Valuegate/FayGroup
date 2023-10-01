@@ -1,13 +1,16 @@
 import Link from "next/link";
 import React from "react";
 
+import Logo from "@/public/assets/Logo.svg";
+import Image from 'next/image';
+
 const Footer = ({ active = -1 }) => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex px-[200px] gap-[135px] items-start justify-start">
         <div className="flex flex-col gap-[20px] items-start">
           <div>
-            <img src="./Logo.svg" />
+            <Image src={Logo} />
           </div>
           <div className="w-[400px] text-slate-950 text-base font-normal leading-loose">
             We provide the best services and we are ready to help your business
@@ -58,19 +61,19 @@ const Footer = ({ active = -1 }) => {
               Services
             </div>
             <Link
-              href="/"
+              href="/features/business-consulting"
               className="text-slate-950 text-base font-normal leading-loose"
             >
               Business Consulting
             </Link>
             <Link
-              href="/"
+              href="/features/product-development"
               className="text-slate-950 text-base font-normal leading-loose"
             >
               Product Development
             </Link>
             <Link
-              href="/"
+              href="/features/digital-transformation"
               className="text-slate-950 text-base font-normal leading-loose"
             >
               Digital Transformation

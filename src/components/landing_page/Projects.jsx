@@ -3,6 +3,13 @@ import React from "react";
 import Button from "@/src/components/reusable/Button";
 import { FaArrowRight } from "react-icons/fa";
 
+import Image from 'next/image';
+import Pin from "@/public/assets/Pin.svg";
+
+import Project1 from "@/public/assets/landing-page/Project 1.png";
+import Project2 from "@/public/assets/landing-page/Project 2.png";
+import Project3 from "@/public/assets/landing-page/Project 3.png";
+
 const Projects = () => {
   const titles = [
     "UI Design",
@@ -13,9 +20,9 @@ const Projects = () => {
   ];
 
   const projects = [
-    "./landing-page/Project 1.png",
-    "./landing-page/Project 2.png",
-    "./landing-page/Project 3.png",
+    Project1,
+    Project2,
+    Project3,
   ];
 
   return (
@@ -23,34 +30,34 @@ const Projects = () => {
       <div className="flex flex-col gap-[20px] items-center">
         <div className="flex items-center gap-[15px]">
           <div className="w-[18px]">
-            <img src="./Pin.svg" alt="pin" />
+            <Image src={Pin} alt="pin" />
           </div>
-          <div className="text-maroon text-base font-[600] leading-loose">
+          <p className="text-maroon text-base font-[600] leading-loose">
             Portfolio
-          </div>
+          </p>
         </div>
 
         <div className="flex gap-[10px]">
-          <div className="text-slate-950 text-4xl font-[600] leading-[44px]">
+          <p className="text-slate-950 text-4xl font-[600] leading-[44px]">
             Our Latest
-          </div>
-          <div className="text-red-950 text-4xl font-[600] leading-[44px]">
+          </p>
+          <p className="text-red-950 text-4xl font-[600] leading-[44px]">
             Projects
-          </div>
+          </p>
         </div>
       </div>
 
       <div className="mt-[40px] flex items-center justify-center gap-[99px]">
-        {titles.map((titles, i) => {
+        {titles.map((title, i) => {
           return (
-            <div
+            <p
               key={i}
               className={`opacity-80 text-center ${
                 i == 0 ? "text-maroon font-[700]" : "text-slate-950"
               } text-base font-normal leading-loose`}
             >
-              {titles}
-            </div>
+              {title}
+            </p>
           );
         })}
       </div>
@@ -61,7 +68,7 @@ const Projects = () => {
               key={i}
               className="opacity-80 text-center text-slate-950 text-base font-normal leading-loose"
             >
-              <img src={project} alt="Project Image" />
+              <Image src={project} alt="Project Image" />
             </div>
           );
         })}

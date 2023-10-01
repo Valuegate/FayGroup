@@ -1,30 +1,34 @@
 import Nav from "@/src/components/reusable/Nav";
 import Button from "@/src/components/reusable/Button";
 import React from "react";
-import { FaArrowAltCircleRight } from "react-icons/fa";
-import HeroImage from "./HeroImage";
+
+import Shadow from '@/public/assets/shadow.svg';
+import Hero from "@/public/assets/landing-page/Hero.svg";
+import Welcome from "@/public/assets/landing-page/Welcome.svg";
+import Image from "next/image";
+
 
 const MainInformation = () => {
   return (
     <div className="relative">
-      <img
-        src="./shadow.svg"
-        alt=""
-        className="absolute top-0 left-0 -z-10 w-full"
+      <Image
+        src={Shadow}
+        alt="shadow"
+        className="absolute top-0 left-0 -z-10 w-full h-[100vh]"
       />
       <Nav />
       <div className="mt-[5%] mb-[10%]">
-        <div className="flex gap-[10%] items-start justify-start mx-[10%]">
+        <div className="flex gap-[10%] items-start justify-between mx-[10%]">
           <div className="w-[50%] flex flex-col">
             <div className="flex items-center">
               <div>
-                <img src="./landing-page/Welcome.svg" alt="welcome" />
+                <Image src={Welcome} alt="welcome" />
               </div>
 
               <div className="bg-extraDarkRed rounded-[40px] py-3 px-5">
-                <div className="text-white text-base font-[500] leading-loose">
+                <p className="text-white text-base font-[500] leading-loose">
                   WELCOME TO FAYGROUP 👋
-                </div>
+                </p>
               </div>
             </div>
             <div className="flex flex-col gap-[32px] mt-[5%]">
@@ -37,10 +41,10 @@ const MainInformation = () => {
                 </p>
               </div>
 
-              <div className="w-[90%] text-slate-950 text-base font-normal leading-loose">
+              <p className="w-[90%] text-slate-950 text-base font-normal leading-loose">
                 Unleash your business potential. Explore Our Range of Services
                 Tailored to Boost Your Success.
-              </div>
+              </p>
 
               <div className="flex justify-start items-center gap-[20px]">
                 <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed">
@@ -52,7 +56,10 @@ const MainInformation = () => {
               </div>
             </div>
           </div>
-          <HeroImage />
+
+          <div className="w-[40%] absolute top-[10%] right-[10%]">
+            <Image src={Hero} alt="Hero" />
+          </div>
         </div>
       </div>
     </div>

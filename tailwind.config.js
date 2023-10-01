@@ -22,6 +22,13 @@ module.exports = {
         "extraDarkRed" : "#470912",
         "pale" : "#E49F5E",
         "blandGrey" : "#D9D9D9",
+        "slightRedBackground" : "rgba(160, 59, 64, 0.04)",
+        "sdOrange" : "#FFF5EC",
+        "udGreen" : "#E5F9F7",
+        "msRed": "#FFEFF0",
+        "seBlue": "#F1F1FF",
+        "deYellow": "#FCFBE7",
+        "scBlue": "#EDF6FF"
       },
       fontFamily: {
         body: ["Poppins"]

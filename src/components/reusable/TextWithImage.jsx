@@ -2,6 +2,10 @@ import React from "react";
 
 import Button from "./Button";
 
+import Image from 'next/image';
+import Pin from "@/public/assets/Pin.svg";
+
+
 const TextWithImage = ({
   image,
   children,
@@ -18,19 +22,19 @@ const TextWithImage = ({
   return (
     <div
       className={`flex w-full gap-[10%] items-center ${
-        useRedBackground && useRedBackground && "bg-pink-50"
+        useRedBackground && useRedBackground && "bg-slightRedBackground"
       } py-[5%] px-[10%]`}
     >
       {left && (
         <div className="w-[50%]">
-          <img src={image} alt="image" />
+          <Image src={image} alt="image" />
         </div>
       )}
 
       <div className="flex flex-col w-[50%]">
         <div className="flex items-center gap-[15px]">
           <div className="w-[18px]">
-            <img src="./Pin.svg" alt="pin" />
+            <Image src={Pin} alt="pin" />
           </div>
           <div className="text-maroon text-base font-[600] leading-loose">
             {pinText}
@@ -61,7 +65,7 @@ const TextWithImage = ({
 
       {right && (
         <div className="w-[50%]">
-          <img src={image} alt="image" />
+          <Image src={image} alt="image" />
         </div>
       )}
     </div>

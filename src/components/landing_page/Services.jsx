@@ -1,6 +1,11 @@
 import React from "react";
-import Link from 'next/link';
+import Link from "next/link";
+import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import Pin from "@/public/assets/Pin.svg";
+import PD from "@/public/assets/landing-page/Product Development.svg";
+import BC from "@/public/assets/landing-page/Business Consulting.svg";
+import DT from "@/public/assets/landing-page/Digital Transformation.svg";
 
 const Services = () => {
   const services = [
@@ -8,42 +13,42 @@ const Services = () => {
       name: "Product Development",
       subtitle:
         "Embark on a journey of innovation with our product development expertise. Let your ideas flourish and take shape in the tech world.",
-      image: "./landing-page/Product Development.svg",
-      link: "/",
+      image: PD,
+      link: "/features/product-development",
     },
     {
       name: "Business Consulting",
       subtitle:
         "Navigate your business's success path with our expert business consulting services. Let us guide you through strategy, innovation, and growth.",
-      image: "./landing-page/Business Consulting.svg",
-      link: "/",
+      image: BC,
+      link: "/features/business-consulting",
     },
     {
       name: "Digital Transformation",
       subtitle:
         "Embark on a journey of digital evolution with our transformative solutions. Harness the power of technology to revolutionize your business.",
-      image: "./landing-page/Digital Transformation.svg",
-      link: "/",
+      image: DT,
+      link: "/features/digital-transformation",
     },
   ];
 
   return (
     <div className="pt-[100px] pb-[150px] flex flex-col w-full items-center">
       <div className="flex flex-col gap-[60px]">
-          <div className="flex flex-col gap-[20px] items-center">
-            <div className="flex items-center gap-[15px]">
-              <div className="w-[18px]">
-                <img src="./Pin.svg" alt="pin" />
-              </div>
-              <div className="text-maroon text-base font-[600] leading-loose">
-                SERVICES
-              </div>
+        <div className="flex flex-col gap-[20px] items-center">
+          <div className="flex items-center gap-[15px]">
+            <div className="w-[18px]">
+              <Image src={Pin} alt="pin" />
             </div>
-
-            <div className="text-slate-950 text-4xl font-[600] leading-[44px]">
-                Our Provided <span className="text-red-950">Services</span>
-              </div>
+            <p className="text-maroon text-base font-[600] leading-loose">
+              SERVICES
+            </p>
           </div>
+
+          <p className="text-slate-950 text-4xl font-[600] leading-[44px]">
+            Our Provided <span className="text-red-950">Services</span>
+          </p>
+        </div>
 
         <div className="flex items-center justify-center gap-[40px]">
           {services.map((service, i) => {
@@ -53,19 +58,22 @@ const Services = () => {
                 className="flex flex-col bg-white w-[416px] h-[462px] items-center rounded-[12px] drop-shadow-2xl"
               >
                 <div className="w-[90px] h-auto mt-[54px]">
-                  <img src={service.image} alt="service image" />
+                  <Image src={service.image} alt="service image" />
                 </div>
 
-                <div className="mt-[34px] text-2xl font-[600] leading-9">
+                <p className="mt-[34px] text-2xl font-[600] leading-9">
                   {service.name}
-                </div>
+                </p>
 
-                <div className="mt-[20px] px-[40px] text-center text-slate-950 text-base font-normal leading-loose">
+                <p className="mt-[20px] px-[40px] text-center text-slate-950 text-base font-normal leading-loose">
                   {service.subtitle}
-                </div>
+                </p>
 
-                <Link href={service.link} className="mt-[16px] flex items-center justify-center gap-[10px] text-maroon">
-                  <div className="font-[500] leading-loose">Explore More</div>
+                <Link
+                  href={service.link}
+                  className="mt-[16px] flex items-center justify-center gap-[10px] text-maroon"
+                >
+                  <p className="font-[500] leading-loose">Explore More</p>
                   <FaArrowRight />
                 </Link>
               </div>

@@ -4,7 +4,7 @@ import WorkInterest from "../reusable/WorkInterest";
 import Contact from "../reusable/Contact";
 import Intro from "./Intro";
 import Projects from "../landing_page/Projects";
-import Listen from "../landing_page/Listen";
+import Listen from "../reusable/Listen";
 import MiniBlog from "./MiniBlog";
 
 
@@ -13,9 +13,13 @@ const WorksPage = () => {
     <>
     <Intro />
     <Projects />
+    <div className="h-[100px]"/>
     <Listen />
+    <div className="h-[100px]"/>
     <MiniBlog />
+    <div className="h-[100px]"/>
     <Contact />
+    <div className="h-[100px]"/>
     <WorkInterest />
     <Footer active={2}/>
   </>

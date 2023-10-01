@@ -1,61 +1,63 @@
 import React from "react";
 
-const Contact = () => {
+import Image from "next/image";
+import Pin from "@/public/assets/Pin.svg";
+import Call from "@/public/assets/landing-page/Call.svg";
+import Message from "@/public/assets/landing-page/Message.svg";
+import ContactImage from "@/public/assets/landing-page/Contact.svg";
 
+const Contact = () => {
   return (
     <div className="flex w-full items-center py-[5%] px-[10%] gap-[10%]">
       <div className="flex flex-col w-[50%]">
         <div className="flex items-center gap-[15px] mt-[16px]">
           <div className="w-[18px]">
-            <img src="./Pin.svg" alt="pin" />
+            <Image src={Pin} alt="pin" />
           </div>
-          <div className="text-maroon text-base font-[600] leading-loose">
+          <p className="text-maroon text-base font-[600] leading-loose">
             CONTACT US
-          </div>
+          </p>
         </div>
 
         <div className="mt-[3%]" />
 
         <div className="flex gap-[10px] items-center w-full">
-          <div className="text-slate-950 text-4xl font-[600] leading-[48px]">
-            Don't Hesitate To
-          </div>
-          <div className="text-red-950 text-4xl font-[600] leading-[48px]">
-            Contact Us
-          </div>
+          <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
+            Don't Hesitate To <span className="text-red-950">Contact Us</span>
+          </p>
         </div>
 
         <div className="mt-[5%]" />
 
-        <div className="w-[557px] text-slate-950 text-base font-normal leading-loose">
+        <p className="w-[557px] text-slate-950 text-base font-normal leading-loose">
           Don't hesitate to contact us with your questions, ideas, or
           challenges. We are eager to listen, understand, and create digital
           solutions that drive remarkable results for your business.
-        </div>
+        </p>
 
         <div className="flex flex-col gap-[20px] items-start mt-[20px]">
           <div className="flex gap-[20px] items-center justify-start">
             <div>
-              <img src="./landing-page/Call.svg" alt="" />
+              <Image src={Call} alt="Call" />
             </div>
 
-            <div className=" text-slate-950 text-base font-normal leading-loose">
+            <p className=" text-slate-950 text-base font-normal leading-loose">
               +370 608 769 51
-            </div>
+            </p>
           </div>
           <div className="flex gap-[20px] items-center justify-start">
             <div>
-              <img src="./landing-page/Message.svg" alt="" />
+              <Image src={Message} alt="Message" />
             </div>
-            <div className=" text-slate-950 text-base font-normal leading-loose">
+            <p className=" text-slate-950 text-base font-normal leading-loose">
               faygroup@gmail.com
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
       <div className="w-[50%] h-auto">
-        <img src="./landing-page/Contact.svg" alt="" />
+        <Image src={ContactImage} alt="Contact" />
       </div>
     </div>
   );

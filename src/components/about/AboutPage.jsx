@@ -7,6 +7,10 @@ import Contact from "../reusable/Contact";
 import TextWithImage from "../reusable/TextWithImage";
 import Team from "./Team";
 
+import BannerImage from "@/public/assets/about/Banner Image.svg";
+import AimImage from "@/public/assets/about/Aim.png";
+import FutureImage from "@/public/assets/about/Future.png";
+
 const AboutPage = () => {
   return (
     <>
@@ -14,7 +18,9 @@ const AboutPage = () => {
         active={4}
         firstText={"Hello! We'd Love to"}
         secondText={"Introduce Ourself"}
-        image={"./About/Banner Image.svg"}
+        hidePinText={false}
+        pinText="ABOUT US"
+        image={BannerImage}
         subtitle={
           "At MB FayGroup, we're not just a tech company; we're your innovation partners on a mission to transform ideas into reality."
         }
@@ -22,7 +28,7 @@ const AboutPage = () => {
       <Facts />
       <TextWithImage
         left={true}
-        image={"./About/Aim.png"}
+        image={AimImage}
         pinText={"OUR MISSION"}
         preRedText={"What we are "}
         redText={"Aiming"}
@@ -34,7 +40,7 @@ const AboutPage = () => {
       />
       <TextWithImage
         right={true}
-        image={"./About/Future.png"}
+        image={FutureImage}
         content={
           "Our vision is simple yet ambitious: to accelerate your tech journey. We understand that ideas are the seeds of innovation, and we're here to nurture those seeds, cultivate them, and help you launch them into the world as thriving products."
         }
@@ -44,7 +50,9 @@ const AboutPage = () => {
         pinText={"OUR VISION"}
       />
       <Team />
+      <div className="h-[100px]"/>
       <Contact />
+      <div className="h-[100px]"/>
       <WorkInterest />
       <Footer active={3} />
     </>

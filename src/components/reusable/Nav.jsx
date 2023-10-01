@@ -6,6 +6,19 @@ import { FaCaretDown } from "react-icons/fa";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 
+import Logo from "@/public/assets/Logo.svg";
+import PD from "@/public/assets/nav/image 12.svg";
+import DT from "@/public/assets/nav/image 13.svg";
+import BC from "@/public/assets/nav/image 14-6.svg";
+import SD from "@/public/assets/nav/image 14.svg";
+import UD from "@/public/assets/nav/image 14-1.svg";
+import MS from "@/public/assets/nav/image 14-2.svg";
+import SE from "@/public/assets/nav/image 14-3.svg";
+import DS from "@/public/assets/nav/image 14-4.svg";
+import SC from "@/public/assets/nav/image 14-5.svg";
+
+import Image from "next/image";
+
 const Nav = ({ active = 0 }) => {
   const router = useRouter();
   const [showFeature, setShowFeature] = useState(false);
@@ -25,7 +38,7 @@ const Nav = ({ active = 0 }) => {
     },
     {
       name: "Blogs",
-      link: "/blog",
+      link: "/blogs",
     },
     {
       name: "About Us",
@@ -40,7 +53,7 @@ const Nav = ({ active = 0 }) => {
   return (
     <nav className="flex justify-between px-[200px] py-[32px] items-center bg-transparent">
       <Link href={"/"}>
-        <img src="./Logo.svg" />
+        <Image src={Logo} alt ="logo"/>
       </Link>
 
       <div className="flex w-3/5 justify-evenly">
@@ -88,49 +101,49 @@ const Dropdown = () => {
       <div className="flex items-start gap-[10%]">
         <div className="flex w-[70%] gap-[10%]">
           <div className="flex flex-col w-1/2">
-            <div className="text-maroon text-base font-[600] leading-loose">
+            <p className="text-maroon text-base font-[600] leading-loose">
               FEATURES
-            </div>
+            </p>
 
             <div className="mt-[5%]" />
 
             <Link href={"/features/product-development"}>
               <div className="flex flex-col">
                 <div className="flex justify-start items-start gap-5">
-                  <img
-                    src="./nav/image 12.svg"
-                    alt=""
+                  <Image
+                    src={PD}
+                    alt="product-development"
                     className="w-[40px] h-[40px]"
                   />
                   <div className="flex flex-col gap-2">
-                    <div className="text-slate-950 text-base font-semibold leading-loose">
+                    <p className="text-slate-950 text-base font-semibold leading-loose">
                       Product Development
-                    </div>
-                    <div className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
+                    </p>
+                    <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
                       Our experienced team is dedicated in bringing innovative
                       ideas to market.
-                    </div>
+                    </p>
                   </div>
                 </div>
               </div>
             </Link>
             <div className="mt-[10%]" />
-            <Link href={"/"}>
+            <Link href={"/features/digital-transformation"}>
               <div className="flex flex-col">
                 <div className="flex justify-start items-start gap-5">
-                  <img
-                    src="./nav/image 13.svg"
-                    alt=""
+                  <Image
+                    src={DT}
+                    alt="digital transformation"
                     className="w-[40px] h-[40px]"
                   />
                   <div className="flex flex-col gap-2">
-                    <div className="text-slate-950 text-base font-semibold leading-loose">
+                    <p className="text-slate-950 text-base font-semibold leading-loose">
                       Digital Transformation
-                    </div>
-                    <div className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
+                    </p>
+                    <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
                       Unlock new opportunities and stay competitive in the
                       digital age.
-                    </div>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -140,22 +153,22 @@ const Dropdown = () => {
           <div className="flex flex-col w-1/2">
             <div className="mt-[10%]" />
 
-            <Link href={"/"}>
+            <Link href={"/features/business-consulting"}>
               <div className="flex flex-col">
                 <div className="flex justify-start items-start gap-5">
-                  <img
-                    src="./nav/image 14-6.svg"
-                    alt=""
+                  <Image
+                    src={BC}
+                    alt="business-consulting"
                     className="w-[40px] h-[40px]"
                   />
                   <div className="flex flex-col gap-2">
-                    <div className="text-slate-950 text-base font-semibold leading-loose">
+                    <p className="text-slate-950 text-base font-semibold leading-loose">
                       Business Consulting
-                    </div>
-                    <div className=" text-slate-950 text-base font-normal leading-relaxed">
+                    </p>
+                    <p className=" text-slate-950 text-base font-normal leading-relaxed">
                       Our business consulting experts provide strategic guidance
                       to optimize your operations and drive growth.
-                    </div>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -164,80 +177,80 @@ const Dropdown = () => {
         </div>
 
         <div className="flex flex-col w-[30%] border-l-gray-200 border-l-2 pl-12">
-          <div className="text-maroon text-base font-[600] leading-loose">
+          <p className="text-maroon text-base font-[600] leading-loose">
             PRODUCT DEVELOPMENT
-          </div>
+          </p>
 
           <div className="mt-[5%]" />
 
           <div className="flex flex-col">
             <Link
-              href={"/"}
+              href={"/features/software-development"}
               className="py-2 px-2 rounded-md flex items-center gap-5"
             >
-              <img
-                src="./nav/image 14.svg"
-                alt="code"
+              <Image
+                src={SD}
+                alt="software development"
                 className="w-[40px] h-[40px]"
               />
               Software Development
             </Link>
 
             <Link
-              href={"/"}
+              href={"/features/ui-ux"}
               className="py-2 px-2 rounded-md flex items-center gap-5"
             >
-              <img
-                src="./nav/image 14-1.svg"
-                alt="code"
+              <Image
+                src={UD}
+                alt="ui-ux"
                 className="w-[40px] h-[40px]"
               />
               UI/UX Design
             </Link>
 
             <Link
-              href={"/"}
+              href={"/features/mobile-solution"}
               className="py-2 px-2 rounded-md flex items-center gap-5"
             >
-              <img
-                src="./nav/image 14-2.svg"
-                alt="code"
+              <Image
+                src={MS}
+                alt="mobile solution"
                 className="w-[40px] h-[40px]"
               />
               Mobile Solution
             </Link>
 
             <Link
-              href={"/"}
+              href={"/features/system-engineering"}
               className="py-2 px-2 rounded-md flex items-center gap-5"
             >
-              <img
-                src="./nav/image 14-3.svg"
-                alt="code"
+              <Image
+                src={SE}
+                alt="system engineering"
                 className="w-[40px] h-[40px]"
               />
               System Engineering
             </Link>
 
             <Link
-              href={"/"}
+              href={"/features/data-science"}
               className="py-2 px-2 rounded-md flex items-center gap-5"
             >
-              <img
-                src="./nav/image 14-4.svg"
-                alt="code"
+              <Image
+                src={DS}
+                alt="data science"
                 className="w-[40px] h-[40px]"
               />
               Data Science
             </Link>
 
             <Link
-              href={"/"}
+              href={"/features/strategy-consulting"}
               className="py-2 px-2 rounded-md flex items-center gap-5"
             >
-              <img
-                src="./nav/image 14-5.svg"
-                alt="code"
+              <Image
+                src={SC}
+                alt="strategy consulting"
                 className="w-[40px] h-[40px]"
               />
               Strategy Consulting

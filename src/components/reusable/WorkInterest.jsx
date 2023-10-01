@@ -1,17 +1,23 @@
 import React from "react";
 import Button from "./Button";
 
+import Image from 'next/image';
+
+import Arrow from "@/public/assets/landing-page/Arrow.svg";
+import Wave from "@/public/assets/landing-page/Wave.svg";
+import Guy from "@/public/assets/landing-page/Guy.svg";
+
 const WorkInterest = () => {
   return (
     <div className="flex items-center justify-center mb-[150px] w-full relative">
       <div className="bg-darkBlue rounded-[60px] rounded-br-none w-[80%] h-[380px] flex justify-between items-end">
         <div className="flex flex-col h-full px-[50px] justify-center">
-          <div className="text-white text-[48px] font-[600] leading-[72px]">
+          <p className="text-white text-[48px] font-[600] leading-[72px]">
             Interested to Work With Us?
-          </div>
-          <div className="text-maroon text-[48px] font-[600] leading-[72px]">
+          </p>
+          <p className="text-maroon text-[48px] font-[600] leading-[72px]">
             Bring Projects!
-          </div>
+          </p>
 
           <Button
             style={
@@ -23,16 +29,14 @@ const WorkInterest = () => {
         </div>
 
         <div className="absolute bottom-[20%] left-[45%]">
-          <img src="./landing-page/Arrow.svg" alt="arrow" />
+          <Image src={Arrow} alt="arrow" />
         </div>
 
-        <div>
-          <img src="./landing-page/Wave.svg" alt="wave" />
-        </div>
+        <Image src={Wave} alt="wave" className="w-[40%]"/>
       </div>
 
       <div className="absolute right-[15%] bottom-0">
-        <img src="./landing-page/Guy.svg" alt="guy" />
+        <Image src={Guy} alt="guy" />
       </div>
     </div>
   );
