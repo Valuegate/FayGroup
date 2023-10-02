@@ -64,7 +64,7 @@ const Banner = ({
               <div className="flex justify-start items-center gap-[20px]">
                 {includeButton && (
                   <Button
-                    style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed text-center"
+                    style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200 text-center"
                     destination={"/contact-us"}
                   >
                     Get In Touch

@@ -73,7 +73,7 @@ const Projects = () => {
           );
         })}
       </div>
-      <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md flex gap-2 items-center hover:bg-extraDarkRed" destination={"/contact-us"}>
+      <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md flex gap-2 items-center hover:bg-extraDarkRed transition ease-in-out duration-200" destination={"/contact-us"}>
         Get In Touch
         <FaArrowRight />
       </Button>

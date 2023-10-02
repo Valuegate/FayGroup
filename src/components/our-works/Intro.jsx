@@ -59,7 +59,7 @@ const Intro = () => {
         </p>
 
         <div className="flex justify-start items-center gap-[20px] mt-[25px]">
-          <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed" destination={"/contact-us"}>
+          <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200" destination={"/contact-us"}>
             Get In Touch
           </Button>
           <Button style="text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">

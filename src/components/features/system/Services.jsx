@@ -57,7 +57,7 @@ const Services = () => {
           return (
             <div
               key={i}
-              className={`flex flex-col bg-white hover:bg-palePink shadow-lg w-[400px] h-[280px] items-start rounded-[12px] px-8 py-5`}
+              className={`flex flex-col bg-white transition ease-in-out duration-200 hover:bg-palePink shadow-lg w-[400px] h-[280px] items-start rounded-[12px] px-8 py-5`}
             >
               <p className="mt-[34px] text-2xl font-[600] leading-9">
                 {service.title}
