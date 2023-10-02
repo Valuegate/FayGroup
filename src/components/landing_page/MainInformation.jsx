@@ -47,7 +47,7 @@ const MainInformation = () => {
               </p>
 
               <div className="flex justify-start items-center gap-[20px]">
-                <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed">
+                <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed" destination={"/contact-us"}>
                   Get In Touch
                 </Button>
                 <Button style="text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">

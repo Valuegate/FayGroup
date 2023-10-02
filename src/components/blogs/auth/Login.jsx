@@ -55,7 +55,7 @@ const Login = () => {
           </div>
           <Button
             style={
-              "w-[300px] bg-darkBlue rounded-[5px] text-white py-2.5 mt-[5%] hover:bg-extraDarkRed"
+              "w-[300px] bg-darkBlue rounded-[5px] text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center"
             }
           >
             Login

@@ -10,6 +10,7 @@ const BlogsPage = () => {
     <>
       <Intro />
       <Contact />
+      <div className="h-[200px]"/>
       <WorkInterest />
       <Footer />
     </>

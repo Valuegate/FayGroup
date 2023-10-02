@@ -45,7 +45,7 @@ const UIUX = () => {
       <Listen />
       <div className="h-[100px]" />
       <Contact />
-      <div className="h-[100px]" />
+      <div className="h-[200px]" />
       <WorkInterest />
       <Footer active={1} />
     </>

@@ -86,7 +86,7 @@ const Nav = ({ active = 0 }) => {
           );
         })}
       </div>
-      <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed">
+      <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed" destination={"/contact-us"}>
         Get In Touch
       </Button>
     </nav>

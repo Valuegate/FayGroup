@@ -1,10 +1,12 @@
 import React from "react";
 
-const Button = ({children, style}) => {
+import Link from "next/link";
+
+const Button = ({children, style, destination = "/", onClick}) => {
   return (
-    <button className={style}>
+    <Link className={style} href={destination} onClick={onClick}>
       {children}
-    </button>
+    </Link>
   );
 };
 

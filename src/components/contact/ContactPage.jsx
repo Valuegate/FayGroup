@@ -21,6 +21,7 @@ const ContactPage = () => {
         image={ContactImage}
         subtitle={"Moving from idea to product starts with a conversation."}
         hideExplore={true}
+        includeButton={false}
       />
       <ContactInfo />
       <div className="h-[100px]"/>

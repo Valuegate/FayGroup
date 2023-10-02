@@ -23,6 +23,7 @@ const WorkInterest = () => {
             style={
               "text-darkBlue bg-blandGrey px-5 py-3 font-[500] mt-[20px] rounded-md w-[140px]"
             }
+            destination={"/contact-us"}
           >
             Contact Us
           </Button>

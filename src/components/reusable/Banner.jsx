@@ -15,7 +15,8 @@ const Banner = ({
   hideExplore,
   swapRedText = false,
   hidePinText = true,
-  pinText = ""
+  pinText = "",
+  includeButton = true,
 }) => {
   return (
     <div className="relative">
@@ -40,9 +41,17 @@ const Banner = ({
                     </div>
                   </div>
                 )}
-                <p className={`${swapRedText ? "text-red-950" : "text-slate-950"} text-[64px] font-[500] leading-[88px]`}>
+                <p
+                  className={`${
+                    swapRedText ? "text-red-950" : "text-slate-950"
+                  } text-[64px] font-[500] leading-[88px]`}
+                >
                   {firstText}{" "}
-                  <span className={`${!swapRedText ? "text-red-950" : "text-slate-950"} text-[64px] font-[500] leading-[88px] `}>
+                  <span
+                    className={`${
+                      !swapRedText ? "text-red-950" : "text-slate-950"
+                    } text-[64px] font-[500] leading-[88px] `}
+                  >
                     {secondText}
                   </span>
                 </p>
@@ -53,9 +62,14 @@ const Banner = ({
               </div>
 
               <div className="flex justify-start items-center gap-[20px]">
-                <Button style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed">
-                  Get In Touch
-                </Button>
+                {includeButton && (
+                  <Button
+                    style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed text-center"
+                    destination={"/contact-us"}
+                  >
+                    Get In Touch
+                  </Button>
+                )}
                 {!hideExplore && (
                   <Button style="text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">
                     Explore More

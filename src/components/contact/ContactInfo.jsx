@@ -39,7 +39,7 @@ const ContactInfo = () => {
             <textarea type="text" className="w-full bg-blandGrey border px-2 py-3 font-normal resize-none focus:outline-none rounded-sm" placeholder="Type Here..."  />
           </div>
 
-          <Button style={"w-full bg-darkBlue rounded-sm text-white py-2.5 mt-[5%] hover:bg-extraDarkRed"}> 
+          <Button style={"w-full bg-darkBlue rounded-sm text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center"} > 
               Send
           </Button>
         </div>

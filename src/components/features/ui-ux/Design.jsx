@@ -87,7 +87,7 @@ const Design = () => {
           </div>
         </div>
 
-        <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md w-[160px] hover:bg-extraDarkRed">
+        <Button style="text-white text-center mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md w-[160px] hover:bg-extraDarkRed" destination="/contact-us">
           Get In Touch
         </Button>
       </div>
