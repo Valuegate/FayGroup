@@ -61,14 +61,14 @@ const Projects = () => {
           );
         })}
       </div>
-      <div className="flex gap-[40px] mt-[20px] mb-[67px] items-center px-[200px]">
+      <div className="flex sm:flex-col gap-10 mt-10 mb-30 items-center px-[10%] sm:px-[5%]">
         {projects.map((project, i) => {
           return (
             <div
               key={i}
               className="opacity-80 text-center text-slate-950 text-base font-normal leading-loose"
             >
-              <Image src={project} alt="Project Image" />
+              <Image src={project} alt="Project Image" className="sm:w-full"/>
             </div>
           );
         })}

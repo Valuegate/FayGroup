@@ -12,11 +12,11 @@ import C2 from "@/public/assets/landing-page/standout/c2.svg";
 
 const Standout = () => {
   return (
-    <>
+    <div className="sm:flex sm:flex-col">
       <div
-        className={`flex w-full gap-[10%] items-center relative py-[5%] px-[10%]`}
+        className={`flex w-full gap-[10%] items-center relative py-[5%] px-[10%] sm:px-[5%]`}
       >
-        <div className="flex flex-col w-[50%]">
+        <div className="flex flex-col w-[50%] sm:w-full">
           <div className="flex items-center gap-[15px]">
             <div className="w-[18px]">
               <Image src={Pin} alt="pin" />
@@ -42,14 +42,22 @@ const Standout = () => {
 
           <InsightsInfo />
 
-          <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md w-[160px] text-center hover:bg-extraDarkRed transition ease-in-out duration-200" destination={"/contact-us"} >
+          <Button
+            style="sm:w-full text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md w-[160px] text-center hover:bg-extraDarkRed transition ease-in-out duration-200"
+            destination={"/contact-us"}
+          >
             Get In Touch
           </Button>
         </div>
 
+        <div className="w-full block sm:hidden">
+          <StandoutImage />
+        </div>
+      </div>
+      <div className="w-full hidden sm:block">
         <StandoutImage />
       </div>
-    </>
+    </div>
   );
 };
 

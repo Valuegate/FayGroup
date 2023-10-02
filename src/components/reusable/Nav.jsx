@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { React, useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
+import { FaBarsStaggered } from "react-icons/fa6";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 
@@ -50,19 +51,16 @@ const Nav = ({ active = 0 }) => {
     },
   ];
 
-  const toggle = () => {
-    setShowFeature(!showFeature);
-    console.log(showFeature);
-  };
+  const toggle = () => setShowFeature(!showFeature);
 
   return (
-    <nav className="flex justify-between px-[200px] py-[32px] items-center bg-transparent">
+    <nav className="flex justify-between px-[10%] sm:px-[5%] py-[32px] items-center bg-transparent ">
       <Link href={"/"}>
         <Image src={Logo} alt="logo" />
       </Link>
 
       <div
-        className={`absolute left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg px-[12%] py-[2%] ${
+        className={`absolute block sm:hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg px-[12%] py-[2%] ${
           showFeature ? "top-[15%] " : "-top-[100%]"
         } `}
       >
@@ -224,7 +222,7 @@ const Nav = ({ active = 0 }) => {
         </div>
       </div>
 
-      <div className="flex w-3/5 justify-evenly">
+      <div className="sm:hidden flex w-3/5 justify-evenly">
         {navs.map((nav, i) => {
           return (
             <div
@@ -254,11 +252,13 @@ const Nav = ({ active = 0 }) => {
         })}
       </div>
       <Button
-        style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
+        style="block sm:hidden text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
         destination={"/contact-us"}
       >
         Get In Touch
       </Button>
+
+      <FaBarsStaggered size={"30px"} className="hidden sm:block"/>
     </nav>
   );
 };

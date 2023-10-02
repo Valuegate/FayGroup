@@ -50,12 +50,12 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-[40px]">
+        <div className="flex sm:flex-col items-center justify-center gap-[40px]">
           {services.map((service, i) => {
             return (
               <div
                 key={i}
-                className="flex flex-col bg-white w-[416px] h-[462px] items-center rounded-[12px] drop-shadow-2xl"
+                className="flex flex-col bg-white w-[416px] sm:w-[80%] h-[462px] items-center rounded-[12px] drop-shadow-2xl"
               >
                 <div className="w-[90px] h-auto mt-[54px]">
                   <Image src={service.image} alt="service image" />

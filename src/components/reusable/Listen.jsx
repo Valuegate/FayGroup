@@ -12,73 +12,79 @@ import Right from "@/public/assets/landing-page/Right Arrow.svg";
 
 const Listen = () => {
   return (
-    <div className="flex w-full items-center pr-[10%] gap-[10%] bg-slightRedBackground">
-      <Image src={HappyMan} alt="Happy Man"  className="w-[50%]"/>
+    <div className="sm:flex sm:flex-col">
+      <div className="flex w-full items-center px-[10%] sm:px-[5%] gap-[10%] bg-slightRedBackground">
+        <Image src={HappyMan} alt="Happy Man" className="w-[50%] sm:hidden" />
 
-      <div className="flex flex-col w-[50%]">
-        <div className="flex items-center gap-[15px]">
-          <div className="w-[18px]">
-            <Image src={Pin} alt="pin" />
-          </div>
-          <p className="text-maroon text-base font-[600] leading-loose">
-            TESTIMONIALS
-          </p>
-        </div>
-
-        <div className="mt-[3%]" />
-
-        <div className="flex gap-[10px] w-full">
-          <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
-            Listen to what
-          </p>
-          <p className="text-red-950 text-4xl font-[600] leading-[48px]">
-            Our Clients
-          </p>
-          <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
-            say
-          </p>
-        </div>
-
-        <div className="mt-[5%]" />
-
-        <p className="text-slate-950 text-base font-normal leading-loose">
-          “Our website has transformed from a good to the best. We are super
-          thrilled about our new website! They don’t act like a typical agency,
-          they are more like on honest business partner who is truly invested.”
-        </p>
-
-        <div className="mt-[29px] flex gap-[20px] items-start">
-          <div>
-            <Image src={Client} alt="client" />
-          </div>
-
-          <div className="flex flex-col justify-between items-start">
-            <p className="text-slate-950 text-2xl font-[600] leading-9">
-              Olagunju David
-            </p>
-            <p className="text-slate-950 text-base font-[400] leading-loose">
-              CEO of Digitata
+        <div className="flex flex-col w-[50%] sm:w-full sm:mt-20">
+          <div className="flex items-center gap-[15px]">
+            <div className="w-[18px]">
+              <Image src={Pin} alt="pin" />
+            </div>
+            <p className="text-maroon text-base font-[600] leading-loose">
+              TESTIMONIALS
             </p>
           </div>
-          <div>
-            <Image src={Stars} alt="client" />
+
+          <div className="mt-[3%]" />
+
+          <div className="flex gap-[10px] w-full">
+            <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
+              Listen to what
+            </p>
+            <p className="text-red-950 text-4xl font-[600] leading-[48px]">
+              Our Clients
+            </p>
+            <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
+              say
+            </p>
+          </div>
+
+          <div className="mt-[5%]" />
+
+          <p className="text-slate-950 text-base font-normal leading-loose">
+            “Our website has transformed from a good to the best. We are super
+            thrilled about our new website! They don’t act like a typical
+            agency, they are more like on honest business partner who is truly
+            invested.”
+          </p>
+
+          <div className="mt-[29px] flex gap-[20px] items-start">
+            <div>
+              <Image src={Client} alt="client" />
+            </div>
+
+            <div className="flex flex-col justify-between items-start">
+              <p className="text-slate-950 text-2xl font-[600] leading-9">
+                Olagunju David
+              </p>
+              <p className="text-slate-950 text-base font-[400] leading-loose">
+                CEO of Digitata
+              </p>
+            </div>
+            <div>
+              <Image src={Stars} alt="client" />
+            </div>
+          </div>
+
+          <div className="mt-[5%]" />
+
+          <div className="flex gap-[20px] sm:justify-center">
+            <div>
+              <Image src={Left} alt="arrow" className="cursor-pointer" />
+            </div>
+            <div>
+              <Image src={Right} alt="arrow" className="cursor-pointer" />
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-[5%]" />
-
-        <div className="flex gap-[20px]">
-          <div>
-            <Image src={Left} alt="arrow" className="cursor-pointer"/>
-          </div>
-          <div>
-            <Image src={Right} alt="arrow" className="cursor-pointer"/>
-          </div>
-        </div>
+      <div className="hidden sm:block sm:w-full sm:px-[5%] bg-slightRedBackground">
+        <Image src={HappyMan} alt="HappyMan" className="sm:mt-10 sm:mb-10"/>
       </div>
     </div>
   );
 };
 
 export default Listen;
-
