@@ -36,16 +36,16 @@ const Services = () => {
     <div className="pt-[100px] pb-[150px] flex flex-col w-full items-center">
       <div className="flex flex-col gap-[60px]">
         <div className="flex flex-col gap-[20px] items-center">
-          <div className="flex items-center gap-[15px]">
-            <div className="w-[18px]">
+          <div className="flex items-center gap-[10px]">
+            <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
             </div>
-            <p className="text-maroon text-base font-[600] leading-loose">
+            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
               SERVICES
             </p>
           </div>
 
-          <p className="text-slate-950 text-4xl font-[600] leading-[44px]">
+          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
             Our Provided <span className="text-red-950">Services</span>
           </p>
         </div>
@@ -55,17 +55,17 @@ const Services = () => {
             return (
               <div
                 key={i}
-                className="flex flex-col bg-white w-[416px] sm:w-[80%] h-[462px] items-center rounded-[12px] drop-shadow-2xl"
+                className="flex flex-col bg-white w-[416px] sm:w-[90%] h-[462px] items-center rounded-[12px] sm:shadow-lg shadow-2xl"
               >
                 <div className="w-[90px] h-auto mt-[54px]">
                   <Image src={service.image} alt="service image" />
                 </div>
 
-                <p className="mt-[34px] text-2xl font-[600] leading-9">
+                <p className="mt-[34px] text-2xl font-medium leading-9 sm:text-xl sm:leading-10">
                   {service.name}
                 </p>
 
-                <p className="mt-[20px] px-[40px] text-center text-slate-950 text-base font-normal leading-loose">
+                <p className="mt-[20px] px-[20px] text-center text-slate-950 text-base font-normal leading-loose">
                   {service.subtitle}
                 </p>
 
@@ -73,7 +73,7 @@ const Services = () => {
                   href={service.link}
                   className="mt-[16px] flex items-center justify-center gap-[10px] text-maroon"
                 >
-                  <p className="font-[500] leading-loose">Explore More</p>
+                  <p className="font-medium leading-loose">Explore More</p>
                   <FaArrowRight />
                 </Link>
               </div>

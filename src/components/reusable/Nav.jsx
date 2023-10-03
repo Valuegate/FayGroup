@@ -258,7 +258,7 @@ const Nav = ({ active = 0 }) => {
         Get In Touch
       </Button>
 
-      <FaBarsStaggered size={"30px"} className="hidden sm:block"/>
+      <FaBarsStaggered size={"25px"} className="hidden sm:block text-extraDarkRed"/>
     </nav>
   );
 };

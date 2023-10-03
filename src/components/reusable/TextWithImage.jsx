@@ -32,18 +32,18 @@ const TextWithImage = ({
         )}
 
         <div className="flex flex-col w-[50%] sm:w-full sm:mt-20">
-          <div className="flex items-center gap-[15px]">
-            <div className="w-[18px]">
+          <div className="flex items-center gap-[10px]">
+            <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
             </div>
-            <p className="text-maroon text-base font-[600] leading-loose">
+            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
               {pinText}
             </p>
           </div>
 
           <div className="mt-[3%]" />
 
-          <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
+          <p className="text-slate-950 text-4xl sm:text-2xl sm:leading-9 font-medium leading-[48px]">
             {preRedText} <span className="text-red-950">{redText}</span>{" "}
             {postRedText}
           </p>

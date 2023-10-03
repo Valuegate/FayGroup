@@ -5,9 +5,7 @@ import InsightsInfo from "../../reusable/InsightsInfo";
 import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
 
-import SI from "@/public/assets/landing-page/standout/image.svg";
-import C1 from "@/public/assets/landing-page/standout/c1.svg";
-import C2 from "@/public/assets/landing-page/standout/c2.svg";
+import SI from "@/public/assets/product development/Frame 36182.png";
 
 const Standout = () => {
   return (
@@ -15,7 +13,9 @@ const Standout = () => {
       <div
         className={`flex w-full gap-[10%] items-center relative py-[5%] px-[10%] bg-slightRedBackground`}
       >
-        <StandoutImage />
+        <div className="w-[50%] block sm:hidden">
+          <Image src={SI} alt="Standout" />
+        </div>
 
         <div className="flex flex-col w-[50%]">
           <div className="flex items-center gap-[15px]">
@@ -55,20 +55,3 @@ const Standout = () => {
 
 export default Standout;
 
-const StandoutImage = () => {
-  return (
-    <div className="w-[50%] relative">
-      <Image src={SI} alt="image" className="" />
-      <Image
-        src={C1}
-        alt="c1"
-        className="absolute -z-10 top-0 -right-[3%] w-[30%]"
-      />
-      <Image
-        src={C2}
-        alt="c2"
-        className="absolute z-10 bottom-0 -left-[3%] w-[20%]"
-      />
-    </div>
-  );
-};

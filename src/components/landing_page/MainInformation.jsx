@@ -13,7 +13,7 @@ const MainInformation = () => {
       <Image
         src={Shadow}
         alt="shadow"
-        className="absolute top-0 left-0 -z-10 w-full h-[100vh]"
+        className="block absolute top-0 left-0 -z-10 w-full h-[100vh]"
       />
 
       <Nav />
@@ -21,20 +21,17 @@ const MainInformation = () => {
         <div className="w-[50%] sm:w-full flex flex-col">
           <div className="flex items-center">
             <div>
-              <Image src={Welcome} alt="welcome" />
+              <Image src={Welcome} alt="welcome" className="sm:w-[100px]" />
             </div>
-
-            <p className="text-white text-base font-[500] leading-loose bg-extraDarkRed rounded-[40px] py-3 px-5">
+            <p className="text-white text-center sm:text-[14px] font-[500] leading-loose bg-extraDarkRed rounded-[40px] py-3 px-5">
               WELCOME TO FAYGROUP 👋
             </p>
           </div>
-          <div className="flex flex-col gap-[32px] mt-[5%]">
+          <div className="flex flex-col gap-[32px] sm:gap-[16px] mt-[5%]">
             <div className="w-full flex-shrink">
-              <p className="text-slate-950 text-[64px] font-[500] leading-[88px]">
+              <p className="text-slate-950 text-[64px] sm:text-[32px] font-[500] sm:leading-[48px] leading-[88px]">
                 Grow your Business with{" "}
-                <span className="text-red-950 text-[64px] font-[500] leading-[88px]">
-                  Our Solutions
-                </span>
+                <span className="text-red-950">Our Solutions</span>
               </p>
             </div>
 
@@ -57,7 +54,12 @@ const MainInformation = () => {
           </div>
         </div>
 
-        <div className="w-[40%] sm:w-full">
+        <div className="w-[40%] sm:w-full sm:mt-5 sm:mb-10 sm:relative">
+          <Image
+            src={Shadow}
+            alt="shadow"
+            className="sm:block hidden absolute top-0 left-0 -z-10 w-full h-auto"
+          />
           <Image src={Hero} alt="Hero" />
         </div>
       </div>

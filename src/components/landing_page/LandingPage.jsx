@@ -19,7 +19,7 @@ const LandingPage = () => {
       <MainInformation />
       <Purpose />
       <Services />
-      <div className="h-[100px]"/>
+      <div className="sm:hidden block h-[100px] sm:h-0"/>
       <TextWithImage
         left={true}
         pinText={"ADVISING"}
