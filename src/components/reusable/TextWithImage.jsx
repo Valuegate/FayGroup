@@ -73,8 +73,12 @@ const TextWithImage = ({
         )}
       </div>
 
-      <div className="hidden sm:block sm:w-full sm:px-[5%] bg-slightRedBackground">
-        <Image src={image} alt="image" className="sm:mt-20 sm:mb-20"/>
+      <div
+        className={`hidden sm:block sm:w-full sm:px-[5%] ${
+          useRedBackground && "bg-slightRedBackground"
+        } `}
+      >
+        <Image src={image} alt="image" className="sm:mt-20 sm:mb-20" />
       </div>
     </div>
   );

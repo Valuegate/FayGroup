@@ -10,6 +10,7 @@ import Team from "./Team";
 import BannerImage from "@/public/assets/about/Banner Image.svg";
 import AimImage from "@/public/assets/about/Aim.png";
 import FutureImage from "@/public/assets/about/Future.png";
+import WorkedWith from "../reusable/WorkedWith";
 
 const AboutPage = () => {
   return (
@@ -26,6 +27,9 @@ const AboutPage = () => {
         }
       />
       <Facts />
+      <div className="bg-slightRedBackground py-10 mt-5">
+        <WorkedWith/>
+      </div>
       <TextWithImage
         left={true}
         image={AimImage}

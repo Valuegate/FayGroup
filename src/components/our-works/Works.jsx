@@ -17,7 +17,7 @@ const WorksPage = () => {
     <Listen />
     <div className="h-[100px]"/>
     <MiniBlog />
-    <div className="h-[100px]"/>
+    <div className="h-[100px] sm:h-0"/>
     <Contact />
     <div className="h-[200px]"/>
     <WorkInterest />

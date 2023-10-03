@@ -26,52 +26,52 @@ const Banner = ({
         className="absolute top-0 left-0 -z-10 w-full"
       />
       <Nav active={active} />
-      <div className="mt-[96px] pb-[150px] px-[10%]">
+      <div className="mt-[96px] sm:mt-10 pb-[150px] px-[10%] sm:px-[5%] sm:flex sm:flex-col">
         <div className="flex gap-10 items-start justify-between">
-          <div className="w-[50%] flex flex-col">
-            <div className="flex flex-col gap-[32px] mt-[10px]">
+          <div className="w-[50%] sm:w-full flex flex-col">
+            <div className="flex flex-col gap-5  mt-[10px]">
               <div className="w-full flex-shrink">
                 {!hidePinText && (
-                  <div className="flex items-center gap-[15px]">
-                    <div className="w-[18px]">
+                  <div className="flex items-center gap-[10px]">
+                    <div className="w-[14px]">
                       <Image src={Pin} alt="pin" />
                     </div>
-                    <div className="text-maroon text-base font-[600] leading-loose">
+                    <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
                       {pinText}
-                    </div>
+                    </p>
                   </div>
                 )}
                 <p
                   className={`${
                     swapRedText ? "text-red-950" : "text-slate-950"
-                  } text-[64px] font-[500] leading-[88px]`}
+                  } text-[64px] sm:text-[32px] font-[500] sm:leading-[48px] leading-[88px]`}
                 >
                   {firstText}{" "}
                   <span
                     className={`${
                       !swapRedText ? "text-red-950" : "text-slate-950"
-                    } text-[64px] font-[500] leading-[88px] `}
+                    } text-[64px] font-[500] leading-[88px] sm:leading-[48px] sm:text-[32px]`}
                   >
                     {secondText}
                   </span>
                 </p>
               </div>
 
-              <div className="w-[90%] text-slate-950 text-base font-normal leading-loose">
+              <div className="w-[90%] sm:w-full text-slate-950 text-base font-normal leading-loose">
                 {subtitle}
               </div>
 
-              <div className="flex justify-start items-center gap-[20px]">
+              <div className="flex sm:flex-col sm:w-full justify-start items-center gap-[20px]">
                 {includeButton && (
                   <Button
-                    style="text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200 text-center"
+                    style="text-white text-center sm:w-full bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200 text-center"
                     destination={"/contact-us"}
                   >
                     Get In Touch
                   </Button>
                 )}
                 {!hideExplore && (
-                  <Button style="text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">
+                  <Button style="text-darkBlue text-center sm:w-full bg-blandGrey px-5 py-3 font-[500] rounded-md">
                     Explore More
                   </Button>
                 )}
@@ -79,8 +79,10 @@ const Banner = ({
             </div>
           </div>
 
-          <Image src={image} alt="image" className="w-[50%] h-auto" />
+          <Image src={image} alt="image" className="w-[50%] h-auto sm:hidden" />
         </div>
+
+        <Image src={image} alt="image" className="w-full sm:mt-10 h-auto hidden sm:block" />
       </div>
     </div>
   );

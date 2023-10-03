@@ -21,7 +21,7 @@ const Services = () => {
         "Elevate your business with our exceptional software development service. FayGroup excels at delivering top-notch solutions.",
       image: SD,
       link: "/features/software-development",
-      color: "sdOrange",
+      color: "bg-sdOrange",
     },
     {
       name: "UI/UX Design",
@@ -29,7 +29,7 @@ const Services = () => {
         "Improve your user experience with our impeccable UI/UX Design service. At FayGroup, we create intuitive interfaces and deliver excellence.",
       image: UD,
       link: "/features/ui-ux",
-      color: "udGreen",
+      color: "bg-udGreen",
     },
     {
       name: "Mobile Solutions",
@@ -37,7 +37,7 @@ const Services = () => {
         "Transform your vision into a dynamic reality with our Mobile App Development service.  Experience the pinnacle of excellence with us.",
       image: MS,
       link: "/features/mobile-solution",
-      color: "msRed",
+      color: "bg-msRed",
     },
     {
       name: "System Engineering",
@@ -45,7 +45,7 @@ const Services = () => {
         "Elevate your business standards with our System Engineering service. At FayGroup we guarantees your operations aligns with outstanding quality standards.",
       image: SE,
       link: "/features/system-engineering",
-      color: "seBlue",
+      color: "bg-seBlue",
     },
     {
       name: "Data Science",
@@ -53,7 +53,7 @@ const Services = () => {
         "Unlock the power of data with our Data Engineering service. At FayGroup, we transform raw information into valuable insights, fuelling your business decisions with precision and efficiency.",
       image: DS,
       link: "/features/data-science",
-      color: "deYellow",
+      color: "bg-deYellow",
     },
     {
       name: "Strategy Consulting",
@@ -61,7 +61,7 @@ const Services = () => {
         "At FayGroup, our seasoned experts collaborate with you to strategize, innovate, and optimize your business operations. Your venture is finely tuned for growth and prosperity.",
       image: SC,
       link: "/features/strategy-consulting",
-      color: "scBlue",
+      color: "bg-scBlue",
     },
   ];
 
@@ -82,12 +82,11 @@ const Services = () => {
 
       <div className="grid grid-cols-3 gap-10 w-[80%] mt-20">
         {services.map((service, i) => {
-          let color = "bg-" + service.color;
         
           return (
             <div
               key={i}
-              className={`flex flex-col ${color} w-[416px] h-[462px] items-center rounded-[12px]`}
+              className={`flex flex-col ${service.color} w-[416px] h-[462px] items-center rounded-[12px]`}
             >
               <Image
                 src={service.image}

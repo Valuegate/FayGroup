@@ -1,5 +1,8 @@
 import React from "react";
 
+import Image from 'next/image';
+import Group from "@/public/assets/about/Group.svg";
+
 const Facts = () => {
   const facts = [
     {
@@ -19,23 +22,22 @@ const Facts = () => {
     },
   ];
   return (
-    <div className="flex flex-col">
-      <div className="px-[150px]">
-        <img src="./About/Group.svg" alt="" />
-        <div className="mt-[30px] flex gap-[40px] py-[67px] items-center px-[50px]">
+    <div className="px-[10%] flex flex-col sm:px-[5%]">
+        <Image src={Group} alt="Group" className="w-full"/>
+        <div className="mt-[30px] sm:flex-col flex sm:gap-5 gap-20 py-[67px] items-center">
           {facts.map((fact, i) => {
             return (
               <div
                 key={i}
-                className="flex flex-col items-start w-[33%] h-[320px] shadow-xl rounded-[12px] px-[40px] py-[40px]"
+                className="flex flex-col items-start w-[33%] sm:w-full h-[320px] shadow-xl rounded-[12px] px-[40px] sm:px-[5%] py-[40px]"
               >
-                <div className="text-slate-950 text-[48px] font-[600] leading-[88px] ">
+                <div className="text-slate-950 text-[52px] font-medium leading-[88px]">
                   {fact.title}
                 </div>
-                <div className="text-maroon text-[24px] font-[500] leading-9 mt-[16px]">
+                <div className="text-maroon text-[24px] sm:text-xl font-medium sm:leading-10 leading-9 mt-5 sm:mt-3">
                   {fact.sub}
                 </div>
-                <div className="text-slate-950 text-[16px] font-[500] mt-[16px]">
+                <div className="text-slate-950 text-base leading-loose font-normal mt-5 sm:mt-3">
                   {fact.text}
                 </div>
               </div>
@@ -43,7 +45,6 @@ const Facts = () => {
           })}
         </div>
       </div>
-    </div>
   );
 };
 

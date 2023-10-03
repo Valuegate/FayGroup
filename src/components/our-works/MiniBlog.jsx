@@ -27,7 +27,7 @@ const MiniBlog = () => {
     },
   ];
   return (
-    <div className="flex flex-col w-full items-center justify-center">
+    <div className="flex flex-col w-full items-center justify-center sm:hidden">
       <div className="flex items-center gap-[10px]">
         <div className="w-[18px]">
           <Image src={Pin} alt="pin" />
