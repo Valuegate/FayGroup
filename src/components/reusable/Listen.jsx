@@ -17,25 +17,18 @@ const Listen = () => {
         <Image src={HappyMan} alt="Happy Man" className="w-[50%] sm:hidden" />
 
         <div className="flex flex-col w-[50%] sm:w-full sm:mt-20">
-          <div className="flex items-center gap-[15px]">
-            <div className="w-[18px]">
-              <Image src={Pin} alt="pin" />
+          <div className="flex flex-col gap-[20px] items-start">
+            <div className="flex items-center gap-[10px]">
+              <div className="w-[14px]">
+                <Image src={Pin} alt="pin" />
+              </div>
+              <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+                TESTIMONIALS
+              </p>
             </div>
-            <p className="text-maroon text-base font-[600] leading-loose">
-              TESTIMONIALS
-            </p>
-          </div>
 
-          <div className="mt-[3%]" />
-
-          <div className="flex gap-[10px] w-full">
-            <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
-              Listen to what
-            </p>
-            <p className="text-red-950 text-4xl font-[600] leading-[48px]">
-              Our Clients
-            </p>
-            <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
+            <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+              Listen to what <span className="text-red-950">Our Clients</span>{" "}
               say
             </p>
           </div>
@@ -49,22 +42,18 @@ const Listen = () => {
             invested.”
           </p>
 
-          <div className="mt-[29px] flex gap-[20px] items-start">
-            <div>
-              <Image src={Client} alt="client" />
-            </div>
+          <div className="mt-[29px] flex gap-2 items-start">
+            <Image src={Client} alt="client" className="w-[20%]"/>
 
             <div className="flex flex-col justify-between items-start">
-              <p className="text-slate-950 text-2xl font-[600] leading-9">
+              <p className="text-slate-950 sm:text-xl text-2xl font-medium sm:leading-10 leading-9">
                 Olagunju David
               </p>
-              <p className="text-slate-950 text-base font-[400] leading-loose">
+              <p className="text-slate-950 text-base font-normal leading-loose">
                 CEO of Digitata
               </p>
             </div>
-            <div>
-              <Image src={Stars} alt="client" />
-            </div>
+            <Image src={Stars} alt="client" className="w-[30%] sm:mt-3"/>
           </div>
 
           <div className="mt-[5%]" />
@@ -81,7 +70,7 @@ const Listen = () => {
       </div>
 
       <div className="hidden sm:block sm:w-full sm:px-[5%] bg-slightRedBackground">
-        <Image src={HappyMan} alt="HappyMan" className="sm:mt-10 sm:mb-10"/>
+        <Image src={HappyMan} alt="HappyMan" className="sm:mt-10 sm:mb-10" />
       </div>
     </div>
   );

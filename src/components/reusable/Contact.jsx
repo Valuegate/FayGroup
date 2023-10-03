@@ -8,28 +8,26 @@ import ContactImage from "@/public/assets/landing-page/Contact.svg";
 
 const Contact = () => {
   return (
-    <div className="flex w-full items-center py-[5%] px-[10%] gap-[10%]">
-      <div className="flex flex-col w-[50%]">
-        <div className="flex items-center gap-[15px] mt-[16px]">
-          <div className="w-[18px]">
-            <Image src={Pin} alt="pin" />
+    <div className="flex sm:flex-col w-full items-center py-[5%] px-[10%] sm:px-[5%] gap-[10%]">
+      <div className="flex flex-col w-[50%] sm:w-full">
+        <div className="flex flex-col gap-[20px] items-start">
+          <div className="flex items-center gap-[10px]">
+            <div className="w-[14px]">
+              <Image src={Pin} alt="pin" />
+            </div>
+            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+              CONTACT US
+            </p>
           </div>
-          <p className="text-maroon text-base font-[600] leading-loose">
-            CONTACT US
-          </p>
-        </div>
 
-        <div className="mt-[3%]" />
-
-        <div className="flex gap-[10px] items-center w-full">
-          <p className="text-slate-950 text-4xl font-[600] leading-[48px]">
+          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
             Don't Hesitate To <span className="text-red-950">Contact Us</span>
           </p>
         </div>
 
         <div className="mt-[5%]" />
 
-        <p className="w-[557px] text-slate-950 text-base font-normal leading-loose">
+        <p className="w-[557px] sm:w-full text-slate-950 text-base font-normal leading-loose">
           Don't hesitate to contact us with your questions, ideas, or
           challenges. We are eager to listen, understand, and create digital
           solutions that drive remarkable results for your business.
@@ -56,7 +54,11 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="w-[50%] h-auto">
+      <div className="w-[50%] h-auto sm:hidden">
+        <Image src={ContactImage} alt="Contact" />
+      </div>
+
+      <div className="sm:w-full sm:mt-20 h-auto hidden sm:block">
         <Image src={ContactImage} alt="Contact" />
       </div>
     </div>

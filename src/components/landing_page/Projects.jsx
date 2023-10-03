@@ -3,7 +3,7 @@ import React from "react";
 import Button from "@/src/components/reusable/Button";
 import { FaArrowRight } from "react-icons/fa";
 
-import Image from 'next/image';
+import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
 
 import Project1 from "@/public/assets/landing-page/Project 1.png";
@@ -19,42 +19,38 @@ const Projects = () => {
     "Branding",
   ];
 
-  const projects = [
-    Project1,
-    Project2,
-    Project3,
-  ];
+  const projects = [Project1, Project2, Project3];
 
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col gap-[20px] items-center">
-        <div className="flex items-center gap-[15px]">
-          <div className="w-[18px]">
+        <div className="flex items-center gap-[10px]">
+          <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
           </div>
-          <p className="text-maroon text-base font-[600] leading-loose">
+          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
             Portfolio
           </p>
         </div>
 
-        <div className="flex gap-[10px]">
-          <p className="text-slate-950 text-4xl font-[600] leading-[44px]">
-            Our Latest
-          </p>
-          <p className="text-red-950 text-4xl font-[600] leading-[44px]">
-            Projects
-          </p>
-        </div>
+        <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+          Our Latest <span className="text-red-950">Projects</span>
+        </p>
       </div>
 
-      <div className="mt-[40px] flex items-center justify-center gap-[99px]">
+      <div className="mt-20 sm:overflow-x-auto sm:w-full sm:px-[5%] flex items-center gap-20">
         {titles.map((title, i) => {
           return (
             <p
               key={i}
-              className={`opacity-80 text-center ${
-                i == 0 ? "text-maroon font-[700]" : "text-slate-950"
-              } text-base font-normal leading-loose`}
+              className={`opacity-80 cursor-pointer text-center
+              
+              ${
+                i == 0 ? "text-maroon font-medium" : "text-slate-950 font-normal"
+              } 
+              
+              
+              text-base`}
             >
               {title}
             </p>
@@ -68,13 +64,16 @@ const Projects = () => {
               key={i}
               className="opacity-80 text-center text-slate-950 text-base font-normal leading-loose"
             >
-              <Image src={project} alt="Project Image" className="sm:w-full"/>
+              <Image src={project} alt="Project Image" className="sm:w-full" />
             </div>
           );
         })}
       </div>
-      <Button style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md flex gap-2 items-center hover:bg-extraDarkRed transition ease-in-out duration-200" destination={"/contact-us"}>
-        Get In Touch
+      <Button
+        style="text-white mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md flex gap-2 items-center hover:bg-extraDarkRed transition ease-in-out duration-200"
+        destination={"/our-works"}
+      >
+        Explore More
         <FaArrowRight />
       </Button>
     </div>

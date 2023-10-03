@@ -23,7 +23,7 @@ const MainInformation = () => {
             <div>
               <Image src={Welcome} alt="welcome" className="sm:w-[100px]" />
             </div>
-            <p className="text-white text-center sm:text-[14px] font-[500] leading-loose bg-extraDarkRed rounded-[40px] py-3 px-5">
+            <p className="text-white text-center sm:text-[14px] font-[500] leading-loose bg-extraDarkRed rounded-[40px] py-3 px-4">
               WELCOME TO FAYGROUP 👋
             </p>
           </div>
