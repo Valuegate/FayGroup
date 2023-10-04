@@ -30,23 +30,21 @@ module.exports = {
         deYellow: "#FCFBE7",
         scBlue: "#EDF6FF",
         palePink: "#FFE3E5",
+        thickSdOrange: "#E2730B",
+        thickUdGreen: "#469D97",
+        thickMsRed: "#EB2127",
+        thickSeBlue: "#4141E8",
+        thickDeYellow: "#B0A700",
+        thickScBlue: "#0083FF",
       },
       fontFamily: {
         body: ["Poppins"],
       },
       screens: {
         sm: {
-          max: "640px",
+          max: "768px",
         }, // small screens
-        md: {
-          max: "768px"
-        }, // medium screens
-        lg: {
-          max: "1024px"
-        }, // large screens
-        xl: {
-          max: "1280px"
-        }, // extra large screens
+        
       },
     },
   },

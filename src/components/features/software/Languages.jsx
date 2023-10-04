@@ -27,16 +27,25 @@ const Languages = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-10 items-center justify-center w-full">
-      <p className="text-slate-950 text-xl font-medium leading-loose">
+    <div className="flex flex-col gap-10 items-center justify-center w-full sm:w-full">
+      <p className="text-slate-950 text-center text-xl font-medium leading-loose sm:px-[5%]">
         The special languages we use to build amazing websites
       </p>
-      <div className="flex justify-between w-[40%] gap-5">
+      <div className="flex gap-5 w-[45%] sm:w-full sm:overflow-x-auto sm:px-[5%] scrollbar-custom">
         {languages.map((language, i) => {
-          return <div key={i} className="flex items-center gap-2 rounded-full px-3 py-2 border border-slate-600 border-opacity-30">
-          <Image src={language.image} alt="language image" />
-          <p className="text-center text-slate-950 text-base font-normal leading-loose">{language.name}</p>
-          </div>;
+          return (
+            <div className="overscroll-none">
+              <div
+                key={i}
+                className="flex mr-[5%] w-[300px] items-center gap-2 rounded-full px-3 py-2 p-4 border border-slate-600 border-opacity-30"
+              >
+                <Image src={language.image} alt="language image" />
+                <p className="text-center text-slate-950 text-base font-normal leading-loose">
+                  {language.name}
+                </p>
+              </div>
+            </div>
+          );
         })}
       </div>
     </div>

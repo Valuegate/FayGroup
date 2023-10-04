@@ -275,7 +275,7 @@ const Nav = ({ active = 0 }) => {
       <div
         className={`sm:flex sm:flex-col z-30 hidden ${
           showFeature ? "sm:block left-0" : "sm:hidden -left-[100%]"
-        } fixed overscroll-y-contain top-0 transform ease-linear duration-500 w-[100%] bg-white h-full shadow-md px-[5%] py-[5%]`}
+        } fixed overscroll-y-auto top-0 transform ease-linear duration-500 w-[100%] bg-white h-full shadow-md px-[5%] py-[5%]`}
       >
         <div className="flex w-full mt-[15px] justify-between items-center">
           <Link href={"/"}>
@@ -288,15 +288,7 @@ const Nav = ({ active = 0 }) => {
         <div className="mt-10 flex w-full flex-col gap-5 items-start">
           {navs.map((nav, i) => {
             return nav.icon ? (
-              <div
-                className={`flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose ${
-                  i == active && "text-maroon`"
-                }`}
-                onClick={() => setShowMobileFeatures(!showMobileFeatures)}
-              >
-                {nav.name}
-                {showMobileFeatures ? <FaCaretUp /> : nav.icon}
-              </div>
+              <MobileFeatures active={i == active} features={features} />
             ) : (
               <Link
                 href={nav.link}
@@ -366,16 +358,83 @@ export default Nav;
 
 const MobileFeatures = ({ features, active = false }) => {
   const [showMobileFeatures, setShowMobileFeatures] = useState(false);
-  
+
   return (
-    <div
-      className={`flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose ${
-        active && "text-maroon`"
-      }`}
-      onClick={() => setShowMobileFeatures(!showMobileFeatures)}
-    >
-      {nav.name}
-      {showMobileFeatures ? <FaCaretUp /> : nav.icon}
+    <div className="flex flex-col w-full">
+      <div
+        className={`flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose ${
+          active && "text-maroon`"
+        }`}
+        onClick={() => setShowMobileFeatures(!showMobileFeatures)}
+      >
+        Features
+        {showMobileFeatures ? <FaCaretUp /> : <FaCaretDown />}
+      </div>
+
+      <div
+        className={`${
+          showMobileFeatures ? "" : "hidden"
+        } mt-3 px-[5%] flex flex-col w-full gap-5 items-start`}
+      >
+        {features.map((feature, i) => {
+          return i == 0 ? (
+            <MobileServices key={i} services={feature.children} />
+          ) : (
+            <Link
+              key={i}
+              href={feature.link}
+              className="text-base leading-loose font-normal"
+            >
+              {feature.name}
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const MobileServices = ({ services }) => {
+  const [showMobileServices, setShowMobileServices] = useState(false);
+
+  const toggle = () => setShowMobileServices(!showMobileServices);
+
+  return (
+    <div className="flex flex-col w-full">
+      <div
+        className="flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose"
+        onClick={() => setShowMobileServices(!showMobileServices)}
+      >
+        <Link
+          href={"/features/product-development"}
+          className="text-base font-normal leading-loose"
+        >
+          Product Development
+        </Link>
+        {showMobileServices ? (
+          <FaCaretUp onClick={toggle} />
+        ) : (
+          <FaCaretDown onClick={toggle} />
+        )}
+      </div>
+
+      <div
+        className={`${
+          showMobileServices ? "" : "hidden"
+        } mt-3 px-[5%] flex flex-col w-full gap-3 items-start`}
+      >
+        {services.map((service, i) => {
+          return (
+            <Link
+              href={service.link}
+              key={i}
+              className={`flex items-center text-base font-normal leading-loose`}
+            >
+              {service.name}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

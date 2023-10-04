@@ -1,6 +1,5 @@
 import React from "react";
-import TextWithImage from "../reusable/TextWithImage";
-import InsightsInfo from "../reusable/InsightsInfo";
+import InsightsInfo from "@/src/components/reusable/InsightsInfo";
 import Button from "@/src/components/reusable/Button";
 
 import Image from "next/image";

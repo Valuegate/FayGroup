@@ -22,6 +22,7 @@ const Services = () => {
       image: SD,
       link: "/features/software-development",
       color: "bg-sdOrange",
+      text: "text-thickSdOrange",
     },
     {
       name: "UI/UX Design",
@@ -30,6 +31,7 @@ const Services = () => {
       image: UD,
       link: "/features/ui-ux",
       color: "bg-udGreen",
+      text: "text-thickUdGreen",
     },
     {
       name: "Mobile Solutions",
@@ -38,6 +40,7 @@ const Services = () => {
       image: MS,
       link: "/features/mobile-solution",
       color: "bg-msRed",
+      text: "text-thickMsRed",
     },
     {
       name: "System Engineering",
@@ -46,6 +49,7 @@ const Services = () => {
       image: SE,
       link: "/features/system-engineering",
       color: "bg-seBlue",
+      text: "text-thickSeBlue",
     },
     {
       name: "Data Science",
@@ -54,6 +58,7 @@ const Services = () => {
       image: DS,
       link: "/features/data-science",
       color: "bg-deYellow",
+      text: "text-thickDeYellow",
     },
     {
       name: "Strategy Consulting",
@@ -62,31 +67,34 @@ const Services = () => {
       image: SC,
       link: "/features/strategy-consulting",
       color: "bg-scBlue",
+      text: "text-thickScBlue",
     },
   ];
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex items-center gap-[15px]">
-        <div className="w-[18px]">
-          <Image src={Pin} alt="pin" />
-        </div>
-        <p className="text-maroon text-base font-[600] leading-loose">
-          SERVICES
-        </p>
-      </div>
-      <p className="text-slate-950 text-4xl font-[600] leading-[44px]">
-        Providing <span className="text-red-950">The Best Service</span> for
-        Every Client
-      </p>
+      <div className="flex flex-col gap-[20px] items-center">
+          <div className="flex items-center gap-[10px]">
+            <div className="w-[14px]">
+              <Image src={Pin} alt="pin" />
+            </div>
+            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+              SERVICES
+            </p>
+          </div>
 
-      <div className="grid grid-cols-3 gap-10 w-[80%] mt-20">
+          <p className="text-slate-950 text-4xl sm:text-center sm:px-[10%] sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+            Providing <span className="text-red-950">Best Services</span> for Every Client
+          </p>
+        </div>
+
+      <div className="sm:flex sm:flex-col grid grid-cols-3 gap-10 w-[80%] sm:px-[5%] sm:w-full mt-20">
         {services.map((service, i) => {
         
           return (
             <div
               key={i}
-              className={`flex flex-col ${service.color} w-[416px] h-[462px] items-center rounded-[12px]`}
+              className={`flex flex-col ${service.color} w-[416px] sm:w-full h-[462px] items-center rounded-[12px]`}
             >
               <Image
                 src={service.image}
@@ -94,11 +102,11 @@ const Services = () => {
                 className="w-[60px] h[60px] mt-[54px]"
               />
 
-              <p className="mt-[34px] text-2xl font-[600] leading-9">
+              <p className={`mt-[34px] text-2xl sm:text-xl font-medium leading-9 ${service.text}`}>
                 {service.name}
               </p>
 
-              <p className="mt-[20px] px-[40px] text-center text-slate-950 text-base font-normal leading-loose">
+              <p className="mt-[20px] px-[40px] sm:px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
                 {service.subtitle}
               </p>
 

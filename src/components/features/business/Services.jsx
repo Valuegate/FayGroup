@@ -35,19 +35,22 @@ const Services = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex items-center gap-[15px]">
-        <div className="w-[18px]">
-          <Image src={Pin} alt="pin" />
-        </div>
-        <p className="text-maroon text-base font-[600] leading-loose">
-          SERVICES
-        </p>
-      </div>
-      <p className="text-slate-950 text-4xl font-[600] leading-[44px]">
-        Benefits of a <span className="text-red-950">Consultancy</span>
-      </p>
+      <div className="flex flex-col gap-[20px] items-center">
+          <div className="flex items-center gap-[10px]">
+            <div className="w-[14px]">
+              <Image src={Pin} alt="pin" />
+            </div>
+            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+              SERVICES
+            </p>
+          </div>
 
-      <div className="flex items-center gap-10 w-[80%] mt-5">
+          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+            Benefits of a <span className="text-red-950">Consultancy</span>
+          </p>
+        </div>
+
+      <div className="flex sm:flex-col items-center gap-10 w-[80%] mt-5">
         {services.map((service, i) => {
           return (
             <div
@@ -59,7 +62,7 @@ const Services = () => {
                 alt="service image"
                 className="w-[60px] h[60px] mt-[54px]"
               />
-              <p className="mt-[20px] px-[40px] text-center text-slate-950 text-base font-normal leading-loose">
+              <p className="mt-[20px] px-[40px] sm:px-[20%] text-center text-slate-950 text-base font-normal leading-loose">
                 {service.subtitle}
               </p>
             </div>

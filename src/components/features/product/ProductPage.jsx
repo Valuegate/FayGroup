@@ -33,7 +33,7 @@ const ProductPage = () => {
       <WorkedWith />
       <div className="h-[100px]" />
       <Standout />
-      <div className="h-[150px]" />
+      <div className="h-[150px] sm:h-[100px]" />
       <Services />
       <div className="h-[150px]" />
       <Listen />
