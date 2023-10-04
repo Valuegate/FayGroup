@@ -41,7 +41,7 @@ const MobilePage = () => {
         useRedBackground={true}
         left={true}
         pinText={"ACHIEVE MORE"}
-        preRedText={"Ulnleash Mobile Excellence: Partner with FayGroup for"}
+        preRedText={"Unleash Mobile Excellence: Partner with FayGroup for"}
         redText={"Optimal Solutions"}
         content={
           "Unlock the true potential of your business with FayGroup's exceptional mobile solutions. Get customized mobile applications that drive growth, engagement, and efficiency"

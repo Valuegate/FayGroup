@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { React, useState } from "react";
-import { FaCaretDown } from "react-icons/fa";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { FaBarsStaggered } from "react-icons/fa6";
 import Button from "./Button";
-import { useRouter } from "next/navigation";
+
+import { BiX } from "react-icons/bi";
 
 import Logo from "@/public/assets/Logo.svg";
 import PD from "@/public/assets/nav/image 12.svg";
@@ -21,8 +22,51 @@ import SC from "@/public/assets/nav/image 14-5.svg";
 import Image from "next/image";
 
 const Nav = ({ active = 0 }) => {
-  const router = useRouter();
   const [showFeature, setShowFeature] = useState(false);
+  const [showMobileFeatures, setShowMobileFeatures] = useState(false);
+
+  const services = [
+    {
+      name: "Software Development",
+      link: "/features/software-development",
+    },
+    {
+      name: "UI/UX Design",
+      link: "/features/ui-ux",
+    },
+    {
+      name: "Mobile Solutions",
+      link: "/features/mobile-solution",
+    },
+    {
+      name: "System Engineering",
+      link: "/features/system-engineering",
+    },
+    {
+      name: "Data Science",
+      link: "/features/data-science",
+    },
+    {
+      name: "Strategy Consulting",
+      link: "/features/strategy-consulting",
+    },
+  ];
+
+  const features = [
+    {
+      name: "Product Development",
+      link: "/features/product-development",
+      children: services,
+    },
+    {
+      name: "Digital Transformation",
+      link: "/features/digital-transformation",
+    },
+    {
+      name: "Business Consulting",
+      link: "/features/business-consulting",
+    },
+  ];
 
   const navs = [
     {
@@ -31,7 +75,9 @@ const Nav = ({ active = 0 }) => {
     },
     {
       name: "Features",
+      link: "",
       icon: <FaCaretDown />,
+      children: features,
     },
     {
       name: "Our Works",
@@ -58,6 +104,8 @@ const Nav = ({ active = 0 }) => {
       <Link href={"/"}>
         <Image src={Logo} alt="logo" />
       </Link>
+
+      {/** Desktop Nav */}
 
       <div
         className={`absolute block sm:hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg px-[12%] py-[2%] ${
@@ -222,6 +270,54 @@ const Nav = ({ active = 0 }) => {
         </div>
       </div>
 
+      {/** Mobile Nav */}
+
+      <div
+        className={`sm:flex sm:flex-col z-30 hidden ${
+          showFeature ? "sm:block left-0" : "sm:hidden -left-[100%]"
+        } fixed overscroll-y-contain top-0 transform ease-linear duration-500 w-[100%] bg-white h-full shadow-md px-[5%] py-[5%]`}
+      >
+        <div className="flex w-full mt-[15px] justify-between items-center">
+          <Link href={"/"}>
+            <Image src={Logo} alt="logo" />
+          </Link>
+
+          <BiX size={"32px"} className="text-extraDarkRed" onClick={toggle} />
+        </div>
+
+        <div className="mt-10 flex w-full flex-col gap-5 items-start">
+          {navs.map((nav, i) => {
+            return nav.icon ? (
+              <div
+                className={`flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose ${
+                  i == active && "text-maroon`"
+                }`}
+                onClick={() => setShowMobileFeatures(!showMobileFeatures)}
+              >
+                {nav.name}
+                {showMobileFeatures ? <FaCaretUp /> : nav.icon}
+              </div>
+            ) : (
+              <Link
+                href={nav.link}
+                key={i}
+                className={`flex items-center text-base font-normal leading-loose ${
+                  i == active && "text-maroon"
+                }`}
+              >
+                {nav.name}
+              </Link>
+            );
+          })}
+        </div>
+
+        <Button
+          style="w-full text-center mt-10 text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
+          destination={"/contact-us"}
+        >
+          Get In Touch
+        </Button>
+      </div>
       <div className="sm:hidden flex w-3/5 justify-evenly">
         {navs.map((nav, i) => {
           return (
@@ -244,7 +340,7 @@ const Nav = ({ active = 0 }) => {
                   onClick={toggle}
                 >
                   {nav.name}
-                  {nav.icon && nav.icon}
+                  {nav.icon && (showFeature ? <FaCaretUp /> : nav.icon)}
                 </div>
               )}
             </div>
@@ -257,10 +353,29 @@ const Nav = ({ active = 0 }) => {
       >
         Get In Touch
       </Button>
-
-      <FaBarsStaggered size={"25px"} className="hidden sm:block text-extraDarkRed"/>
+      <FaBarsStaggered
+        size={"25px"}
+        className="hidden sm:block text-extraDarkRed"
+        onClick={toggle}
+      />
     </nav>
   );
 };
 
 export default Nav;
+
+const MobileFeatures = ({ features, active = false }) => {
+  const [showMobileFeatures, setShowMobileFeatures] = useState(false);
+  
+  return (
+    <div
+      className={`flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose ${
+        active && "text-maroon`"
+      }`}
+      onClick={() => setShowMobileFeatures(!showMobileFeatures)}
+    >
+      {nav.name}
+      {showMobileFeatures ? <FaCaretUp /> : nav.icon}
+    </div>
+  );
+};
