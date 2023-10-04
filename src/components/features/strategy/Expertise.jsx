@@ -51,27 +51,40 @@ const Expertise = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex items-center gap-[15px]">
-        <div className="w-[18px]">
-          <Image src={Pin} alt="pin" />
+      <div className="flex flex-col gap-[20px] items-center">
+        <div className="flex items-center gap-[10px]">
+          <div className="w-[14px]">
+            <Image src={Pin} alt="pin" />
+          </div>
+          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+            EXPERRTISE
+          </p>
         </div>
-        <p className="text-maroon text-base font-[600] leading-loose">
-          EXPERTISE
+
+        <p className="text-slate-950 text-4xl sm:text-2xl text-center font-medium sm:leading-9 leading-[44px]">
+          Let's know Details from{" "}
+          <span className="text-red-950">our Professions</span>
         </p>
       </div>
-      <p className="text-slate-950 text-4xl font-[600] leading-[44px] mt-2">
-        Let's know Details from{" "}
-        <span className="text-red-950">our Professions</span>
-      </p>
-      <div className="grid grid-cols-3 w-[80%] mt-10 mb-[200px]">
+
+      <div className="sm:flex sm:flex-col items-center sm:w-full grid grid-cols-3 w-[80%] mt-10 mb-[200px] sm:mb-0">
         {professions.map((profession, i) => {
           return (
-            <div key={i} className="flex flex-col items-start justify-start w-[80%]">
-              <Image src={profession.image} alt="Profession Image" className="w-[100%]" />
-              <p className="text-slate-950 text-2xl font-[600] leading-9 w-[80%]">
+            <div
+              key={i}
+              className="flex flex-col items-start justify-start w-[80%] sm:w-[90%]"
+            >
+              <Image
+                src={profession.image}
+                alt="Profession Image"
+                className="w-[100%]"
+              />
+              <p className="text-slate-950 text-2xl font-medium sm:text-xl sm:w-full leading-9 w-[80%]">
                 {profession.title}
               </p>
-              <p className="mt-[20px] text-slate-950 text-base font-normal leading-loose">{profession.content}</p>
+              <p className="mt-[20px] sm:mt-2 text-slate-950 text-base font-normal leading-loose">
+                {profession.content}
+              </p>
             </div>
           );
         })}

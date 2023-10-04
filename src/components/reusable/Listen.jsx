@@ -42,7 +42,7 @@ const Listen = () => {
             invested.”
           </p>
 
-          <div className="mt-[29px] flex gap-2 items-start">
+          <div className="mt-[29px] flex gap-2 items-start sm:w-full">
             <Image src={Client} alt="client" className="w-[20%]"/>
 
             <div className="flex flex-col justify-between items-start">
@@ -53,7 +53,7 @@ const Listen = () => {
                 CEO of Digitata
               </p>
             </div>
-            <Image src={Stars} alt="client" className="w-[30%] sm:mt-3"/>
+            <Image src={Stars} alt="client" className="w-[30%] sm:w-[25%] sm:mt-3"/>
           </div>
 
           <div className="mt-[5%]" />

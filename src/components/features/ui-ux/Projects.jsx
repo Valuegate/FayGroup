@@ -14,18 +14,21 @@ const Projects = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex items-center gap-[15px]">
-        <div className="w-[18px]">
-          <Image src={Pin} alt="pin" />
+      <div className="flex flex-col gap-[20px] items-center">
+        <div className="flex items-center gap-[10px]">
+          <div className="w-[14px]">
+            <Image src={Pin} alt="pin" />
+          </div>
+          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+            Portfolio
+          </p>
         </div>
-        <p className="text-maroon text-base font-[600] leading-loose">
-          Portfolio
+
+        <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+          Our Latest <span className="text-red-950">Projects</span>
         </p>
       </div>
-      <p className="text-slate-950 text-4xl font-[600] leading-[44px]">
-        Our Latest <span className="text-red-950">Projects</span>
-      </p>
-      <div className="flex mt-5 mb-10 justify-around items-center w-[80%]">
+      <div className="flex sm:flex-col mt-5 mb-10 justify-around items-center w-[80%]">
         {projects.map((project, i) => {
           return (
             <div

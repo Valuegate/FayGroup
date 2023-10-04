@@ -30,31 +30,34 @@ const Services = () => {
 
   return (
     <div className="flex flex-col items-center">
-        <div className="flex items-center gap-[15px]">
-          <div className="w-[18px]">
-            <Image src={Pin} alt="pin" />
+        <div className="flex flex-col gap-[20px] items-center">
+          <div className="flex items-center gap-[10px]">
+            <div className="w-[14px]">
+              <Image src={Pin} alt="pin" />
+            </div>
+            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+              SERVICES
+            </p>
           </div>
-          <p className="text-maroon text-base font-[600] leading-loose">
-            SERVICES
+
+          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+            Our Technology <span className="text-red-950">Capabilities</span>
           </p>
         </div>
-        <p className="text-slate-950 text-4xl font-[600] leading-[44px] mt-2">
-          Our Technology <span className="text-red-950">Capabilities</span>
-        </p>
-        <p className="text-center text-slate-950 text-base font-normal leading-loose mt-2">
+        <p className="text-center text-slate-950 text-base font-normal leading-loose mt-2 sm:px-[10%]">
           Transforming Information into Valuable Insights.
         </p>
-      <div className="flex justify-between w-full mt-20 h-[800px]">
-      <Image src={Rectangle} alt="image" className="w-[40%] h-full"/>
+      <div className="flex justify-between w-full mt-20 sm:mt-0 h-[800px] sm:h-auto">
+      <Image src={Rectangle} alt="image" className="w-[40%] h-full sm:hidden"/>
 
-      <div className="grid grid-cols-2 gap-10 w-[55%] py-[100px]">
+      <div className="sm:flex sm:mt-10 sm:w-full sm:flex-col items-center grid grid-cols-2 gap-10 w-[55%] py-[100px] sm:py-0">
         {services.map((service, i) => {
           return (
             <div
               key={i}
-              className={`flex flex-col bg-white transition ease-in-out duration-200 hover:bg-palePink shadow-lg w-[400px] h-[280px] items-start rounded-[12px] px-8 py-5`}
+              className={`flex sm:w-[90%] sm:h-[200px] flex-col bg-white transition ease-in-out duration-200 hover:bg-palePink shadow-lg w-[400px] h-[280px] items-start rounded-[12px] px-8 py-5 sm:py-2`}
             >
-              <p className="mt-[34px] text-2xl font-[600] leading-9">
+              <p className="mt-[34px] text-2xl sm:text-xl font-medium leading-9">
                 {service.title}
               </p>
 
