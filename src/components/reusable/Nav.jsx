@@ -109,7 +109,7 @@ const Nav = ({ active = 0 }) => {
 
       <div
         className={`absolute block sm:hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg px-[12%] py-[2%] ${
-          showFeature ? "top-[15%] " : "-top-[100%]"
+          showFeature ? "top-[15%]" : "-top-[100%]"
         } `}
       >
         <div className="flex items-start gap-[10%] mb-[2%]">
@@ -360,9 +360,9 @@ const MobileFeatures = ({ features, active = false }) => {
   const [showMobileFeatures, setShowMobileFeatures] = useState(false);
 
   return (
-    <div className="flex flex-col w-full">
+    <div key={200} className="flex flex-col w-full">
       <div
-        key={1}
+        key={100}
         className={`flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose ${
           active && "text-maroon`"
         }`}
@@ -373,7 +373,7 @@ const MobileFeatures = ({ features, active = false }) => {
       </div>
 
       <div
-        key={0}
+        key={50}
         className={`${
           showMobileFeatures ? "" : "hidden"
         } mt-3 px-[5%] flex flex-col w-full gap-5 items-start`}
@@ -402,8 +402,9 @@ const MobileServices = ({ services }) => {
   const toggle = () => setShowMobileServices(!showMobileServices);
 
   return (
-    <div className="flex flex-col w-full">
+    <div key={2345} className="flex flex-col w-full">
       <div
+      key={1283}
         className="flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose"
         onClick={() => setShowMobileServices(!showMobileServices)}
       >

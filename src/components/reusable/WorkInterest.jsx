@@ -27,8 +27,8 @@ const WorkInterest = () => {
           </Button>
         </div>
 
-        <div className="absolute bottom-[20%] left-[45%] sm:bottom-[35%] sm:left-[50%]">
-          <Image src={Arrow} alt="arrow" />
+        <div className="absolute bottom-[20%] left-[45%] sm:bottom-[40%] sm:left-[55%]">
+          <Image src={Arrow} alt="arrow" className="sm:w-[70%]"/>
         </div>
 
         <Image src={Wave} alt="wave" className="w-[40%] sm:hidden" />

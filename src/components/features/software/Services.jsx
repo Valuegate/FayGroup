@@ -12,23 +12,23 @@ const Services = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col gap-[20px] items-center">
-          <div className="flex items-center gap-[10px]">
-            <div className="w-[14px]">
-              <Image src={Pin} alt="pin" />
-            </div>
-            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
-              SERVICES
-            </p>
+        <div className="flex items-center gap-[10px]">
+          <div className="w-[14px]">
+            <Image src={Pin} alt="pin" />
           </div>
-
-          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
-            Our Provided <span className="text-red-950">Services</span>
+          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+            SERVICES
           </p>
         </div>
 
+        <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+          Our Provided <span className="text-red-950">Services</span>
+        </p>
+      </div>
+
       <div className="flex gap-10 w-full sm:px-0 px-[10%] mt-20 items-center justify-between sm:overflow-x-auto">
         <div className="w-[20%] sm:w-[70%] h-[350px] bg-blandGrey rounded-lg" />
-        <div className="w-[20%] h-[350px] bg-blandGrey rounded-lg" />
+        <div className="w-[20%] sm:w-[70%] h-[350px] bg-blandGrey rounded-lg" />
         <div className="w-[15%] h-[250px] bg-blandGrey rounded-lg" />
         <div className="w-[10%] h-[150px] bg-blandGrey rounded-lg" />
         <div className="w-[15%] h-[250px] bg-blandGrey rounded-lg" />
