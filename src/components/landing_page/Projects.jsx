@@ -61,13 +61,13 @@ const Projects = () => {
       </div>
 
       <div className="sm:w-full sm:overflow-x-auto scrollbar-custom sm:px-[5%]">
-        <ul
+        <ul key={100}
           className="flex text-sm leading-loose sm:w-full font-medium text-center"
           id="myTab"
           data-tabs-toggle="#myTabContent"
           role="tablist"
         >
-          <li role="presentation">
+          <li role="presentation" key={0}>
             <button
               onClick={() => selectTab(0)}
               className={`inline-block p-4 border-b-2 border-transparent ${
@@ -83,7 +83,7 @@ const Projects = () => {
               UI Design
             </button>
           </li>
-          <li role="presentation">
+          <li role="presentation"  key={1}>
             <button
               onClick={() => selectTab(1)}
               className={`inline-block p-4 border-b-2 border-transparent ${
@@ -99,7 +99,7 @@ const Projects = () => {
               Web Development
             </button>
           </li>
-          <li role="presentation">
+          <li role="presentation"  key={2}>
             <button
               onClick={() => selectTab(2)}
               className={`inline-block p-4 border-b-2 ${
@@ -115,7 +115,7 @@ const Projects = () => {
               Mobile App
             </button>
           </li>
-          <li role="presentation">
+          <li role="presentation"  key={3}>
             <button
               onClick={() => selectTab(3)}
               className={`inline-block p-4 border-b-2 ${
@@ -131,7 +131,7 @@ const Projects = () => {
               SEO
             </button>
           </li>
-          <li role="presentation" className="pr-5">
+          <li role="presentation" className="pr-5"  key={4}>
             <button
               onClick={() => selectTab(4)}
               className={`inline-block p-4 border-b-2 ${

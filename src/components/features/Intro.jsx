@@ -22,7 +22,7 @@ const Intro = ({
     <div className="relative mb-[100px] bg-slightRedBackground">
       <Image
         src={Shadow}
-        alt=""
+        alt="shadow"
         className="absolute top-0 left-0 -z-10 w-full h-[50%]"
       />
       <Nav active={1} />

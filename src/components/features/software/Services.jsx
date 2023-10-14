@@ -1,7 +1,5 @@
 import React from "react";
 
-import { FaArrowRight } from "react-icons/fa";
-
 import Pin from "@/public/assets/Pin.svg";
 import Image from "next/image";
 
@@ -10,7 +8,7 @@ import Right from "@/public/assets/landing-page/Right Arrow.svg";
 
 const Services = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full justify-center">
       <div className="flex flex-col gap-[20px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
@@ -26,12 +24,22 @@ const Services = () => {
         </p>
       </div>
 
-      <div className="flex gap-10 w-full sm:px-0 px-[10%] mt-20 items-center justify-between sm:overflow-x-auto">
-        <div className="w-[20%] sm:w-[70%] h-[350px] bg-blandGrey rounded-lg" />
-        <div className="w-[20%] sm:w-[70%] h-[350px] bg-blandGrey rounded-lg" />
-        <div className="w-[15%] h-[250px] bg-blandGrey rounded-lg" />
-        <div className="w-[10%] h-[150px] bg-blandGrey rounded-lg" />
-        <div className="w-[15%] h-[250px] bg-blandGrey rounded-lg" />
+      <div className="flex gap-10 w-full sm:px-0 px-[10%] mt-20 items-center justify-between overflow-scroll scrollbar-custom">
+        <div className="w-[20%] sm:w-[300px] h-[350px] bg-blandGrey rounded-lg">
+          <div className="sm:w-[300px]" />
+        </div>
+        <div className="w-[20%] sm:w-[300px] h-[350px] bg-blandGrey rounded-lg">
+          <div className="sm:w-[300px]" />
+        </div>
+        <div className="w-[15%] h-[250px] sm:w-[240px] bg-blandGrey rounded-lg">
+          <div className="sm:w-[240px]" />
+        </div>
+        <div className="w-[10%] h-[150px] sm:w-[180px] bg-blandGrey rounded-lg">
+          <div className="sm:w-[180px]" />
+        </div>
+        <div className="w-[15%] h-[250px]  sm:w-[240px] bg-blandGrey rounded-lg">
+          <div className="sm:w-[240px]" />
+        </div>
       </div>
 
       <div className="flex gap-[20px] mt-5">

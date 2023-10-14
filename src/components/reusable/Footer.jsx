@@ -15,17 +15,25 @@ const Footer = ({ active = -1 }) => {
       <div className="flex px-[10%] sm:px-[5%] gap-[135px] sm:gap-0 items-start justify-start sm:flex-col sm:w-full">
         <div className="flex flex-col gap-[20px] items-start">
           <div>
-            <Image src={Logo} />
+            <Image src={Logo} alt="Logo" />
           </div>
           <div className="w-[400px] sm:w-full text-slate-950 text-base font-normal leading-loose">
             We provide the best services and we are ready to help your business
             grow.
           </div>
           <div className="flex sm:mt-2 sm:mb-5 justify-around gap-3 sm:w-[60%] items-center">
-            <Image src={LN} alt="LinkedIn" />
-            <Image src={IN} alt="Instagram" />
-            <Image src={TW} alt="Twitter" />
-            <Image src={FB} alt="Facebook" />
+            <Link href={"/"}>
+              <Image src={LN} alt="LinkedIn" />
+            </Link>
+            <Link href={"/"}>
+              <Image src={IN} alt="Instagram" />
+            </Link>
+            <Link href={"/"}>
+              <Image src={TW} alt="Twitter" />
+            </Link>
+            <Link href={"/"}>
+              <Image src={FB} alt="Facebook" />
+            </Link>
           </div>
         </div>
 

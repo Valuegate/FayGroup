@@ -47,7 +47,7 @@ const Intro = () => {
           </p>
         </div>
 
-        <p className="text-slate-950 text-4xl mt-5 sm:text-[32px] text-center font-medium sm:leading-9 leading-[44px]">
+        <p className="text-slate-950 text-4xl sm:w-full w-[40%] mt-5 sm:text-[32px] text-center font-medium sm:leading-9 leading-[44px]">
           Unlock our Portfolio of Past{" "}
           <span className="text-red-950">Tech Triumphs</span>
         </p>
