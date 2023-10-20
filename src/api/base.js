@@ -1,0 +1,1 @@
+const baseUrl = "https://faygroup.onrender.com/api/";

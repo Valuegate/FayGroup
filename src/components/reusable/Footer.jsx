@@ -4,10 +4,15 @@ import React from "react";
 import Logo from "@/public/assets/Logo.svg";
 import Image from "next/image";
 
-import LN from "@/public/assets/nav/Frame 35626.svg";
-import IN from "@/public/assets/nav/Frame 35627.svg";
-import TW from "@/public/assets/nav/Frame 35628.svg";
-import FB from "@/public/assets/nav/Frame 35630.svg";
+import LN from "@/public/assets/nav/Frame 35630.svg";
+import IN from "@/public/assets/nav/Frame 35628.svg";
+import TW from "@/public/assets/nav/Frame 35627.svg";
+import FB from "@/public/assets/nav/Frame 35626.svg";
+
+const linkedInUrl = "https://www.linkedin.com/company/faygroup/";
+const instagramUrl = "https://www.instagram.com/mb_faygroup/";
+const facebookUrl = "https://web.facebook.com/MBFayGroup";
+const twitterUrl = "";
 
 const Footer = ({ active = -1 }) => {
   return (
@@ -22,16 +27,16 @@ const Footer = ({ active = -1 }) => {
             grow.
           </div>
           <div className="flex sm:mt-2 sm:mb-5 justify-around gap-3 sm:w-[60%] items-center">
-            <Link href={"/"}>
+            <Link href={linkedInUrl} target="_blank">
               <Image src={LN} alt="LinkedIn" />
             </Link>
-            <Link href={"/"}>
+            <Link href={instagramUrl} target="_blank">
               <Image src={IN} alt="Instagram" />
             </Link>
-            <Link href={"/"}>
+            <Link href={twitterUrl} target="_blank">
               <Image src={TW} alt="Twitter" />
             </Link>
-            <Link href={"/"}>
+            <Link href={facebookUrl} target="_blank">
               <Image src={FB} alt="Facebook" />
             </Link>
           </div>
@@ -108,25 +113,29 @@ const Footer = ({ active = -1 }) => {
                 Socials
               </div>
               <Link
-                href="/"
+                href={linkedInUrl}
+                target="_blank"
                 className="text-slate-950 text-base font-normal leading-loose"
               >
                 Linkedln
               </Link>
               <Link
-                href="/"
+                href={twitterUrl}
+                target="_blank"
                 className="text-slate-950 text-base font-normal leading-loose"
               >
                 Twitter
               </Link>
               <Link
-                href="/"
+                href={instagramUrl}
+                target="_blank"
                 className="text-slate-950 text-base font-normal leading-loose"
               >
                 Instagram
               </Link>
               <Link
-                href="/"
+                href={facebookUrl}
+                target="_blank"
                 className="text-slate-950 text-base font-normal leading-loose"
               >
                 Facebook
