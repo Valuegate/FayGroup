@@ -31,6 +31,8 @@ const Strategy = () => {
         content={
           "Achieving Business Excellence with FayGroup's Strategy Experts"
         }
+        scrollTo="strategy-service"
+        subActiveNav={9}
       />
       <div className="h-[100px]" />
       <Expertise />

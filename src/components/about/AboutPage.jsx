@@ -25,6 +25,7 @@ const AboutPage = () => {
         subtitle={
           "At MB FayGroup, we're not just a tech company; we're your innovation partners on a mission to transform ideas into reality."
         }
+        scrollTo={"facts-about-us"}
       />
       <Facts />
       <div className="bg-slightRedBackground py-10 mt-5">

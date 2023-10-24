@@ -11,7 +11,7 @@ import MiniBlog from "./MiniBlog";
 const WorksPage = () => {
   return (
     <>
-    <Intro />
+    <Intro scrollTo = "landing-page-projects"/>
     <Projects />
     <div className="h-[100px]"/>
     <Listen />

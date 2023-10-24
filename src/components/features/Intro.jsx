@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import Pin from "@/public/assets/Pin.svg";
 import Shadow from "@/public/assets/shadow.svg";
+import scrollToElement from "@/src/api/functions";
 
 const Intro = ({
   One,
@@ -17,6 +18,8 @@ const Intro = ({
   redSubtitle,
   postRedSubtitle,
   content,
+  scrollTo = "",
+  subActiveNav = 0,
 }) => {
   return (
     <div className="relative mb-[100px] bg-slightRedBackground">
@@ -25,7 +28,7 @@ const Intro = ({
         alt="shadow"
         className="absolute top-0 left-0 -z-10 w-full h-[50%]"
       />
-      <Nav active={1} />
+      <Nav active={1} sub={subActiveNav}/>
       <div className="absolute z-10 top-[30%] right-[15%] sm:hidden">
         <Image src={One} alt="one" className="" />
       </div>
@@ -69,7 +72,7 @@ const Intro = ({
           >
             Get In Touch
           </Button>
-          <Button style="text-darkBlue text-center sm:w-full bg-blandGrey px-5 py-3 font-[500] rounded-md">
+          <Button style="text-darkBlue text-center sm:w-full bg-blandGrey px-5 py-3 font-[500] rounded-md" onClick={() => scrollToElement(scrollTo)}>
             Explore More
           </Button>
         </div>

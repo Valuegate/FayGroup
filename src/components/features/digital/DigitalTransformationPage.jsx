@@ -1,5 +1,5 @@
 import React from "react";
-import Banner from "@/src/components/reusable//Banner";
+import Banner from "@/src/components/reusable/Banner";
 import Footer from "@/src/components/reusable/Footer";
 import WorkInterest from "@/src/components/reusable/WorkInterest";
 import Contact from "@/src/components/reusable/Contact";
@@ -19,6 +19,7 @@ const DigitalTransformationPage = () => {
       <div className="flex flex-col gap-10 items-start">
         <Banner
           active={1}
+          subActive={2}
           image={HeroImage}
           firstText={"Digitally Transform"}
           secondText={"Your Business for Success"}
@@ -28,6 +29,7 @@ const DigitalTransformationPage = () => {
           }
           pinText="DIGITAL TRANSFORMATION"
           hidePinText={false}
+          scrollTo="digital_service"
         />
       </div>
       <div className="h-[150px]" />
@@ -56,7 +58,7 @@ const DigitalTransformationPage = () => {
       <Contact />
       <div className="h-[200px]" />
       <WorkInterest />
-      <Footer active={1} />
+      <Footer active={1} subActive={2}/>
     </>
   );
 };

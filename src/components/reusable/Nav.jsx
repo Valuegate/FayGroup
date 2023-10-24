@@ -21,9 +21,8 @@ import SC from "@/public/assets/nav/image 14-5.svg";
 
 import Image from "next/image";
 
-const Nav = ({ active = 0 }) => {
+const Nav = ({ active = 0, sub = 0 }) => {
   const [showFeature, setShowFeature] = useState(false);
-  const [showMobileFeatures, setShowMobileFeatures] = useState(false);
 
   const services = [
     {
@@ -130,7 +129,7 @@ const Nav = ({ active = 0 }) => {
                       className="w-[40px] h-[40px]"
                     />
                     <div className="flex flex-col gap-2">
-                      <p className="text-slate-950 text-base font-semibold leading-loose">
+                      <p className={`${sub == 1 ? "text-maroon" : "text-slate-950"}  text-base font-semibold leading-loose`}>
                         Product Development
                       </p>
                       <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
@@ -151,7 +150,7 @@ const Nav = ({ active = 0 }) => {
                       className="w-[40px] h-[40px]"
                     />
                     <div className="flex flex-col gap-2">
-                      <p className="text-slate-950 text-base font-semibold leading-loose">
+                    <p className={`${sub == 2 ? "text-maroon" : "text-slate-950"}  text-base font-semibold leading-loose`}>
                         Digital Transformation
                       </p>
                       <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
@@ -176,7 +175,7 @@ const Nav = ({ active = 0 }) => {
                       className="w-[40px] h-[40px]"
                     />
                     <div className="flex flex-col gap-2">
-                      <p className="text-slate-950 text-base font-semibold leading-loose">
+                    <p className={`${sub == 3 ? "text-maroon" : "text-slate-950"}  text-base font-semibold leading-loose`}>
                         Business Consulting
                       </p>
                       <p className=" text-slate-950 text-base font-normal leading-relaxed">
@@ -200,7 +199,7 @@ const Nav = ({ active = 0 }) => {
             <div className="flex flex-col">
               <Link
                 href={"/features/software-development"}
-                className="py-2 px-2 rounded-md flex items-center gap-5"
+                className={`${sub == 4 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={SD}
@@ -212,7 +211,7 @@ const Nav = ({ active = 0 }) => {
 
               <Link
                 href={"/features/ui-ux"}
-                className="py-2 px-2 rounded-md flex items-center gap-5"
+                className={`${sub == 5 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image src={UD} alt="ui-ux" className="w-[40px] h-[40px]" />
                 UI/UX Design
@@ -220,7 +219,7 @@ const Nav = ({ active = 0 }) => {
 
               <Link
                 href={"/features/mobile-solution"}
-                className="py-2 px-2 rounded-md flex items-center gap-5"
+                className={`${sub == 6 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={MS}
@@ -232,7 +231,7 @@ const Nav = ({ active = 0 }) => {
 
               <Link
                 href={"/features/system-engineering"}
-                className="py-2 px-2 rounded-md flex items-center gap-5"
+                className={`${sub == 7 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={SE}
@@ -244,7 +243,7 @@ const Nav = ({ active = 0 }) => {
 
               <Link
                 href={"/features/data-science"}
-                className="py-2 px-2 rounded-md flex items-center gap-5"
+                className={`${sub == 8 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={DS}
@@ -256,7 +255,7 @@ const Nav = ({ active = 0 }) => {
 
               <Link
                 href={"/features/strategy-consulting"}
-                className="py-2 px-2 rounded-md flex items-center gap-5"
+                className={`${sub == 9 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={SC}

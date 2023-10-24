@@ -12,8 +12,9 @@ import One from "@/public/assets/our-works/One.svg";
 import Two from "@/public/assets/our-works/Two.svg";
 import Three from "@/public/assets/our-works/Three.svg";
 import Four from "@/public/assets/our-works/Four.svg";
+import scrollToElement from "@/src/api/functions";
 
-const Intro = () => {
+const Intro = ({scrollTo}) => {
   return (
     <div className="relative mb-[100px] bg-slightRedBackground">
       <Image
@@ -65,7 +66,10 @@ const Intro = () => {
           >
             Get In Touch
           </Button>
-          <Button style="text-darkBlue text-center sm:w-full bg-blandGrey px-5 py-3 font-[500] rounded-md">
+          <Button
+            style="text-darkBlue text-center sm:w-full bg-blandGrey px-5 py-3 font-[500] rounded-md"
+            onClick={() => scrollToElement(scrollTo)}
+          >
             Explore More
           </Button>
         </div>

@@ -31,6 +31,8 @@ const Data = () => {
         content={
           "Discover the untapped potential of your data with FayGroup's Data Science expertise. We turn complex information into actionable insights."
         }
+        scrollTo="data-service"
+        subActiveNav={8}
       />
       <div className="h-[100px]" />
 

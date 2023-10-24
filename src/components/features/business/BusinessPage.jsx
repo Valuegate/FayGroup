@@ -20,6 +20,7 @@ const BusinessPage = () => {
     <>
       <Banner
         active={1}
+        subActive={3}
         firstText={"Use Digital Solutions for Efficient"}
         secondText={"Business Consulting"}
         hidePinText={false}
@@ -28,6 +29,7 @@ const BusinessPage = () => {
         subtitle={
           "Navigate your business's success path. Let us guide you through strategy, innovation, and growth. Together, we'll shape a bright future for your ventures."
         }
+        scrollTo="business-service"
       />
 
       <div className="h-[100px]" />
@@ -99,7 +101,7 @@ const BusinessPage = () => {
       <Contact />
       <div className="h-[200px]" />
       <WorkInterest />
-      <Footer active={1} />
+      <Footer active={1} subActive={3}/>
     </>
   );
 };

@@ -29,6 +29,8 @@ const System = () => {
         content={
           " We specialize in fine-tuning your systems to work at their absolute best. Our expert team ensures that your technology performs at peak efficiency, helping your business run smoother than ever before."
         }
+        scrollTo="system-service"
+        subActiveNav={7}
       />
       <div className="h-[100px]" />
       <Services />

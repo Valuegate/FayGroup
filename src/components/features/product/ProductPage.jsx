@@ -19,6 +19,7 @@ const ProductPage = () => {
       <div className="flex flex-col gap-10 items-start">
         <Banner
           active={1}
+          subActive={1}
           image={HeroImage}
           firstText={"Use Digital Solutions for Efficient"}
           secondText={"Product Development"}
@@ -27,6 +28,7 @@ const ProductPage = () => {
           }
           pinText="PRODUCT DEVELOPMENT"
           hidePinText={false}
+          scrollTo="product-services"
         />
       </div>
       <div className="h-[150px] " />
@@ -43,7 +45,7 @@ const ProductPage = () => {
       <Contact />
       <div className="h-[200px]" />
       <WorkInterest />
-      <Footer active={1} />
+      <Footer active={1} subActive={1}/>
     </>
   );
 };

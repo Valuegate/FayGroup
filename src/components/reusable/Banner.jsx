@@ -5,10 +5,12 @@ import Button from "@/src/components/reusable/Button";
 import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
 import Shadow from "@/public/assets/shadow.svg";
+import scrollToElement from "@/src/api/functions";
 
 const Banner = ({
   image,
   active,
+  subActive = 0,
   firstText,
   secondText,
   subtitle,
@@ -17,6 +19,7 @@ const Banner = ({
   hidePinText = true,
   pinText = "",
   includeButton = true,
+  scrollTo = "",
 }) => {
   return (
     <div className="relative">
@@ -25,7 +28,7 @@ const Banner = ({
         alt="Shadow"
         className="absolute top-0 left-0 -z-10 w-full"
       />
-      <Nav active={active} />
+      <Nav active={active} sub={subActive}/>
       <div className="mt-[96px] sm:mt-10 pb-[150px] px-[10%] sm:px-[5%] sm:flex sm:flex-col">
         <div className="flex gap-10 items-start justify-between">
           <div className="w-[50%] sm:w-full flex flex-col">
@@ -71,7 +74,10 @@ const Banner = ({
                   </Button>
                 )}
                 {!hideExplore && (
-                  <Button style="text-darkBlue text-center sm:w-full bg-blandGrey px-5 py-3 font-[500] rounded-md">
+                  <Button
+                    style="text-darkBlue text-center sm:w-full bg-blandGrey px-5 py-3 font-[500] rounded-md"
+                    onClick={() => scrollToElement(scrollTo)}
+                  >
                     Explore More
                   </Button>
                 )}
@@ -82,7 +88,11 @@ const Banner = ({
           <Image src={image} alt="image" className="w-[50%] h-auto sm:hidden" />
         </div>
 
-        <Image src={image} alt="image" className="w-full sm:mt-10 h-auto hidden sm:block" />
+        <Image
+          src={image}
+          alt="image"
+          className="w-full sm:mt-10 h-auto hidden sm:block"
+        />
       </div>
     </div>
   );

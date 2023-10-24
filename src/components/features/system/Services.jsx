@@ -37,7 +37,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center" id="system-service">
       <div className="flex flex-col gap-[20px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">

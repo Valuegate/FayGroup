@@ -29,6 +29,8 @@ const SoftwarePage = () => {
         preRedSubtitle={"Advance Business with Innovative"}
         redSubtitle={"Software Engineering"}
         content={"With our Software solutions, your ideas flourish and take shape in the tech world. Together, we craft tomorrow's solutions today."}
+        scrollTo="software-service"
+        subActiveNav={4}
       />
       <Languages />
       <div className="h-[100px]" />

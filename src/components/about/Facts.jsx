@@ -24,7 +24,7 @@ const Facts = () => {
   return (
     <div className="px-[10%] flex flex-col sm:px-[5%]">
         <Image src={Group} alt="Group" className="w-full"/>
-        <div className="mt-[30px] sm:flex-col flex sm:gap-5 gap-20 py-[67px] items-center">
+        <div className="mt-[30px] sm:flex-col flex sm:gap-5 gap-20 py-[67px] items-center" id='facts-about-us'>
           {facts.map((fact, i) => {
             return (
               <div

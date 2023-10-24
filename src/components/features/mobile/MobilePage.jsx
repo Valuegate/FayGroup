@@ -32,6 +32,8 @@ const MobilePage = () => {
         content={
           "Experience the next level of business transformation with FayGroup's advanced mobile solutions."
         }
+        scrollTo="mobile-service"
+        subActiveNav={6}
       />
       <WorkedWith />
       <div className="h-[150px]" />

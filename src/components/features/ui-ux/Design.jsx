@@ -97,7 +97,7 @@ const Design = () => {
         </Button>
       </div>
 
-      <div className="sm:block mt-10 mb-10">
+      <div className="sm:block hidden mt-10 mb-10">
         <Image src={Rectangle} alt="image" />
       </div>
     </div>

@@ -33,6 +33,8 @@ const UIUX = () => {
         content={
           "Get access to seamless navigation and stunning designs that will leave your users delighted"
         }
+        scrollTo="ui-services"
+        subActiveNav={5}
       />
       <WorkedWith />
       <div className="h-[100px]" />

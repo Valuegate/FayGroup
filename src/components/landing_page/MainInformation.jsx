@@ -7,6 +7,8 @@ import Hero from "@/public/assets/landing-page/Hero.svg";
 import Welcome from "@/public/assets/landing-page/Welcome.svg";
 import Image from "next/image";
 
+import scrollToElement from "@/src/api/functions";
+
 const MainInformation = () => {
   return (
     <div className="relative">
@@ -47,7 +49,7 @@ const MainInformation = () => {
               >
                 Get In Touch
               </Button>
-              <Button style="sm:w-full text-center text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md">
+              <Button style="sm:w-full text-center text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md" onClick={() => scrollToElement("landing-page-service")}>
                 Explore More
               </Button>
             </div>
