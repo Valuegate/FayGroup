@@ -11,7 +11,7 @@ import TextWithImage from "../reusable/TextWithImage";
 import Standout from "./Standout";
 
 
-import AdviseImage from "@/public/assets/landing-page/Advising images.png";
+import AdviseImage from "@/public/assets/landing-page/Advising-images.png";
 
 const LandingPage = () => {
   return (
