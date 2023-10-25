@@ -28,18 +28,18 @@ const Footer = ({ active = -1, subActive = -1}) => {
             grow.
           </div>
           <div className="flex sm:mt-2 sm:mb-5 justify-around gap-3 sm:w-[60%] items-center">
-            <Link href={linkedInUrl} target="_blank">
+            <a href={linkedInUrl} target="_blank">
               <Image src={LN} alt="LinkedIn" />
-            </Link>
-            <Link href={instagramUrl} target="_blank">
+            </a>
+            <a href={instagramUrl} target="_blank">
               <Image src={IN} alt="Instagram" />
-            </Link>
-            <Link href={twitterUrl} target="_blank">
+            </a>
+            <a href={twitterUrl} target="_blank">
               <Image src={TW} alt="Twitter" />
-            </Link>
-            <Link href={facebookUrl} target="_blank">
+            </a>
+            <a href={facebookUrl} target="_blank">
               <Image src={FB} alt="Facebook" />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -113,34 +113,34 @@ const Footer = ({ active = -1, subActive = -1}) => {
               <div className="text-slate-950 text-base font-[600] leading-loose mb-[20px]">
                 Socials
               </div>
-              <Link
+              <a
                 href={linkedInUrl}
                 target="_blank"
                 className="text-slate-950 text-base font-normal leading-loose"
               >
                 Linkedln
-              </Link>
-              <Link
+              </a>
+              <a
                 href={twitterUrl}
                 target="_blank"
                 className="text-slate-950 text-base font-normal leading-loose"
               >
                 Twitter
-              </Link>
-              <Link
+              </a>
+              <a
                 href={instagramUrl}
                 target="_blank"
                 className="text-slate-950 text-base font-normal leading-loose"
               >
                 Instagram
-              </Link>
-              <Link
+              </a>
+              <a
                 href={facebookUrl}
                 target="_blank"
                 className="text-slate-950 text-base font-normal leading-loose"
               >
                 Facebook
-              </Link>
+              </a>
             </div>
             <div className="flex flex-col">
               <div className="text-slate-950 text-base font-[600] leading-loose mb-[20px]">
