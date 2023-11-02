@@ -1,19 +1,13 @@
 import React from "react";
 import Footer from "../reusable/Footer";
 import WorkInterest from "../reusable/WorkInterest";
-import Contact from "../reusable/Contact";
-import Intro from "./Intro";
 
 import Nav from "../reusable/Nav";
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
 
 import Pin from "@/public/assets/Pin.svg";
-import Shadow from "@/public/assets/shadow.svg";
 import Image from "next/image";
 
 import Client from "@/public/assets/landing-page/Client Image.svg";
-import Dev from "@/public/assets/Dev.jpg";
 import MiniBlog from "../reusable/MiniBlog";
 
 const Blog = ({ id }) => {
