@@ -19,7 +19,7 @@ const Blog = ({ id }) => {
       image: Client,
     },
     timestamp: "September 14, 2023",
-    media: Dev,
+    media: "",
     content:
       "At Help Scout, we believe that AI won't replace the teams that talk with customers every day. Instead, it will help them work more efficiently, enhance their skills, and strengthen customer relationships. We’re making that future a reality, building AI features that improve resolution time, customer sentiment, and employee satisfaction. We’re committed to making it effortless so teams can experience the benefits of AI without having to learn the ins and outs of large language models. Our features are embedded in the Help Scout platform — no plugins and no copying and pasting — so users can tap into the power of AI with just one click. In July, we released AI summarize. Today, we’re excited to launch another AI feature for Help Scout users: AI assist [Beta].",
   };
