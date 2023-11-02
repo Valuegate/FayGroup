@@ -39,7 +39,7 @@ const UIUX = () => {
       <WorkedWith />
       <div className="h-[100px]" />
       <Design />
-      <div className="h-[100px]" />
+      <div className="h-[100px]" id="ui-services"/>
       <Services />
       <div className="h-[100px]" />
       <Projects />

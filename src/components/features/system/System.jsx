@@ -32,7 +32,7 @@ const System = () => {
         scrollTo="system-service"
         subActiveNav={7}
       />
-      <div className="h-[100px]" />
+      <div className="h-[100px]" id="system-service"/>
       <Services />
       <div className="h-[100px]" />
       <TextWithImage

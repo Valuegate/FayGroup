@@ -34,7 +34,7 @@ const Data = () => {
         scrollTo="data-service"
         subActiveNav={8}
       />
-      <div className="h-[100px]" />
+      <div className="h-[100px]" id="data-service"/>
 
       <Services />
       <div className="h-[100px]" />

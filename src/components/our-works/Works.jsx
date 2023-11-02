@@ -12,6 +12,7 @@ const WorksPage = () => {
   return (
     <>
     <Intro scrollTo = "landing-page-projects"/>
+    <div id="landing-page-projects" className="h-10"/>
     <Projects />
     <div className="h-[100px]"/>
     <Listen />

@@ -32,7 +32,7 @@ const BusinessPage = () => {
         scrollTo="business-service"
       />
 
-      <div className="h-[100px]" />
+      <div className="h-[100px]" id="business-service"/>
       <Services />
       <div className="h-[100px]" />
 

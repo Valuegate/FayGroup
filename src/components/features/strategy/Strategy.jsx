@@ -34,7 +34,7 @@ const Strategy = () => {
         scrollTo="strategy-service"
         subActiveNav={9}
       />
-      <div className="h-[100px]" />
+      <div className="h-[100px]" id="strategy-service"/>
       <Expertise />
       <div className="h-[100px]" />
       <TextWithImage

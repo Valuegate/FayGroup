@@ -36,7 +36,7 @@ const MobilePage = () => {
         subActiveNav={6}
       />
       <WorkedWith />
-      <div className="h-[150px]" />
+      <div className="h-[150px]" id="mobile-service"/>
       <Services />
       <div className="h-[100px]" />
       <TextWithImage
