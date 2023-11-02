@@ -7,14 +7,14 @@ import Listen from "../../reusable/Listen";
 
 import TextWithImage from "../../reusable/TextWithImage";
 
-import Elevate from "@/public/assets/mobile solution/Rectangle 1.png";
-import Unlock from "@/public/assets/mobile solution/Rectangle 1-1.png";
+import Elevate from "@/public/assets/mobile solution/Rectangle 1.svg";
+import Unlock from "@/public/assets/mobile solution/Rectangle 1-1.svg";
 import Services from "./Services";
 
-import One from "@/public/assets/mobile solution/Ellipse 10.png";
-import Two from "@/public/assets/mobile solution/Ellipse 11.png";
-import Three from "@/public/assets/mobile solution/Ellipse 12.png";
-import Four from "@/public/assets/mobile solution/Ellipse 13.png";
+import One from "@/public/assets/mobile solution/Ellipse 10.svg";
+import Two from "@/public/assets/mobile solution/Ellipse 11.svg";
+import Three from "@/public/assets/mobile solution/Ellipse 12.svg";
+import Four from "@/public/assets/mobile solution/Ellipse 13.svg";
 import WorkedWith from "../../reusable/WorkedWith";
 
 const MobilePage = () => {

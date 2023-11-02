@@ -7,15 +7,15 @@ import Listen from "../../reusable/Listen";
 import Languages from "./Languages";
 import TextWithImage from "../../reusable/TextWithImage";
 
-import Elevate from "@/public/assets/software development/Rectangle 1.png";
-import Unlock from "@/public/assets/software development/Rectangle 1-1.png";
+import Elevate from "@/public/assets/software development/Rectangle 1.svg";
+import Unlock from "@/public/assets/software development/Rectangle 1-1.svg";
 import Services from "./Services";
 
 
-import One from "@/public/assets/software development/Ellipse 11.png";
-import Two from "@/public/assets/software development/Ellipse 10.png";
-import Three from "@/public/assets/software development/Ellipse 12.png";
-import Four from "@/public/assets/software development/Ellipse 13.png";
+import One from "@/public/assets/software development/Ellipse 11.svg";
+import Two from "@/public/assets/software development/Ellipse 10.svg";
+import Three from "@/public/assets/software development/Ellipse 12.svg";
+import Four from "@/public/assets/software development/Ellipse 13.svg";
 
 const SoftwarePage = () => {
   return (

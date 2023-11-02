@@ -1,39 +1,32 @@
 import React from "react";
 
 import Image from "next/image";
-import Dev from "@/public/assets/Dev.jpg";
 import Pin from "@/public/assets/Pin.svg";
 
 const Team = () => {
   const members = [
     {
       name: "Adegunju Micheal",
-      image: Dev,
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: Dev,
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: Dev,
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: Dev,
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: Dev,
       role: "Senior Front-End Engineer",
     },
     {
       name: "Adegunju Micheal",
-      image: Dev,
       role: "Senior Front-End Engineer",
     },
   ];

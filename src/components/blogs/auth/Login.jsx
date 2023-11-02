@@ -22,19 +22,25 @@ const Login = () => {
         <Nav active={3} />
 
         <div className="mt-[150px] flex flex-col items-center">
+        
+
+          <div className="flex flex-col gap-5 items-center mt-10">
           <div className="flex items-center gap-[10px]">
-            <div className="w-[18px]">
+            <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
             </div>
-            <p className="text-maroon text-base font-[600] leading-loose">
+            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
               LOGIN
             </p>
           </div>
-
-          <p className="text-slate-950 text-4xl font-[600] leading-[48px] text-center">
-            Login to <span className="text-red-950">Continue Managing</span>{" "}
-            your CRM
+          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+            Login to <span className="text-red-950">Continue Managing</span> your CRM
           </p>
+        </div>
+
+
+
+
           <div className="flex flex-col items-start mt-20">
             <p className="text-slate-950 text-base font-medium leading-loose mb-1">
               Email Address

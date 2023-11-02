@@ -7,8 +7,8 @@ import Image from "next/image";
 import WorkedWith from "../../reusable/WorkedWith";
 import TextWithImage from "../../reusable/TextWithImage";
 
-import HeroImage from "@/public/assets/digital transformation/Rectangle 1.png";
-import Tech from "@/public/assets/digital transformation/Tech.png";
+import HeroImage from "@/public/assets/digital transformation/Rectangle 1.svg";
+import Tech from "@/public/assets/digital transformation/Tech.svg";
 import MiniBlog from "../../reusable/MiniBlog";
 import Listen from "../../reusable/Listen";
 import Services from "./Services";

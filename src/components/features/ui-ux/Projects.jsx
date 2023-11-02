@@ -6,8 +6,8 @@ import Image from "next/image";
 import Button from "../../reusable/Button";
 import { FaArrowRight } from "react-icons/fa";
 
-import one from "@/public/assets/ui-ux/Rectangle 4.png";
-import two from "@/public/assets/ui-ux/Rectangle 4-1.png";
+import one from "@/public/assets/ui-ux/Rectangle 4.svg";
+import two from "@/public/assets/ui-ux/Rectangle 4-1.svg";
 
 const Projects = () => {
   const projects = [one, two, one];

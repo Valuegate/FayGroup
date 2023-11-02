@@ -3,7 +3,7 @@ import React from "react";
 import Pin from "@/public/assets/Pin.svg";
 import Image from "next/image";
 
-import Rectangle from "@/public/assets/data science/Rectangle 4.png";
+import Rectangle from "@/public/assets/data science/Rectangle 4.svg";
 
 const Services = () => {
   const services = [

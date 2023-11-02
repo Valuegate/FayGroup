@@ -8,12 +8,12 @@ import Listen from "../../reusable/Listen";
 import Services from "./Services";
 import Intro from "../Intro";
 
-import One from "@/public/assets/system engineering/Ellipse 10.png";
-import Two from "@/public/assets/system engineering/Ellipse 11.png";
-import Three from "@/public/assets/system engineering/Ellipse 12.png";
-import Four from "@/public/assets/system engineering/Ellipse 13.png";
+import One from "@/public/assets/system engineering/Ellipse 10.svg";
+import Two from "@/public/assets/system engineering/Ellipse 11.svg";
+import Three from "@/public/assets/system engineering/Ellipse 12.svg";
+import Four from "@/public/assets/system engineering/Ellipse 13.svg";
 
-import Rectangle from "@/public/assets/system engineering/Rectangle 1.png";
+import Rectangle from "@/public/assets/system engineering/Rectangle 1.svg";
 
 const System = () => {
   return (

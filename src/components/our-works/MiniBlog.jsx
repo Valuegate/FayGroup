@@ -4,7 +4,6 @@ import { FaArrowRight } from "react-icons/fa";
 
 import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
-import Dev from "@/public/assets/Dev.jpg";
 import Left from "@/public/assets/landing-page/Left Arrow.svg";
 import Right from "@/public/assets/landing-page/Right Arrow.svg";
 
@@ -12,17 +11,14 @@ const MiniBlog = () => {
   const blogs = [
     {
       name: "Introducing MB FAY GROUP",
-      image: Dev,
       link: "/blogs/1",
     },
     {
       name: "Tech & Innovation",
-      image: Dev,
       link: "/blogs/1",
     },
     {
       name: "Software Development: How to start as a newbie",
-      image: Dev,
       link: "/blogs/1",
     },
   ];

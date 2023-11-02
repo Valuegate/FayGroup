@@ -6,11 +6,11 @@ import WorkInterest from "../../reusable/WorkInterest";
 import Contact from "../../reusable/Contact";
 import TextWithImage from "../../reusable/TextWithImage";
 
-import BannerImage from "@/public/assets/business consulting/Hero.png";
-import TechConsult from "@/public/assets/business consulting/Rectangle 1.png";
-import DataConsult from "@/public/assets/business consulting/Rectangle 1-1.png";
-import PEC from "@/public/assets/business consulting/Rectangle 1-2.png";
-import QM from "@/public/assets/business consulting/Rectangle 1-3.png";
+import BannerImage from "@/public/assets/business consulting/Hero.svg";
+import TechConsult from "@/public/assets/business consulting/Rectangle 1.svg";
+import DataConsult from "@/public/assets/business consulting/Rectangle 1-1.svg";
+import PEC from "@/public/assets/business consulting/Rectangle 1-2.svg";
+import QM from "@/public/assets/business consulting/Rectangle 1-3.svg";
 import Services from "./Services";
 import Listen from "../../reusable/Listen";
 import MiniBlog from "../../reusable/MiniBlog";
@@ -35,7 +35,6 @@ const BusinessPage = () => {
       <div className="h-[100px]" id="business-service"/>
       <Services />
       <div className="h-[100px]" />
-
       <TextWithImage
         pinText={"TECHNICAL CONSULT"}
         hidePinText={false}

@@ -5,15 +5,12 @@ import Contact from "../../reusable/Contact";
 import Intro from "../Intro";
 import Listen from "../../reusable/Listen";
 
-import TextWithImage from "../../reusable/TextWithImage";
-
-import Elevate from "@/public/assets/ui-ux/Rectangle 1.png";
 import Services from "./Services";
 
-import One from "@/public/assets/ui-ux/Ellipse 10.png";
-import Two from "@/public/assets/ui-ux/Ellipse 11.png";
-import Three from "@/public/assets/ui-ux/Ellipse 12.png";
-import Four from "@/public/assets/ui-ux/Ellipse 13.png";
+import One from "@/public/assets/ui-ux/Ellipse 10.svg";
+import Two from "@/public/assets/ui-ux/Ellipse 11.svg";
+import Three from "@/public/assets/ui-ux/Ellipse 12.svg";
+import Four from "@/public/assets/ui-ux/Ellipse 13.svg";
 import WorkedWith from "../../reusable/WorkedWith";
 import Design from "./Design";
 import Projects from "./Projects";

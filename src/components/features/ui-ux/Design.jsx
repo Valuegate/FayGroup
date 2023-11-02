@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
 import Pen from "@/public/assets/Pen.svg";
-import Rectangle from "@/public/assets/ui-ux/Rectangle 1.png";
+import Rectangle from "@/public/assets/ui-ux/Rectangle 1.svg";
 
 import Button from "../../reusable/Button";
 

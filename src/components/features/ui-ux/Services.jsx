@@ -5,11 +5,11 @@ import Image from "next/image";
 
 import Frame from "@/public/assets/ui-ux/Frame 60.svg";
 
-import one from "@/public/assets/ui-ux/1.png";
-import two from "@/public/assets/ui-ux/2.png";
-import three from "@/public/assets/ui-ux/3.png";
-import four from "@/public/assets/ui-ux/4.png";
-import five from "@/public/assets/ui-ux/5.png";
+import one from "@/public/assets/ui-ux/Frame 36189.svg";
+import two from "@/public/assets/ui-ux/Frame 36190.svg";
+import three from "@/public/assets/ui-ux/Frame 36191.svg";
+import four from "@/public/assets/ui-ux/Frame 36192.svg";
+import five from "@/public/assets/ui-ux/Frame 36193.svg";
 
 const Services = () => {
   const images = [one, two, three, four, five];

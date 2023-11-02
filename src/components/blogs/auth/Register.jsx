@@ -1,12 +1,10 @@
 import React from "react";
 import Nav from "../../reusable/Nav";
 import Button from "../../reusable/Button";
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
 
 import Pin from "@/public/assets/Pin.svg";
 import Shadow from "@/public/assets/shadow.svg";
-import Choose from "@/public/assets/blogs/Ellipse.png";
+import Choose from "@/public/assets/blogs/Ellipse.svg";
 import Image from "next/image";
 import Footer from "../../reusable/Footer";
 
@@ -22,19 +20,20 @@ const Register = () => {
         <Nav active={3} />
 
         <div className="mt-[150px] flex flex-col items-center">
+          
+          <div className="flex flex-col gap-5 items-center mt-10">
           <div className="flex items-center gap-[10px]">
-            <div className="w-[18px]">
+            <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
             </div>
-            <p className="text-maroon text-base font-[600] leading-loose">
+            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
               CREATE ACCOUNT
             </p>
           </div>
-
-          <p className="text-slate-950 text-4xl font-[600] leading-[48px] text-center">
-            Get Started to Begin{" "}
-            <span className="text-red-950">Blog Creation</span>
+          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+            Get Started to Begin<span className="text-red-950"> Blog Creation</span>
           </p>
+        </div>
 
           <Image
             src={Choose}

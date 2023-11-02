@@ -5,26 +5,22 @@ import { FaArrowRight } from "react-icons/fa";
 
 import Pin from "@/public/assets/Pin.svg";
 import Shadow from "@/public/assets/shadow.svg";
-import Dev from "@/public/assets/Dev.jpg";
 import Image from "next/image";
 
 const Intro = () => {
   const blogs = [
     {
       name: "Introducing AI Assist for Better, Faster Responses",
-      image: Dev,
       link: "/blogs/1",
       content:
         "At Help Scout, we believe that AI won't replace the teams that talk with customers every day. Instead, it will help them work more efficiently, enhance their skills, and strengthen customer relationships...",
     },
     {
       name: "Tech & Innovation",
-      image: Dev,
       link: "/blogs/1",
     },
     {
       name: "Software Development: How to start as a newbie",
-      image: Dev,
       link: "/blogs/1",
     },
   ];

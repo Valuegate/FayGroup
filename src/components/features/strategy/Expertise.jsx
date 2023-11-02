@@ -3,12 +3,12 @@ import React from "react";
 import Pin from "@/public/assets/Pin.svg";
 import Image from "next/image";
 
-import one from "@/public/assets/strategy/Rectangle 4.png";
-import two from "@/public/assets/strategy/Rectangle 4-1.png";
-import three from "@/public/assets/strategy/Rectangle 4-2.png";
-import four from "@/public/assets/strategy/Rectangle 4-3.png";
-import five from "@/public/assets/strategy/Rectangle 4-4.png";
-import six from "@/public/assets/strategy/Rectangle 4-5.png";
+import one from "@/public/assets/strategy/Rectangle 4.svg";
+import two from "@/public/assets/strategy/Rectangle 4-1.svg";
+import three from "@/public/assets/strategy/Rectangle 4-2.svg";
+import four from "@/public/assets/strategy/Rectangle 4-3.svg";
+import five from "@/public/assets/strategy/Rectangle 4-4.svg";
+import six from "@/public/assets/strategy/Rectangle 4-5.svg";
 
 const Expertise = () => {
   const professions = [

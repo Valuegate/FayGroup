@@ -5,7 +5,7 @@ import Button from "@/src/components/reusable/Button";
 import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
 
-import SI from "@/public/assets/product development/Frame 36182.png";
+import SI from "@/public/assets/product development/Frame 36182.svg";
 
 const Standout = () => {
   return (
