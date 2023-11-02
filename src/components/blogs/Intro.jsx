@@ -55,7 +55,8 @@ const Intro = () => {
         <div className="flex sm:flex-col gap-[5%] items-start px-[10%] sm:px-[5%] mt-32 mb-20">
           <div className="flex flex-col w-[60%] sm:w-full">
             <div className="flex flex-col items-start justify-start">
-              <Image src={blogs[0].image} alt="Blog Image" />
+              {/* <Image src={blogs[0].image} alt="Blog Image" /> */}
+              <img src={"https://res.cloudinary.com/devemmy/image/upload/v1681343921/home_p4un4n.jpg"} alt="blog image" className="h-[700px]"/>
               <p className="text-slate-950 sm:text-xl text-2xl mt-5 font-medium leading-9 w-[80%]">
                 {blogs[0].name}
               </p>
@@ -81,7 +82,8 @@ const Intro = () => {
                   key={i}
                   className="flex flex-col items-start justify-start"
                 >
-                  <Image src={blog.image} alt="Blog Image" />
+                  {/* <Image src={blog.image} alt="Blog Image" /> */}
+                  <img src={"https://res.cloudinary.com/devemmy/image/upload/v1681343921/home_p4un4n.jpg"} alt="blog image" className="h-[400px]"/>
                   <p className="text-slate-950 mt-5 sm:text-xl text-2xl font-medium leading-9 w-[80%]">
                     {blog.name}
                   </p>

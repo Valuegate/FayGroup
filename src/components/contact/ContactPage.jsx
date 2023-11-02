@@ -6,7 +6,7 @@ import Contact from "../reusable/Contact";
 import ContactInfo from "./ContactInfo";
 
 
-import ContactImage from "@/public/assets/contact/Contact.png";
+import ContactImage from "@/public/assets/contact/Contact.svg";
 
 
 const ContactPage = () => {

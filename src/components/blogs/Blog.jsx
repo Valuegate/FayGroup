@@ -61,7 +61,8 @@ const Blog = ({ id }) => {
 
         <div className="w-full sm:w-full mt-20 mb-20 flex flex-col items-center">
           <div className="w-full">
-            <Image src={blog.media} alt="Blog Image" className="shadow-xl" />
+            {/* <Image src={blog.media} alt="Blog Image" className="shadow-xl" /> */}
+            <img src={"https://res.cloudinary.com/devemmy/image/upload/v1681343921/home_p4un4n.jpg"} alt="blog image" className="shadow-xl h-[800px]"/>
           </div>
 
           <p className="text-slate-950 text-base font-normal leading-loose sm:w-full px-[20%] sm:mt-10 mt-20 sm:px-0">

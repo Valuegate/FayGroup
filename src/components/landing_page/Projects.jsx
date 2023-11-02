@@ -10,9 +10,9 @@ import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
 
-import Project1 from "@/public/assets/landing-page/Project 1.png";
-import Project2 from "@/public/assets/landing-page/Project 2.png";
-import Project3 from "@/public/assets/landing-page/Project 3.png";
+import Project1 from "@/public/assets/landing-page/Project 1.svg";
+import Project2 from "@/public/assets/landing-page/Project 2.svg";
+import Project3 from "@/public/assets/landing-page/Project 3.svg";
 
 const Projects = () => {
   const projects = [Project1, Project2, Project3];

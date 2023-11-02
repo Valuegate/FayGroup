@@ -62,7 +62,8 @@ const Team = () => {
               key={i}
               className="flex flex-col w-[80%] sm:w-full items-start sm:items-start sm:px-[5%] justify-start"
             >
-              <Image src={member.image} alt="Member Image" />
+              {/* <Image src={member.image} alt="Member Image" /> */}
+              <img src={"https://res.cloudinary.com/devemmy/image/upload/v1681343921/home_p4un4n.jpg"} alt="blog image" className="h-[400px]"/>
               <p className="text-slate-950 mt-2 sm:text-xl text-2xl font-medium leading-9 w-[80%]">
                 {member.name}
               </p>

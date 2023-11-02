@@ -8,8 +8,8 @@ import TextWithImage from "../reusable/TextWithImage";
 import Team from "./Team";
 
 import BannerImage from "@/public/assets/about/Banner Image.svg";
-import AimImage from "@/public/assets/about/Aim.png";
-import FutureImage from "@/public/assets/about/Future.png";
+import AimImage from "@/public/assets/about/Aim.svg";
+import FutureImage from "@/public/assets/about/Future.svg";
 import WorkedWith from "../reusable/WorkedWith";
 
 const AboutPage = () => {

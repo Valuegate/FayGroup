@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../reusable/Button";
 
 import Pin from "@/public/assets/Pin.svg";
-import Background from "@/public/assets/contact/Background.png";
+import Background from "@/public/assets/contact/Background.svg";
 import Image from "next/image";
 
 const ContactInfo = () => {
@@ -50,7 +50,7 @@ const Info = ({ hidden = false }) => {
 const Content = ({ hidden = false }) => {
   return (
     <div className={`relative ${hidden ? "sm:hidden" : "hidden sm:block"}`}>
-      <Image src={Background} alt="background" className="sm:h-[610px] h-[700px]" />
+      <Image src={Background} alt="background" className="sm:h-[610px] h-full" />
       <div className=" sm:w-[98%] w-[80%] h-[90%] sm:h-[550px] flex flex-col bg-white absolute z-10 top-[5%] sm:left-[1%] left-[10%] rounded-[12px] items-center px-[7%] py-[5%]">
         <p className="text-slate-950 text-2xl sm:text-xl font-medium leading-9">
           Get in Touch

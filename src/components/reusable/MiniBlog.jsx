@@ -51,7 +51,8 @@ const MiniBlog = ({
         {blogs.map((blog, i) => {
           return (
             <div key={i} className="flex flex-col items-start justify-start">
-              <Image src={blog.image} alt="Blog Image" />
+              {/* <Image src={blog.image} alt="Blog Image" /> */}
+              <img src={"https://res.cloudinary.com/devemmy/image/upload/v1681343921/home_p4un4n.jpg"} alt="blog image" className="h-[400px]"/>
               <p className="text-slate-950 mt-5 sm:text-xl text-2xl font-medium leading-9 w-[80%]">
                 {blog.name}
               </p>
