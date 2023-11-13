@@ -12,7 +12,7 @@ import FB from "@/public/assets/nav/Frame 35626.svg";
 const linkedInUrl = "https://www.linkedin.com/company/faygroup/";
 const instagramUrl = "https://www.instagram.com/mb_faygroup/";
 const facebookUrl = "https://web.facebook.com/MBFayGroup";
-const twitterUrl = "";
+const twitterUrl = "https://twitter.com/mb_faygroup";
 
 const Footer = ({ active = -1, subActive = -1}) => {
   return (
@@ -20,9 +20,9 @@ const Footer = ({ active = -1, subActive = -1}) => {
       <div className="flex px-[10%] sm:px-[5%] gap-20 sm:gap-0 items-start justify-between sm:flex-col sm:w-full">
         
         <div className="flex flex-col gap-5 items-start">
-          <div>
+          <Link href={"/"}>
             <Image src={Logo} alt="Logo" />
-          </div>
+          </Link>
           <div className="w-[400px] sm:w-full text-slate-950 text-base font-normal leading-loose">
             We provide the best services and we are ready to help your business
             grow.

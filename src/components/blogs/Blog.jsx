@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Footer from "../reusable/Footer";
 import WorkInterest from "../reusable/WorkInterest";
 
@@ -9,20 +11,65 @@ import Image from "next/image";
 
 import Client from "@/public/assets/landing-page/Client Image.svg";
 import MiniBlog from "../reusable/MiniBlog";
+import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
+import useLocalStorage from "use-local-storage";
 
-const Blog = ({ id }) => {
-  const blog = {
-    id: { id },
-    title: "Introducing AI Assist for Better, Faster Responses",
-    author: {
-      name: "Samson Jackson",
-      image: Client,
-    },
-    timestamp: "September 14, 2023",
-    media: "",
-    content:
-      "At Help Scout, we believe that AI won't replace the teams that talk with customers every day. Instead, it will help them work more efficiently, enhance their skills, and strengthen customer relationships. We’re making that future a reality, building AI features that improve resolution time, customer sentiment, and employee satisfaction. We’re committed to making it effortless so teams can experience the benefits of AI without having to learn the ins and outs of large language models. Our features are embedded in the Help Scout platform — no plugins and no copying and pasting — so users can tap into the power of AI with just one click. In July, we released AI summarize. Today, we’re excited to launch another AI feature for Help Scout users: AI assist [Beta].",
+const axios = require("axios");
+
+const Blog = ({ id = "" }) => {
+  const [loading, setLoading] = useState(true);
+  const [blog, setBlog] = useState({});
+  const [author, setAuthor] = useState({});
+
+  // const blog = {
+  //   id: { id },
+  //   title: "Introducing AI Assist for Better, Faster Responses",
+  //   author: {
+  //     name: "Samson Jackson",
+  //     image: Client,
+  //   },
+  //   timestamp: "September 14, 2023",
+  //   media: "",
+  //   content:
+  //     "At Help Scout, we believe that AI won't replace the teams that talk with customers every day. Instead, it will help them work more efficiently, enhance their skills, and strengthen customer relationships. We’re making that future a reality, building AI features that improve resolution time, customer sentiment, and employee satisfaction. We’re committed to making it effortless so teams can experience the benefits of AI without having to learn the ins and outs of large language models. Our features are embedded in the Help Scout platform — no plugins and no copying and pasting — so users can tap into the power of AI with just one click. In July, we released AI summarize. Today, we’re excited to launch another AI feature for Help Scout users: AI assist [Beta].",
+  // };
+
+  const getBlog = () => {
+    axios({
+      method: "GET",
+      url: `http://62.72.22.207:3000/api/blog/get-blog/${id}`,
+    })
+      .then((res) => {
+        setLoading(false);
+        setBlog(res.data.blog);
+        let userID = res.data.blog.userId;
+        console.log(res.data.blog);
+        axios({
+          method: "GET",
+          url: `http://62.72.22.207:3000/api/users/${userID}`,
+        })
+          .then((res) => {
+            console.log(res);
+            setLoading(false);
+            setAuthor(res.data);
+          })
+          .catch((err) => {
+            console.error(err);
+            setBlog({});
+            setAuthor({});
+            setLoading(false);
+          });
+      })
+      .catch((err) => {
+        console.error(err);
+        setBlog({});
+        setLoading(false);
+      });
   };
+
+  useEffect(() => {
+    getBlog();
+  }, []);
 
   return (
     <div className="relative">
@@ -43,31 +90,27 @@ const Blog = ({ id }) => {
 
         <div className="flex sm:w-full sm:flex-col gap-5 sm:gap-1 items-center mt-5 ">
           <div>
-            <Image src={blog.author.image} alt="author image" />
+            {/* <img src={author.profilePicture} alt="author image" className="h-[120px] w-[120px] rounded-full"/> */}
           </div>
           <p className="text-slate-950 text-base font-medium leading-loose">
-            Written by {blog.author.name}
+            Written by {author.name}
           </p>
           <p className="text-slate-950 text-base font-normal leading-loose">
-            {blog.timestamp}
+            {blog.createdAt}
           </p>
         </div>
 
         <div className="w-full sm:w-full mt-20 mb-20 flex flex-col items-center">
           <div className="w-full">
             {/* <Image src={blog.media} alt="Blog Image" className="shadow-xl" /> */}
-            <img src={"https://res.cloudinary.com/devemmy/image/upload/v1681343921/home_p4un4n.jpg"} alt="blog image" className="shadow-xl h-[800px]"/>
+            <img
+              src={blog.blogProfileUrl}
+              alt="blog image"
+              className="shadow-xl h-[800px]"
+            />
           </div>
 
           <p className="text-slate-950 text-base font-normal leading-loose sm:w-full px-[20%] sm:mt-10 mt-20 sm:px-0">
-            {blog.content}
-          </p>
-
-          <p className="text-slate-950 sm:text-xl text-2xl font-medium leading-9 mt-10 sm:text-center mb-10">
-            Meet AI assist 👋 Your personal writing assistant
-          </p>
-
-          <p className="text-slate-950 text-base font-normal leading-loose sm:w-full px-[20%] sm:px-0">
             {blog.content}
           </p>
         </div>

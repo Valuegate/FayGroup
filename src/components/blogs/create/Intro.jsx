@@ -7,12 +7,15 @@ import Pin from "@/public/assets/Pin.svg";
 import Shadow from "@/public/assets/shadow.svg";
 import Client from "@/public/assets/landing-page/Client Image.svg";
 import Image from "next/image";
+import useLocalStorage from "use-local-storage";
 
 const Intro = () => {
   const author = {
     name: "Samson Samuel",
     image: Client,
   };
+
+  let user = useLocalStorage("user", {});
 
   return (
     <div className="relative">
@@ -24,14 +27,14 @@ const Intro = () => {
       <Nav active={3} />
 
       <div className="flex flex-col justify-center items-center gap-5 mt-20">
-        <Image
-          src={author.image}
+        <img
+          src={user[0].profilePicture}
           alt="Author Image"
           className="h-[120px] w-[120px] rounded-full "
         />
         <div className="flex flex-col gap-2 items-center">
           <p className="text-slate-950 text-2xl font-medium leading-9">
-            {author.name}
+            {user[0].name}
           </p>
           <p className="text-slate-950 text-base font-normal leading-loose">
             Author

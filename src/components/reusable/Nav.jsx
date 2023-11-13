@@ -379,7 +379,7 @@ const MobileFeatures = ({ features, active = false }) => {
       >
         {features.map((feature, i) => {
           return i == 0 ? (
-            <MobileServices key={0} services={feature.children} />
+            <MobileServices key={i} services={feature.children} />
           ) : (
             <Link
               key={i}

@@ -19,6 +19,7 @@ module.exports = {
         sunYellow: "#F9EC23",
         weirdYellow: "#C2B917",
         maroon: "#A2393F",
+        fadedBlack:"rgba(0, 0, 0, 0.7)",
         extraDarkRed: "#470912",
         pale: "#E49F5E",
         blandGrey: "#D9D9D9",
