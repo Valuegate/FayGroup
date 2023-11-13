@@ -11,14 +11,27 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../reusable/Footer";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
-const axios = require('axios');
-
+const axios = require("axios");
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState({});
 
   const register = () => {
+    if (document.getElementById("nameID").value.length == 0) {
+      toast.error("Please enter your name");
+      return;
+    } else if (document.getElementById("emailID").value.length == 0) {
+      toast.error("Please enter your email");
+      return;
+    } else if (document.getElementById("passwordID").value.length == 0) {
+      toast.error("Please enter your password");
+      return;
+    } else if (!file.name) {
+      toast.error("Please select an image for your blog");
+      return;
+    }
+
     setLoading(true);
     var formData = new FormData();
     formData.append("name", document.getElementById("nameID").value);
@@ -27,38 +40,39 @@ const Register = () => {
     formData.append("file", file);
 
     axios({
-      method: 'POST',
+      method: "POST",
       url: `http://62.72.22.207:3000/api/users/register`,
       data: formData,
-      headers: {'Content-Type': 'multipart/form-data'}
+      headers: { "Content-Type": "multipart/form-data" },
     })
-    .then(res => {
-      toast.success(`${res}. Please login in with your details`);
-      setLoading(false);
-      window.location.replace("/blogs/login");
-    })
-    .catch(err => {
-      toast.error("An error occurred trying to register your account. Please try again");
-      setLoading(false);
-    });
-  }
-
+      .then((res) => {
+        toast.success(`${res}. Please login in with your details`);
+        setLoading(false);
+        window.location.replace("/blogs/login");
+      })
+      .catch((err) => {
+        toast.error(
+          "An error occurred trying to register your account. Please try again"
+        );
+        setLoading(false);
+      });
+  };
 
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <div className={`${loading && "overflow-hidden"} relative`}>
-
-      <div
+        <div
           // className={`z-50 absolute flex flex-col top-0 left-0 items-center justify-center w-[100vw] h-[100vh] bg-fadedBlack ${
           //   !loading && "hidden"
           // } ${loading && "overflow-hidden"}`}
 
-          className={`overflow-y-auto flex flex-col bg-fadedBlack overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full  h-full max-h-full ${!loading && "hidden"}`}
+          className={`overflow-y-auto flex flex-col bg-fadedBlack overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full  h-full max-h-full ${
+            !loading && "hidden"
+          }`}
         >
           <SpinningCircles fill="#A2393F" />
         </div>
-
 
         <Image
           src={Shadow}
@@ -114,7 +128,7 @@ const Register = () => {
               id="passwordID"
             />
           </div>
-          
+
           <Button
             style={
               "w-[300px] bg-darkBlue rounded-[5px] text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center"
@@ -124,12 +138,10 @@ const Register = () => {
             Create Account
           </Button>
 
-          <Link 
-              href={"/blogs/login"}
-              className= "mt-10"
-            >
-              Already have an account yet? <span className="text-maroon">Login</span>
-            </Link>
+          <Link href={"/blogs/login"} className="mt-10">
+            Already have an account yet?{" "}
+            <span className="text-maroon">Login</span>
+          </Link>
         </div>
       </div>
 
@@ -149,7 +161,7 @@ function getBase64(file) {
   });
 }
 
-const UploadFile = ({setFile}) => {
+const UploadFile = ({ setFile }) => {
   const [image, setImage] = useState("");
   const [former, setFormer] = useState("");
   const inputRef = useRef(null);

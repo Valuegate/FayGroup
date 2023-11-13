@@ -12,20 +12,39 @@ import "react-toastify/dist/ReactToastify.css";
 const axios = require("axios");
 
 const Upload = () => {
+  const user = useLocalStorage("user");
   const [file, setFile] = useState({});
+  const [content, setContent] = useState("");
+  const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
 
-  
   const upload = () => {
+    if (title.length == 0) {
+      toast.error("Please provide a title for your blog");
+      return;
+    } else if (content.length == 0) {
+      toast.error("Please provide a content for your blog");
+      return;
+    } else if (!file.name) {
+      toast.error("Please select an image for your blog");
+      return;
+    }
+
+    console.log(file);
+
+    var formData = new FormData();
+    formData.append("userId", user.userId);
+    formData.append("content", content);
+    formData.append("title", title);
+    formData.append("blogPictureUrl", file);
+
+    setLoading(true);
+
     axios({
       method: "POST",
       url: `http://62.72.22.207:3000/api/blog/create-blog`,
-      data: {
-        "userId": "",
-        "content": document.getElementById("contentID").value,
-        "title": document.getElementById("titleID").value,
-        "blogPictureUrl": ""
-      },
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
     })
       .then((res) => {
         toast.success(`Blog created successfully`);
@@ -33,7 +52,7 @@ const Upload = () => {
       })
       .catch((err) => {
         toast.error(
-          "An error occurred trying to register your account. Please try again"
+          "An error occurred trying to create your blog. Please try again"
         );
         setLoading(false);
       });
@@ -42,8 +61,13 @@ const Upload = () => {
   return (
     <>
       <ToastContainer />
-      <div className="flex justify-between w-full px-[10%] mt-10 gap-20">
-        <UploadFile setFile={setFile} />
+
+      <div
+        className={`flex justify-between w-full px-[10%] mt-10 gap-20 ${
+          loading && "hidden"
+        }`}
+      >
+        <UploadFile setFile={setFile} className="sm:hidden" />
 
         <div className="flex flex-col justify-center items-start w-[50%] h-[420px]">
           <p className="text-slate-950 text-base font-medium leading-loose">
@@ -54,6 +78,8 @@ const Upload = () => {
             className="w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
             placeholder=""
             id="titleID"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
           <p className="text-slate-950 text-base font-medium leading-loose">
             Message
@@ -63,6 +89,8 @@ const Upload = () => {
             className="w-full h-[180px] mb-3 bg-blandGrey border px-2 py-3 font-normal resize-none focus:outline-none rounded-sm"
             placeholder="Type Here..."
             id="contentID"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
           />
 
           <Button
@@ -74,6 +102,14 @@ const Upload = () => {
             Send
           </Button>
         </div>
+      </div>
+
+      <div
+        className={`flex flex-col  justify-center items-center w-full h-[300px] ${
+          !loading && "hidden"
+        }`}
+      >
+        <SpinningCircles fill="#A2393F" />
       </div>
     </>
   );

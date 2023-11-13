@@ -18,6 +18,14 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const login = () => {
+    if (document.getElementById("emailID").value.length == 0) {
+      toast.error("Please enter your email");
+      return;
+    } else if (document.getElementById("passwordID").value.length == 0) {
+      toast.error("Please enter your password");
+      return;
+    }
+
     setLoading(true);
     axios({
       method: "POST",
@@ -53,7 +61,7 @@ const Login = () => {
           <SpinningCircles fill="#A2393F" />
         </div>
 
-        <div className={``}>
+        <div>
           <Image
             src={Shadow}
             alt="shadow"
@@ -108,7 +116,8 @@ const Login = () => {
             </Button>
 
             <Link className="mt-10 " href={"/blogs/register"}>
-              Don't have an account yet? <span className="text-maroon">Register</span>
+              Don't have an account yet?{" "}
+              <span className="text-maroon">Register</span>
             </Link>
           </div>
         </div>

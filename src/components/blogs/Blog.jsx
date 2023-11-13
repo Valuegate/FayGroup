@@ -34,6 +34,33 @@ const Blog = ({ id = "" }) => {
   //     "At Help Scout, we believe that AI won't replace the teams that talk with customers every day. Instead, it will help them work more efficiently, enhance their skills, and strengthen customer relationships. We’re making that future a reality, building AI features that improve resolution time, customer sentiment, and employee satisfaction. We’re committed to making it effortless so teams can experience the benefits of AI without having to learn the ins and outs of large language models. Our features are embedded in the Help Scout platform — no plugins and no copying and pasting — so users can tap into the power of AI with just one click. In July, we released AI summarize. Today, we’re excited to launch another AI feature for Help Scout users: AI assist [Beta].",
   // };
 
+  function convertDate(date) {
+    let dateObject = new Date(date);
+
+    let day = dateObject.getDate();
+    let month = dateObject.getMonth();
+    let year = dateObject.getFullYear();
+
+    let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let monthName = monthNames[month];
+
+    let dayWithSuffix = day + getOrdinalSuffix(day);
+
+    return `${monthName} ${dayWithSuffix}, ${year}`;
+  }
+
+
+  function getOrdinalSuffix(day) {
+    if(day > 3 && day < 21) return "th";
+    switch(day % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
+    }
+  }
+
+
   const getBlog = () => {
     axios({
       method: "GET",
@@ -41,28 +68,25 @@ const Blog = ({ id = "" }) => {
     })
       .then((res) => {
         setLoading(false);
-        setBlog(res.data.blog);
-        let userID = res.data.blog.userId;
-        console.log(res.data.blog);
+        let fetchedBlog = res.data.blog;
+        let userID = fetchedBlog.userId;
         axios({
           method: "GET",
-          url: `http://62.72.22.207:3000/api/users/${userID}`,
+          url: `http://62.72.22.207:3000/api/users/get-user-by-id/${userID}`,
         })
           .then((res) => {
-            console.log(res);
+            let fetchedAuthor = res.data.user;
             setLoading(false);
-            setAuthor(res.data);
+            setBlog(fetchedBlog);
+            setAuthor(fetchedAuthor);
           })
           .catch((err) => {
             console.error(err);
-            setBlog({});
-            setAuthor({});
             setLoading(false);
           });
       })
       .catch((err) => {
         console.error(err);
-        setBlog({});
         setLoading(false);
       });
   };
@@ -89,20 +113,17 @@ const Blog = ({ id = "" }) => {
         </p>
 
         <div className="flex sm:w-full sm:flex-col gap-5 sm:gap-1 items-center mt-5 ">
-          <div>
-            {/* <img src={author.profilePicture} alt="author image" className="h-[120px] w-[120px] rounded-full"/> */}
-          </div>
+          <div></div>
           <p className="text-slate-950 text-base font-medium leading-loose">
             Written by {author.name}
           </p>
           <p className="text-slate-950 text-base font-normal leading-loose">
-            {blog.createdAt}
+            {convertDate(blog.createdAt)}
           </p>
         </div>
 
         <div className="w-full sm:w-full mt-20 mb-20 flex flex-col items-center">
           <div className="w-full">
-            {/* <Image src={blog.media} alt="Blog Image" className="shadow-xl" /> */}
             <img
               src={blog.blogProfileUrl}
               alt="blog image"

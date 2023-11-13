@@ -14,11 +14,10 @@ const instagramUrl = "https://www.instagram.com/mb_faygroup/";
 const facebookUrl = "https://web.facebook.com/MBFayGroup";
 const twitterUrl = "https://twitter.com/mb_faygroup";
 
-const Footer = ({ active = -1, subActive = -1}) => {
+const Footer = ({ active = -1, subActive = -1 }) => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex px-[10%] sm:px-[5%] gap-20 sm:gap-0 items-start justify-between sm:flex-col sm:w-full">
-        
         <div className="flex flex-col gap-5 items-start">
           <Link href={"/"}>
             <Image src={Logo} alt="Logo" />
@@ -89,19 +88,25 @@ const Footer = ({ active = -1, subActive = -1}) => {
               </div>
               <Link
                 href="/features/business-consulting"
-                className={`${subActive == 3 ? "text-maroon" : "text-slate-950"} text-base font-normal leading-loose`}
+                className={`${
+                  subActive == 3 ? "text-maroon" : "text-slate-950"
+                } text-base font-normal leading-loose`}
               >
                 Business Consulting
               </Link>
               <Link
                 href="/features/product-development"
-                className={`${subActive == 1 ? "text-maroon" : "text-slate-950"} text-base font-normal leading-loose`}
+                className={`${
+                  subActive == 1 ? "text-maroon" : "text-slate-950"
+                } text-base font-normal leading-loose`}
               >
                 Product Development
               </Link>
               <Link
                 href="/features/digital-transformation"
-                className={`${subActive == 2 ? "text-maroon" : "text-slate-950"} text-base font-normal leading-loose`}
+                className={`${
+                  subActive == 2 ? "text-maroon" : "text-slate-950"
+                } text-base font-normal leading-loose`}
               >
                 Digital Transformation
               </Link>
@@ -155,14 +160,20 @@ const Footer = ({ active = -1, subActive = -1}) => {
             </div>
           </div>
         </div>
-
-
       </div>
 
       <div className="w-[70%] h-[1px] bg-slate-200 mt-[60px]" />
 
       <div className=" mt-10 text-slate-400 text-base font-normal leading-loose mb-10">
-        Copyright 2023. All rights reserved.
+        Copyright 2023. All rights reserved.{" "}
+        <span
+          className="text-slate-100 cursor-pointer underline"
+          onClick={() => {
+            window.location.href = "/blogs/login";
+          }}
+        >
+          Login
+        </span>
       </div>
     </div>
   );
