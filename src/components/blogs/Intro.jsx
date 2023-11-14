@@ -24,7 +24,6 @@ const Intro = () => {
       .then((res) => {
         setLoading(false);
         setBlogs(res.data.blogs);
-        console.log(blogs[6]);
       })
       .catch((err) => {
         console.error(err);
@@ -71,7 +70,7 @@ const Intro = () => {
               <img
                 src={blogs[0]?.blogPictureUrl}
                 alt="blog image"
-                className="h-[700px]"
+                className="h-[700px] w-full object-contain"
               />
               <p className="text-slate-950 sm:text-xl text-2xl mt-5 font-medium leading-9 w-[80%]">
                 {blogs[0]?.title}
@@ -101,7 +100,7 @@ const Intro = () => {
                   <img
                     src={blog.blogPictureUrl}
                     alt="blog image"
-                    className="h-[400px]"
+                    className="h-[400px] w-full object-contain"
                   />
                   <p className="text-slate-950 mt-5 sm:text-xl text-2xl font-medium leading-9 w-[80%]">
                     {blog.title}

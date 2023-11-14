@@ -8,7 +8,13 @@ import Image from "next/image";
 import useLocalStorage from "use-local-storage";
 
 const Intro = () => {
-  const [user, setUser] = useLocalStorage("user", {});
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    let localUser = window.localStorage.getItem("user");
+    localUser = JSON.parse(localUser);
+    setUser(localUser);
+  }, []);
   
 
   return (

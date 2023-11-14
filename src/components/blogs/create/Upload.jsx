@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Button from "../../reusable/Button";
@@ -8,15 +8,25 @@ import UPImg from "@/public/assets/blogs/Group 11222.svg";
 import useLocalStorage from "use-local-storage";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
 import "react-toastify/dist/ReactToastify.css";
+import { headers } from "@/next.config";
 
 const axios = require("axios");
 
 const Upload = () => {
-  const user = useLocalStorage("user");
+  const [user, setUser] = useState({});
+
   const [file, setFile] = useState({});
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    let localUser = window.localStorage.getItem("user");
+    localUser = JSON.parse(localUser);
+    setUser(localUser);
+
+    
+  }, []);
 
   const upload = () => {
     if (title.length == 0) {
@@ -30,25 +40,41 @@ const Upload = () => {
       return;
     }
 
-    console.log(file);
-
-    var formData = new FormData();
-    formData.append("userId", user.userId);
-    formData.append("content", content);
-    formData.append("title", title);
-    formData.append("blogPictureUrl", file);
-
     setLoading(true);
 
     axios({
-      method: "POST",
-      url: `http://62.72.22.207:3000/api/blog/create-blog`,
-      data: formData,
-      headers: { "Content-Type": "multipart/form-data" },
+      method: "GET",
+      url: "http://62.72.22.207:3000/api/users/get-user/",
+      headers: { Authorization: `Bearer ${user.token}` },
     })
       .then((res) => {
-        toast.success(`Blog created successfully`);
-        setLoading(false);
+        let userID = res.data.data._id;
+        var formData = new FormData();
+        formData.append("userId", userID);
+        formData.append("content", content);
+        formData.append("title", title);
+        formData.append("file", file);
+
+        console.log("After the first request");
+
+        axios({
+          method: "POST",
+          url: `http://62.72.22.207:3000/api/blog/create-blog`,
+          data: formData,
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+          .then((res) => {
+            console.log("After the second request");
+            toast.success(`Blog created successfully`);
+            window.location.href = "/";
+            setLoading(false);
+          })
+          .catch((err) => {
+            toast.error(
+              "An error occurred trying to create your blog. Please try again"
+            );
+            setLoading(false);
+          });
       })
       .catch((err) => {
         toast.error(
@@ -67,9 +93,15 @@ const Upload = () => {
           loading && "hidden"
         }`}
       >
-        <UploadFile setFile={setFile} className="sm:hidden" />
+        <div className="sm:hidden">
+          <UploadFile setFile={setFile} />
+        </div>
 
-        <div className="flex flex-col justify-center items-start w-[50%] h-[420px]">
+        <div className="flex flex-col justify-center items-start w-[50%] sm:w-full h-[420px] sm:h-auto">
+          <div className="sm:block hidden sm: mb-10">
+            <UploadFile setFile={setFile} />
+          </div>
+
           <p className="text-slate-950 text-base font-medium leading-loose">
             Headline
           </p>
@@ -164,7 +196,7 @@ const UploadFile = ({ setFile }) => {
         <div className="flex-col justify-start items-center gap-4 inline-flex">
           <Image src={UPImg} alt="upload" className="h-[50px] w-[50px]" />
 
-          <div className="flex-col justify-start items-center gap-2 flex">
+          <div className="flex-col justify-start items-center gap-2 flex text-center">
             <p className="text-slate-950 text-2xl font-medium leading-9">
               Select an image to upload
             </p>
@@ -179,7 +211,7 @@ const UploadFile = ({ setFile }) => {
     <img
       src={image}
       alt="Profile Image"
-      className="w-[50%] cursor-pointer h-[420px] object-cover"
+      className="w-[50%] sm:w-full sm:h-auto cursor-pointer h-[420px] object-cover"
       onClick={() => {
         setImage("");
         setFile({});

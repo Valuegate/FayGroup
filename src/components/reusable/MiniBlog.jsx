@@ -31,7 +31,6 @@ const MiniBlog = ({
       .then((res) => {
         setLoading(false);
         setBlogs(res.data.blogs);
-        console.log(blogs[6]);
       })
       .catch((err) => {
         console.error(err);
@@ -66,10 +65,9 @@ const MiniBlog = ({
         {blogs.map((blog, i) => {
           return (
             <div key={i} className="flex flex-col items-start justify-start">
-              {/* <Image src={blog.image} alt="Blog Image" /> */}
-              <img src={blog.blogProfileUrl} alt="blog image" className="h-[400px]"/>
+              <img src={blog.blogPictureUrl} alt="blog image" className="h-[400px] w-full object-contain"/>
               <p className="text-slate-950 mt-5 sm:text-xl text-2xl font-medium leading-9 w-[80%]">
-                {blog.name}
+                {blog.title}
               </p>
               <Link
                 href={`/blogs/${blog._id}`}

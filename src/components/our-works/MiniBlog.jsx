@@ -42,7 +42,7 @@ const MiniBlog = () => {
         setBlogs(res.data.blogs);
       })
       .catch((err) => {
-        console.error(err);
+        console.error(`Get Blogs In Miniblogs error: ${err}`);
         setBlogs([]);
         setLoading(false);
       });
@@ -71,14 +71,14 @@ const MiniBlog = () => {
         </p>
       </div>
       <div
-        className={`grid grid-cols-3 gap-5 w-full px-[10%] mt-[50px] mb-[50px] flex gap-[20px] ${
+        className={`grid grid-cols-3 gap-5 w-full px-[10%] mt-[50px] mb-[50px] sm:flex sm:flex-col ${
           loading && "hidden"
         }`}
       >
         {currentBlogs.map((blog, i) => {
           return (
             <div key={i} className="flex flex-col items-start justify-start">
-              <img src={blog.blogProfileUrl} alt="blog image" />
+              <img src={blog.blogPictureUrl} alt="blog image" />
               <p className="text-slate-950 mt-5 sm:text-xl text-2xl font-medium leading-9 w-[80%]">
                 {blog.title}
               </p>

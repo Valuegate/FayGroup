@@ -108,7 +108,7 @@ const Nav = ({ active = 0, sub = 0 }) => {
 
       <div
         className={`absolute block sm:hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg px-[12%] py-[2%] ${
-          showFeature ? "top-[15%]" : "-top-[100%]"
+          showFeature ? "top-[13%]" : "-top-[100%]"
         } `}
       >
         <div className="flex items-start gap-[10%] mb-[2%]">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Logo from "@/public/assets/Logo.svg";
 import Image from "next/image";
@@ -9,12 +9,22 @@ import IN from "@/public/assets/nav/Frame 35628.svg";
 import TW from "@/public/assets/nav/Frame 35627.svg";
 import FB from "@/public/assets/nav/Frame 35626.svg";
 
+import useLocalStorage from "use-local-storage";
+
 const linkedInUrl = "https://www.linkedin.com/company/faygroup/";
 const instagramUrl = "https://www.instagram.com/mb_faygroup/";
 const facebookUrl = "https://web.facebook.com/MBFayGroup";
 const twitterUrl = "https://twitter.com/mb_faygroup";
 
 const Footer = ({ active = -1, subActive = -1 }) => {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    let localUser = window.localStorage.getItem("user");
+    localUser = JSON.parse(localUser);
+    setUser(localUser);
+  }, []);
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex px-[10%] sm:px-[5%] gap-20 sm:gap-0 items-start justify-between sm:flex-col sm:w-full">
@@ -169,10 +179,16 @@ const Footer = ({ active = -1, subActive = -1 }) => {
         <span
           className="text-slate-100 cursor-pointer underline"
           onClick={() => {
+            if(user.name && user.name.length > 0) {
+              window.localStorage.setItem("user", {});
+            }
+
+            // window.location.href =
+            //   (user.name !== undefined && user.name.length == 0) ? "/blogs/login" : "/blogs";
             window.location.href = "/blogs/login";
           }}
         >
-          Login
+          {(user.name && user.name.length > 0) ? "Logout" : "Login"}
         </span>
       </div>
     </div>

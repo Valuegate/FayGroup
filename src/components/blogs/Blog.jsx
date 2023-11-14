@@ -19,20 +19,6 @@ const axios = require("axios");
 const Blog = ({ id = "" }) => {
   const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState({});
-  const [author, setAuthor] = useState({});
-
-  // const blog = {
-  //   id: { id },
-  //   title: "Introducing AI Assist for Better, Faster Responses",
-  //   author: {
-  //     name: "Samson Jackson",
-  //     image: Client,
-  //   },
-  //   timestamp: "September 14, 2023",
-  //   media: "",
-  //   content:
-  //     "At Help Scout, we believe that AI won't replace the teams that talk with customers every day. Instead, it will help them work more efficiently, enhance their skills, and strengthen customer relationships. We’re making that future a reality, building AI features that improve resolution time, customer sentiment, and employee satisfaction. We’re committed to making it effortless so teams can experience the benefits of AI without having to learn the ins and outs of large language models. Our features are embedded in the Help Scout platform — no plugins and no copying and pasting — so users can tap into the power of AI with just one click. In July, we released AI summarize. Today, we’re excited to launch another AI feature for Help Scout users: AI assist [Beta].",
-  // };
 
   function convertDate(date) {
     let dateObject = new Date(date);
@@ -67,23 +53,10 @@ const Blog = ({ id = "" }) => {
       url: `http://62.72.22.207:3000/api/blog/get-blog/${id}`,
     })
       .then((res) => {
-        setLoading(false);
         let fetchedBlog = res.data.blog;
-        let userID = fetchedBlog.userId;
-        axios({
-          method: "GET",
-          url: `http://62.72.22.207:3000/api/users/get-user-by-id/${userID}`,
-        })
-          .then((res) => {
-            let fetchedAuthor = res.data.user;
-            setLoading(false);
-            setBlog(fetchedBlog);
-            setAuthor(fetchedAuthor);
-          })
-          .catch((err) => {
-            console.error(err);
-            setLoading(false);
-          });
+        setBlog(fetchedBlog);
+        console.log(fetchedBlog);
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
@@ -112,26 +85,26 @@ const Blog = ({ id = "" }) => {
           {blog.title}
         </p>
 
-        <div className="flex sm:w-full sm:flex-col gap-5 sm:gap-1 items-center mt-5 ">
+        <div className={`flex sm:w-full sm:flex-col gap-5 sm:gap-1 items-center mt-5 ${loading && "hidden"}`}>
           <div></div>
-          <p className="text-slate-950 text-base font-medium leading-loose">
-            Written by {author.name}
+          <p className={`text-slate-950 text-base font-medium leading-loose`}>
+            Written by {blog.user?.name}
           </p>
           <p className="text-slate-950 text-base font-normal leading-loose">
             {convertDate(blog.createdAt)}
           </p>
         </div>
 
-        <div className="w-full sm:w-full mt-20 mb-20 flex flex-col items-center">
+        <div className={`w-full sm:w-full mt-20 mb-20 flex flex-col items-center ${loading && "hidden"}`}>
           <div className="w-full">
             <img
-              src={blog.blogProfileUrl}
+              src={blog.blogPictureUrl}
               alt="blog image"
-              className="shadow-xl h-[800px]"
+              className="shadow-xl h-auto"
             />
           </div>
 
-          <p className="text-slate-950 text-base font-normal leading-loose sm:w-full px-[20%] sm:mt-10 mt-20 sm:px-0">
+          <p className={`text-slate-950 text-base font-normal leading-loose sm:w-full px-[20%] sm:mt-10 mt-20 sm:px-0 ${loading && "hidden"}`}>
             {blog.content}
           </p>
         </div>
