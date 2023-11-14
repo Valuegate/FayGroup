@@ -9,8 +9,6 @@ import IN from "@/public/assets/nav/Frame 35628.svg";
 import TW from "@/public/assets/nav/Frame 35627.svg";
 import FB from "@/public/assets/nav/Frame 35626.svg";
 
-import useLocalStorage from "use-local-storage";
-
 const linkedInUrl = "https://www.linkedin.com/company/faygroup/";
 const instagramUrl = "https://www.instagram.com/mb_faygroup/";
 const facebookUrl = "https://web.facebook.com/MBFayGroup";
@@ -21,7 +19,13 @@ const Footer = ({ active = -1, subActive = -1 }) => {
 
   useEffect(() => {
     let localUser = window.localStorage.getItem("user");
-    localUser = JSON.parse(localUser);
+    if(localUser === undefined) {
+      localUser = {
+        name: ""
+      };
+    } else {
+      localUser = JSON.parse(localUser);
+    }
     setUser(localUser);
   }, []);
 
@@ -179,16 +183,15 @@ const Footer = ({ active = -1, subActive = -1 }) => {
         <span
           className="text-slate-100 cursor-pointer underline"
           onClick={() => {
-            if(user.name && user.name.length > 0) {
-              window.localStorage.setItem("user", {});
+            if(user.name) {
+              window.localStorage.setItem("user", undefined);
+              window.location.href = "/blogs";
+            } else {
+              window.location.href = "/blogs/login";
             }
-
-            // window.location.href =
-            //   (user.name !== undefined && user.name.length == 0) ? "/blogs/login" : "/blogs";
-            window.location.href = "/blogs/login";
           }}
         >
-          {(user.name && user.name.length > 0) ? "Logout" : "Login"}
+          {user.name ? "Logout" : "Login"}
         </span>
       </div>
     </div>

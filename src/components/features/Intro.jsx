@@ -6,7 +6,13 @@ import Image from "next/image";
 
 import Pin from "@/public/assets/Pin.svg";
 import Shadow from "@/public/assets/shadow.svg";
-import scrollToElement from "@/src/api/functions";
+
+function scrollToElement (elementID) {
+  const element = document.getElementById(elementID);
+  element?.scrollIntoView({
+      behavior: "smooth",
+  })
+}
 
 const Intro = ({
   One,

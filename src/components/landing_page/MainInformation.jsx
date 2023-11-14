@@ -7,9 +7,15 @@ import Hero from "@/public/assets/landing-page/Hero.svg";
 import Welcome from "@/public/assets/landing-page/Welcome.svg";
 import Image from "next/image";
 
-import scrollToElement from "@/src/api/functions";
-
 const MainInformation = () => {
+
+  function scrollToElement (elementID) {
+    const element = document.getElementById(elementID);
+    element?.scrollIntoView({
+        behavior: "smooth",
+    })
+}
+
   return (
     <div className="relative">
       <Image

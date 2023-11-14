@@ -54,7 +54,7 @@ const AboutPage = () => {
         postRedText={"for All"}
         pinText={"OUR VISION"}
       />
-      <Team />
+      {/* <Team /> */}
       <div className="h-[100px]"/>
       <Contact />
       <div className="h-[200px]"/>

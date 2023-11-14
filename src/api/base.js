@@ -1,1 +1,0 @@
-const baseUrl = "http://62.72.22.207:3000/api/";

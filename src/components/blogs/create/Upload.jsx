@@ -55,8 +55,6 @@ const Upload = () => {
         formData.append("title", title);
         formData.append("file", file);
 
-        console.log("After the first request");
-
         axios({
           method: "POST",
           url: `http://62.72.22.207:3000/api/blog/create-blog`,
@@ -64,9 +62,10 @@ const Upload = () => {
           headers: { "Content-Type": "multipart/form-data" },
         })
           .then((res) => {
-            console.log("After the second request");
             toast.success(`Blog created successfully`);
-            window.location.href = "/";
+            setContent("");
+            setTitle("");
+            setFile({});
             setLoading(false);
           })
           .catch((err) => {

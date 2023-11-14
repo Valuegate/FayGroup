@@ -12,9 +12,18 @@ import One from "@/public/assets/our-works/One.svg";
 import Two from "@/public/assets/our-works/Two.svg";
 import Three from "@/public/assets/our-works/Three.svg";
 import Four from "@/public/assets/our-works/Four.svg";
-import scrollToElement from "@/src/api/functions";
 
 const Intro = ({scrollTo}) => {
+
+
+  function scrollToElement (elementID) {
+    const element = document.getElementById(elementID);
+    element?.scrollIntoView({
+        behavior: "smooth",
+    })
+}
+
+
   return (
     <div className="relative mb-[100px] bg-slightRedBackground">
       <Image
