@@ -184,7 +184,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
             }
           }}
         >
-          {user === undefined ? "Login" : "Logout"}
+          {(user === undefined || user.name === undefined) ? "Login" : "Logout"}
         </span>
       </div>
     </div>
