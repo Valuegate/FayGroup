@@ -14,7 +14,6 @@ import "react-toastify/dist/ReactToastify.css";
 const axios = require("axios");
 const https = require("https");
 
-
 const Login = () => {
   const [user, setUser] = useLocalStorage("user", {});
   const [loading, setLoading] = useState(false);
@@ -31,12 +30,15 @@ const Login = () => {
     setLoading(true);
     axios({
       method: "POST",
-      url: `http://62.72.22.207:3000/api/users/sign-in`,
+      url: `https://62.72.22.207:3000/api/users/sign-in`,
       data: {
         email: document.getElementById("emailID").value,
         password: document.getElementById("passwordID").value,
       },
-      httpsAgent: new https.Agent({ keepAlive: true, rejectUnauthorized: false  }),
+      httpsAgent: new https.Agent({
+        keepAlive: true,
+        rejectUnauthorized: false,
+      }),
     })
       .then((res) => {
         setUser(res.data);
