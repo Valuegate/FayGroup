@@ -19,13 +19,6 @@ const Footer = ({ active = -1, subActive = -1 }) => {
 
   useEffect(() => {
     let localUser = window.localStorage.getItem("user");
-    if(localUser === undefined) {
-      localUser = {
-        name: ""
-      };
-    } else {
-      localUser = JSON.parse(localUser);
-    }
     setUser(localUser);
   }, []);
 
@@ -183,7 +176,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
         <span
           className="text-slate-100 cursor-pointer underline"
           onClick={() => {
-            if(user.name) {
+            if(user !== undefined) {
               window.localStorage.setItem("user", undefined);
               window.location.href = "/blogs";
             } else {
@@ -191,7 +184,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
             }
           }}
         >
-          {user.name ? "Logout" : "Login"}
+          {user === undefined ? "Login" : "Logout"}
         </span>
       </div>
     </div>
