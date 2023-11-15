@@ -14,9 +14,6 @@ import "react-toastify/dist/ReactToastify.css";
 const axios = require("axios");
 const https = require("https");
 
-const agent = new https.Agent({
-  rejectUnauthorized: false,
-});
 
 const Login = () => {
   const [user, setUser] = useLocalStorage("user", {});
@@ -39,7 +36,7 @@ const Login = () => {
         email: document.getElementById("emailID").value,
         password: document.getElementById("passwordID").value,
       },
-      httpsAgent: agent,
+      httpsAgent: new https.Agent({ keepAlive: true, rejectUnauthorized: false  }),
     })
       .then((res) => {
         setUser(res.data);
