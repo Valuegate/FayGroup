@@ -176,7 +176,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
         <span
           className="text-slate-100 cursor-pointer underline"
           onClick={() => {
-            if(user !== undefined) {
+            if(user !== undefined && user.name !== undefined) {
               window.localStorage.setItem("user", undefined);
               window.location.href = "/blogs";
             } else {
