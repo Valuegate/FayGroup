@@ -9,7 +9,7 @@ export default function Blogs() {
 
   useEffect(() => {
     let localUser = window.localStorage.getItem("user");
-    if (localUser != undefined) {
+    if (localUser !== undefined && localUser.name !== undefined) {
       router.replace("/blogs/create-blog");
     }
 
