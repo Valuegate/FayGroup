@@ -30,7 +30,7 @@ const Login = () => {
     setLoading(true);
     axios({
       method: "POST",
-      url: `https://62.72.22.207:3000/api/users/sign-in`,
+      url: `http://62.72.22.207:3000/api/users/sign-in`,
       data: {
         email: document.getElementById("emailID").value,
         password: document.getElementById("passwordID").value,
