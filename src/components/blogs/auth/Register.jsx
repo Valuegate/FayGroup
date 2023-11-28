@@ -11,10 +11,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../reusable/Footer";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
+
+import { IoMdEyeOff, IoMdEye } from "react-icons/io";
+
 const axios = require("axios");
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [file, setFile] = useState({});
 
   const register = () => {
@@ -41,7 +45,8 @@ const Register = () => {
 
     axios({
       method: "POST",
-      url: `http://62.72.22.207:3000/api/users/register`,
+      // url: `http://62.72.22.207:3000/api/users/register`,
+      url: "faysolutions.com:3000/api/users/register",
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     })
@@ -81,7 +86,7 @@ const Register = () => {
         />
         <Nav active={3} />
 
-        <div className="mt-[150px] flex flex-col items-center">
+        <div className="mt-[150px] sm:mt-16 flex flex-col items-center">
           <div className="flex flex-col gap-5 items-center mt-10">
             <div className="flex items-center gap-[10px]">
               <div className="w-[14px]">
@@ -91,7 +96,7 @@ const Register = () => {
                 CREATE ACCOUNT
               </p>
             </div>
-            <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+            <p className="text-slate-950 text-4xl sm:text-center sm:text-2xl font-medium sm:leading-9 leading-[44px]">
               Get Started to Begin
               <span className="text-red-950"> Blog Creation</span>
             </p>
@@ -99,13 +104,13 @@ const Register = () => {
 
           <UploadFile setFile={setFile} />
 
-          <div className="flex flex-col items-start mt-20">
+          <div className="flex flex-col items-start mt-20 sm:w-full sm:px-[5%]">
             <p className="text-slate-950 text-base font-medium leading-loose mb-1">
               Name
             </p>
             <input
               type="text"
-              className="w-[500px] bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
+              className="w-[500px] sm:w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
               placeholder=""
               id="nameID"
             />
@@ -114,29 +119,39 @@ const Register = () => {
             </p>
             <input
               type="email"
-              className="w-[500px] bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
+              className="w-[500px] sm:w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
               placeholder="example@example.com"
               id="emailID"
             />
             <p className="text-slate-950 text-base font-medium leading-loose mb-1">
               Password
             </p>
-            <input
-              type="password"
-              className="w-[500px] bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm"
-              placeholder=""
-              id="passwordID"
-            />
+            <div className="relative sm:w-full flex justify-center items-center">
+              <input
+                type={`${showPassword ? "text" : "password"}`}
+                className="w-[500px] sm:w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm"
+                placeholder=""
+                id="passwordID"
+              />
+              <div className="absolute right-3" onClick={() => setShowPassword(!showPassword)}> 
+                {
+                  showPassword ? <IoMdEyeOff fill="#470912" size={"20px"} /> : <IoMdEye fill="#470912" size={"20px"}/>
+                }
+
+              </div>
+            </div>
           </div>
 
-          <Button
-            style={
-              "w-[300px] bg-darkBlue rounded-[5px] text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center"
-            }
-            onClick={register}
-          >
-            Create Account
-          </Button>
+          <div className="mt-10 sm:w-full sm:px-[5%]">
+            <Button
+              style={
+                "w-[300px] bg-darkBlue sm:w-full rounded-[5px] text-white py-2.5 hover:bg-extraDarkRed text-center"
+              }
+              onClick={register}
+            >
+              Create Account
+            </Button>
+          </div>
 
           <Link href={"/blogs/login"} className="mt-10">
             Already have an account yet?{" "}
@@ -145,7 +160,7 @@ const Register = () => {
         </div>
       </div>
 
-      <div className="h-[300px]" />
+      <div className="h-[300px] sm:h-[100px]" />
       <Footer />
     </>
   );

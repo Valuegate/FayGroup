@@ -24,7 +24,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex px-[10%] sm:px-[5%] gap-20 sm:gap-0 items-start justify-between sm:flex-col sm:w-full">
+      <div className="flex px-[10%] sm:px-[5%] gap-20 sm:gap-0 items-start justify-between sm:flex-col w-[100vw">
         <div className="flex flex-col gap-5 items-start">
           <Link href={"/"}>
             <Image src={Logo} alt="Logo" />

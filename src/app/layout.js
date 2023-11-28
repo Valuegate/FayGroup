@@ -9,7 +9,7 @@ const poppins = Poppins({ subsets: ['latin'],
 
 export const metadata = {
   title: 'FayGroup',
-  description: 'The best of the best',
+  description: 'Empowering Businesses with Digital Excellence',
 }
 
 export default function RootLayout({ children }) {
