@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Nav from "../reusable/Nav";
+import Nav from "../reusable/NavBar";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import Pin from "@/public/assets/Pin.svg";

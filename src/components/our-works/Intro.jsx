@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../reusable/Nav";
+import Nav from "../reusable/NavBar";
 import Link from "next/link";
 import Button from "../reusable/Button";
 import { FaArrowRight } from "react-icons/fa";

@@ -13,13 +13,14 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        offWhite: "#FDFDFD",
         darkBlue: "#000024",
         poopBrown: "#45050D",
         fancyRed: "#EB2027",
         sunYellow: "#F9EC23",
         weirdYellow: "#C2B917",
         maroon: "#A2393F",
-        fadedBlack:"rgba(0, 0, 0, 0.7)",
+        fadedBlack: "rgba(0, 0, 0, 0.7)",
         extraDarkRed: "#470912",
         pale: "#E49F5E",
         blandGrey: "#D9D9D9",
@@ -41,12 +42,7 @@ module.exports = {
       fontFamily: {
         body: ["Poppins"],
       },
-      screens: {
-        sm: {
-          max: "768px",
-        }, // small screens
-        
-      },
+      
     },
   },
   plugins: [],

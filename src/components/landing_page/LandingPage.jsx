@@ -15,11 +15,10 @@ import AdviseImage from "@/public/assets/landing-page/Frame 36176.svg";
 
 const LandingPage = () => {
   return (
-    <div>
+    <>
       <MainInformation />
       <Purpose />
       <Services />
-      <div className="sm:hidden block h-[100px] sm:h-0"/>
       <TextWithImage
         left={true}
         pinText={"ADVISING"}
@@ -33,18 +32,13 @@ const LandingPage = () => {
           " With a profound understanding of fiscal complexities, we provide tailored solutions to address multifaceted challenges. Our seasoned team of advisors is committed to meticulously analyzing your financial concerns and providing comprehensive insights that empower informed decision-making."
         }
       />
-      <div className="h-[100px]"/>
       <Standout />
-      <div className="h-[100px]"/>
       <Projects />
-      <div className="h-[100px]"/>
       <Listen />
-      <div className="h-[100px]"/>
       <Contact />
-      <div className="h-[200px]"/>
       <WorkInterest />
       <Footer active={0} />
-    </div>
+    </>
   );
 };
 

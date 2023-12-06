@@ -99,7 +99,7 @@ const Nav = ({ active = 0, sub = 0 }) => {
   const toggle = () => setShowFeature(!showFeature);
 
   return (
-    <nav className="flex justify-between px-[10%] sm:px-[5%] py-[32px] items-center bg-transparent ">
+    <nav className="flex w-full justify-between lg:px-[10%] px-[5%] h-[10vh] items-center bg-transparent ">
       <Link href={"/"}>
         <Image src={Logo} alt="logo" />
       </Link>
@@ -107,8 +107,8 @@ const Nav = ({ active = 0, sub = 0 }) => {
       {/** Desktop Nav */}
 
       <div
-        className={`absolute block sm:hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg px-[12%] py-[2%] ${
-          showFeature ? "top-[13%]" : "-top-[100%]"
+        className={`absolute lg:block hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg px-[12%] py-5 ${
+          showFeature ? "top-[10vh]" : "-top-[100%]"
         } `}
       >
         <div className="flex items-start gap-[10%] mb-[2%]">
@@ -269,12 +269,12 @@ const Nav = ({ active = 0, sub = 0 }) => {
         </div>
       </div>
 
-      {/** Mobile Nav */}
+      {/** Mobile Nav */} 
 
       <div
-        className={`sm:flex sm:flex-col z-30 hidden ${
-          showFeature ? "sm:block left-0" : "sm:hidden -left-[100%]"
-        } fixed overscroll-y-auto top-0 transform ease-linear duration-500 w-[100%] bg-white h-full shadow-md px-[5%] py-[5%]`}
+        className={`flex flex-col z-30 lg:hidden ${
+          showFeature ? "left-0" : "hidden -left-[100%]"
+        } fixed overscroll-y-auto top-0 transform ease-linear duration-500 w-full bg-white h-full shadow-md px-[5%] py-[5%]`}
       >
         <div className="flex w-full mt-[15px] justify-between items-center">
           <Link href={"/"}>
@@ -303,13 +303,16 @@ const Nav = ({ active = 0, sub = 0 }) => {
         </div>
 
         <Button
-          style="w-full text-center mt-10 text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
+          style="w-full text-center mt-56 text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
           destination={"/contact-us"}
         >
           Get In Touch
         </Button>
       </div>
-      <div className="sm:hidden flex w-3/5 justify-evenly">
+
+
+
+      <div className="hidden lg:flex lg:items-center lg:w-3/5 justify-evenly">
         {navs.map((nav, i) => {
           return (
             <div
@@ -338,15 +341,16 @@ const Nav = ({ active = 0, sub = 0 }) => {
           );
         })}
       </div>
+
       <Button
-        style="block sm:hidden text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
+        style="lg:block hidden text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
         destination={"/contact-us"}
       >
         Get In Touch
       </Button>
       <FaBarsStaggered
         size={"25px"}
-        className="hidden sm:block text-extraDarkRed"
+        className="lg:hidden block text-extraDarkRed"
         onClick={toggle}
       />
     </nav>

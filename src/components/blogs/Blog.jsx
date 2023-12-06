@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../reusable/Footer";
 import WorkInterest from "../reusable/WorkInterest";
 
-import Nav from "../reusable/Nav";
+import Nav from "../reusable/NavBar";
 
 import Pin from "@/public/assets/Pin.svg";
 import Image from "next/image";

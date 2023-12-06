@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useLocalStorage from "use-local-storage";
 import { ToastContainer, toast } from "react-toastify";
-import Nav from "../../reusable/Nav";
+import Nav from "../../reusable/NavBar";
 import Button from "../../reusable/Button";
 import Link from "next/link";
 import Pin from "@/public/assets/Pin.svg";

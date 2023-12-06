@@ -19,19 +19,19 @@ const TextWithImage = ({
   useRedBackground,
 }) => {
   return (
-    <div className="sm:flex sm:flex-col">
+    <div className="flex flex-col lg:flex-row mt-10">
       <div
         className={`flex w-full gap-[10%] items-center ${
           useRedBackground && useRedBackground && "bg-slightRedBackground"
-        } py-[5%] px-[10%] sm:px-[5%]`}
+        } pt-16 lg:pb-16 lg:px-[10%] px-[5%]`}
       >
         {left && (
-          <div className="w-[50%] block sm:hidden">
+          <div className="w-[50%] lg:block hidden">
             <Image src={image} alt="image" />
           </div>
         )}
 
-        <div className="flex flex-col w-[50%] sm:w-full sm:mt-20">
+        <div className="flex flex-col lg:w-[50%] w-full">
           <div className="flex items-center gap-[10px]">
             <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
@@ -41,16 +41,12 @@ const TextWithImage = ({
             </p>
           </div>
 
-          <div className="mt-[3%]" />
-
-          <p className="text-slate-950 text-4xl sm:text-2xl sm:leading-9 font-medium leading-[48px]">
+          <p className="text-slate-950 mt-5 lg:text-4xl text-2xl leading-9 font-medium lg:leading-[48px]">
             {preRedText} <span className="text-red-950">{redText}</span>{" "}
             {postRedText}
           </p>
 
-          <div className="mt-[5%]" />
-
-          <p className="text-slate-950 text-base font-normal leading-loose">
+          <p className="text-slate-950 mt-5 text-base font-normal leading-loose">
             {content}
           </p>
 
@@ -58,7 +54,7 @@ const TextWithImage = ({
 
           {includeButton && (
             <Button
-              style="sm:w-full text-white text-center mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md w-[160px] hover:bg-extraDarkRed transition ease-in-out duration-200"
+              style="w-full lg:w-[200px] text-white text-center mt-12 bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
               destination={"/contact-us"}
             >
               Get In Touch
@@ -67,18 +63,18 @@ const TextWithImage = ({
         </div>
 
         {right && (
-          <div className="w-[50%] block sm:hidden">
+          <div className="w-[50%] lg:block hidden">
             <Image src={image} alt="image" />
           </div>
         )}
       </div>
 
       <div
-        className={`hidden sm:block sm:w-full sm:px-[5%] ${
+        className={`lg:hidden w-full px-[5%] py-20 ${
           useRedBackground && "bg-slightRedBackground"
         } `}
       >
-        <Image src={image} alt="image" className="sm:mt-20 sm:mb-20" />
+        <Image src={image} alt="image" />
       </div>
     </div>
   );

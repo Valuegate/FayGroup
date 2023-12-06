@@ -44,16 +44,16 @@ const Listen = () => {
   }
 
   return (
-    <div className="sm:flex sm:flex-col">
-      <div className="flex w-full items-center px-[10%] py-[5%] sm:px-[5%] gap-[10%] bg-slightRedBackground">
+    <div className="flex flex-col lg:flex-row mt-20">
+      <div className="flex w-full items-center lg:px-[10%] py-16 px-[5%] gap-[10%] bg-slightRedBackground">
         <Image
           src={HappyMan}
           alt="Happy Man"
-          className="w-[45%] h-auto sm:hidden"
+          className="w-[45%] h-auto hidden lg:block"
         />
 
-        <div className="flex flex-col w-[50%] sm:w-full sm:pt-20">
-          <div className="flex flex-col gap-[20px] items-start">
+        <div className="flex flex-col lg:w-[50%] w-full">
+          <div className="flex flex-col gap-10 items-start">
             <div className="flex items-center gap-[10px]">
               <div className="w-[14px]">
                 <Image src={Pin} alt="pin" />
@@ -62,53 +62,44 @@ const Listen = () => {
                 TESTIMONIALS
               </p>
             </div>
-
-            <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
-              Listen to what <span className="text-red-950">Our Clients</span>{" "}
-              say
-            </p>
           </div>
+          <p className="text-slate-950 my-5 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[44px]">
+            Listen to what <span className="text-red-950">Our Clients</span> say
+          </p>
 
-          <div className="mt-[5%]" />
-
-          <AnimatePresence>
-            <motion.div
+          <div>
+            <motion.p
               key={index}
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 100 }}
+              className="text-slate-950 text-base font-normal leading-loose"
             >
-              <p className="text-slate-950 text-base font-normal leading-loose">
-                {testimonials[index].text}
-              </p>
+              {testimonials[index].text}
+            </motion.p>
 
-              <div className="mt-[29px] flex gap-3 items-start sm:w-full">
-                <Image
-                  src={testimonials[index].image}
-                  alt="client"
-                  className="w-[90px] h-[90px]"
-                />
+            <div className="mt-10 flex gap-3 lg:flex-row flex-col items-center lg:items-start w-full">
+              <Image
+                src={testimonials[index].image}
+                alt="client"
+                className="w-[90px] h-[90px]"
+              />
 
-                <div className="flex flex-col justify-between items-start">
-                  <p className="text-slate-950 sm:text-xl text-2xl font-medium sm:leading-10 leading-9">
-                    {testimonials[index].name}
-                  </p>
-                  <p className="text-slate-950 text-base font-normal leading-loose">
-                    {testimonials[index].title}
-                  </p>
-                </div>
-                <Image
-                  src={Stars}
-                  alt="client"
-                  className="w-[25%] sm:mt-3"
-                />
+              <div className="flex flex-col justify-between lg:items-start items-center">
+                <p className="text-slate-950 sm:text-xl text-2xl font-medium sm:leading-10 leading-9">
+                  {testimonials[index].name}
+                </p>
+                <p className="text-slate-950 text-base font-normal leading-loose">
+                  {testimonials[index].title}
+                </p>
               </div>
-            </motion.div>
-          </AnimatePresence>
+              <Image src={Stars} alt="client" className="w-[25%] sm:mt-3" />
+            </div>
+          </div>
 
-          <div className="mt-[5%]" />
-
-          <div className="flex gap-[20px] sm:justify-center">
+      
+          {/* FUNNEL CREATION, LEAD GEBERATION */}
+          <div className="flex mt-5 gap-[20px] justify-center">
             <div onClick={() => change(-1)}>
               <Image
                 src={Left}
@@ -129,7 +120,7 @@ const Listen = () => {
         </div>
       </div>
 
-      <div className="hidden sm:block sm:w-full sm:px-[5%] bg-slightRedBackground">
+      <div className="lg:hidden w-full sm:px-[5%] bg-slightRedBackground">
         <Image src={HappyMan} alt="HappyMan" className="sm:mt-10 sm:mb-10" />
       </div>
     </div>

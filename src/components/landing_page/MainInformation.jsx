@@ -1,4 +1,4 @@
-import Nav from "@/src/components/reusable/Nav";
+import Nav from "@/src/components/reusable/NavBar";
 import Button from "@/src/components/reusable/Button";
 import React from "react";
 
@@ -17,7 +17,7 @@ const MainInformation = () => {
 }
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <Image
         src={Shadow}
         alt="shadow"
@@ -25,19 +25,19 @@ const MainInformation = () => {
       />
 
       <Nav />
-      <div className="flex sm:flex-col gap-[10%] items-start justify-between mx-[10%] sm:mx-[5%] mt-[5%] mb-[10%]">
-        <div className="w-[50%] sm:w-full flex flex-col">
+      <div className="lg:flex-row flex flex-col gap-[10%] items-start justify-between lg:px-[10%] px-[5%] mt-[5%] mb-[10%]">
+        <div className="lg:w-[50%] w-full flex flex-col">
           <div className="flex items-center">
             <div>
-              <Image src={Welcome} alt="welcome" className="sm:w-[100px]" />
+              <Image src={Welcome} alt="welcome" className="w-[100px]" />
             </div>
-            <p className="text-white text-center sm:text-[14px] font-[500] leading-loose bg-extraDarkRed rounded-[40px] py-3 px-4">
+            <p className="text-white text-center text-[14px] lg:text-[14px] font-[500] leading-loose bg-extraDarkRed rounded-[40px] py-3 px-4">
               WELCOME TO FAYGROUP 👋
             </p>
           </div>
-          <div className="flex flex-col gap-[32px] sm:gap-[16px] mt-[5%]">
+          <div className="flex flex-col lg:gap-[32px] gap-[16px] mt-[5%]">
             <div className="w-full flex-shrink">
-              <p className="text-slate-950 text-[64px] sm:text-[32px] font-[500] sm:leading-[48px] leading-[88px]">
+              <p className="text-slate-950 lg:text-[64px] text-[32px] font-[500] leading-[48px] lg:leading-[88px]">
                 Grow your Business with{" "}
                 <span className="text-red-950">Our Solutions</span>
               </p>
@@ -48,21 +48,21 @@ const MainInformation = () => {
               Tailored to Boost Your Success.
             </p>
 
-            <div className="sm:flex-col flex justify-start items-center gap-[20px]">
+            <div className="flex-col lg:flex-row   lg:flex flex justify-start items-center gap-5">
               <Button
-                style="sm:w-full text-center text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
+                style="w-full lg:w-[200px] text-center text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
                 destination={"/contact-us"}
               >
                 Get In Touch
               </Button>
-              <Button style="sm:w-full text-center text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md" onClick={() => scrollToElement("landing-page-service")}>
+              <Button style="w-full lg:w-[200px] text-center text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md" onClick={() => scrollToElement("landing-page-service")}>
                 Explore More
               </Button>
             </div>
           </div>
         </div>
 
-        <div className="w-[40%] sm:w-full sm:mt-5 sm:mb-10 sm:relative">
+        <div className="lg:w-[40%] w-full mt-5 mb-10 relative">
           <Image
             src={Shadow}
             alt="shadow"

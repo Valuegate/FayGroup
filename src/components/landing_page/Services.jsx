@@ -33,9 +33,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-[100px] pb-[150px] flex flex-col w-full items-center" id="landing-page-service">
-      <div className="flex flex-col gap-[60px]">
-        <div className="flex flex-col gap-[20px] items-center">
+    <div className="py-20 px-[10%] sm:px-[5%] flex flex-col w-full items-center bg-offWhite" id="landing-page-service">
+      <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-3 items-center">
           <div className="flex items-center gap-[10px]">
             <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
@@ -45,33 +45,33 @@ const Services = () => {
             </p>
           </div>
 
-          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+          <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[44px]">
             Our Provided <span className="text-red-950">Services</span>
           </p>
         </div>
 
-        <div className="flex sm:flex-col items-center justify-center gap-[40px]">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
           {services.map((service, i) => {
             return (
               <div
                 key={i}
-                className="flex flex-col bg-white w-[416px] sm:w-[90%] h-[462px] items-center rounded-[12px] sm:shadow-lg shadow-2xl"
+                className="flex flex-col px-5 bg-white lg:w-[370px] w-full h-[470px] justify-center items-center rounded-[12px] sm:shadow-lg shadow-xl"
               >
-                <div className="w-[90px] h-auto mt-[54px]">
+                <div className="lg:w-[90px] h-auto w-[80px] ">
                   <Image src={service.image} alt="service image" />
                 </div>
 
-                <p className="mt-[34px] text-2xl font-medium leading-9 sm:text-xl sm:leading-10">
+                <p className="mt-8 lg:text-2xl text-xl font-medium leading-9">
                   {service.name}
                 </p>
 
-                <p className="mt-[20px] px-[20px] text-center text-slate-950 text-base font-normal leading-loose">
+                <p className="mt-4 lg:text-[18px]  text-[16px] text-center text-slate-950 text-base font-normal leading-loose">
                   {service.subtitle}
                 </p>
 
                 <Link
                   href={service.link}
-                  className="mt-[16px] flex items-center justify-center gap-[10px] text-maroon"
+                  className="mt-4 flex items-center justify-center gap-3 text-maroon"
                 >
                   <p className="font-medium leading-loose">Explore More</p>
                   <FaArrowRight />

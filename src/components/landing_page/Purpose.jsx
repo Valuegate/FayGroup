@@ -6,8 +6,8 @@ import Pin from "@/public/assets/Pin.svg";
 
 const Purpose = () => {
   return (
-    <div className="flex sm:flex-col justify-between bg-blandGrey pt-[60px] pb-[90px] sm:px-[5%] px-[10%] w-full">
-      <div className="flex flex-col gap-[12px]">
+    <div className="flex flex-col lg:flex-row justify-between bg-blandGrey pt-20 pb-20 sm:px-[5%] px-[10%] w-full">
+      <div className="flex flex-col gap-[12px] lg:w-[30%] w-full">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
@@ -17,19 +17,19 @@ const Purpose = () => {
           </p>
         </div>
 
-        <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[48px] w-[320px] sm:w-full">
+        <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[48px]">
           Purpose of a convoy is to keep{" "}
           <span className="text-red-950">FayGroup</span>
         </p>
       </div>
 
-      <div className="flex justify-between items-start gap-10 sm:mt-10">
-        <EllipseStack />
-        <div className="flex flex-col gap-5 sm:gap-2 sm:w-[90%]">
+      <div className="flex justify-between items-start gap-10 mt-10 lg:mt-0 lg:w-[30%] w-full">
+        {/* <EllipseStack /> */}
+        <div className="flex flex-col gap-5 sm:gap-2">
           <p className="text-black text-base font-medium sm:text-xl sm:leading-10 leading-loose">
             Built for impact
           </p>
-          <p className="w-[307px] sm:w-full text-slate-950 text-base font-normal leading-loose">
+          <p className="w-full text-slate-950 text-base font-normal leading-loose">
             Our focus is not only on crafting cutting-edge digital solutions but
             also on ensuring that every project we undertake leaves a lasting
             mark.
@@ -37,13 +37,13 @@ const Purpose = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-start gap-10 sm:mt-10">
-        <EllipseStack />
-        <div className="flex flex-col gap-5 sm:gap-2 sm:w-[90%]">
+      <div className="flex justify-between items-start gap-10 mt-10 lg:mt-0 lg:w-[30%] w-full">
+        {/* <EllipseStack /> */}
+        <div className="flex flex-col gap-5 sm:gap-2">
           <p className="text-black text-base font-medium sm:text-xl sm:leading-10 leading-loose">
             Empowering Innovation
           </p>
-          <p className="w-[307px] sm:w-full text-slate-950 text-base font-normal leading-loose">
+          <p className="w-full text-slate-950 text-base font-normal leading-loose">
             Our team will work hand in hand with your organization to understand
             your unique needs, challenges, and goals to drive growth and
             efficiency.

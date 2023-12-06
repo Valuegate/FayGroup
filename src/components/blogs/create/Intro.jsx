@@ -1,7 +1,7 @@
 "use client"
 
 import React, {useState, useEffect} from "react";
-import Nav from "../../reusable/Nav";
+import Nav from "../../reusable/NavBar";
 import Pin from "@/public/assets/Pin.svg";
 import Shadow from "@/public/assets/shadow.svg";
 import Image from "next/image";

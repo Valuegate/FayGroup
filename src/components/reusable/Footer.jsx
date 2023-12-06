@@ -15,25 +15,25 @@ const facebookUrl = "https://web.facebook.com/MBFayGroup";
 const twitterUrl = "https://twitter.com/mb_faygroup";
 
 const Footer = ({ active = -1, subActive = -1 }) => {
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-    let localUser = window.localStorage.getItem("user");
-    setUser(localUser);
-  }, []);
+  
+  // const [user, setUser] = useState({});
+  // useEffect(() => {
+  //   let localUser = window.localStorage.getItem("user");
+  //   setUser(localUser);
+  // }, []);
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex px-[10%] sm:px-[5%] gap-20 sm:gap-0 items-start justify-between sm:flex-col w-[100vw">
+      <div className="flex lg:px-[10%] px-[5%] lg:gap-20 gap-0 items-start justify-between lg:flex-row flex-col w-[100vw]">
         <div className="flex flex-col gap-5 items-start">
           <Link href={"/"}>
             <Image src={Logo} alt="Logo" />
           </Link>
-          <div className="w-[400px] sm:w-full text-slate-950 text-base font-normal leading-loose">
+          <div className="w-full text-slate-950 text-base font-normal leading-loose">
             We provide the best services and we are ready to help your business
             grow.
           </div>
-          <div className="flex sm:mt-2 sm:mb-5 justify-around gap-3 sm:w-[60%] items-center">
+          <div className="flex sm:mt-2 sm:mb-5 justify-around gap-3 w-[60%]  items-center">
             <a href={linkedInUrl} target="_blank">
               <Image src={LN} alt="LinkedIn" />
             </a>
@@ -49,8 +49,8 @@ const Footer = ({ active = -1, subActive = -1 }) => {
           </div>
         </div>
 
-        <div className="flex gap-20 sm:gap-10 sm:flex-col sm:w-full">
-          <div className="flex gap-[80px] sm:justify-between sm:gap-0">
+        <div className="flex lg:gap-20 gap-10 flex-col mt-10 lg:mt-0 lg:flex-row w-full">
+          <div className="flex lg:gap-[80px] justify-between gap-0">
             <div className="flex flex-col">
               <div className="text-slate-950 text-base font-[600] leading-loose mb-[20px]">
                 Links
@@ -120,7 +120,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
             </div>
           </div>
 
-          <div className="flex gap-[80px] sm:justify-between sm:gap-0">
+          <div className="flex lg:gap-[80px] justify-between gap-0">
             <div className="flex flex-col">
               <div className="text-slate-950 text-base font-[600] leading-loose mb-[20px]">
                 Socials
@@ -173,7 +173,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
 
       <div className=" mt-10 text-slate-400 text-base font-normal leading-loose mb-10">
         Copyright 2023. All rights reserved.{" "}
-        <span
+        {/* <span
           className="text-slate-100 cursor-pointer underline"
           onClick={() => {
             if(user !== undefined && user.name !== undefined) {
@@ -185,7 +185,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
           }}
         >
           {(user === undefined || user.name === undefined) ? "Login" : "Logout"}
-        </span>
+        </span> */}
       </div>
     </div>
   );

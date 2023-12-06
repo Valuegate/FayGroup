@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "@/src/components/reusable/Nav";
+import Nav from "@/src/components/reusable/NavBar";
 import Button from "@/src/components/reusable/Button";
 
 import Image from "next/image";

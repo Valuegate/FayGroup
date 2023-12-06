@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import Nav from "../../reusable/Nav";
+import Nav from "../../reusable/NavBar";
 import Button from "../../reusable/Button";
 import { ToastContainer, toast } from "react-toastify";
 import Pin from "@/public/assets/Pin.svg";
@@ -11,7 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../../reusable/Footer";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
-
+import "react-toastify/dist/ReactToastify.css";
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 
 const axios = require("axios");
