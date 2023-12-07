@@ -88,16 +88,16 @@ const Upload = () => {
       <ToastContainer />
 
       <div
-        className={`flex justify-between w-full px-[10%] mt-10 gap-20 ${
+        className={`flex justify-between w-full lg:px-[10%] px-[5%] mt-10 gap-20 ${
           loading && "hidden"
         }`}
       >
-        <div className="sm:hidden">
+        <div className="hidden lg:block">
           <UploadFile setFile={setFile} />
         </div>
 
-        <div className="flex flex-col justify-center items-start w-[50%] sm:w-full h-[420px] sm:h-auto">
-          <div className="sm:block hidden sm: mb-10">
+        <div className="flex flex-col justify-center items-start lg:w-[50%] w-full lg:h-[420px] h-auto">
+          <div className="lg:hidden mb-10 lg:mb-0">
             <UploadFile setFile={setFile} />
           </div>
 
@@ -196,10 +196,10 @@ const UploadFile = ({ setFile }) => {
           <Image src={UPImg} alt="upload" className="h-[50px] w-[50px]" />
 
           <div className="flex-col justify-start items-center gap-2 flex text-center">
-            <p className="text-slate-950 text-2xl font-medium leading-9">
+            <p className="text-slate-950 lg:text-2xl text-xl font-medium leading-9">
               Select an image to upload
             </p>
-            <p className="text-slate-950 text-center px-[5%] text-base font-normal leading-loose">
+            <p className="text-slate-950 text-center px-[5%] lg:text-base text-[14px] font-normal leading-loose">
               Upload max of 20MB Png, Jpg and Svg format of the image
             </p>
           </div>

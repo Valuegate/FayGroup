@@ -7,52 +7,42 @@ import Image from "next/image";
 
 const ContactInfo = () => {
   return (
-    <div className="flex sm:flex-col px-[10%] sm:px-[5%] justify-between sm:items-start items-center sm:gap-10 gap-[10%]">
-      <div className="relative">
-        <Info hidden={true} />
-      </div>
-      <Content hidden={true} />
-      <Info hidden={false} />
-      <Content hidden={false} />
+    <div className="flex h-full pt-20 lg:pb-20 flex-col bg-offWhite lg:flex-row lg:px-[10%] px-[5%] justify-between items-start lg:items-center gap-10 lg:gap-[10%]">
+      <Info />
+      <Content />
     </div>
   );
 };
 
 export default ContactInfo;
 
-const Info = ({ hidden = false }) => {
+const Info = () => {
   return (
-    <div
-      className={`${
-        hidden
-          ? "hidden sm:block sm:w-full"
-          : "sm:hidden flex flex-col w-[50%] sm:w-full sm:px-[5%]"
-      }`}
-    >
+    <div className="flex flex-col lg:w-[50%] w-full px-0">
       <div className="flex items-center gap-[10px]">
         <div className="w-[14px]">
           <Image src={Pin} alt="pin" />
         </div>
-        <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+        <p className="text-maroon text-base text-xs font-medium leading-loose">
           MESSAGE
         </p>
       </div>
-      <p className="text-slate-950 text-4xl sm:text-2xl sm:leading-9 font-medium leading-[48px]">
+      <p className="text-slate-950 lg:text-4xl text-2xl leading-9 font-medium lg:leading-[48px]">
         Turn your <span className="text-red-950">ideas</span> into reality
       </p>
-      <p className="text-slate-950 text-base font-normal leading-loose mt-[5%]">
+      <p className="text-slate-950 text-base font-normal leading-loose mt-5">
         Connect with us and let's get started.
       </p>
     </div>
   );
 };
 
-const Content = ({ hidden = false }) => {
+const Content = () => {
   return (
-    <div className={`relative ${hidden ? "sm:hidden" : "hidden sm:block"}`}>
-      <Image src={Background} alt="background" className="sm:h-[610px] h-full" />
-      <div className=" sm:w-[98%] w-[80%] h-[90%] sm:h-[550px] flex flex-col bg-white absolute z-10 top-[5%] sm:left-[1%] left-[10%] rounded-[12px] items-center px-[7%] py-[5%]">
-        <p className="text-slate-950 text-2xl sm:text-xl font-medium leading-9">
+    <div className="relative">
+      <Image src={Background} alt="background" className="h-auto" />
+      <div className="w-[92%] lg:w-[80%] h-[90%] overflow-y-scroll flex flex-col bg-white absolute z-10 top-[5%] left-[4%] lg:left-[10%] rounded-[12px] items-center px-[7%] py-[5%]">
+        <p className="text-slate-950 lg:text-2xl text-xl font-medium leading-9">
           Get in Touch
         </p>
         <div className="flex flex-col items-start mt-[8%] w-full">
@@ -80,7 +70,7 @@ const Content = ({ hidden = false }) => {
             Phone Number
           </p>
           <input
-            type="number"
+            type="text"
             className="w-full bg-blandGrey border px-2 py-2.5 font-normal focus:outline-none rounded-sm"
             placeholder="Enter Phone Number"
           />
@@ -96,11 +86,7 @@ const Content = ({ hidden = false }) => {
           />
         </div>
 
-        <Button
-          style={
-            "w-full bg-darkBlue rounded-sm text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center transition ease-in-out duration-200"
-          }
-        >
+        <Button style="w-full mt-10 text-center text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200">
           Send
         </Button>
       </div>

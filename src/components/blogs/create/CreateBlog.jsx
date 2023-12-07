@@ -13,7 +13,7 @@ const CreateBlog = () => {
     <>
       <Intro />
       <Upload />
-      <div className="h-[300px]" />
+      <div className="lg:h-40 h-24"/>
       <Footer />
     </>
   );

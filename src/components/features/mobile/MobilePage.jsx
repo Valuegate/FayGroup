@@ -36,9 +36,8 @@ const MobilePage = () => {
         subActiveNav={6}
       />
       <WorkedWith />
-      <div className="h-[150px]" id="mobile-service"/>
+      <div className="h-20" id="mobile-service"/>
       <Services />
-      <div className="h-[100px]" />
       <TextWithImage
         useRedBackground={true}
         left={true}
@@ -51,7 +50,6 @@ const MobilePage = () => {
         includeButton={true}
         image={Elevate}
       />
-      <div className="h-[100px]" />
       <TextWithImage
         right={true}
         pinText={"ACHIEVE MORE"}
@@ -63,12 +61,8 @@ const MobilePage = () => {
         includeButton={true}
         image={Unlock}
       />
-    
-      <div className="h-[100px]" />
       <Listen />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
       <Footer active={1} />
     </>

@@ -35,17 +35,17 @@ const Banner = ({
         className="absolute top-0 left-0 -z-10 w-full"
       />
       <Nav active={active} sub={subActive} />
-      <div className="mt-[96px] sm:mt-10 pb-[150px] px-[10%] sm:px-[5%] sm:flex sm:flex-col">
+      <div className="py-20  lg:px-[10%] px-[5%] flex flex-col lg:flex">
         <div className="flex gap-10 items-start justify-between">
-          <div className="w-[50%] sm:w-full flex flex-col">
-            <div className="flex flex-col gap-5  mt-[10px]">
+          <div className="lg:w-[50%] w-full flex flex-col">
+            <div className="flex flex-col gap-5 mt-5">
               <div className="w-full flex-shrink">
                 {!hidePinText && (
                   <div className="flex items-center gap-[10px]">
                     <div className="w-[14px]">
                       <Image src={Pin} alt="pin" />
                     </div>
-                    <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+                    <p className="text-maroon text-base font-medium leading-loose">
                       {pinText}
                     </p>
                   </div>
@@ -53,27 +53,27 @@ const Banner = ({
                 <p
                   className={`${
                     swapRedText ? "text-red-950" : "text-slate-950"
-                  } text-[64px] sm:text-[32px] font-[500] sm:leading-[48px] leading-[88px]`}
+                  } lg:text-[64px] text-[32px] font-[500] leading-[48px] lg:leading-[88px]`}
                 >
                   {firstText}{" "}
                   <span
                     className={`${
                       !swapRedText ? "text-red-950" : "text-slate-950"
-                    } text-[64px] font-[500] leading-[88px] sm:leading-[48px] sm:text-[32px]`}
+                    }`}
                   >
                     {secondText}
                   </span>
                 </p>
               </div>
 
-              <div className="w-[90%] sm:w-full text-slate-950 text-base font-normal leading-loose">
+              <div className="lg:w-[90%] w-full text-slate-950 text-base font-normal leading-loose">
                 {subtitle}
               </div>
 
-              <div className="flex sm:flex-col sm:w-full justify-start items-center gap-[20px]">
+              <div className="flex flex-col lg:flex-row w-full justify-start items-center gap-[20px]">
                 {includeButton && (
                   <Button
-                    style="text-white text-center sm:w-full bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200 text-center"
+                  style="w-full lg:w-[200px] text-center text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
                     destination={"/contact-us"}
                   >
                     Get In Touch
@@ -81,7 +81,7 @@ const Banner = ({
                 )}
                 {!hideExplore && (
                   <Button
-                    style="text-darkBlue text-center sm:w-full bg-blandGrey px-5 py-3 font-[500] rounded-md"
+                    style="w-full lg:w-[200px] text-center text-darkBlue bg-blandGrey px-5 py-3 font-[500] rounded-md"
                     onClick={() => scrollToElement(scrollTo)}
                   >
                     Explore More
@@ -91,13 +91,13 @@ const Banner = ({
             </div>
           </div>
 
-          <Image src={image} alt="image" className="w-[50%] h-auto sm:hidden" />
+          <Image src={image} alt="image" className="lg:w-[50%] h-auto hidden lg:block" />
         </div>
 
         <Image
           src={image}
           alt="image"
-          className="w-full sm:mt-10 h-auto hidden sm:block"
+          className="w-full mt-10 lg:mt-0 h-auto lg:hidden"
         />
       </div>
     </div>

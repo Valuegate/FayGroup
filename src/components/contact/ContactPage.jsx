@@ -24,9 +24,7 @@ const ContactPage = () => {
         includeButton={false}
       />
       <ContactInfo />
-      <div className="h-[100px]"/>
       <Contact />
-      <div className="h-[100px]"/>
       <WorkInterest />
       <Footer />
     </>

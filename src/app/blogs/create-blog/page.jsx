@@ -6,16 +6,17 @@ import { useRouter } from "next/navigation";
 
 
 export default function CreateBlogs() {
-  const router = useRouter();
-  useEffect(() => {
-    let localUser = window.localStorage.getItem("user");
-    if (localUser === undefined || localUser.name === undefined) {
-      router.replace("/blogs");
-    }
-  }, [])
+  // const router = useRouter();
+  // useEffect(() => {
+  //   let localUser = window.localStorage.getItem("user");
+  //   if (localUser === undefined || localUser.name === undefined) {
+  //     router.replace("/blogs");
+  //   }
+  // }, [])
 
 
   return (
-   <CreateBlog/> 
+   //<CreateBlog/> 
+   <> </>
   )
 }

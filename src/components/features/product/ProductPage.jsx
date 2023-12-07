@@ -31,21 +31,15 @@ const ProductPage = () => {
           scrollTo="product-services"
         />
       </div>
-      <div className="h-[150px] " />
       <WorkedWith />
-      <div className="h-[100px]" />
       <Standout />
-      <div className="h-[150px] sm:h-[100px]" id="product-services"/>
+      <div className="lg:h-32 h-20" id="product-services" />
       <Services />
-      <div className="h-[150px]" />
       <Listen />
-      <div className="h-[100px]" />
       <MiniBlog />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
-      <Footer active={1} subActive={1}/>
+      <Footer active={1} subActive={1} />
     </>
   );
 };

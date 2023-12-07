@@ -31,10 +31,7 @@ const BusinessPage = () => {
         }
         scrollTo="business-service"
       />
-
-      <div className="h-[100px]" id="business-service"/>
       <Services />
-      <div className="h-[100px]" />
       <TextWithImage
         pinText={"TECHNICAL CONSULT"}
         hidePinText={false}
@@ -48,8 +45,6 @@ const BusinessPage = () => {
         includeButton={true}
         image={TechConsult}
       />
-      <div className="h-[100px]" />
-
       <TextWithImage
         pinText={"DATA CONSULT"}
         hidePinText={false}
@@ -62,9 +57,6 @@ const BusinessPage = () => {
         includeButton={true}
         image={DataConsult}
       />
-
-      <div className="h-[100px]" />
-
       <TextWithImage
         pinText={"PLATFORM ENGINEERING CONSULT"}
         hidePinText={false}
@@ -78,8 +70,6 @@ const BusinessPage = () => {
         includeButton={true}
         image={PEC}
       />
-      <div className="h-[100px]" />
-
       <TextWithImage
         pinText={"QUALITY MANAGEMENT"}
         hidePinText={false}
@@ -92,15 +82,11 @@ const BusinessPage = () => {
         includeButton={true}
         image={QM}
       />
-      <div className="h-[150px]" />
       <Listen />
-      <div className="h-[100px]" />
       <MiniBlog />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
-      <Footer active={1} subActive={3}/>
+      <Footer active={1} subActive={3} />
     </>
   );
 };

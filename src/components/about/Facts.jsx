@@ -22,22 +22,22 @@ const Facts = () => {
     },
   ];
   return (
-    <div className="px-[10%] flex flex-col sm:px-[5%]">
+    <div className="flex flex-col lg:px-[5%] px-0 bg-offWhite">
         <Image src={Group} alt="Group" className="w-full"/>
-        <div className="mt-[30px] sm:flex-col flex sm:gap-5 gap-20 py-[67px] items-center" id='facts-about-us'>
+        <div className="flex-col flex lg:flex-row gap-5 lg:gap-20 py-20 px-[5%] items-center" id='facts-about-us'>
           {facts.map((fact, i) => {
             return (
               <div
                 key={i}
-                className="flex flex-col items-start w-[33%] sm:w-full h-[320px] shadow-xl rounded-[12px] px-[40px] sm:px-[5%] py-[40px]"
+                className="flex flex-col justify-center lg:justify-start items-start lg:w-[30%] w-full h-[320px] shadow-xl rounded-[12px] px-12 px-6 py-10"
               >
-                <div className="text-slate-950 text-[52px] font-medium leading-[88px]">
+                <div className="text-slate-950 lg:text-[52px] text-[40px] font-medium lg:leading-[88px] leading-[60px]">
                   {fact.title}
                 </div>
-                <div className="text-maroon text-[24px] sm:text-xl font-medium sm:leading-10 leading-9 mt-5 sm:mt-3">
+                <div className="text-maroon lg:text-[24px] text-xl font-medium leading-10 lg:leading-9 mt-3">
                   {fact.sub}
                 </div>
-                <div className="text-slate-950 text-base leading-loose font-normal mt-5 sm:mt-3">
+                <div className="text-slate-950 text-base leading-loose font-normal mt-3">
                   {fact.text}
                 </div>
               </div>

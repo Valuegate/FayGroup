@@ -44,12 +44,12 @@ const Intro = () => {
         className="absolute top-0 left-0 -z-10 w-full"
       />
       <Nav active={3} />
-      <div className="mt-[150px] sm:mt-20 sm:px-[5%] flex flex-col items-center relative">
+      <div className="lg:mt-40 mt-20 sm:px-[5%] flex flex-col items-center relative">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
           </div>
-          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+          <p className="text-maroon text-base font-medium leading-loose">
             BLOGS
           </p>
         </div>

@@ -51,41 +51,73 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-offWhite py-20">
       <div className="flex flex-col gap-[20px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
           </div>
-          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+          <p className="text-maroon text-base font-medium leading-loose">
             SERVICES
           </p>
         </div>
 
-        <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+        <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[44px]">
           Our Provided <span className="text-red-950">Services</span>
         </p>
       </div>
-      <div className="sm:flex sm:flex-col items-center sm:w-full grid grid-cols-3 gap-10 w-[80%] mt-20">
+
+      <div className="flex lg:flex-row flex-col w-full lg:justify-around mt-20 lg:gap-0 gap-16 px-[5%] lg:px-[10%]">
         {services.map((service, i) => {
-          return (
+          return i >= 3 ? (
+            <></>
+          ) : (
             <div
               key={i}
-              className={`flex flex-col bg-white shadow-lg w-[400px] sm:w-[90%] h-[430px] items-center rounded-[12px]`}
+              className={`flex flex-col bg-white shadow-lg lg:w-[30%] w-full h-[430px] items-center rounded-[12px]`}
             >
               <Image
                 src={service.image}
                 alt="service image"
-                className="w-[80px] h[80px] mt-[54px]"
+                className="w-[80px] h[80px] mt-16"
               />
 
               <p
-                className={`mt-[34px] text-2xl sm:text-xl font-medium leading-9`}
+                className={`mt-10 lg:text-2xl text-xl text-center font-medium leading-9`}
               >
                 {service.name}
               </p>
 
-              <p className="mt-[20px] px-[40px] sm:px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
+              <p className="mt-10 lg:px-[10%] px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
+                {service.subtitle}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+      
+      <div className="flex lg:flex-row flex-col w-full lg:justify-around mt-20 lg:mt-10 lg:gap-0 gap-16 px-[5%] lg:px-[10%]">
+        {services.map((service, i) => {
+          return i < 3 ? (
+            <></>
+          ) : (
+            <div
+              key={i}
+              className={`flex flex-col bg-white shadow-lg lg:w-[30%] w-full h-[430px] items-center rounded-[12px]`}
+            >
+              <Image
+                src={service.image}
+                alt="service image"
+                className="w-[80px] h[80px] mt-16"
+              />
+
+              <p
+                className={`mt-10 lg:text-2xl text-xl text-center font-medium leading-9`}
+              >
+                {service.name}
+              </p>
+
+              <p className="mt-10 lg:px-[10%] px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
                 {service.subtitle}
               </p>
             </div>

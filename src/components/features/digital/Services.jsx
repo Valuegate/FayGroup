@@ -51,40 +51,69 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-offWhite py-20" id="digital_service">
       <div className="flex flex-col gap-[20px] items-center">
-          <div className="flex items-center gap-[10px]">
-            <div className="w-[14px]">
-              <Image src={Pin} alt="pin" />
-            </div>
-            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
-              SERVICES
-            </p>
+        <div className="flex items-center gap-[10px]">
+          <div className="w-[14px]">
+            <Image src={Pin} alt="pin" />
           </div>
-
-          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
-            Our Provided <span className="text-red-950">Services</span>
+          <p className="text-maroon text-base font-medium leading-loose">
+            SERVICES
           </p>
         </div>
 
-      <div className="grid grid-cols-3 gap-10 w-[80%] sm:w-full sm:flex sm:flex-col mt-10 sm:px-[5%]">
+        <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[44px]">
+          Our Provided <span className="text-red-950">Services</span>
+        </p>
+      </div>
+
+      <div className="flex flex-col lg:flex-row w-full lg:gap-0 lg:justify-evenly mt-20 gap-16 px-[5%] lg:px-[10%]">
         {services.map((service, i) => {
-          return (
+          return i >= 3 ? (
+            <></>
+          ) : (
             <div
               key={i}
-              className={`flex flex-col w-full pb-10 bg-white shadow-xl items-center rounded-lg`}
+              className={`flex flex-col w-full lg:w-[30%] pb-10 bg-white shadow-xl items-center rounded-lg`}
             >
               <Image
                 src={service.image}
                 alt="service image"
-                className="w-[60px] h[60px] mt-[54px]"
+                className="w-[60px] h[60px] mt-20"
               />
 
-              <p className="mt-[34px] text-2xl sm:text-xl font-medium leading-9">
+              <p className="mt-5 lg:text-2xl text-xl font-medium leading-9">
                 {service.name}
               </p>
 
-              <p className="mt-[20px] px-[40px] sm:px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
+              <p className="mt-5 lg:px-[10%] px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
+                {service.subtitle}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="flex flex-col lg:flex-row w-full lg:gap-0 lg:justify-evenly lg:mt-10 mt-20 gap-16 px-[5%] lg:px-[10%]">
+        {services.map((service, i) => {
+          return i < 3 ? (
+            <></>
+          ) : (
+            <div
+              key={i}
+              className={`flex flex-col w-full lg:w-[30%] pb-10 bg-white shadow-xl items-center rounded-lg`}
+            >
+              <Image
+                src={service.image}
+                alt="service image"
+                className="w-[60px] h[60px] mt-20"
+              />
+
+              <p className="mt-5 lg:text-2xl text-xl font-medium leading-9">
+                {service.name}
+              </p>
+
+              <p className="mt-5 lg:px-[10%] px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
                 {service.subtitle}
               </p>
             </div>

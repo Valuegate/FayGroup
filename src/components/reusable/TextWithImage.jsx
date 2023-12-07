@@ -36,7 +36,7 @@ const TextWithImage = ({
             <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
             </div>
-            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+            <p className="text-maroon text-base font-medium leading-loose">
               {pinText}
             </p>
           </div>

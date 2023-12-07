@@ -72,47 +72,87 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center" >
+    <div className="flex flex-col items-center mb-20">
       <div className="flex flex-col gap-[20px] items-center">
-          <div className="flex items-center gap-[10px]">
-            <div className="w-[14px]">
-              <Image src={Pin} alt="pin" />
-            </div>
-            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
-              SERVICES
-            </p>
+        <div className="flex items-center gap-[10px]">
+          <div className="w-[14px]">
+            <Image src={Pin} alt="pin" />
           </div>
-
-          <p className="text-slate-950 text-4xl sm:text-center sm:px-[10%] sm:text-2xl font-medium sm:leading-9 leading-[44px]">
-            Providing <span className="text-red-950">Best Services</span> for Every Client
+          <p className="text-maroon text-base font-medium leading-loose">
+            SERVICES
           </p>
         </div>
 
-      <div className="sm:flex sm:flex-col grid grid-cols-3 gap-10 w-[80%] sm:px-[5%] sm:w-full mt-20">
+        <p className="text-slate-950 lg:text-4xl text-center px-[10%] text-2xl font-medium leading-9 lg:leading-[44px]">
+          Providing <span className="text-red-950">Best Services</span> for
+          Every Client
+        </p>
+      </div>
+
+      <div className="flex flex-col lg:flex-row w-full lg:gap-0 lg:justify-evenly mt-20 gap-16 px-[5%] lg:px-[10%]">
         {services.map((service, i) => {
-        
-          return (
+          return i >= 3 ? (
+            <></>
+          ) : (
             <div
               key={i}
-              className={`flex flex-col ${service.color} w-[416px] sm:w-full h-[462px] items-center rounded-[12px]`}
+              className={`flex flex-col ${service.color} lg:w-[30%] w-full h-[465px] items-center rounded-[12px]`}
             >
               <Image
                 src={service.image}
                 alt="service image"
-                className="w-[60px] h[60px] mt-[54px]"
+                className="w-[60px] h-[60px] mt-16"
               />
 
-              <p className={`mt-[34px] text-2xl sm:text-xl font-medium leading-9 ${service.text}`}>
+              <p
+                className={`mt-10 lg:text-2xl text-xl font-medium leading-9 ${service.text}`}
+              >
                 {service.name}
               </p>
 
-              <p className="mt-[20px] px-[40px] sm:px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
+              <p className="mt-5 lg:px-[10%] px-[5%] text-center text-slate-950 text-base font-normal leading-loose">
                 {service.subtitle}
               </p>
 
               <Link
                 href={service.link}
-                className="mt-[16px] flex items-center justify-center gap-[10px] text-slate-950"
+                className="mt-5 flex items-center justify-center gap-[10px] text-slate-950"
+              >
+                <p className="font-[500] leading-loose">Explore More</p>
+                <FaArrowRight />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+      <div className="flex flex-col lg:flex-row w-full lg:gap-0 lg:justify-evenly lg:mt-10 mt-20 gap-16 px-[5%] lg:px-[10%]">
+        {services.map((service, i) => {
+          return i < 3 ? (
+            <></>
+          ) : (
+            <div
+              key={i}
+              className={`flex flex-col ${service.color} lg:w-[30%] w-full h-[465px] items-center rounded-[12px]`}
+            >
+              <Image
+                src={service.image}
+                alt="service image"
+                className="w-[60px] h-[60px] mt-16"
+              />
+
+              <p
+                className={`mt-10 lg:text-2xl text-xl font-medium leading-9 ${service.text}`}
+              >
+                {service.name}
+              </p>
+
+              <p className={`mt-5 ${i === 4 ? "lg:px-[5%]" : "lg:px-[10%]"} px-[5%] text-center text-slate-950 text-base font-normal leading-loose`}>
+                {service.subtitle}
+              </p>
+
+              <Link
+                href={service.link}
+                className="mt-5 flex items-center justify-center gap-[10px] text-slate-950"
               >
                 <p className="font-[500] leading-loose">Explore More</p>
                 <FaArrowRight />

@@ -12,15 +12,11 @@ const WorksPage = () => {
   return (
     <>
     <Intro scrollTo = "landing-page-projects"/>
-    <div id="landing-page-projects" className="h-10"/>
+    <div id="landing-page-projects" className="lg:h-8 h-0"/>
     <Projects />
-    <div className="h-[100px]"/>
     <Listen />
-    <div className="h-[100px]"/>
     <MiniBlog />
-    <div className="h-[100px] sm:h-0"/>
     <Contact />
-    <div className="h-[200px]"/>
     <WorkInterest />
     <Footer active={2}/>
   </>

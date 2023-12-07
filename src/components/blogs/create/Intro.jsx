@@ -26,10 +26,10 @@ const Intro = () => {
       />
       <Nav active={3} />
 
-      <div className="flex flex-col justify-center items-center gap-5 mt-20">
+      <div className="flex flex-col justify-center items-center gap-3 mt-20">
         <img
           src={user.profilePicture}
-          alt="Author Image"
+          alt=""
           className="h-[120px] w-[120px] rounded-full "
         />
         <div className="flex flex-col gap-2 items-center">
@@ -42,16 +42,16 @@ const Intro = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 items-center mt-10">
+      <div className="flex flex-col gap-2   items-center mt-20">
           <div className="flex items-center gap-[10px]">
             <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
             </div>
-            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+            <p className="text-maroon text-base font-medium leading-loose">
               BLOG
             </p>
           </div>
-          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+          <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[44px]">
             Create <span className="text-red-950">Blog</span>
           </p>
         </div>

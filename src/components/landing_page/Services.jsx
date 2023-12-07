@@ -33,7 +33,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="py-20 px-[10%] sm:px-[5%] flex flex-col w-full items-center bg-offWhite" id="landing-page-service">
+    <div className="py-20 lg:px-[10%] px-[5%] flex flex-col w-full items-center bg-offWhite" id="landing-page-service">
       <div className="flex flex-col gap-16">
         <div className="flex flex-col gap-3 items-center">
           <div className="flex items-center gap-[10px]">
@@ -55,7 +55,7 @@ const Services = () => {
             return (
               <div
                 key={i}
-                className="flex flex-col px-5 bg-white lg:w-[370px] w-full h-[470px] justify-center items-center rounded-[12px] sm:shadow-lg shadow-xl"
+                className="flex flex-col px-5 bg-white lg:w-[30%] w-full h-[470px] justify-center items-center rounded-[12px] sm:shadow-lg shadow-xl"
               >
                 <div className="lg:w-[90px] h-auto w-[80px] ">
                   <Image src={service.image} alt="service image" />

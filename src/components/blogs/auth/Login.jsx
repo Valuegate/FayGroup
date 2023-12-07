@@ -78,54 +78,58 @@ const Login = () => {
 
           <Nav active={3} />
 
-          <div className="mt-[150px] sm:mt-16 flex flex-col items-center">
+          <div className="lg:mt-32 mt-16 flex flex-col items-center">
             <div className="flex flex-col gap-5 items-center mt-10">
               <div className="flex items-center gap-[10px]">
                 <div className="w-[14px]">
                   <Image src={Pin} alt="pin" />
                 </div>
-                <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+                <p className="text-maroon text-base font-medium leading-loose">
                   LOGIN
                 </p>
               </div>
-              <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:text-center sm:leading-9 leading-[44px]">
+              <p className="text-slate-950 lg:text-4xl text-2xl font-medium text-center leading-9 lg:leading-[44px]">
                 Login to <span className="text-red-950">Continue Managing</span>{" "}
                 your CRM
               </p>
             </div>
 
-            <div className="flex flex-col items-start mt-20 sm:w-full sm:px-[5%]">
+            <div className="flex flex-col items-start mt-20 w-full px-[5%]">
               <p className="text-slate-950 text-base font-medium leading-loose mb-1">
                 Email Address
               </p>
               <input
                 type="email"
-                className="w-[500px] sm:w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
+                className="lg:w-[500px] w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
                 placeholder="example@example.com"
                 id="emailID"
               />
               <p className="text-slate-950 text-base font-medium leading-loose mb-1">
                 Password
               </p>
-              <div className="relative sm:w-full flex justify-center items-center">
-              <input
-                type={`${showPassword ? "text" : "password"}`}
-                className="w-[500px] sm:w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm"
-                placeholder=""
-                id="passwordID"
-              />
-              <div className="absolute right-3" onClick={() => setShowPassword(!showPassword)}> 
-                {
-                  showPassword ? <IoMdEyeOff fill="#470912" size={"20px"} /> : <IoMdEye fill="#470912" size={"20px"}/>
-                }
-
+              <div className="relative lg:w-[500px] w-full flex justify-center items-center">
+                <input
+                  type={`${showPassword ? "text" : "password"}`}
+                  className="w-[500px] sm:w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm"
+                  placeholder=""
+                  id="passwordID"
+                />
+                <div
+                  className="absolute right-3 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <IoMdEyeOff fill="#470912" size={"20px"} />
+                  ) : (
+                    <IoMdEye fill="#470912" size={"20px"} />
+                  )}
+                </div>
               </div>
             </div>
-            </div>
-            <div className="mt-10 sm:w-full sm:px-[5%]">
+            <div className="mt-10 w-full px-[5%]">
               <Button
                 style={
-                  "w-[300px] sm:w-full bg-darkBlue rounded-[5px] text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center"
+                  "lg:w-[300px] w-full bg-darkBlue rounded-[5px] text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center"
                 }
                 onClick={login}
               >
@@ -139,7 +143,7 @@ const Login = () => {
             </Link>
           </div>
         </div>
-        <div className="h-[300px] sm:h-[100px]" />
+        <div className="lg:h-32 h-20" />
         <Footer />
       </div>
     </>

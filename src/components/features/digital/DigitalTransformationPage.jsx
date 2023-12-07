@@ -16,25 +16,21 @@ import Services from "./Services";
 const DigitalTransformationPage = () => {
   return (
     <>
-      <div className="flex flex-col gap-10 items-start">
-        <Banner
-          active={1}
-          subActive={2}
-          image={HeroImage}
-          firstText={"Digitally Transform"}
-          secondText={"Your Business for Success"}
-          swapRedText={true}
-          subtitle={
-            "Embrace the power of digital solutions to streamline your product development processes, fostering both efficiency and innovation."
-          }
-          pinText="DIGITAL TRANSFORMATION"
-          hidePinText={false}
-          scrollTo="digital_service"
-        />
-      </div>
-      <div className="h-[150px]" />
+      <Banner
+        active={1}
+        subActive={2}
+        image={HeroImage}
+        firstText={"Digitally Transform"}
+        secondText={"Your Business for Success"}
+        swapRedText={true}
+        subtitle={
+          "Embrace the power of digital solutions to streamline your product development processes, fostering both efficiency and innovation."
+        }
+        pinText="DIGITAL TRANSFORMATION"
+        hidePinText={false}
+        scrollTo="digital_service"
+      />
       <WorkedWith />
-      <div className="h-[100px]" />
       <TextWithImage
         left={true}
         image={Tech}
@@ -48,17 +44,12 @@ const DigitalTransformationPage = () => {
         }
         includeButton={true}
       />
-      <div className="h-[100px]" id="digital_service" />
       <Services />
-      <div className="h-[100px]" />
       <Listen />
-      <div className="h-[100px]" />
       <MiniBlog />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
-      <Footer active={1} subActive={2}/>
+      <Footer active={1} subActive={2} />
     </>
   );
 };

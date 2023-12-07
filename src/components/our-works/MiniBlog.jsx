@@ -54,18 +54,18 @@ const MiniBlog = () => {
 
 
   return (
-    <div className="flex flex-col w-full items-center justify-center sm:hidden">
+    <div className="flex flex-col w-full items-center justify-center py-20">
       <div className="flex flex-col gap-[20px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
           </div>
-          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+          <p className="text-maroon text-base text-xs font-medium leading-loose">
             BLOGS
           </p>
         </div>
 
-        <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+        <p className="text-slate-950 lg:text-4xl text-2xl text-center font-medium leading-9 lg:leading-[44px]">
           Let's know Details from{" "}
           <span className="text-red-950">our Blogs</span>
         </p>
