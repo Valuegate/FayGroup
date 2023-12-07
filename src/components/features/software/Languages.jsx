@@ -27,11 +27,11 @@ const Languages = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-10 items-center justify-center w-full sm:w-full">
-      <p className="text-slate-950 text-center text-xl font-medium leading-loose sm:px-[5%]">
+    <div className="flex flex-col gap-10 items-center justify-center w-full pb-10">
+      <p className="text-slate-950 text-center text-xl font-medium leading-loose px-[5%]">
         The special languages we use to build amazing websites
       </p>
-      <div className="sm:w-full sm:overflow-x-auto gap-5 scrollbar-custom sm:px-[5%] flex items-center">
+      <div className="w-full overflow-x-auto gap-5 scrollbar-custom px-[5%] flex lg:items-center lg:justify-center">
         {languages.map((language, i) => {
           return (
             <div

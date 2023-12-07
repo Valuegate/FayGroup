@@ -14,31 +14,31 @@ const Services = () => {
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
           </div>
-          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+          <p className="text-maroon text-base font-medium leading-loose">
             SERVICES
           </p>
         </div>
 
-        <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+        <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[44px]">
           Our Provided <span className="text-red-950">Services</span>
         </p>
       </div>
 
-      <div className="flex gap-10 w-full sm:px-0 px-[10%] mt-20 items-center justify-between overflow-scroll scrollbar-custom">
-        <div className="w-[20%] sm:w-[300px] h-[350px] bg-blandGrey rounded-lg">
-          <div className="sm:w-[300px]" />
+      <div className="flex gap-10 w-full px-[10%] mt-20 items-center justify-between overflow-scroll scrollbar-custom">
+        <div className="lg:w-[20%] w-[300px] h-[350px] bg-blandGrey rounded-lg">
+          <div className="w-[300px]" />
         </div>
-        <div className="w-[20%] sm:w-[300px] h-[350px] bg-blandGrey rounded-lg">
-          <div className="sm:w-[300px]" />
+        <div className="lg:w-[20%] w-[300px] h-[350px] bg-blandGrey rounded-lg">
+          <div className="w-[300px]" />
         </div>
-        <div className="w-[15%] h-[250px] sm:w-[240px] bg-blandGrey rounded-lg">
-          <div className="sm:w-[240px]" />
+        <div className="lg:w-[15%] h-[250px] w-[240px] bg-blandGrey rounded-lg">
+          <div className="w-[240px]" />
         </div>
-        <div className="w-[10%] h-[150px] sm:w-[180px] bg-blandGrey rounded-lg">
-          <div className="sm:w-[180px]" />
+        <div className="lg:w-[10%] h-[150px] w-[180px] bg-blandGrey rounded-lg">
+          <div className="w-[180px]" />
         </div>
-        <div className="w-[15%] h-[250px]  sm:w-[240px] bg-blandGrey rounded-lg">
-          <div className="sm:w-[240px]" />
+        <div className="lg:w-[15%] h-[250px] w-[240px] bg-blandGrey rounded-lg">
+          <div className="w-[240px]" />
         </div>
       </div>
 

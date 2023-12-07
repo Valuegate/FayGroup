@@ -32,9 +32,7 @@ const System = () => {
         scrollTo="system-service"
         subActiveNav={7}
       />
-      <div className="h-[100px]" id="system-service"/>
       <Services />
-      <div className="h-[100px]" />
       <TextWithImage
         right={true}
         pinText={"ACHIEVE MORE"}
@@ -44,11 +42,8 @@ const System = () => {
         redText={"Super Business Efficiency"}
         content={"Our expert team ensures that your technology performs at peak efficiency, helping your business run smoother than ever before"}
       />
-      <div className="h-[100px]" />
       <Listen />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
       <Footer active={1} />
     </>

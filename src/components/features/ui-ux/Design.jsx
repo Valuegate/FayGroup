@@ -10,37 +10,36 @@ import Button from "../../reusable/Button";
 const Design = () => {
   return (
     <div
-      className={`flex w-full sm:flex-col gap-[10%] items-center bg-slightRedBackground py-[5%] sm:px-[5%]  px-[10%]`}
+      className={`flex w-full flex-col lg:flex-row gap-[10%] items-center bg-slightRedBackground py-[5%] sm:px-[5%] mt-20  px-[10%]`}
     >
-      <div className="w-[50%] sm:hidden">
+      <div className="lg:w-[50%] lg:block hidden">
         <Image src={Rectangle} alt="image" />
       </div>
 
-      <div className="flex flex-col w-[50%] justify-start items-start sm:w-full">
-        <div className="flex flex-col gap-[20px] items-start sm:mt-10">
+      <div className="flex flex-col lg:w-[50%] justify-start items-start w-full">
+        <div className="flex flex-col gap-[20px] items-start lg:mt-0 mt-10">
           <div className="flex items-center gap-[10px]">
             <div className="w-[14px]">
               <Image src={Pin} alt="pin" />
             </div>
-            <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+            <p className="text-maroon text-base font-medium leading-loose">
               SERVICES
             </p>
           </div>
 
-          <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+          <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:eading-[44px]">
             These are the <span className="text-red-950">Design Services</span>{" "}
             we Provide
           </p>
         </div>
 
-        <div className="mt-[3%]" />
-        <p className="text-slate-950 text-base font-normal leading-loose">
+        <p className="text-slate-950 mt-5 text-base font-normal leading-loose">
           We are idea generators, goal seekers, challenge-thirty proffessionals,
           creators of unique internet project.
         </p>
-        <div className="mt-[5%]" />
+        
 
-        <div className="flex justify-between mb-[5%] items-start gap-5">
+        <div className="flex justify-between my-[5%] items-start gap-5">
           <Image src={Pen} alt="Pen" className="w-[35px]" />
           <div className="flex flex-col">
             <p className="text-slate-950 text-xl font-medium leading-loose">
@@ -90,14 +89,14 @@ const Design = () => {
         </div>
 
         <Button
-          style="text-white sm:w-full text-center mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md w-[160px] hover:bg-extraDarkRed transition ease-in-out duration-200"
+          style="text-white w-full text-center mt-[32px] bg-darkBlue px-5 py-3 font-[500] rounded-md lg:w-[200px] hover:bg-extraDarkRed transition ease-in-out duration-200"
           destination="/contact-us"
         >
           Get In Touch
         </Button>
       </div>
 
-      <div className="sm:block hidden mt-10 mb-10">
+      <div className="lg:hidden my-10">
         <Image src={Rectangle} alt="image" />
       </div>
     </div>

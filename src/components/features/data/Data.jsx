@@ -27,18 +27,14 @@ const Data = () => {
         pinText={"DATA SCIENCE"}
         preRedSubtitle={"Harnessing"}
         redSubtitle={"Data for Strategic"}
-        postRedSubtitle={"Insghts"}
+        postRedSubtitle={"Insights"}
         content={
           "Discover the untapped potential of your data with FayGroup's Data Science expertise. We turn complex information into actionable insights."
         }
         scrollTo="data-service"
         subActiveNav={8}
       />
-      <div className="h-[100px]" id="data-service"/>
-
       <Services />
-      <div className="h-[100px]" />
-
       <TextWithImage
         right={true}
         pinText={"ACHIEVE MORE"}
@@ -50,12 +46,8 @@ const Data = () => {
           "Specializing in unleashing the true power of your data. Our Data Science service empowers your business with valuable insights for smarter strategies."
         }
       />
-
-      <div className="h-[100px]" />
       <Listen />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
       <Footer active={1} />
     </>

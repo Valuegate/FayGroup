@@ -33,7 +33,6 @@ const SoftwarePage = () => {
         subActiveNav={4}
       />
       <Languages />
-      <div className="h-[100px]" />
       <TextWithImage
         useRedBackground={true}
         left={true}
@@ -47,7 +46,6 @@ const SoftwarePage = () => {
         includeButton={true}
         image={Elevate}
       />
-      <div className="h-[100px]" />
       <TextWithImage
         right={true}
         pinText={"ACHIEVE MORE"}
@@ -59,13 +57,10 @@ const SoftwarePage = () => {
         includeButton={true}
         image={Unlock}
       />
-      <div className="h-[100px]" id="software-service"/>
+      <div className="h-20" id="software-service"/>
       <Services />
-      <div className="h-[100px]" />
       <Listen />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
       <Footer active={1} />
     </>

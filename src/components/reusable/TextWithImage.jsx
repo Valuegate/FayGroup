@@ -1,9 +1,13 @@
+"use client";
+
 import React from "react";
 
 import Button from "./Button";
 
 import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
+
+import { motion } from "framer-motion";
 
 const TextWithImage = ({
   image,
@@ -26,9 +30,14 @@ const TextWithImage = ({
         } pt-16 lg:pb-16 lg:px-[10%] px-[5%]`}
       >
         {left && (
-          <div className="w-[50%] lg:block hidden">
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+            }}
+            className="w-[50%] lg:block hidden"
+          >
             <Image src={image} alt="image" />
-          </div>
+          </motion.div>
         )}
 
         <div className="flex flex-col lg:w-[50%] w-full">
@@ -63,9 +72,14 @@ const TextWithImage = ({
         </div>
 
         {right && (
-          <div className="w-[50%] lg:block hidden">
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+            }}
+            className="w-[50%] lg:block hidden"
+          >
             <Image src={image} alt="image" />
-          </div>
+          </motion.div>
         )}
       </div>
 

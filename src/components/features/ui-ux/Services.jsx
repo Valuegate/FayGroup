@@ -16,22 +16,22 @@ const Services = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col gap-[20px] items-center">
+      <div className="flex flex-col gap-[10px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
           </div>
-          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+          <p className="text-maroon text-base font-medium leading-loose">
             SERVICES
           </p>
         </div>
 
-        <p className="text-slate-950 text-4xl sm:text-2xl font-medium sm:leading-9 leading-[44px]">
+        <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[44px]">
           Our <span className="text-red-950">Design Process</span>
         </p>
       </div>
-      <Image src={Frame} alt="frame" className="w-[80%] mt-20 sm:hidden" />
-      <div className="hidden sm:w-full gap-2 sm:flex sm:flex-col items-center mt-10">
+      <Image src={Frame} alt="frame" className="lg:w-[80%] lg:block my-20 hidden" />
+      <div className="lg:hidden w-full gap-2 flex flex-col items-center mt-10">
         {images.map((image, i) => {
           return <Image key={i} src={image} alt="design process image" className="w-[50%]"/>;
         })}

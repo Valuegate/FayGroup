@@ -34,17 +34,12 @@ const UIUX = () => {
         subActiveNav={5}
       />
       <WorkedWith />
-      <div className="h-[100px]" />
       <Design />
-      <div className="h-[100px]" id="ui-services"/>
+      <div className="h-20" id="ui-services"/>
       <Services />
-      <div className="h-[100px]" />
       <Projects />
-      <div className="h-[100px]" />
       <Listen />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
       <Footer active={1} />
     </>
