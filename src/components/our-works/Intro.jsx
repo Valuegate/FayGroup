@@ -13,16 +13,15 @@ import Two from "@/public/assets/our-works/Two.svg";
 import Three from "@/public/assets/our-works/Three.svg";
 import Four from "@/public/assets/our-works/Four.svg";
 
-const Intro = ({scrollTo}) => {
+import { motion } from "framer-motion";
 
-
-  function scrollToElement (elementID) {
+const Intro = ({ scrollTo }) => {
+  function scrollToElement(elementID) {
     const element = document.getElementById(elementID);
     element?.scrollIntoView({
-        behavior: "smooth",
-    })
-}
-
+      behavior: "smooth",
+    });
+  }
 
   return (
     <div className="relative bg-slightRedBackground">
@@ -32,20 +31,56 @@ const Intro = ({scrollTo}) => {
         className="absolute top-0 left-0 -z-10 w-full h-[50%]"
       />
       <Nav active={2} />
-      <div className="absolute z-10 top-[30%] right-[15%] hidden lg:block">
+      <motion.div
+        animate={{
+          y: ["0%", "10%", "0%"],
+          transition: {
+            duration: 1,
+            repeat: Infinity,
+          },
+        }}
+        className="absolute z-10 top-[30%] right-[15%] hidden lg:block"
+      >
         <Image src={One} alt="one" className="" />
-      </div>
-      <div className="absolute z-10 top-[30%] left-[15%] hidden lg:block">
+      </motion.div>
+      <motion.div
+        animate={{
+          y: ["10%", "0%", "10%"],
+          transition: {
+            duration: 1,
+            repeat: Infinity,
+          },
+        }}
+        className="absolute z-10 top-[30%] left-[15%] hidden lg:block"
+      >
         <Image src={Two} alt="one" className="" />
-      </div>
+      </motion.div>
 
-      <div className="absolute z-10 top-[65%] left-[25%] hidden lg:block">
+      <motion.div
+        animate={{
+          x: ["0%", "10%", "0%"],
+          transition: {
+            duration: 1,
+            repeat: Infinity,
+          },
+        }}
+        className="absolute z-10 top-[65%] left-[25%] hidden lg:block"
+      >
         <Image src={Three} alt="one" className="" />
-      </div>
+      </motion.div>
 
-      <div className="absolute z-10 top-[65%] right-[25%] hidden lg:block">
+      <motion.div
+        animate={{
+          x: ["10%", "0%", "10%"],
+          transition: {
+            duration: 1,
+            repeat: Infinity,
+          },
+        }}
+        className="absolute z-10 top-[65%] right-[25%] hidden lg:block"
+      >
         <Image src={Four} alt="one" className="" />
-      </div>
+      </motion.div>
 
       <div className="lg:mt-32 mt-20 px-[5%] pb-20 lg:pb-28 lg:px-0 flex flex-col items-center relative">
         <div className="flex items-center gap-[10px]">
@@ -68,7 +103,21 @@ const Intro = ({scrollTo}) => {
           innovation and excellence shines through every venture.
         </p>
 
-        <div className="flex w-full flex-col lg:flex-row lg:justify-center justify-start items-center gap-[20px] mt-10">
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            transition: {
+              ease: "easeIn",
+              duration: 2,
+            },
+          }}
+          className="flex w-full flex-col lg:flex-row lg:justify-center justify-start items-center gap-[20px] mt-10"
+        >
           <Button
             style="text-white text-center w-full lg:w-[200px] bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
             destination={"/contact-us"}
@@ -81,10 +130,8 @@ const Intro = ({scrollTo}) => {
           >
             Explore More
           </Button>
-        </div>
+        </motion.div>
       </div>
-
-      
     </div>
   );
 };
