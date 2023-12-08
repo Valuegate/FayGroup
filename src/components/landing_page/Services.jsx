@@ -7,6 +7,8 @@ import PD from "@/public/assets/landing-page/Product Development.svg";
 import BC from "@/public/assets/landing-page/Business Consulting.svg";
 import DT from "@/public/assets/landing-page/Digital Transformation.svg";
 
+import {motion} from "framer-motion";
+
 const Services = () => {
   const services = [
     {
@@ -53,7 +55,10 @@ const Services = () => {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
           {services.map((service, i) => {
             return (
-              <div
+              <motion.div
+              whileHover={{
+                scale: 1.05,
+              }}
                 key={i}
                 className="flex flex-col px-5 bg-white lg:w-[30%] w-full h-[470px] justify-center items-center rounded-[12px] sm:shadow-lg shadow-xl"
               >
@@ -76,7 +81,7 @@ const Services = () => {
                   <p className="font-medium leading-loose">Explore More</p>
                   <FaArrowRight />
                 </Link>
-              </div>
+              </motion.div>
             );
           })}
         </div>

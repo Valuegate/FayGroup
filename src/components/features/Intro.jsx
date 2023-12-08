@@ -103,7 +103,7 @@ const Intro = ({
         <div className="lg:px-[20%] px-0 lg:w-[80%] w-full">
           <motion.p 
           animate={{
-            scale: [1.0, 1.05, 1.0],
+            scale: [1.0, 1.1, 1.0],
             transition: {
               duration: 5,
               repeat: Infinity,
@@ -120,7 +120,21 @@ const Intro = ({
           {content}
         </p>
 
-        <div className="flex w-full flex-col lg:flex-row justify-start lg:justify-center items-center gap-[20px] mt-5 lg:mt-10">
+        <motion.div 
+          initial={{
+            opacity: 0,
+            scale: 0,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            transition: {
+              ease: "easeIn",
+              duration: 2,
+            }
+          }}
+        
+        className="flex w-full flex-col lg:flex-row justify-start lg:justify-center items-center gap-[20px] mt-5 lg:mt-10">
           <Button
             style="text-white text-center w-full lg:w-[200px] bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
             destination={"/contact-us"}
@@ -133,7 +147,7 @@ const Intro = ({
           >
             Explore More
           </Button>
-        </div>
+        </motion.div>
       </div>
 
       <div className="lg:h-32 h-20" />

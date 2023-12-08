@@ -13,6 +13,8 @@ import SD from "@/public/assets/product development/SD.svg";
 import SE from "@/public/assets/product development/SE.svg";
 import UD from "@/public/assets/product development/UD.svg";
 
+import {motion} from "framer-motion";
+
 const Services = () => {
   const services = [
     {
@@ -94,7 +96,10 @@ const Services = () => {
           return i >= 3 ? (
             <></>
           ) : (
-            <div
+            <motion.div
+            whileHover={{
+              scale: 1.05
+            }}
               key={i}
               className={`flex flex-col ${service.color} lg:w-[30%] w-full h-[465px] items-center rounded-[12px]`}
             >
@@ -121,7 +126,7 @@ const Services = () => {
                 <p className="font-[500] leading-loose">Explore More</p>
                 <FaArrowRight />
               </Link>
-            </div>
+            </motion.div>
           );
         })}
       </div>
@@ -130,7 +135,10 @@ const Services = () => {
           return i < 3 ? (
             <></>
           ) : (
-            <div
+            <motion.div
+            whileHover={{
+              scale: 1.05
+            }}
               key={i}
               className={`flex flex-col ${service.color} lg:w-[30%] w-full h-[465px] items-center rounded-[12px]`}
             >
@@ -157,7 +165,7 @@ const Services = () => {
                 <p className="font-[500] leading-loose">Explore More</p>
                 <FaArrowRight />
               </Link>
-            </div>
+            </motion.div>
           );
         })}
       </div>

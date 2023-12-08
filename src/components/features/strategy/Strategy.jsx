@@ -34,9 +34,7 @@ const Strategy = () => {
         scrollTo="strategy-service"
         subActiveNav={9}
       />
-      <div className="h-[100px]" id="strategy-service"/>
       <Expertise />
-      <div className="h-[100px]" />
       <TextWithImage
         right={true}
         pinText={"ACHIEVE MORE"}
@@ -48,11 +46,8 @@ const Strategy = () => {
           "Navigate the Future with FayGroup's Premium Strategy Consulting"
         }
       />
-      <div className="h-[100px]" />
       <Listen />
-      <div className="h-[100px]" />
       <Contact />
-      <div className="h-[200px]" />
       <WorkInterest />
       <Footer active={1} />
     </>

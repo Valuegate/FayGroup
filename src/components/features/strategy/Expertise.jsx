@@ -50,39 +50,66 @@ const Expertise = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex flex-col gap-[20px] items-center">
+    <div className="flex flex-col items-center pt-20" id="strategy-service">
+      <div className="flex flex-col gap-[10px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
           </div>
-          <p className="text-maroon text-base sm:text-xs font-medium leading-loose">
+          <p className="text-maroon text-base font-medium leading-loose">
             EXPERRTISE
           </p>
         </div>
 
-        <p className="text-slate-950 text-4xl sm:text-2xl text-center font-medium sm:leading-9 leading-[44px]">
+        <p className="text-slate-950 lg:text-4xl text-2xl text-center font-medium leading-9 lg:leading-[44px]">
           Let's know Details from{" "}
           <span className="text-red-950">our Professions</span>
         </p>
       </div>
 
-      <div className="sm:flex sm:flex-col items-center sm:w-full grid grid-cols-3 w-[80%] mt-10 mb-[200px] sm:mb-0">
+      <div className="flex lg:flex-row flex-col w-full lg:justify-around mt-20 lg:gap-0 gap-16 px-[5%] lg:px-[10%]">
         {professions.map((profession, i) => {
-          return (
+          return i >= 3 ? (
+            <></>
+          ) : (
             <div
               key={i}
-              className="flex flex-col items-start justify-start w-[80%] sm:w-[90%]"
+              className="flex flex-col items-start justify-start lg:w-[30%] w-full"
             >
               <Image
                 src={profession.image}
                 alt="Profession Image"
-                className="w-[100%]"
+                className=""
               />
-              <p className="text-slate-950 text-2xl font-medium sm:text-xl sm:w-full leading-9 w-[80%]">
+              <p className="text-slate-950 lg:text-2xl font-medium text-xl w-full leading-9 px-10">
                 {profession.title}
               </p>
-              <p className="mt-[20px] sm:mt-2 text-slate-950 text-base font-normal leading-loose">
+              <p className="mt-2 text-slate-950 text-base font-normal leading-loose px-10">
+                {profession.content}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="flex lg:flex-row flex-col w-full lg:justify-around mt-20 lg:mt-10 lg:gap-0 gap-16 px-[5%] lg:px-[10%]">
+        {professions.map((profession, i) => {
+          return i < 3 ? (
+            <></>
+          ) : (
+            <div
+              key={i}
+              className="flex flex-col items-start justify-start lg:w-[30%] w-full"
+            >
+              <Image
+                src={profession.image}
+                alt="Profession Image"
+                className=""
+              />
+              <p className="text-slate-950 lg:text-2xl font-medium text-xl w-full leading-9 px-10">
+                {profession.title}
+              </p>
+              <p className="mt-2 text-slate-950 text-base font-normal leading-loose px-10">
                 {profession.content}
               </p>
             </div>
