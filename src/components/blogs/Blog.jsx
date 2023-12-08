@@ -16,9 +16,8 @@ import useLocalStorage from "use-local-storage";
 
 const axios = require("axios");
 
-const Blog = ({ id = "" }) => {
+const Blog = ({ blog }) => {
   const [loading, setLoading] = useState(true);
-  const [blog, setBlog] = useState({});
 
   function convertDate(date) {
     let dateObject = new Date(date);
@@ -47,26 +46,6 @@ const Blog = ({ id = "" }) => {
   }
 
 
-  const getBlog = () => {
-    axios({
-      method: "GET",
-      url: `http://62.72.22.207:3000/api/blog/get-blog/${id}`,
-    })
-      .then((res) => {
-        let fetchedBlog = res.data.blog;
-        setBlog(fetchedBlog);
-        console.log(fetchedBlog);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  };
-
-  useEffect(() => {
-    getBlog();
-  }, []);
 
   return (
     <div className="relative">
@@ -88,7 +67,7 @@ const Blog = ({ id = "" }) => {
         <div className={`flex sm:w-full sm:flex-col gap-5 sm:gap-1 items-center mt-5 ${loading && "hidden"}`}>
           <div></div>
           <p className={`text-slate-950 text-base font-medium leading-loose`}>
-            Written by {blog.user?.name}
+            Written by {blog.user.name}
           </p>
           <p className="text-slate-950 text-base font-normal leading-loose">
             {convertDate(blog.createdAt)}
@@ -115,7 +94,6 @@ const Blog = ({ id = "" }) => {
         redText="Latest"
         postRedText="Blogs"
       />
-      <div className="h-[200px]" />
       <WorkInterest />
       <Footer active={3} />
     </div>
