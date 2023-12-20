@@ -16,11 +16,11 @@ const twitterUrl = "https://twitter.com/mb_faygroup";
 
 const Footer = ({ active = -1, subActive = -1 }) => {
   
-  // const [user, setUser] = useState({});
-  // useEffect(() => {
-  //   let localUser = window.localStorage.getItem("user");
-  //   setUser(localUser);
-  // }, []);
+  const [user, setUser] = useState();
+  useEffect(() => {
+    let localUser = window.localStorage.getItem("user");
+    setUser(localUser);
+  }, []);
 
   return (
     <div className="flex flex-col items-center">
@@ -173,7 +173,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
 
       <div className=" mt-10 text-slate-400 text-base font-normal leading-loose mb-10">
         Copyright 2023. All rights reserved.{" "}
-        {/* <span
+        <span
           className="text-slate-100 cursor-pointer underline"
           onClick={() => {
             if(user !== undefined && user.name !== undefined) {
@@ -185,7 +185,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
           }}
         >
           {(user === undefined || user.name === undefined) ? "Login" : "Logout"}
-        </span> */}
+        </span>
       </div>
     </div>
   );

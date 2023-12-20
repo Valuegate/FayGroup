@@ -45,8 +45,7 @@ const Register = () => {
 
     axios({
       method: "POST",
-      // url: `http://62.72.22.207:3000/api/users/register`,
-      url: "faysolutions.com:3000/api/users/register",
+      url: `https://62.72.22.207:3000/api/users/register`,
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     })
@@ -65,7 +64,14 @@ const Register = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer 
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        rtl={false}
+        theme="colored"
+      />
       <div className={`${loading && "overflow-hidden"} relative`}>
         <div
           // className={`z-50 absolute flex flex-col top-0 left-0 items-center justify-center w-[100vw] h-[100vh] bg-fadedBlack ${

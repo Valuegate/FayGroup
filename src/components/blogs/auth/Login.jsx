@@ -32,16 +32,11 @@ const Login = () => {
     setLoading(true);
     axios({
       method: "POST",
-      // url: `http://62.72.22.207:3000/api/users/sign-in`,
-      url: "https://faysolutions.com:3000/api/users/sign-in",
+      url: `https://62.72.22.207:3000/api/users/sign-in`,
       data: {
         email: document.getElementById("emailID").value,
         password: document.getElementById("passwordID").value,
       },
-      httpsAgent: new https.Agent({
-        keepAlive: true,
-        rejectUnauthorized: false,
-      }),
     })
       .then((res) => {
         setUser(res.data);
@@ -59,7 +54,14 @@ const Login = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        rtl={false}
+        theme="colored"
+       />
       <div className={`${loading && "overflow-hidden"} relative`}>
         <div
           className={`overflow-y-auto flex flex-col bg-fadedBlack overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full  h-full max-h-full ${
