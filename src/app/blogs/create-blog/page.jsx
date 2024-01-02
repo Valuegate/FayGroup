@@ -1,18 +1,22 @@
 'use client'
 
 import CreateBlog from "@/src/components/blogs/create/CreateBlog";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function CreateBlogs() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  
   useEffect(() => {
-    let localUser = window.localStorage.getItem("user");
-    if (localUser === undefined || localUser.name === undefined) {
+    let user = window.localStorage.getItem("faygroup-user");
+    user = JSON.parse(user);
+    if (user === undefined || user === null || user?.name === null || user?.name === undefined) {
+      setIsLoggedIn(false);
       window.location.replace("/blogs");
     }
   }, [])
 
   return (
-   <CreateBlog/> 
+   !isLoggedIn ? <></> : <CreateBlog/> 
   )
 }

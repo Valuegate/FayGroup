@@ -16,7 +16,7 @@ const axios = require("axios");
 const https = require("https");
 
 const Login = () => {
-  const [user, setUser] = useLocalStorage("user", {});
+  const [user, setUser] = useLocalStorage("faygroup-user", {});
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -32,7 +32,7 @@ const Login = () => {
     setLoading(true);
     axios({
       method: "POST",
-      url: `https://62.72.22.207:3000/api/users/sign-in`,
+      url: `https://faysolutions.com:3000/api/users/sign-in`,
       data: {
         email: document.getElementById("emailID").value,
         password: document.getElementById("passwordID").value,

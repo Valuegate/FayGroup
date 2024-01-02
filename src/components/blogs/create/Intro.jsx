@@ -8,10 +8,10 @@ import Image from "next/image";
 import useLocalStorage from "use-local-storage";
 
 const Intro = () => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState();
 
   useEffect(() => {
-    let localUser = window.localStorage.getItem("user");
+    let localUser = window.localStorage.getItem("faygroup-user");
     localUser = JSON.parse(localUser);
     setUser(localUser);
   }, []);
@@ -28,13 +28,13 @@ const Intro = () => {
 
       <div className="flex flex-col justify-center items-center gap-3 mt-20">
         <img
-          src={user.profilePicture}
+          src={user?.profilePicture}
           alt=""
           className="h-[120px] w-[120px] rounded-full "
         />
         <div className="flex flex-col gap-2 items-center">
           <p className="text-slate-950 text-2xl font-medium leading-9">
-            {user.name}
+            {user?.name}
           </p>
           <p className="text-slate-950 text-base font-normal leading-loose">
             Author

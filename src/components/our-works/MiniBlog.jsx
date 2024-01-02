@@ -35,7 +35,7 @@ const MiniBlog = () => {
     setLoading(true);
     axios({
       method: "GET",
-      url: `http://62.72.22.207:3000/api/blog/get-blogs`,
+      url: `https://faysolutions.com:3000/api/blog/get-blogs`,
     })
       .then((res) => {
         setLoading(false);

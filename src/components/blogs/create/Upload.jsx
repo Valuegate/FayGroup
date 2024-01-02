@@ -21,7 +21,7 @@ const Upload = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    let localUser = window.localStorage.getItem("user");
+    let localUser = window.localStorage.getItem("faygroup-user");
     localUser = JSON.parse(localUser);
     setUser(localUser);
 
@@ -57,7 +57,7 @@ const Upload = () => {
 
         axios({
           method: "POST",
-          url: `http://62.72.22.207:3000/api/blog/create-blog`,
+          url: `https://faysolutions.com:3000/api/blog/create-blog`,
           data: formData,
           headers: { "Content-Type": "multipart/form-data" },
         })

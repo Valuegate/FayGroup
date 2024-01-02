@@ -17,7 +17,7 @@ import useLocalStorage from "use-local-storage";
 const axios = require("axios");
 
 const Blog = ({ blog }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   function convertDate(date) {
     let dateObject = new Date(date);
@@ -44,6 +44,10 @@ const Blog = ({ blog }) => {
       default: return 'th';
     }
   }
+
+  useEffect(() => {
+    console.log(blog);
+  }, [])
 
 
 
