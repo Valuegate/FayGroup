@@ -24,8 +24,6 @@ const Upload = () => {
     let localUser = window.localStorage.getItem("faygroup-user");
     localUser = JSON.parse(localUser);
     setUser(localUser);
-
-    
   }, []);
 
   const upload = () => {
@@ -44,7 +42,7 @@ const Upload = () => {
 
     axios({
       method: "GET",
-      url: "http://62.72.22.207:3000/api/users/get-user/",
+      url: "https://faysolutions.com:3000/api/users/get-user/",
       headers: { Authorization: `Bearer ${user.token}` },
     })
       .then((res) => {
@@ -85,7 +83,14 @@ const Upload = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        rtl={false}
+        theme="colored"
+      />
 
       <div
         className={`flex justify-between w-full lg:px-[10%] px-[5%] mt-10 gap-20 ${
