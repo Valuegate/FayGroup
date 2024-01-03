@@ -55,12 +55,9 @@ const MiniBlog = ({
       newStart = Math.max(0, start - 3);
       newEnd = Math.min(blogs.length, newStart + 3);
     } else if (step > 0) {
-      newEnd = Math.min(blogs.length, end + 3);
-      newStart = newEnd - 3;
+      newStart = Math.min(blogs.length - 3, start + 3);
+      newEnd = newStart + 3;
     }
-
-    // console.log('New Start', start)
-    // console.log('New End', end)
 
     setStart(newStart);
     setEnd(newEnd);
@@ -108,17 +105,26 @@ const MiniBlog = ({
                     <FaArrowRight />
                   </Link>
                 </div>
-              ) : (
-                <></>
-              );
+              ) : null;
             })}
           </div>
-          <div className="flex gap-[20px]">
+          <div className={`flex gap-[20px] ${loading && "hidden"}`}>
             <div onClick={() => navigate(-1)}>
-              <Image src={Left} alt="arrow" className="cursor-pointer" />
+              <Image
+                src={Left}
+                alt="arrow"
+                className={`cursor-pointer ${start === 0 && "opacity-40"}`}
+              />
             </div>
+
             <div onClick={() => navigate(1)}>
-              <Image src={Right} alt="arrow" className="cursor-pointer" />
+              <Image
+                src={Right}
+                alt="arrow"
+                className={`cursor-pointer ${
+                  end < blogs.length - 1 && "opacity-40"
+                }`}
+              />
             </div>
           </div>
         </>
