@@ -20,7 +20,6 @@ const Footer = ({ active = -1, subActive = -1 }) => {
   useEffect(() => {
     let localUser = window.localStorage.getItem("faygroup-user");
     localUser = JSON.parse(localUser);
-    console.log(localUser);
     setUser(localUser);
   }, []);
 
@@ -176,7 +175,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
       <div className=" mt-10 text-slate-400 text-base font-normal leading-loose mb-10">
         Copyright 2023. All rights reserved.{" "}
         <span
-          className="text-slate-100 cursor-pointer underline"
+          className="text-slate-50 cursor-default underline"
           onClick={() => {
             if(user === undefined || user === null || user?.name === null || user?.name === undefined) {
               window.location.href = "/blogs/login";

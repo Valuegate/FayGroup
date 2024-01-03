@@ -61,7 +61,7 @@ const Login = () => {
         newestOnTop={true}
         rtl={false}
         theme="colored"
-       />
+      />
       <div className={`${loading && "overflow-hidden"} relative`}>
         <div
           className={`overflow-y-auto flex flex-col bg-fadedBlack overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full  h-full max-h-full ${
@@ -96,39 +96,43 @@ const Login = () => {
               </p>
             </div>
 
-            <div className="flex flex-col items-start mt-20 w-full px-[5%]">
-              <p className="text-slate-950 text-base font-medium leading-loose mb-1">
-                Email Address
-              </p>
-              <input
-                type="email"
-                className="lg:w-[500px] w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
-                placeholder="example@example.com"
-                id="emailID"
-              />
-              <p className="text-slate-950 text-base font-medium leading-loose mb-1">
-                Password
-              </p>
-              <div className="relative lg:w-[500px] w-full flex justify-center items-center">
+            <div className="flex flex-col items-start lg:justify-center lg:items-center mt-20 w-full px-[5%]">
+              <div className="flex flex-col w-full lg:w-fit">
+                <p className="text-slate-950 text-base font-medium leading-loose mb-1">
+                  Email Address
+                </p>
                 <input
-                  type={`${showPassword ? "text" : "password"}`}
-                  className="w-[500px] sm:w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm"
-                  placeholder=""
-                  id="passwordID"
+                  type="email"
+                  className="lg:w-[500px] w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm mb-3"
+                  placeholder="example@example.com"
+                  id="emailID"
                 />
-                <div
-                  className="absolute right-3 cursor-pointer"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? (
-                    <IoMdEyeOff fill="#470912" size={"20px"} />
-                  ) : (
-                    <IoMdEye fill="#470912" size={"20px"} />
-                  )}
+              </div>
+              <div className="flex flex-col w-full lg:w-fit">
+                <p className="text-slate-950 text-base font-medium leading-loose mb-1">
+                  Password
+                </p>
+                <div className="relative lg:w-[500px] w-full flex justify-center items-center">
+                  <input
+                    type={`${showPassword ? "text" : "password"}`}
+                    className="lg:w-[500px] w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm"
+                    placeholder=""
+                    id="passwordID"
+                  />
+                  <div
+                    className="absolute right-3 cursor-pointer"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? (
+                      <IoMdEyeOff fill="#470912" size={"20px"} />
+                    ) : (
+                      <IoMdEye fill="#470912" size={"20px"} />
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="mt-10 w-full px-[5%]">
+            <div className="mt-10 w-full lg:w-fit px-[5%]">
               <Button
                 style={
                   "lg:w-[300px] w-full bg-darkBlue rounded-[5px] text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center"

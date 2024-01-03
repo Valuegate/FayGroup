@@ -97,7 +97,7 @@ const Upload = () => {
           loading && "hidden"
         }`}
       >
-        <div className="hidden lg:block">
+        <div className="hidden lg:block lg:w-[50%]">
           <UploadFile setFile={setFile} />
         </div>
 
@@ -215,7 +215,7 @@ const UploadFile = ({ setFile }) => {
     <img
       src={image}
       alt="Profile Image"
-      className="w-[50%] sm:w-full sm:h-auto cursor-pointer h-[420px] object-cover"
+      className="w-full sm:h-auto cursor-pointer h-[420px] object-cover"
       onClick={() => {
         setImage("");
         setFile({});

@@ -44,7 +44,7 @@ const Intro = () => {
         className="absolute top-0 left-0 -z-10 w-full"
       />
       <Nav active={3} />
-      <div className="lg:mt-40 mt-20 sm:px-[5%] flex flex-col items-center relative">
+      <div className="lg:mt-40 mt-20 px-[5%] flex flex-col items-center relative">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
@@ -54,41 +54,39 @@ const Intro = () => {
           </p>
         </div>
 
-        <p className="text-slate-950 text-4xl px-[35%] sm:px-[5%] sm:w-full mt-5 sm:text-[32px] text-center font-medium sm:leading-9 leading-[44px]">
+        <p className="text-slate-950 lg:text-4xl text-2xl lg:px-[20%] px-[5%] w-full mt-5 text-center font-medium leading-9 lg:leading-[44px]">
           Step Into The World of Tech{" "}
           <span className="text-red-950">Insights and Innovation</span> at our
           Blog
         </p>
 
         <div
-          className={`flex sm:flex-col gap-[5%] items-start px-[10%] sm:px-[5%] mt-32 mb-20 ${
+          className={`flex flex-col lg:flex-row lg:gap-24 lg:justify-between items-start w-[90%] mt-32 mb-20 ${
             loading && "hidden"
           }`}
         >
-          <div className="flex flex-col w-[60%] sm:w-full">
-            <div className="flex flex-col items-start justify-start">
-              <img
-                src={blogs[0]?.blogPictureUrl}
-                alt="blog image"
-                className="h-[700px] w-full object-contain"
-              />
-              <p className="text-slate-950 sm:text-xl text-2xl mt-5 font-medium leading-9 w-[80%]">
-                {blogs[0]?.title}
-              </p>
-              <p className="text-slate-950 text-base font-normal leading-loose mt-5">
-                {blogs[0]?.content}
-              </p>
-              <Link
-                href={`/blogs/${blogs[0]?._id}`}
-                className="text-maroon w-[80%] mt-5 flex gap-2 items-center"
-              >
-                Read More
-                <FaArrowRight />
-              </Link>
-            </div>
+          <div className="flex flex-col items-start justify-start lg:w-[60%] w-full">
+            <img
+              src={blogs[0]?.blogPictureUrl}
+              alt="blog image"
+              className="lg:h-[700px] w-full h-auto object-cover"
+            />
+            <p className="text-slate-950 sm:text-xl text-2xl mt-5 font-medium leading-9 w-[80%]">
+              {blogs[0]?.title}
+            </p>
+            <p className="text-slate-950 text-base font-normal leading-loose mt-5 lg:w-fit w-[80%]">
+              {blogs[0]?.content.substring(0, 100)}
+            </p>
+            <Link
+              href={`/blogs/${blogs[0]?._id}`}
+              className="text-maroon w-[80%] mt-5 flex gap-2 items-center"
+            >
+              Read More
+              <FaArrowRight />
+            </Link>
           </div>
 
-          <div className={`flex flex-col gap-10 w-[30%] sm:w-full sm:mt-10`}>
+          <div className={`flex flex-col gap-20 lg:w-[40%] w-full mt-10 lg:mt-0`}>
             {blogs.map((blog, i) => {
               return i == 0 || i > 2 ? (
                 <></>
@@ -100,7 +98,7 @@ const Intro = () => {
                   <img
                     src={blog.blogPictureUrl}
                     alt="blog image"
-                    className="h-[400px] w-full object-contain"
+                    className="lg:h-[350px] h-auto object-cover"
                   />
                   <p className="text-slate-950 mt-5 sm:text-xl text-2xl font-medium leading-9 w-[80%]">
                     {blog.title}

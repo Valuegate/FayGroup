@@ -5,7 +5,7 @@ import Contact from "../reusable/Contact";
 import Intro from "./Intro";
 import Projects from "../landing_page/Projects";
 import Listen from "../reusable/Listen";
-import MiniBlog from "./MiniBlog";
+import MiniBlog from "@/src/components/reusable/MiniBlog";
 
 
 const WorksPage = () => {
