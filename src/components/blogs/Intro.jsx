@@ -66,7 +66,7 @@ const Intro = () => {
           }`}
         >
           {!loading && blogs.length === 0 && (
-            <div className="flex flex-col justify-center text-center text-maroon items-center w-full lg:h-[300px] h-[200px] text-center lg:text-2xl text-xl">
+            <div className="flex flex-col justify-center text-maroon items-center w-full lg:h-[300px] h-[200px] text-center lg:text-2xl text-xl">
               There are no blogs posted yet
             </div>
           )}

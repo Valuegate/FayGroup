@@ -61,7 +61,9 @@ const Upload = () => {
         })
           .then((res) => {
             toast.success(`Blog created successfully`);
-            window.location.reload();
+            setTimeout(() => {
+              window.location.reload();
+            }, 2500);
           })
           .catch((err) => {
             toast.error(

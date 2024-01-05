@@ -66,7 +66,7 @@ const Projects = () => {
           onClick={() => selectTab(0)}
           className={` p-4 border-b-2 border-transparent ${
             active == 0 && "text-maroon border-maroon"
-          } rounded-t-lg hover:text-maroon w-[180px]`}
+          } rounded-t-lg hover:text-maroon lg:w-[180px] w-[250px]`}
         >
           UI Design
         </button>
@@ -75,7 +75,7 @@ const Projects = () => {
           onClick={() => selectTab(1)}
           className={`inline-block p-4 border-b-2 border-transparent ${
             active == 1 && "text-maroon border-maroon"
-          } rounded-t-lg hover:text-maroon w-[180px]`}
+          } rounded-t-lg hover:text-maroon w-[200px]`}
         >
           Web Development
         </button>
@@ -85,7 +85,7 @@ const Projects = () => {
           onClick={() => selectTab(2)}
           className={`inline-block p-4 border-b-2 ${
             active == 2 && "text-maroon border-maroon"
-          } border-transparent rounded-t-lg hover:text-maroon w-[120px]`}
+          } border-transparent rounded-t-lg hover:text-maroon w-[150px]`}
         >
           Mobile App
         </button>

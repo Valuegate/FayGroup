@@ -73,7 +73,7 @@ const Nav = ({ active = 0, sub = 0 }) => {
       link: "/",
     },
     {
-      name: "Features",
+      name: "Services",
       link: "",
       icon: <FaCaretDown />,
       children: features,
@@ -371,7 +371,7 @@ const MobileFeatures = ({ features, active = false }) => {
         }`}
         onClick={() => setShowMobileFeatures(!showMobileFeatures)}
       >
-        Features
+        Services
         {showMobileFeatures ? <FaCaretUp /> : <FaCaretDown />}
       </div>
 

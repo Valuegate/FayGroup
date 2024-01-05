@@ -17,7 +17,7 @@ const ContactPage = () => {
        pinText="CONTACT US"
         active={5}
         firstText={"Ready to turn your idea"}
-        secondText={"into a product"}
+        secondText={"into a product?"}
         image={ContactImage}
         subtitle={"Moving from idea to product starts with a conversation."}
         hideExplore={true}
