@@ -65,6 +65,12 @@ const Intro = () => {
             loading && "hidden"
           }`}
         >
+          {!loading && blogs.length === 0 && (
+            <div className="flex flex-col justify-center items-center w-full lg:h-[300px] h-[200px] text-center lg:text-2xl text-xl">
+              There are no blogs posted yet
+            </div>
+          )}
+
           {blogs.length > 0 && (
             <div className="flex flex-col items-start justify-start lg:w-[60%] w-full">
               <img
