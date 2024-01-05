@@ -65,28 +65,32 @@ const Intro = () => {
             loading && "hidden"
           }`}
         >
-          <div className="flex flex-col items-start justify-start lg:w-[60%] w-full">
-            <img
-              src={blogs[0]?.blogPictureUrl}
-              alt="blog image"
-              className="lg:h-[700px] w-full h-auto object-cover"
-            />
-            <p className="text-slate-950 sm:text-xl text-2xl mt-5 font-medium leading-9 w-[80%]">
-              {blogs[0]?.title}
-            </p>
-            <p className="text-slate-950 text-base font-normal leading-loose mt-5 lg:w-fit w-[80%]">
-              {blogs[0]?.content.substring(0, 100)}
-            </p>
-            <Link
-              href={`/blogs/${blogs[0]?._id}`}
-              className="text-maroon w-[80%] mt-5 flex gap-2 items-center"
-            >
-              Read More
-              <FaArrowRight />
-            </Link>
-          </div>
+          {blogs.length > 0 && (
+            <div className="flex flex-col items-start justify-start lg:w-[60%] w-full">
+              <img
+                src={blogs[0]?.blogPictureUrl}
+                alt="blog image"
+                className="lg:h-[700px] w-full h-auto object-cover"
+              />
+              <p className="text-slate-950 sm:text-xl text-2xl mt-5 font-medium leading-9 w-[80%]">
+                {blogs[0]?.title}
+              </p>
+              <p className="text-slate-950 text-base font-normal leading-loose mt-5 lg:w-fit w-[80%]">
+                {blogs[0]?.content.substring(0, 100)}
+              </p>
+              <Link
+                href={`/blogs/${blogs[0]?._id}`}
+                className="text-maroon w-[80%] mt-5 flex gap-2 items-center"
+              >
+                Read More
+                <FaArrowRight />
+              </Link>
+            </div>
+          )}
 
-          <div className={`flex flex-col gap-20 lg:w-[40%] w-full mt-10 lg:mt-0`}>
+          <div
+            className={`flex flex-col gap-20 lg:w-[40%] w-full mt-10 lg:mt-0`}
+          >
             {blogs.map((blog, i) => {
               return i == 0 || i > 2 ? (
                 <></>
