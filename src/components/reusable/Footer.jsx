@@ -173,7 +173,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
       <div className="w-[70%] h-[1px] bg-slate-200 mt-[60px]" />
 
       <div className=" mt-10 text-slate-400 text-base font-normal leading-loose mb-10">
-        Copyright 2023. All rights reserved.{" "}
+        Copyright {new Date().getFullYear()}. All rights reserved.{" "}
         <span
           className="text-slate-50 cursor-default underline"
           onClick={() => {
