@@ -45,7 +45,7 @@ const AboutPage = () => {
       />
       <TextWithImage
         right={true}
-        image={FutureImage}
+        image={FutureImage }
         content={
           "Our vision is simple yet ambitious: to accelerate your tech journey. We understand that ideas are the seeds of innovation, and we're here to nurture those seeds, cultivate them, and help you launch them into the world as thriving products."
         }
