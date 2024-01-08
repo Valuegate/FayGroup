@@ -14,7 +14,7 @@ const ContactInfo = () => {
   );
 };
 
-export default ContactInfo;
+
 
 const Info = () => {
   return (
@@ -93,3 +93,6 @@ const Content = () => {
     </div>
   );
 };
+
+
+export default Content;

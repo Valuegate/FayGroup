@@ -1,29 +1,25 @@
 import React from "react";
-import Banner from "../reusable/Banner";
+import CustomBanner from "./CustomBanner";
 import Footer from "../reusable/Footer";
 import WorkInterest from "../reusable/WorkInterest";
 import Contact from "../reusable/Contact";
-import ContactInfo from "./ContactInfo";
-
-
-import ContactImage from "@/public/assets/contact/Contact.svg";
+import Content from "./ContactInfo";
 
 
 const ContactPage = () => {
   return (
     <>
-      <Banner
+      <CustomBanner
        hidePinText={false}
        pinText="CONTACT US"
         active={5}
         firstText={"Ready to turn your idea"}
         secondText={"into a product?"}
-        image={ContactImage}
         subtitle={"Moving from idea to product starts with a conversation."}
         hideExplore={true}
         includeButton={false}
+        child={<Content />}
       />
-      <ContactInfo />
       <Contact />
       <WorkInterest />
       <Footer />
