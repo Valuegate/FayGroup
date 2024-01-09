@@ -40,8 +40,8 @@ const Info = () => {
 const Content = () => {
   return (
     <div className="relative">
-      <Image src={Background} alt="background" className="h-auto" />
-      <div className="w-[92%] lg:w-[80%] h-[90%] overflow-y-scroll flex flex-col bg-white absolute z-10 top-[5%] left-[4%] lg:left-[10%] rounded-[12px] items-center px-[7%] py-[5%]">
+      <Image src={Background} alt="background" className="lg:h-auto h-[650px] object-cover" />
+      <div className="w-[92%] lg:w-[80%] h-[90%] flex flex-col bg-white absolute z-10 top-[5%] left-[4%] lg:left-[10%] rounded-[12px] items-center px-[7%] py-[5%]">
         <p className="text-slate-950 lg:text-2xl text-xl font-medium leading-9">
           Get in Touch
         </p>
@@ -81,7 +81,7 @@ const Content = () => {
           </p>
           <textarea
             type="text"
-            className="w-full bg-blandGrey border px-2 py-3 h-[100px] font-normal resize-none focus:outline-none rounded-sm"
+            className="w-full bg-blandGrey border px-2 py-3 lg:h-[150px] h-[100px] font-normal resize-none focus:outline-none rounded-sm"
             placeholder="Type Here..."
           />
         </div>
