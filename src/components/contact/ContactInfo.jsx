@@ -14,8 +14,6 @@ const ContactInfo = () => {
   );
 };
 
-
-
 const Info = () => {
   return (
     <div className="flex flex-col lg:w-[50%] w-full px-0">
@@ -38,9 +36,24 @@ const Info = () => {
 };
 
 const Content = () => {
+  function sendMail() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("address").value;
+    let number = document.getElementById("number").value;
+    let message = document.getElementById("message").value;
+    let body = `Name: ${name}\nEmail: ${email}\nPhone Number: ${number}\nMessage: ${message}`;
+    //console.log(body);
+    let destination = `info@mbfaygroup.com?subject=Contact Information&body=${body}`;
+    window.location.href = `mailto:${destination}`;
+  }
+
   return (
     <div className="relative">
-      <Image src={Background} alt="background" className="lg:h-auto h-[650px] object-cover" />
+      <Image
+        src={Background}
+        alt="background"
+        className="lg:h-auto h-[650px] object-cover"
+      />
       <div className="w-[92%] lg:w-[80%] h-[90%] flex flex-col bg-white absolute z-10 top-[5%] left-[4%] lg:left-[10%] rounded-[12px] items-center px-[7%] py-[5%]">
         <p className="text-slate-950 lg:text-2xl text-xl font-medium leading-9">
           Get in Touch
@@ -51,6 +64,7 @@ const Content = () => {
           </p>
           <input
             type="text"
+            id="name"
             className="w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm"
             placeholder="Enter Full Name"
           />
@@ -61,6 +75,7 @@ const Content = () => {
           </p>
           <input
             type="email"
+            id="address"
             className="w-full bg-blandGrey border px-2 py-2.5 font-normal focus:outline-none rounded-sm"
             placeholder="Enter Email Address"
           />
@@ -71,6 +86,7 @@ const Content = () => {
           </p>
           <input
             type="text"
+            id="number"
             className="w-full bg-blandGrey border px-2 py-2.5 font-normal focus:outline-none rounded-sm"
             placeholder="Enter Phone Number"
           />
@@ -81,18 +97,21 @@ const Content = () => {
           </p>
           <textarea
             type="text"
+            id="message"
             className="w-full bg-blandGrey border px-2 py-3 lg:h-[150px] h-[100px] font-normal resize-none focus:outline-none rounded-sm"
             placeholder="Type Here..."
           />
         </div>
 
-        <Button style="w-full mt-10 text-center text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200">
+        <Button
+          onClick={() => sendMail()}
+          style="w-full mt-10 text-center text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
+        >
           Send
         </Button>
       </div>
     </div>
   );
 };
-
 
 export default Content;

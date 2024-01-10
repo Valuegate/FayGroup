@@ -174,30 +174,7 @@ const Footer = ({ active = -1, subActive = -1 }) => {
       <div className="w-[70%] h-[1px] bg-slate-200 mt-[60px]" />
 
       <div className=" mt-10 text-slate-400 text-base font-normal leading-loose mb-10">
-        Copyright {new Date().getFullYear()}. All rights reserved.{" "}
-        <span
-          className="text-slate-50 cursor-default underline"
-          onClick={() => {
-            if (
-              user === undefined ||
-              user === null ||
-              user?.name === null ||
-              user?.name === undefined
-            ) {
-              window.location.href = "/blogs/login";
-            } else {
-              window.localStorage.setItem("faygroup-user", JSON.stringify({}));
-              window.location.href = "/blogs";
-            }
-          }}
-        >
-          {user === undefined ||
-          user === null ||
-          user?.name === null ||
-          user?.name === undefined
-            ? "Login"
-            : "Logout"}
-        </span>
+        Copyright {new Date().getFullYear()}. All rights reserved.
       </div>
     </div>
   );
