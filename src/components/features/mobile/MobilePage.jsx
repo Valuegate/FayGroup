@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Footer from "../../reusable/Footer";
 import WorkInterest from "../../reusable/WorkInterest";
@@ -36,7 +38,7 @@ const MobilePage = () => {
         subActiveNav={6}
       />
       <WorkedWith />
-      <div className="h-20" id="mobile-service"/>
+      <div className="h-20" id="mobile-service" />
       <Services />
       <TextWithImage
         useRedBackground={true}

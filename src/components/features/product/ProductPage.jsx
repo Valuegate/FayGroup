@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Banner from "@/src/components/reusable//Banner";
 import Footer from "@/src/components/reusable/Footer";

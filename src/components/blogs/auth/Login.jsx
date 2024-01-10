@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import useLocalStorage from "use-local-storage";
 import { ToastContainer, toast } from "react-toastify";
@@ -12,7 +14,7 @@ import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-ci
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 import "react-toastify/dist/ReactToastify.css";
 
-const axios = require("axios");
+import axios from "axios";
 const https = require("https");
 
 const Login = () => {

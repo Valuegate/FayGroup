@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Purpose from "./Purpose";
 import Services from "./Services";
@@ -9,7 +11,6 @@ import MainInformation from "@/src/components/landing_page/MainInformation";
 import WorkInterest from "@/src/components/reusable/WorkInterest";
 import TextWithImage from "../reusable/TextWithImage";
 import Standout from "./Standout";
-
 
 import AdviseImage from "@/public/assets/landing-page/Frame 36176.svg";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Footer from "../../reusable/Footer";
 import WorkInterest from "../../reusable/WorkInterest";
@@ -11,7 +13,6 @@ import Elevate from "@/public/assets/software development/Rectangle 1.svg";
 import Unlock from "@/public/assets/software development/Rectangle 1-1.svg";
 import Services from "./Services";
 
-
 import One from "@/public/assets/software development/Ellipse 11.svg";
 import Two from "@/public/assets/software development/Ellipse 10.svg";
 import Three from "@/public/assets/software development/Ellipse 12.svg";
@@ -20,7 +21,7 @@ import Four from "@/public/assets/software development/Ellipse 13.svg";
 const SoftwarePage = () => {
   return (
     <>
-      <Intro 
+      <Intro
         One={One}
         Two={Two}
         Three={Three}
@@ -28,7 +29,9 @@ const SoftwarePage = () => {
         pinText={"SOFTWARE DEVELOPMENT"}
         preRedSubtitle={"Advance Business with Innovative"}
         redSubtitle={"Software Engineering"}
-        content={"With our Software solutions, your ideas flourish and take shape in the tech world. Together, we craft tomorrow's solutions today."}
+        content={
+          "With our Software solutions, your ideas flourish and take shape in the tech world. Together, we craft tomorrow's solutions today."
+        }
         scrollTo="software-service"
         subActiveNav={4}
       />
@@ -57,7 +60,7 @@ const SoftwarePage = () => {
         includeButton={true}
         image={Unlock}
       />
-      <div className="h-20" id="software-service"/>
+      <div className="h-20" id="software-service" />
       <Services />
       <Listen />
       <Contact />

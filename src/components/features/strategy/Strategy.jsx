@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Footer from "@/src/components/reusable/Footer";
 import WorkInterest from "@/src/components/reusable/WorkInterest";

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Footer from "@/src/components/reusable/Footer";
 import WorkInterest from "@/src/components/reusable/WorkInterest";
@@ -40,7 +42,9 @@ const System = () => {
         includeButton={true}
         preRedText={"Delivering Precision in System Engineering for"}
         redText={"Super Business Efficiency"}
-        content={"Our expert team ensures that your technology performs at peak efficiency, helping your business run smoother than ever before"}
+        content={
+          "Our expert team ensures that your technology performs at peak efficiency, helping your business run smoother than ever before"
+        }
       />
       <Listen />
       <Contact />

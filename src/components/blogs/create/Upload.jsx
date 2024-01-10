@@ -10,7 +10,7 @@ import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-ci
 import "react-toastify/dist/ReactToastify.css";
 import { headers } from "@/next.config";
 
-const axios = require("axios");
+import axios from "axios";
 
 const Upload = () => {
   const [user, setUser] = useState({});

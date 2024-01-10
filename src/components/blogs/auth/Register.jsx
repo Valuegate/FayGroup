@@ -14,7 +14,7 @@ import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-ci
 import "react-toastify/dist/ReactToastify.css";
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 
-const axios = require("axios");
+import axios from "axios";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);

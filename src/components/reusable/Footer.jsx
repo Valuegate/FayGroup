@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -15,7 +17,6 @@ const facebookUrl = "https://web.facebook.com/MBFayGroup";
 const twitterUrl = "https://twitter.com/mb_faygroup";
 
 const Footer = ({ active = -1, subActive = -1 }) => {
-  
   const [user, setUser] = useState();
   useEffect(() => {
     let localUser = window.localStorage.getItem("faygroup-user");
@@ -177,7 +178,12 @@ const Footer = ({ active = -1, subActive = -1 }) => {
         <span
           className="text-slate-50 cursor-default underline"
           onClick={() => {
-            if(user === undefined || user === null || user?.name === null || user?.name === undefined) {
+            if (
+              user === undefined ||
+              user === null ||
+              user?.name === null ||
+              user?.name === undefined
+            ) {
               window.location.href = "/blogs/login";
             } else {
               window.localStorage.setItem("faygroup-user", JSON.stringify({}));
@@ -185,7 +191,12 @@ const Footer = ({ active = -1, subActive = -1 }) => {
             }
           }}
         >
-          {(user === undefined || user === null || user?.name === null || user?.name === undefined) ? "Login" : "Logout"}
+          {user === undefined ||
+          user === null ||
+          user?.name === null ||
+          user?.name === undefined
+            ? "Login"
+            : "Logout"}
         </span>
       </div>
     </div>

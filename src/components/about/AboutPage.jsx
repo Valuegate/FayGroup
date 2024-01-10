@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Banner from "../reusable/Banner";
 import Footer from "../reusable/Footer";
@@ -29,7 +31,7 @@ const AboutPage = () => {
       />
       <Facts />
       <div className="bg-slightRedBackground py-10 mt-5">
-        <WorkedWith/>
+        <WorkedWith />
       </div>
       <TextWithImage
         left={true}

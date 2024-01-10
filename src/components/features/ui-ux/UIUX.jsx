@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Footer from "../../reusable/Footer";
 import WorkInterest from "../../reusable/WorkInterest";
@@ -35,7 +37,7 @@ const UIUX = () => {
       />
       <WorkedWith />
       <Design />
-      <div className="h-20" id="ui-services"/>
+      <div className="h-20" id="ui-services" />
       <Services />
       <Projects />
       <Listen />
