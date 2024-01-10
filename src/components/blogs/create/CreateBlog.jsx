@@ -7,25 +7,25 @@ import Footer from "../../reusable/Footer";
 import Upload from "./Upload";
 
 const CreateBlog = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  // const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-  useEffect(() => {
-    let user = window.localStorage.getItem("faygroup-user");
-    user = JSON.parse(user);
-    if (
-      user === undefined ||
-      user === null ||
-      user?.name === null ||
-      user?.name === undefined
-    ) {
-      setIsLoggedIn(false);
-      window.location.replace("/blogs");
-    }
-  }, []);
+  // useEffect(() => {
+  //   let user = window.localStorage.getItem("faygroup-user");
+  //   user = JSON.parse(user);
+  //   if (
+  //     user === undefined ||
+  //     user === null ||
+  //     user?.name === null ||
+  //     user?.name === undefined
+  //   ) {
+  //     setIsLoggedIn(false);
+  //     window.location.replace("/blogs");
+  //   }
+  // }, []);
 
-  if (!isLoggedIn) {
-    return <></>;
-  }
+  // if (!isLoggedIn) {
+  //   return <></>;
+  // }
 
   return (
     <>

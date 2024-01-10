@@ -72,17 +72,29 @@ const Intro = () => {
           )}
 
           {blogs.length > 0 && (
-            <div className="flex flex-col items-start justify-start lg:w-[60%] w-full">
+            <div
+              className={`flex flex-col items-start justify-start ${
+                blogs.length === 1 ? "lg:w-full" : "lg:w-[60%]"
+              } w-full`}
+            >
               <img
                 src={blogs[0]?.blogPictureUrl}
                 alt="blog image"
                 className="lg:h-[700px] w-full h-auto object-cover"
               />
-              <p className="text-slate-950 sm:text-xl text-2xl mt-5 font-medium leading-9 w-[80%]">
+              <p
+                className={`text-slate-950 text-xl lg:text-2xl mt-5 font-medium leading-9 ${
+                  blogs.length === 1 ? "w-full" : "w-[80%]"
+                }`}
+              >
                 {blogs[0]?.title}
               </p>
-              <p className="text-slate-950 text-base font-normal leading-loose mt-5 lg:w-fit w-[80%]">
-                {blogs[0]?.content.substring(0, 100)}
+              <p
+                className={`text-slate-950 text-base font-normal leading-loose mt-5 ${
+                  blogs.length === 1 ? "w-full" : "w-[80%]"
+                }`}
+              >
+                {blogs[0]?.content.substring(0, 150)}...
               </p>
               <Link
                 href={`/blogs/${blogs[0]?._id}`}
@@ -95,7 +107,9 @@ const Intro = () => {
           )}
 
           <div
-            className={`flex flex-col gap-20 lg:w-[40%] w-full mt-10 lg:mt-0`}
+            className={`flex flex-col gap-20 ${
+              blogs.length === 1 ? "hidden" : "lg:w-[40%]"
+            } w-full mt-10 lg:mt-0`}
           >
             {blogs.map((blog, i) => {
               return i == 0 || i > 2 ? (
