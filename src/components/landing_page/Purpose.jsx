@@ -18,8 +18,8 @@ const Purpose = () => {
         </div>
 
         <p className="text-slate-950 lg:text-4xl text-2xl font-medium leading-9 lg:leading-[48px]">
-          Purpose of a convoy is to keep{" "}
-          <span className="text-red-950">FayGroup</span>
+          Connect for more: your success,
+          <span className="text-red-950"> our business</span>!
         </p>
       </div>
 
