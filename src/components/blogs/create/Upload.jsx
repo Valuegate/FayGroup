@@ -12,6 +12,11 @@ import { headers } from "@/next.config";
 
 import axios from "axios";
 
+const START_PARAGRAPH = "#SP#";
+const END_PARAGRAPH = "#EP#";
+const START_TITLE = "#ST#";
+const END_TITLE = "#ET#";
+
 const Upload = () => {
   const [user, setUser] = useState({});
 
@@ -20,14 +25,61 @@ const Upload = () => {
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const [subtitle, hasSubtitle] = useState(false);
+  const [paragraph, hasParagraph] = useState(false);
+
   useEffect(() => {
     let localUser = window.localStorage.getItem("faygroup-user");
     localUser = JSON.parse(localUser);
     setUser(localUser);
   }, []);
 
+  const addSubtitle = () => {
+    if (paragraph) {
+      toast.error("Please end the paragraph before adding a subtitle");
+      return;
+    }
+
+    if (subtitle) {
+    }
+
+    insertText(subtitle ? END_TITLE : START_TITLE);
+    hasSubtitle(!subtitle);
+  };
+
+  const addParagraph = () => {
+    if (subtitle) {
+      toast.error("Please end the subtitle before adding a subtitle");
+      return;
+    }
+    insertText(paragraph ? END_PARAGRAPH : START_PARAGRAPH);
+    hasParagraph(!paragraph);
+  };
+
+  function insertText(text) {
+    let contentArea = document.getElementById("contentID");
+    let cursorPos = contentArea.selectionStart;
+    let calculatedValue =
+      contentArea.value.slice(0, cursorPos) +
+      text +
+      contentArea.value.slice(cursorPos);
+
+    contentArea.focus();
+    contentArea.value = calculatedValue;
+    console.log(calculatedValue);
+
+    contentArea.selectionStart = cursorPos + text.length;
+    contentArea.selectionEnd = cursorPos + text.length;
+  }
+
   const upload = () => {
-    if (title.length == 0) {
+    if (!paragraph) {
+      toast.error("Please end the paragraph");
+      return;
+    } else if (!subtitle) {
+      toast.error("Please end the subtitle");
+      return;
+    } else if (title.length == 0) {
       toast.error("Please provide a title for your blog");
       return;
     } else if (content.length == 0) {
@@ -120,13 +172,33 @@ const Upload = () => {
             Message
           </p>
           <textarea
+            name="myTextArea"
             type="text"
-            className="w-full h-[180px] mb-3 bg-blandGrey border px-2 py-3 font-normal resize-none focus:outline-none rounded-sm"
+            className="w-full h-[180px]  bg-blandGrey border px-2 py-3 font-normal resize-none focus:outline-none rounded-sm"
             placeholder="Type Here..."
             id="contentID"
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
+
+          <div className="flex justify-center items-center gap-5 w-full">
+            <Button
+              style={`w-[150px] bg-blandGrey ${
+                paragraph && "hidden"
+              } hover:bg-[#F2F2F2] rounded-[5px] text-slate-950 py-2 mt-[5%] text-center`}
+              onClick={addSubtitle}
+            >
+              {subtitle ? "End Subtitle" : "Start Subtitle"}
+            </Button>
+            <Button
+              style={`w-[150px] bg-blandGrey ${
+                subtitle && "hidden"
+              } hover:bg-[#F2F2F2] rounded-[5px] text-slate-950 py-2 mt-[5%] text-center`}
+              onClick={addParagraph}
+            >
+              {paragraph ? "End Paragraph" : "Start Paragraph"}
+            </Button>
+          </div>
 
           <Button
             style={
