@@ -31,11 +31,21 @@ const Blog = ({ id }) => {
       {
         type: PARAGRAPH,
         value:
-          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
+          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hriuwhgiuwgeiuwgieugwiuegiweygdoiwugeiqugeo",
       },
       {
         type: SUBTITLE,
         value: "Lorem Ipsum",
+      },
+      {
+        type: PARAGRAPH,
+        value:
+          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
+      },
+      {
+        type: PARAGRAPH,
+        value:
+          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
       },
       {
         type: PARAGRAPH,
@@ -152,16 +162,16 @@ const Blog = ({ id }) => {
               className="shadow-xl w-full lg:h-[700px] h-auto object-cover"
             />
 
-            <div className="flex flex-col lg:text-start text-center lg:items-start items-center w-full mt-10 lg:mt-20">
+            <div className="flex flex-col w-full mt-10 lg:mt-20">
               {contents.map((content, i) => {
                 return (
                   <p
                     key={i}
                     className={`${
                       content.type === SUBTITLE
-                        ? "lg:text-2xl text-xl font-[600]"
-                        : "text-base font-normal"
-                    } py-3 text-slate-950 leading-loose`}
+                        ? "lg:text-2xl text-xl font-[600] text-center lg:text-start pt-3 pb-2"
+                        : "font-normal py-1"
+                    } text-slate-950 leading-loose w-full`}
                   >
                     {content.value}
                   </p>
