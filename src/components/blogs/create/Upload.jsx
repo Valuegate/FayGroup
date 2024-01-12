@@ -35,23 +35,11 @@ const Upload = () => {
   }, []);
 
   const addSubtitle = () => {
-    if (paragraph) {
-      toast.error("Please end the paragraph before adding a subtitle");
-      return;
-    }
-
-    if (subtitle) {
-    }
-
     insertText(subtitle ? END_TITLE : START_TITLE);
     hasSubtitle(!subtitle);
   };
 
   const addParagraph = () => {
-    if (subtitle) {
-      toast.error("Please end the subtitle before adding a subtitle");
-      return;
-    }
     insertText(paragraph ? END_PARAGRAPH : START_PARAGRAPH);
     hasParagraph(!paragraph);
   };
@@ -65,8 +53,8 @@ const Upload = () => {
       contentArea.value.slice(cursorPos);
 
     contentArea.focus();
-    contentArea.value = calculatedValue;
-    console.log(calculatedValue);
+
+    setContent(calculatedValue);
 
     contentArea.selectionStart = cursorPos + text.length;
     contentArea.selectionEnd = cursorPos + text.length;
@@ -202,7 +190,7 @@ const Upload = () => {
 
           <Button
             style={
-              "w-[150px] bg-darkBlue rounded-[5px] text-white py-2.5 mt-[5%] hover:bg-extraDarkRed text-center"
+              "w-full bg-darkBlue rounded-[5px] text-white py-2.5 lg:mt-5 mt-10 hover:bg-extraDarkRed text-center"
             }
             onClick={upload}
           >

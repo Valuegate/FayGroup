@@ -13,9 +13,48 @@ import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-ci
 
 const axios = require("axios");
 
+const SUBTITLE = "Subtitle";
+const PARAGRAPH = "Paragraph";
+
 const Blog = ({ id }) => {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const [contents, setContent] = useState([]);
+
+  function parseContent(blogContent) {
+    let calculatedContents = [
+      {
+        type: SUBTITLE,
+        value: "Lorem Ipsum",
+      },
+      {
+        type: PARAGRAPH,
+        value:
+          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
+      },
+      {
+        type: SUBTITLE,
+        value: "Lorem Ipsum",
+      },
+      {
+        type: PARAGRAPH,
+        value:
+          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
+      },
+      {
+        type: SUBTITLE,
+        value: "Lorem Ipsum",
+      },
+      {
+        type: PARAGRAPH,
+        value:
+          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
+      },
+    ];
+
+    setContent(calculatedContents);
+  }
 
   function convertDate(date) {
     let dateObject = new Date(date);
@@ -66,6 +105,7 @@ const Blog = ({ id }) => {
     })
       .then((res) => {
         setLoading(false);
+        parseContent(res.data.blog.content);
         setBlog(res.data.blog);
       })
       .catch((err) => {
@@ -112,11 +152,22 @@ const Blog = ({ id }) => {
               className="shadow-xl w-full lg:h-[700px] h-auto object-cover"
             />
 
-            <p
-              className={`text-slate-950 text-base font-normal leading-loose w-full mt-10 lg:mt-20`}
-            >
-              {blog.content}
-            </p>
+            <div className="flex flex-col lg:text-start text-center lg:items-start items-center w-full mt-10 lg:mt-20">
+              {contents.map((content, i) => {
+                return (
+                  <p
+                    key={i}
+                    className={`${
+                      content.type === SUBTITLE
+                        ? "lg:text-2xl text-xl font-[600]"
+                        : "text-base font-normal"
+                    } py-3 text-slate-950 leading-loose`}
+                  >
+                    {content.value}
+                  </p>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
