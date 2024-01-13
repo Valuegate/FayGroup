@@ -32,7 +32,8 @@ const MiniBlog = ({
       .then((res) => {
         setLoading(false);
         setBlogs(res.data.blogs);
-        setEnd(res.data.blogs.length >= 3 ? 2 : res.data.blogs.length);
+        setEnd(res.data.blogs.length >= 3 ? 2 : res.data.blogs.length - 1);
+        setStart(0);
       })
       .catch((err) => {
         console.error(err);
@@ -48,16 +49,12 @@ const MiniBlog = ({
   }, []);
 
   function navigate(step) {
-    let newStart = start;
-    let newEnd = end;
+    let newStart = start + step * 3;
+    if (newStart < 0) newStart = 0;
+    if (newStart > blogs.length - 3) newStart = blogs.length - 3;
 
-    if (step < 0) {
-      newStart = Math.max(0, start - 3);
-      newEnd = Math.min(blogs.length, newStart + 3);
-    } else if (step > 0) {
-      newStart = Math.min(blogs.length - 3, start + 3);
-      newEnd = newStart + 3;
-    }
+    let newEnd = newStart + 2;
+    if (newEnd > blogs.length) newEnd = blogs.length;
 
     setStart(newStart);
     setEnd(newEnd);
@@ -85,8 +82,9 @@ const MiniBlog = ({
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5 w-full lg:px-[10%] px-[5%] my-[50px]">
             {blogs.map((blog, i) => {
               return i >= start && i <= end ? (
-                <div
+                <Link
                   key={i}
+                  href={`/blogs/${blog._id}`}
                   className="flex flex-col items-start justify-start"
                 >
                   <img
@@ -97,19 +95,22 @@ const MiniBlog = ({
                   <p className="text-slate-950 mt-5 text-xl lg:text-2xl font-medium leading-9 w-[80%]">
                     {blog.title}
                   </p>
-                  <Link
-                    href={`/blogs/${blog._id}`}
-                    className="text-maroon w-[80%] mt-2 flex gap-2 items-center"
-                  >
+                  <div className="text-maroon w-[80%] mt-2 flex gap-2 items-center">
                     Read More
                     <FaArrowRight />
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               ) : null;
             })}
           </div>
           <div className={`flex gap-[20px] ${loading && "hidden"}`}>
-            <div onClick={() => navigate(-1)}>
+            <div
+              onClick={() => {
+                if (start > 0) {
+                  navigate(-1);
+                }
+              }}
+            >
               <Image
                 src={Left}
                 alt="arrow"
@@ -117,12 +118,18 @@ const MiniBlog = ({
               />
             </div>
 
-            <div onClick={() => navigate(1)}>
+            <div
+              onClick={() => {
+                if (end !== blogs.length - 1) {
+                  navigate(1);
+                }
+              }}
+            >
               <Image
                 src={Right}
                 alt="arrow"
                 className={`cursor-pointer ${
-                  end < blogs.length - 1 && "opacity-40"
+                  end === blogs.length - 1 && "opacity-40"
                 }`}
               />
             </div>
@@ -131,7 +138,7 @@ const MiniBlog = ({
       )}
 
       {!loading && blogs.length === 0 && (
-        <div className="flex flex-col text-center text-maroon justify-center items-center w-full lg:h-[300px] h-[200px] text-center lg:text-2xl text-xl">
+        <div className="flex flex-col text-maroon justify-center items-center w-full lg:h-[300px] h-[200px] text-center lg:text-2xl text-xl">
           There are no blogs posted yet
         </div>
       )}
