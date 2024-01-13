@@ -23,47 +23,23 @@ const Blog = ({ id }) => {
   const [contents, setContent] = useState([]);
 
   function parseContent(blogContent) {
-    let calculatedContents = [
-      {
-        type: SUBTITLE,
-        value: "Lorem Ipsum",
-      },
-      {
-        type: PARAGRAPH,
-        value:
-          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hriuwhgiuwgeiuwgieugwiuegiweygdoiwugeiqugeo",
-      },
-      {
-        type: SUBTITLE,
-        value: "Lorem Ipsum",
-      },
-      {
-        type: PARAGRAPH,
-        value:
-          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
-      },
-      {
-        type: PARAGRAPH,
-        value:
-          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
-      },
-      {
-        type: PARAGRAPH,
-        value:
-          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
-      },
-      {
-        type: SUBTITLE,
-        value: "Lorem Ipsum",
-      },
-      {
-        type: PARAGRAPH,
-        value:
-          "Lorem Ipsum dolor jabdkjankdjaduhwuehowuheoi hwiowhoeiwhoieh oihr hr\niuwhgiuwgeiuwgieugwiuegiwe\nygdoiwugeiqugeo",
-      },
-    ];
+    let regex = /#ST#(.*?)#ET#|#SP#(.*?)#EP#/g;
+    let match;
+    let result = [];
 
-    setContent(calculatedContents);
+    while ((match = regex.exec(blogContent))) {
+      let obj = {};
+      if (match[1]) {
+        obj.type = SUBTITLE;
+        obj.value = match[1];
+      } else if (match[2]) {
+        obj.type = PARAGRAPH;
+        obj.value = match[2];
+      }
+      result.push(obj);
+    }
+
+    setContent(result);
   }
 
   function convertDate(date) {
@@ -114,9 +90,9 @@ const Blog = ({ id }) => {
       url: `https://faysolutions.com:3000/api/blog/get-blog/${id}`,
     })
       .then((res) => {
-        setLoading(false);
         parseContent(res.data.blog.content);
         setBlog(res.data.blog);
+        setLoading(false);
       })
       .catch((err) => {
         setBlog(null);
@@ -190,7 +166,9 @@ const Blog = ({ id }) => {
       </div>
 
       {!loading && blog === null && (
-        <div>An error occurred somewhere. Please refresh the page </div>
+        <div className="text-center h-56 w-full flex items-center justify-center">
+          An error occurred somewhere. Please refresh the page{" "}
+        </div>
       )}
 
       <MiniBlog

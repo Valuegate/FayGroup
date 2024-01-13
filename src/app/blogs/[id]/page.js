@@ -8,19 +8,19 @@ export const metadata = {
   title: "Blog",
 };
 
-export async function generateStaticParams() {
-  try {
-    const res = await axios.get(
-      "https://faysolutions.com:3000/api/blog/get-blogs",
-      { timeout: 60000 }
-    );
-    const blogIds = res.data.blogs.map((blog) => ({ id: blog._id.toString() }));
-    return blogIds;
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
-}
+// export async function generateStaticParams() {
+//   try {
+//     const res = await axios.get(
+//       "https://faysolutions.com:3000/api/blog/get-blogs",
+//       { timeout: 60000 }
+//     );
+//     const blogIds = res.data.blogs.map((blog) => ({ id: blog._id.toString() }));
+//     return blogIds;
+//   } catch (error) {
+//     console.error(error);
+//     return [];
+//   }
+// }
 
 const ReadBlog = ({ params }) => {
   const { id } = params;
