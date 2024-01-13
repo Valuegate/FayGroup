@@ -8,7 +8,6 @@ import UPImg from "@/public/assets/blogs/Group 11222.svg";
 import useLocalStorage from "use-local-storage";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
 import "react-toastify/dist/ReactToastify.css";
-import { headers } from "@/next.config";
 
 import axios from "axios";
 
@@ -61,10 +60,10 @@ const Upload = () => {
   }
 
   const upload = () => {
-    if (!paragraph) {
+    if (paragraph) {
       toast.error("Please end the paragraph");
       return;
-    } else if (!subtitle) {
+    } else if (subtitle) {
       toast.error("Please end the subtitle");
       return;
     } else if (title.length == 0) {

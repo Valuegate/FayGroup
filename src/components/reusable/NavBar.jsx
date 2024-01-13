@@ -129,7 +129,11 @@ const Nav = ({ active = 0, sub = 0 }) => {
                       className="w-[40px] h-[40px]"
                     />
                     <div className="flex flex-col gap-2">
-                      <p className={`${sub == 1 ? "text-maroon" : "text-slate-950"}  text-base font-semibold leading-loose`}>
+                      <p
+                        className={`${
+                          sub == 1 ? "text-maroon" : "text-slate-950"
+                        }  text-base font-semibold leading-loose`}
+                      >
                         Product Development
                       </p>
                       <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
@@ -150,7 +154,11 @@ const Nav = ({ active = 0, sub = 0 }) => {
                       className="w-[40px] h-[40px]"
                     />
                     <div className="flex flex-col gap-2">
-                    <p className={`${sub == 2 ? "text-maroon" : "text-slate-950"}  text-base font-semibold leading-loose`}>
+                      <p
+                        className={`${
+                          sub == 2 ? "text-maroon" : "text-slate-950"
+                        }  text-base font-semibold leading-loose`}
+                      >
                         Digital Transformation
                       </p>
                       <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
@@ -175,7 +183,11 @@ const Nav = ({ active = 0, sub = 0 }) => {
                       className="w-[40px] h-[40px]"
                     />
                     <div className="flex flex-col gap-2">
-                    <p className={`${sub == 3 ? "text-maroon" : "text-slate-950"}  text-base font-semibold leading-loose`}>
+                      <p
+                        className={`${
+                          sub == 3 ? "text-maroon" : "text-slate-950"
+                        }  text-base font-semibold leading-loose`}
+                      >
                         Business Consulting
                       </p>
                       <p className=" text-slate-950 text-base font-normal leading-relaxed">
@@ -199,7 +211,9 @@ const Nav = ({ active = 0, sub = 0 }) => {
             <div className="flex flex-col">
               <Link
                 href={"/features/software-development"}
-                className={`${sub == 4 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
+                className={`${
+                  sub == 4 && "text-maroon"
+                } py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={SD}
@@ -211,7 +225,9 @@ const Nav = ({ active = 0, sub = 0 }) => {
 
               <Link
                 href={"/features/ui-ux"}
-                className={`${sub == 5 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
+                className={`${
+                  sub == 5 && "text-maroon"
+                } py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image src={UD} alt="ui-ux" className="w-[40px] h-[40px]" />
                 UI/UX Design
@@ -219,7 +235,9 @@ const Nav = ({ active = 0, sub = 0 }) => {
 
               <Link
                 href={"/features/mobile-solution"}
-                className={`${sub == 6 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
+                className={`${
+                  sub == 6 && "text-maroon"
+                } py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={MS}
@@ -231,7 +249,9 @@ const Nav = ({ active = 0, sub = 0 }) => {
 
               <Link
                 href={"/features/system-engineering"}
-                className={`${sub == 7 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
+                className={`${
+                  sub == 7 && "text-maroon"
+                } py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={SE}
@@ -243,7 +263,9 @@ const Nav = ({ active = 0, sub = 0 }) => {
 
               <Link
                 href={"/features/data-science"}
-                className={`${sub == 8 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
+                className={`${
+                  sub == 8 && "text-maroon"
+                } py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={DS}
@@ -255,7 +277,9 @@ const Nav = ({ active = 0, sub = 0 }) => {
 
               <Link
                 href={"/features/strategy-consulting"}
-                className={`${sub == 9 && "text-maroon"} py-2 px-2 rounded-md flex items-center gap-5`}
+                className={`${
+                  sub == 9 && "text-maroon"
+                } py-2 px-2 rounded-md flex items-center gap-5`}
               >
                 <Image
                   src={SC}
@@ -269,7 +293,7 @@ const Nav = ({ active = 0, sub = 0 }) => {
         </div>
       </div>
 
-      {/** Mobile Nav */} 
+      {/** Mobile Nav */}
 
       <div
         className={`flex flex-col z-30 lg:hidden ${
@@ -309,8 +333,6 @@ const Nav = ({ active = 0, sub = 0 }) => {
           Get In Touch
         </Button>
       </div>
-
-
 
       <div className="hidden lg:flex lg:items-center lg:w-3/5 justify-evenly">
         {navs.map((nav, i) => {
@@ -383,7 +405,7 @@ const MobileFeatures = ({ features, active = false }) => {
       >
         {features.map((feature, i) => {
           return i == 0 ? (
-            <MobileServices key={0} services={feature.children} />
+            <MobileServices key={2345} services={feature.children} />
           ) : (
             <Link
               key={i}
@@ -399,15 +421,15 @@ const MobileFeatures = ({ features, active = false }) => {
   );
 };
 
-const MobileServices = ({ services }) => {
+const MobileServices = ({ key, services }) => {
   const [showMobileServices, setShowMobileServices] = useState(false);
 
   const toggle = () => setShowMobileServices(!showMobileServices);
 
   return (
-    <div key={2345} className="flex flex-col w-full">
+    <div key={key} className="flex flex-col w-full">
       <div
-      key={1283}
+        key={1283}
         className="flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose"
         onClick={() => setShowMobileServices(!showMobileServices)}
       >
