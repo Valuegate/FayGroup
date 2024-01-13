@@ -92,10 +92,10 @@ const Intro = ({ scrollTo }) => {
           </p>
         </div>
 
-        <p className="text-slate-950 lg:text-4xl w-full lg:w-[40%] mt-5 text-[32px] text-center font-medium leading-9 lg:leading-[44px]">
+        <h1 className="text-slate-950 lg:text-4xl w-full lg:w-[40%] mt-5 text-[32px] text-center font-medium leading-9 lg:leading-[44px]">
           Unlock our Portfolio of Past{" "}
           <span className="text-red-950">Tech Triumphs</span>
-        </p>
+        </h1>
 
         <p className="text-normal lg:w-[40%] w-full lg:mt-10 mt-5 text-base leading-loose text-center">
           Explore a showcase of our remarkable past projects, where ideas have

@@ -101,26 +101,26 @@ const Intro = ({
         </div>
 
         <div className="lg:px-[20%] px-0 lg:w-[80%] w-full">
-          <motion.p 
-          animate={{
-            scale: [1.0, 1.1, 1.0],
-            transition: {
-              duration: 5,
-              repeat: Infinity,
-            },
-          }}
-          
-          className="text-slate-950 text-4xl mt-5 sm:text-[32px] text-center font-medium sm:leading-9 leading-[44px] ">
+          <motion.h1
+            animate={{
+              scale: [1.0, 1.1, 1.0],
+              transition: {
+                duration: 5,
+                repeat: Infinity,
+              },
+            }}
+            className="text-slate-950 text-4xl mt-5 sm:text-[32px] text-center font-medium sm:leading-9 leading-[44px] "
+          >
             {preRedSubtitle} <span className="text-red-950">{redSubtitle}</span>{" "}
             {postRedSubtitle}
-          </motion.p>
+          </motion.h1>
         </div>
 
         <p className="text-normal lg:w-[40%] w-full lg:mt-10 mt-5 text-base leading-loose text-center">
           {content}
         </p>
 
-        <motion.div 
+        <motion.div
           initial={{
             opacity: 0,
             scale: 0,
@@ -131,10 +131,10 @@ const Intro = ({
             transition: {
               ease: "easeIn",
               duration: 2,
-            }
+            },
           }}
-        
-        className="flex w-full flex-col lg:flex-row justify-start lg:justify-center items-center gap-[20px] mt-5 lg:mt-10">
+          className="flex w-full flex-col lg:flex-row justify-start lg:justify-center items-center gap-[20px] mt-5 lg:mt-10"
+        >
           <Button
             style="text-white text-center w-full lg:w-[200px] bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
             destination={"/contact-us"}

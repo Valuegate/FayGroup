@@ -29,17 +29,17 @@ const MainInformation = () => {
         <Nav />
         <div className="lg:flex-row flex flex-col gap-[10%] items-start justify-between lg:px-[10%] px-[5%] mt-[5%] mb-[10%]">
           <div className="lg:w-[50%] w-full flex flex-col">
-            <motion.div 
-            animate={{
-              y: ["5%", "0%", "5%"],
-              transition: {
-                duration: 3,
-                ease: "easeInOut",
-                repeat: Infinity,
-              },
-            }}
-            
-            className="flex items-center">
+            <motion.div
+              animate={{
+                y: ["5%", "0%", "5%"],
+                transition: {
+                  duration: 3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                },
+              }}
+              className="flex items-center"
+            >
               <div>
                 <Image src={Welcome} alt="welcome" className="w-[100px]" />
               </div>
@@ -49,10 +49,10 @@ const MainInformation = () => {
             </motion.div>
             <div className="flex flex-col lg:gap-[32px] gap-[16px] mt-[5%]">
               <div className="w-full flex-shrink">
-                <p className="text-slate-950 lg:text-[64px] text-[32px] font-[500] leading-[48px] lg:leading-[88px]">
+                <h1 className="text-slate-950 lg:text-[64px] text-[32px] font-[500] leading-[48px] lg:leading-[88px]">
                   Grow your Business with{" "}
                   <span className="text-red-950">Our Solutions</span>
-                </p>
+                </h1>
               </div>
 
               <p className="w-[90%] sm:w-full text-slate-950 text-base font-normal leading-loose">

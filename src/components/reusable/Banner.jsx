@@ -53,7 +53,7 @@ const Banner = ({
                       </p>
                     </div>
                   )}
-                  <p
+                  <h1
                     className={`${
                       swapRedText ? "text-red-950" : "text-slate-950"
                     } lg:text-[64px] text-[32px] font-[500] leading-[48px] lg:leading-[88px]`}
@@ -66,7 +66,7 @@ const Banner = ({
                     >
                       {secondText}
                     </span>
-                  </p>
+                  </h1>
                 </div>
 
                 <div className="lg:w-[90%] w-full text-slate-950 text-base font-normal leading-loose">

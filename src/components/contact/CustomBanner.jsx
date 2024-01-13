@@ -6,9 +6,7 @@ import Image from "next/image";
 import Pin from "@/public/assets/Pin.svg";
 import Shadow from "@/public/assets/shadow.svg";
 
-
 import Background from "@/public/assets/contact/Background.svg";
-
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -31,7 +29,7 @@ const CustomBanner = ({
   pinText = "",
   includeButton = true,
   scrollTo = "",
-  child
+  child,
 }) => {
   return (
     <AnimatePresence>
@@ -57,7 +55,7 @@ const CustomBanner = ({
                       </p>
                     </div>
                   )}
-                  <p
+                  <h1
                     className={`${
                       swapRedText ? "text-red-950" : "text-slate-950"
                     } lg:text-[64px] text-[32px] font-[500] leading-[48px] lg:leading-[88px]`}
@@ -70,7 +68,7 @@ const CustomBanner = ({
                     >
                       {secondText}
                     </span>
-                  </p>
+                  </h1>
                 </div>
 
                 <div className="lg:w-[90%] w-full text-slate-950 text-base font-normal leading-loose">
@@ -112,29 +110,15 @@ const CustomBanner = ({
               </div>
             </div>
 
-            <div
-
-              className="lg:w-[50%] h-auto hidden lg:block"
-            >
-              {child}
-            </div>
+            <div className="lg:w-[50%] h-auto hidden lg:block">{child}</div>
           </div>
 
-          <div
-            className="w-full mt-10 lg:mt-0 h-auto lg:hidden"
-          >
-            {child}
-          </div>
+          <div className="w-full mt-10 lg:mt-0 h-auto lg:hidden">{child}</div>
         </div>
       </motion.div>
     </AnimatePresence>
   );
 };
-
-
-
-
-
 
 const ContactInfo = () => {
   return (
@@ -144,7 +128,6 @@ const ContactInfo = () => {
     </div>
   );
 };
-
 
 const Info = () => {
   return (
@@ -223,6 +206,5 @@ const Content = () => {
     </div>
   );
 };
-
 
 export default CustomBanner;

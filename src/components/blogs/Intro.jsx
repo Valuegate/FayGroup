@@ -54,11 +54,11 @@ const Intro = () => {
           </p>
         </div>
 
-        <p className="text-slate-950 lg:text-4xl text-2xl lg:px-[20%] px-[5%] w-full mt-5 text-center font-medium leading-9 lg:leading-[44px]">
+        <h1 className="text-slate-950 lg:text-4xl text-2xl lg:px-[20%] px-[5%] w-full mt-5 text-center font-medium leading-9 lg:leading-[44px]">
           Step Into The World of Tech{" "}
           <span className="text-red-950">Insights and Innovation</span> at our
           Blog
-        </p>
+        </h1>
 
         <div
           className={`flex flex-col lg:flex-row lg:gap-24 lg:justify-between items-start w-[90%] mt-32 mb-20 ${
