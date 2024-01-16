@@ -9,7 +9,10 @@ import Shadow from "@/public/assets/shadow.svg";
 import Image from "next/image";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
 
-const axios = require("axios");
+import axios from "axios";
+
+const SUBTITLE = "Subtitle";
+const PARAGRAPH = "Paragraph";
 
 const Intro = () => {
   const [loading, setLoading] = useState(true);
