@@ -36,6 +36,26 @@ const Intro = () => {
     fetchBlogs();
   }, []);
 
+  function parseContent(blogContent) {
+    let regex = /#ST#(.*?)#ET#|#SP#(.*?)#EP#/g;
+    let match;
+    let result = [];
+
+    while ((match = regex.exec(blogContent))) {
+      let obj = {};
+      if (match[1]) {
+        obj.type = SUBTITLE;
+        obj.value = match[1];
+        return match[1];
+      } else if (match[2]) {
+        obj.type = PARAGRAPH;
+        obj.value = match[2];
+      }
+      result.push(obj);
+    }
+    return "";
+  }
+
   return (
     <div className="relative">
       <Image
@@ -94,7 +114,7 @@ const Intro = () => {
                   blogs.length === 1 ? "w-full" : "w-[80%]"
                 }`}
               >
-                {blogs[0]?.content.substring(0, 150)}...
+                {parseContent(blogs[0]?.content).substring(0, 150)}...
               </p>
               <Link
                 href={`/blogs/${blogs[0]?._id}`}
