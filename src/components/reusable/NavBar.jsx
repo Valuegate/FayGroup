@@ -73,12 +73,6 @@ const Nav = ({ active = 0, sub = 0 }) => {
       link: "/",
     },
     {
-      name: "Services",
-      link: "",
-      icon: <FaCaretDown />,
-      children: features,
-    },
-    {
       name: "Our Works",
       link: "/our-works",
     },
@@ -91,6 +85,12 @@ const Nav = ({ active = 0, sub = 0 }) => {
       link: "/about",
     },
     {
+      name: "Services",
+      link: "",
+      icon: <FaCaretDown />,
+      children: features,
+    },
+    {
       name: "Contact Us",
       link: "/contact-us",
     },
@@ -99,283 +99,294 @@ const Nav = ({ active = 0, sub = 0 }) => {
   const toggle = () => setShowFeature(!showFeature);
 
   return (
-    <nav className="flex w-full justify-between lg:px-[10%] px-[5%] h-[10vh] items-center bg-transparent ">
-      <Link href={"/"}>
-        <Image src={Logo} alt="logo" />
-      </Link>
+    <div className="">
+      <nav className="flex w-full justify-between lg:px-[10%] px-[5%] h-[10vh] items-center bg-transparent ">
+        <Link href={"/"}>
+          <Image src={Logo} alt="logo" />
+        </Link>
 
-      {/** Desktop Nav */}
+        {/** Desktop Nav */}
 
-      <div
-        className={`absolute lg:block hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg px-[12%] py-5 ${
-          showFeature ? "top-[10vh]" : "-top-[100%]"
-        } `}
-      >
-        <div className="flex items-start gap-[10%] mb-[2%]">
-          <div className="flex w-[70%] gap-[10%]">
-            <div className="flex flex-col w-1/2">
-              <p className="text-maroon text-base font-[600] leading-loose">
-                FEATURES
-              </p>
+        <div className="flex flex-col h-[100vh]">
+          <div
+            className={`flex-col px-[12%] absolute lg:block h-[55vh] hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg  py-5 ${
+              showFeature ? "top-[10vh]" : "-top-[100%]"
+            } `}
+          >
+            <div className="flex items-start gap-[10%] mb-[2%]">
+              <div className="flex w-[70%] gap-[10%]">
+                <div className="flex flex-col w-1/2">
+                  <p className="text-maroon text-base font-[600] leading-loose">
+                    FEATURES
+                  </p>
 
-              <div className="mt-[5%]" />
+                  <div className="mt-[5%]" />
 
-              <Link href={"/features/product-development"}>
+                  <Link href={"/features/product-development"}>
+                    <div className="flex flex-col">
+                      <div className="flex justify-start items-start gap-5">
+                        <Image
+                          src={PD}
+                          alt="product-development"
+                          className="w-[40px] h-[40px]"
+                        />
+                        <div className="flex flex-col gap-2">
+                          <p
+                            className={`${
+                              sub == 1 ? "text-maroon" : "text-slate-950"
+                            }  text-base font-semibold leading-loose`}
+                          >
+                            Product Development
+                          </p>
+                          <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
+                            Our experienced team is dedicated in bringing
+                            innovative ideas to market.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <div className="mt-[10%]" />
+                  <Link href={"/features/digital-transformation"}>
+                    <div className="flex flex-col">
+                      <div className="flex justify-start items-start gap-5">
+                        <Image
+                          src={DT}
+                          alt="digital transformation"
+                          className="w-[40px] h-[40px]"
+                        />
+                        <div className="flex flex-col gap-2">
+                          <p
+                            className={`${
+                              sub == 2 ? "text-maroon" : "text-slate-950"
+                            }  text-base font-semibold leading-loose`}
+                          >
+                            Digital Transformation
+                          </p>
+                          <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
+                            Unlock new opportunities and stay competitive in the
+                            digital age.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+
+                <div className="flex flex-col w-1/2">
+                  <div className="mt-[10%]" />
+
+                  <Link href={"/features/business-consulting"}>
+                    <div className="flex flex-col">
+                      <div className="flex justify-start items-start gap-5">
+                        <Image
+                          src={BC}
+                          alt="business-consulting"
+                          className="w-[40px] h-[40px]"
+                        />
+                        <div className="flex flex-col gap-2">
+                          <p
+                            className={`${
+                              sub == 3 ? "text-maroon" : "text-slate-950"
+                            }  text-base font-semibold leading-loose`}
+                          >
+                            Business Consulting
+                          </p>
+                          <p className=" text-slate-950 text-base font-normal leading-relaxed">
+                            Our business consulting experts provide strategic
+                            guidance to optimize your operations and drive
+                            growth.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flex flex-col w-[30%] border-l-gray-200 border-l-2 pl-12">
+                <p className="text-maroon text-base font-[600] leading-loose">
+                  PRODUCT DEVELOPMENT
+                </p>
+
+                <div className="mt-[5%]" />
+
                 <div className="flex flex-col">
-                  <div className="flex justify-start items-start gap-5">
+                  <Link
+                    href={"/features/software-development"}
+                    className={`${
+                      sub == 4 && "text-maroon"
+                    } py-2 px-2 rounded-md flex items-center gap-5`}
+                  >
                     <Image
-                      src={PD}
-                      alt="product-development"
+                      src={SD}
+                      alt="software development"
                       className="w-[40px] h-[40px]"
                     />
-                    <div className="flex flex-col gap-2">
-                      <p
-                        className={`${
-                          sub == 1 ? "text-maroon" : "text-slate-950"
-                        }  text-base font-semibold leading-loose`}
-                      >
-                        Product Development
-                      </p>
-                      <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
-                        Our experienced team is dedicated in bringing innovative
-                        ideas to market.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              <div className="mt-[10%]" />
-              <Link href={"/features/digital-transformation"}>
-                <div className="flex flex-col">
-                  <div className="flex justify-start items-start gap-5">
+                    Software Development
+                  </Link>
+
+                  <Link
+                    href={"/features/ui-ux"}
+                    className={`${
+                      sub == 5 && "text-maroon"
+                    } py-2 px-2 rounded-md flex items-center gap-5`}
+                  >
+                    <Image src={UD} alt="ui-ux" className="w-[40px] h-[40px]" />
+                    UI/UX Design
+                  </Link>
+
+                  <Link
+                    href={"/features/mobile-solution"}
+                    className={`${
+                      sub == 6 && "text-maroon"
+                    } py-2 px-2 rounded-md flex items-center gap-5`}
+                  >
                     <Image
-                      src={DT}
-                      alt="digital transformation"
+                      src={MS}
+                      alt="mobile solution"
                       className="w-[40px] h-[40px]"
                     />
-                    <div className="flex flex-col gap-2">
-                      <p
-                        className={`${
-                          sub == 2 ? "text-maroon" : "text-slate-950"
-                        }  text-base font-semibold leading-loose`}
-                      >
-                        Digital Transformation
-                      </p>
-                      <p className="w-[100%] text-slate-950 text-base font-normal leading-relaxed">
-                        Unlock new opportunities and stay competitive in the
-                        digital age.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
+                    Mobile Solution
+                  </Link>
 
-            <div className="flex flex-col w-1/2">
-              <div className="mt-[10%]" />
-
-              <Link href={"/features/business-consulting"}>
-                <div className="flex flex-col">
-                  <div className="flex justify-start items-start gap-5">
+                  <Link
+                    href={"/features/system-engineering"}
+                    className={`${
+                      sub == 7 && "text-maroon"
+                    } py-2 px-2 rounded-md flex items-center gap-5`}
+                  >
                     <Image
-                      src={BC}
-                      alt="business-consulting"
+                      src={SE}
+                      alt="system engineering"
                       className="w-[40px] h-[40px]"
                     />
-                    <div className="flex flex-col gap-2">
-                      <p
-                        className={`${
-                          sub == 3 ? "text-maroon" : "text-slate-950"
-                        }  text-base font-semibold leading-loose`}
-                      >
-                        Business Consulting
-                      </p>
-                      <p className=" text-slate-950 text-base font-normal leading-relaxed">
-                        Our business consulting experts provide strategic
-                        guidance to optimize your operations and drive growth.
-                      </p>
-                    </div>
-                  </div>
+                    System Engineering
+                  </Link>
+
+                  <Link
+                    href={"/features/data-science"}
+                    className={`${
+                      sub == 8 && "text-maroon"
+                    } py-2 px-2 rounded-md flex items-center gap-5`}
+                  >
+                    <Image
+                      src={DS}
+                      alt="data science"
+                      className="w-[40px] h-[40px]"
+                    />
+                    Data Science
+                  </Link>
+
+                  <Link
+                    href={"/features/strategy-consulting"}
+                    className={`${
+                      sub == 9 && "text-maroon"
+                    } py-2 px-2 rounded-md flex items-center gap-5`}
+                  >
+                    <Image
+                      src={SC}
+                      alt="strategy consulting"
+                      className="w-[40px] h-[40px]"
+                    />
+                    Strategy Consulting
+                  </Link>
                 </div>
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[30%] border-l-gray-200 border-l-2 pl-12">
-            <p className="text-maroon text-base font-[600] leading-loose">
-              PRODUCT DEVELOPMENT
-            </p>
-
-            <div className="mt-[5%]" />
-
-            <div className="flex flex-col">
-              <Link
-                href={"/features/software-development"}
-                className={`${
-                  sub == 4 && "text-maroon"
-                } py-2 px-2 rounded-md flex items-center gap-5`}
-              >
-                <Image
-                  src={SD}
-                  alt="software development"
-                  className="w-[40px] h-[40px]"
-                />
-                Software Development
-              </Link>
-
-              <Link
-                href={"/features/ui-ux"}
-                className={`${
-                  sub == 5 && "text-maroon"
-                } py-2 px-2 rounded-md flex items-center gap-5`}
-              >
-                <Image src={UD} alt="ui-ux" className="w-[40px] h-[40px]" />
-                UI/UX Design
-              </Link>
-
-              <Link
-                href={"/features/mobile-solution"}
-                className={`${
-                  sub == 6 && "text-maroon"
-                } py-2 px-2 rounded-md flex items-center gap-5`}
-              >
-                <Image
-                  src={MS}
-                  alt="mobile solution"
-                  className="w-[40px] h-[40px]"
-                />
-                Mobile Solution
-              </Link>
-
-              <Link
-                href={"/features/system-engineering"}
-                className={`${
-                  sub == 7 && "text-maroon"
-                } py-2 px-2 rounded-md flex items-center gap-5`}
-              >
-                <Image
-                  src={SE}
-                  alt="system engineering"
-                  className="w-[40px] h-[40px]"
-                />
-                System Engineering
-              </Link>
-
-              <Link
-                href={"/features/data-science"}
-                className={`${
-                  sub == 8 && "text-maroon"
-                } py-2 px-2 rounded-md flex items-center gap-5`}
-              >
-                <Image
-                  src={DS}
-                  alt="data science"
-                  className="w-[40px] h-[40px]"
-                />
-                Data Science
-              </Link>
-
-              <Link
-                href={"/features/strategy-consulting"}
-                className={`${
-                  sub == 9 && "text-maroon"
-                } py-2 px-2 rounded-md flex items-center gap-5`}
-              >
-                <Image
-                  src={SC}
-                  alt="strategy consulting"
-                  className="w-[40px] h-[40px]"
-                />
-                Strategy Consulting
-              </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/** Mobile Nav */}
+        {/** Mobile Nav */}
 
-      <div
-        className={`flex flex-col z-30 lg:hidden ${
-          showFeature ? "left-0" : "hidden -left-[100%]"
-        } fixed overscroll-y-auto top-0 transform ease-linear duration-500 w-full bg-white h-full shadow-md px-[5%] py-[5%]`}
-      >
-        <div className="flex w-full mt-[15px] justify-between items-center">
-          <Link href={"/"}>
-            <Image src={Logo} alt="logo" />
-          </Link>
+        <div
+          className={`flex flex-col z-30 lg:hidden ${
+            showFeature ? "left-0" : "hidden -left-[100%]"
+          } fixed overscroll-y-auto top-0 transform ease-linear duration-500 w-full bg-white h-full shadow-md px-[5%] py-[5%]`}
+        >
+          <div className="flex w-full mt-[15px] justify-between items-center">
+            <Link href={"/"}>
+              <Image src={Logo} alt="logo" />
+            </Link>
 
-          <BiX size={"32px"} className="text-extraDarkRed" onClick={toggle} />
+            <BiX size={"32px"} className="text-extraDarkRed" onClick={toggle} />
+          </div>
+
+          <div className="mt-10 flex w-full flex-col gap-5 items-start">
+            {navs.map((nav, i) => {
+              return nav.icon ? (
+                <MobileFeatures active={i == active} features={features} />
+              ) : (
+                <Link
+                  href={nav.link}
+                  key={i}
+                  className={`flex items-center text-base font-normal leading-loose ${
+                    i == active && "text-maroon"
+                  }`}
+                >
+                  {nav.name}
+                </Link>
+              );
+            })}
+          </div>
+
+          <Button
+            style="w-full text-center mt-56 text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
+            destination={"/contact-us"}
+          >
+            Get In Touch
+          </Button>
         </div>
 
-        <div className="mt-10 flex w-full flex-col gap-5 items-start">
+        <div className="hidden lg:flex lg:items-center lg:w-3/5 justify-evenly">
           {navs.map((nav, i) => {
-            return nav.icon ? (
-              <MobileFeatures active={i == active} features={features} />
-            ) : (
-              <Link
-                href={nav.link}
+            return (
+              <div
                 key={i}
-                className={`flex items-center text-base font-normal leading-loose ${
+                className={`flex items-center text-[18px] font-normal leading-loose ${
                   i == active && "text-maroon"
                 }`}
               >
-                {nav.name}
-              </Link>
+                {nav.link ? (
+                  <Link href={nav.link} key={i}>
+                    {nav.name}
+                    {nav.icon && nav.icon}
+                  </Link>
+                ) : (
+                  <div
+                    className={`flex gap-1 items-center cursor-pointer  font-normal leading-loose ${
+                      i == active && "text-maroon`"
+                    }`}
+                    onClick={toggle}
+                  >
+                    {nav.name}
+                    {nav.icon && (showFeature ? <FaCaretUp /> : nav.icon)}
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
 
         <Button
-          style="w-full text-center mt-56 text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
+          style="lg:block hidden text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
           destination={"/contact-us"}
         >
           Get In Touch
         </Button>
-      </div>
-
-      <div className="hidden lg:flex lg:items-center lg:w-3/5 justify-evenly">
-        {navs.map((nav, i) => {
-          return (
-            <div
-              key={i}
-              className={`flex items-center text-base font-normal leading-loose ${
-                i == active && "text-maroon"
-              }`}
-            >
-              {nav.link ? (
-                <Link href={nav.link} key={i}>
-                  {nav.name}
-                  {nav.icon && nav.icon}
-                </Link>
-              ) : (
-                <div
-                  className={`flex gap-1 items-center cursor-pointer text-base font-normal leading-loose ${
-                    i == active && "text-maroon`"
-                  }`}
-                  onClick={toggle}
-                >
-                  {nav.name}
-                  {nav.icon && (showFeature ? <FaCaretUp /> : nav.icon)}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      <Button
-        style="lg:block hidden text-white bg-darkBlue px-5 py-3 font-[500] rounded-md hover:bg-extraDarkRed transition ease-in-out duration-200"
-        destination={"/contact-us"}
-      >
-        Get In Touch
-      </Button>
-      <FaBarsStaggered
-        size={"25px"}
-        className="lg:hidden block text-extraDarkRed"
+        <FaBarsStaggered
+          size={"25px"}
+          className="lg:hidden block text-extraDarkRed"
+          onClick={toggle}
+        />
+      </nav>
+      <div
         onClick={toggle}
+        className={`${
+          !showFeature && "hidden"
+        } opacity-0 w-[100vw] h-[100vh] fixed top-0 left-0`}
       />
-    </nav>
+    </div>
   );
 };
 
