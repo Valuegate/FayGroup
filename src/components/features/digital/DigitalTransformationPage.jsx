@@ -22,7 +22,7 @@ const DigitalTransformationPage = () => {
         active={1}
         subActive={2}
         image={HeroImage}
-        firstText={"Digitally Transforms"}
+        firstText={"Digitally Transform"}
         secondText={"Your Business for Success"}
         swapRedText={true}
         subtitle={
