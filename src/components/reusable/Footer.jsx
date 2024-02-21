@@ -25,8 +25,8 @@ const Footer = ({ active = -1, subActive = -1 }) => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex lg:px-[10%] px-[5%] lg:gap-20 gap-0 items-start justify-between lg:flex-row flex-col w-[100vw]">
+    <div className="flex flex-col items-center w-[100vw]">
+      <div className="flex lg:px-[10%] px-[5%] lg:gap-20 gap-0 items-start justify-between lg:flex-row flex-col">
         <div className="flex flex-col gap-5 items-start">
           <Link href={"/"}>
             <Image src={Logo} alt="Logo" />

@@ -103,7 +103,7 @@ const Intro = () => {
               <img
                 src={blogs[0]?.blogPictureUrl}
                 alt="blog image"
-                className="lg:h-[700px] w-full h-auto object-cover"
+                className="lg:h-[700px] w-full h-auto object-contain"
               />
               <p
                 className={`text-slate-950 text-xl lg:text-2xl mt-5 font-medium leading-9 ${

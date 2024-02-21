@@ -37,9 +37,11 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center bg-offWhite py-20" id="system-service">
-      <div
-        className="flex flex-col gap-[10px] items-center">
+    <div
+      className="flex flex-col items-center bg-offWhite py-20"
+      id="system-service"
+    >
+      <div className="flex flex-col gap-[10px] items-center">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
@@ -56,14 +58,14 @@ const Services = () => {
       <p className="text-center text-slate-950 text-base font-normal leading-loose mt-2 px-[10%]">
         Embrace the power of optimizing your business systems and processes
       </p>
-      <div className="flex lg:flex-row flex-col w-full lg:justify-around mt-20 lg:gap-0 gap-16 px-[5%] lg:px-[10%]">
+      {/* <div className="flex lg:flex-row flex-col w-full lg:justify-around mt-20 lg:gap-0 gap-16 px-[5%] lg:px-[10%]">
         {services.map((service, i) => {
           return i >= 3 ? (
             <></>
           ) : (
             <div
               key={i}
-              className={`flex flex-col w-full sm:h-[250px] bg-white transition ease-in-out duration-200 hover:bg-palePink shadow-lg lg:w-[30%] h-[280px] items-start rounded-[12px] px-8 py-5`}
+              className={`flex flex-col w-full sm:h-[250px] bg-white transition ease-in-out duration-200 hover:bg-palePink shadow-lg lg:w-[30%]  items-start rounded-[12px] px-8 py-5`}
             >
               <p className="mt-[34px] text-2xl font-medium sm:text-xl leading-9">
                 {service.title}
@@ -87,6 +89,25 @@ const Services = () => {
               className={`flex flex-col w-full sm:h-[250px] bg-white transition ease-in-out duration-200 hover:bg-palePink shadow-lg  lg:w-[30%] h-[280px] items-start rounded-[12px] px-8 py-5`}
             >
               <p className="mt-[34px] text-2xl font-medium sm:text-xl leading-9">
+                {service.title}
+              </p>
+
+              <p className="mt-[20px] text-slate-950 text-base font-normal leading-loose">
+                {service.content}
+              </p>
+            </div>
+          );
+        })}
+      </div> */}
+
+      <div className="lg:grid-cols-3 grid grid-cols-1 gap-10  mt-20 lg:gap-20 px-[5%]">
+        {services.map((service, i) => {
+          return (
+            <div
+              key={i}
+              className={`flex flex-col lg:w-[320px] md:w-[350px] w-[300px] sm:h-[250px] bg-white transition ease-in-out duration-200 hover:bg-palePink shadow-lg items-start rounded-[12px] px-8 py-5`}
+            >
+              <p className="mt-[34px] md:mt-[15px] sm:mt-[10px] text-2xl font-medium sm:text-xl leading-9">
                 {service.title}
               </p>
 

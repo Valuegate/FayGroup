@@ -28,26 +28,32 @@ const Nav = ({ active = 0, sub = 0 }) => {
     {
       name: "Software Development",
       link: "/features/software-development",
+      key: "Software",
     },
     {
       name: "UI/UX Design",
       link: "/features/ui-ux",
+      key: "UI",
     },
     {
       name: "Mobile Solutions",
       link: "/features/mobile-solution",
+      key: "Mobile",
     },
     {
       name: "System Engineering",
       link: "/features/system-engineering",
+      key: "System",
     },
     {
       name: "Data Science",
       link: "/features/data-science",
+      key: "Data",
     },
     {
       name: "Strategy Consulting",
       link: "/features/strategy-consulting",
+      key: "Strategy",
     },
   ];
 
@@ -56,13 +62,16 @@ const Nav = ({ active = 0, sub = 0 }) => {
       name: "Product Development",
       link: "/features/product-development",
       children: services,
+      key: "Product",
     },
     {
       name: "Digital Transformation",
       link: "/features/digital-transformation",
+      key: "Digital",
     },
     {
       name: "Business Consulting",
+      key: "Business",
       link: "/features/business-consulting",
     },
   ];
@@ -71,28 +80,34 @@ const Nav = ({ active = 0, sub = 0 }) => {
     {
       name: "Home",
       link: "/",
+      key: "Home",
     },
     {
       name: "Our Works",
       link: "/our-works",
+      key: "Works",
     },
     {
       name: "Blogs",
       link: "/blogs",
+      key: "Blogs",
     },
     {
       name: "About Us",
       link: "/about",
+      key: "About",
     },
     {
       name: "Services",
       link: "",
       icon: <FaCaretDown />,
       children: features,
+      key: "Services",
     },
     {
       name: "Contact Us",
       link: "/contact-us",
+      key: "Contact",
     },
   ];
 
@@ -416,10 +431,10 @@ const MobileFeatures = ({ features, active = false }) => {
       >
         {features.map((feature, i) => {
           return i == 0 ? (
-            <MobileServices key={2345} services={feature.children} />
+            <MobileServices key={feature.key} services={feature.children} />
           ) : (
             <Link
-              key={i}
+              key={feature.key}
               href={feature.link}
               className="text-base leading-loose font-normal"
             >
@@ -432,13 +447,13 @@ const MobileFeatures = ({ features, active = false }) => {
   );
 };
 
-const MobileServices = ({ key, services }) => {
+const MobileServices = ({ services }) => {
   const [showMobileServices, setShowMobileServices] = useState(false);
 
   const toggle = () => setShowMobileServices(!showMobileServices);
 
   return (
-    <div key={key} className="flex flex-col w-full">
+    <div className="flex flex-col w-full">
       <div
         key={1283}
         className="flex w-full justify-between items-center cursor-pointer text-base font-normal leading-loose"
@@ -466,7 +481,7 @@ const MobileServices = ({ key, services }) => {
           return (
             <Link
               href={service.link}
-              key={i}
+              key={service.key}
               className={`flex items-center text-base font-normal leading-loose`}
             >
               {service.name}

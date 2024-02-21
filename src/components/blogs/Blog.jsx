@@ -135,7 +135,7 @@ const Blog = ({ id }) => {
             <img
               src={blog.blogPictureUrl}
               alt="blog image"
-              className="shadow-xl w-full lg:h-[700px] h-auto object-cover"
+              className="shadow-xl w-full  h-auto object-contain"
             />
 
             <div className="flex flex-col w-full mt-10 lg:mt-20">
