@@ -52,7 +52,7 @@ const Content = () => {
       <Image
         src={Background}
         alt="background"
-        className="lg:h-auto h-[650px] object-cover"
+        className="h-[750px] object-cover"
       />
       <div className="w-[92%] lg:w-[80%] h-[90%] flex flex-col bg-white absolute z-10 top-[5%] left-[4%] lg:left-[10%] rounded-[12px] items-center px-[7%] py-[5%]">
         <p className="text-slate-950 lg:text-2xl text-xl font-medium leading-9">

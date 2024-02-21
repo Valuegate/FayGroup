@@ -10,9 +10,7 @@ import Image from "next/image";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
 
 import axios from "axios";
-
-const SUBTITLE = "Subtitle";
-const PARAGRAPH = "Paragraph";
+const { convert } = require("html-to-text");
 
 const Intro = () => {
   const [loading, setLoading] = useState(true);
@@ -38,26 +36,6 @@ const Intro = () => {
   useEffect(() => {
     fetchBlogs();
   }, []);
-
-  function parseContent(blogContent) {
-    let regex = /#ST#(.*?)#ET#|#SP#(.*?)#EP#/g;
-    let match;
-    let result = [];
-
-    while ((match = regex.exec(blogContent))) {
-      let obj = {};
-      if (match[1]) {
-        obj.type = SUBTITLE;
-        obj.value = match[1];
-        return match[1];
-      } else if (match[2]) {
-        obj.type = PARAGRAPH;
-        obj.value = match[2];
-      }
-      result.push(obj);
-    }
-    return "";
-  }
 
   return (
     <div className="relative">
@@ -117,7 +95,7 @@ const Intro = () => {
                   blogs.length === 1 ? "w-full" : "w-[80%]"
                 }`}
               >
-                {parseContent(blogs[0]?.content).substring(0, 150)}...
+                {convert(blogs[0]?.content).substring(0, 180)}...
               </p>
               <Link
                 href={`/blogs/${blogs[0]?._id}`}
