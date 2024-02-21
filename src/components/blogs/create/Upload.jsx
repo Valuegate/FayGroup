@@ -8,7 +8,10 @@ import UPImg from "@/public/assets/blogs/Group 11222.svg";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
 import "react-toastify/dist/ReactToastify.css";
 
-import QuillEditor from "react-quill";
+import dynamic from "next/dynamic";
+
+const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
+
 import "react-quill/dist/quill.snow.css";
 
 import axios from "axios";
