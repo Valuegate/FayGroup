@@ -11,35 +11,17 @@ import Image from "next/image";
 import MiniBlog from "../reusable/MiniBlog";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
 
-const axios = require("axios");
+import parse from "html-react-parser";
 
-const SUBTITLE = "Subtitle";
-const PARAGRAPH = "Paragraph";
+const axios = require("axios");
 
 const Blog = ({ id }) => {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const [contents, setContent] = useState([]);
+  const [text, setText] = useState("");
 
   function parseContent(blogContent) {
-    let regex = /#ST#(.*?)#ET#|#SP#(.*?)#EP#/g;
-    let match;
-    let result = [];
-
-    while ((match = regex.exec(blogContent))) {
-      let obj = {};
-      if (match[1]) {
-        obj.type = SUBTITLE;
-        obj.value = match[1];
-      } else if (match[2]) {
-        obj.type = PARAGRAPH;
-        obj.value = match[2];
-      }
-      result.push(obj);
-    }
-
-    setContent(result);
+    setText("");
   }
 
   function convertDate(date) {
@@ -90,7 +72,8 @@ const Blog = ({ id }) => {
       url: `https://faysolutions.com:3000/api/blog/get-blog/${id}`,
     })
       .then((res) => {
-        parseContent(res.data.blog.content);
+        console.log(res.data);
+        //parseContent(res.data.blog.content);
         setBlog(res.data.blog);
         setLoading(false);
       })
@@ -130,7 +113,7 @@ const Blog = ({ id }) => {
           </div>
 
           <div
-            className={`w-full sm:w-full mt-20 mb-20 flex flex-col items-center lg:px-[20%] px-0`}
+            className={`w-full sm:w-full mt-20 mb-20 flex flex-col items-center  px-0`}
           >
             <img
               src={blog.blogPictureUrl}
@@ -139,20 +122,7 @@ const Blog = ({ id }) => {
             />
 
             <div className="flex flex-col w-full mt-10 lg:mt-20">
-              {contents.map((content, i) => {
-                return (
-                  <p
-                    key={i}
-                    className={`${
-                      content.type === SUBTITLE
-                        ? "lg:text-2xl text-xl font-[600] text-center lg:text-start pt-3 pb-2"
-                        : "font-normal py-1"
-                    } text-slate-950 leading-loose w-full`}
-                  >
-                    {content.value}
-                  </p>
-                );
-              })}
+              {parse(blog.content)}
             </div>
           </div>
         </div>

@@ -111,7 +111,10 @@ const Nav = ({ active = 0, sub = 0 }) => {
     },
   ];
 
-  const toggle = () => setShowFeature(!showFeature);
+  const toggle = () => {
+    console.log(showFeature);
+    setShowFeature(!showFeature);
+  };
 
   return (
     <div className="">
@@ -398,8 +401,8 @@ const Nav = ({ active = 0, sub = 0 }) => {
       <div
         onClick={toggle}
         className={`${
-          !showFeature && "hidden"
-        } opacity-0 w-[100vw] h-[100vh] fixed top-0 left-0`}
+          !showFeature && "hidden lg:hidden"
+        }  w-[100vw] h-[100vh] opacity-0 fixed z-10 top-0 left-0`}
       />
     </div>
   );

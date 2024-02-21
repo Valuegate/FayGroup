@@ -5,18 +5,13 @@ import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Button from "../../reusable/Button";
 import UPImg from "@/public/assets/blogs/Group 11222.svg";
-import useLocalStorage from "use-local-storage";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
 import "react-toastify/dist/ReactToastify.css";
 
-import Editor from "./Editor";
+import QuillEditor from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 import axios from "axios";
-
-const START_PARAGRAPH = "#SP#";
-const END_PARAGRAPH = "#EP#";
-const START_TITLE = "#ST#";
-const END_TITLE = "#ET#";
 
 const Upload = () => {
   const [user, setUser] = useState({});
@@ -26,49 +21,14 @@ const Upload = () => {
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const [subtitle, hasSubtitle] = useState(false);
-  const [paragraph, hasParagraph] = useState(false);
-
   useEffect(() => {
     let localUser = window.localStorage.getItem("faygroup-user");
     localUser = JSON.parse(localUser);
     setUser(localUser);
   }, []);
 
-  const addSubtitle = () => {
-    insertText(subtitle ? END_TITLE : START_TITLE);
-    hasSubtitle(!subtitle);
-  };
-
-  const addParagraph = () => {
-    insertText(paragraph ? END_PARAGRAPH : START_PARAGRAPH);
-    hasParagraph(!paragraph);
-  };
-
-  function insertText(text) {
-    let contentArea = document.getElementById("contentID");
-    let cursorPos = contentArea.selectionStart;
-    let calculatedValue =
-      contentArea.value.slice(0, cursorPos) +
-      text +
-      contentArea.value.slice(cursorPos);
-
-    contentArea.focus();
-
-    setContent(calculatedValue);
-
-    contentArea.selectionStart = cursorPos + text.length;
-    contentArea.selectionEnd = cursorPos + text.length;
-  }
-
   const upload = () => {
-    if (paragraph) {
-      toast.error("Please end the paragraph");
-      return;
-    } else if (subtitle) {
-      toast.error("Please end the subtitle");
-      return;
-    } else if (title.length == 0) {
+    if (title.length == 0) {
       toast.error("Please provide a title for your blog");
       return;
     } else if (content.length == 0) {
@@ -160,36 +120,14 @@ const Upload = () => {
           <p className="text-slate-950 text-base font-medium leading-loose">
             Message
           </p>
-          <Editor />
-          {/* <textarea
-            name="myTextArea"
-            type="text"
-            className="w-full h-[180px]  bg-blandGrey border px-2 py-3 font-normal resize-none focus:outline-none rounded-sm"
-            placeholder="Type Here..."
-            id="contentID"
+          <QuillEditor
+            className="h-[200px] mb-10 w-full"
+            theme="snow"
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={(value) => {
+              setContent(value);
+            }}
           />
-
-          <div className="flex justify-center items-center gap-5 w-full">
-            <Button
-              style={`w-[150px] bg-blandGrey ${
-                paragraph && "hidden"
-              } hover:bg-[#F2F2F2] rounded-[5px] text-slate-950 py-2 mt-[5%] text-center`}
-              onClick={addSubtitle}
-            >
-              {subtitle ? "End Subtitle" : "Start Subtitle"}
-            </Button>
-            <Button
-              style={`w-[150px] bg-blandGrey ${
-                subtitle && "hidden"
-              } hover:bg-[#F2F2F2] rounded-[5px] text-slate-950 py-2 mt-[5%] text-center`}
-              onClick={addParagraph}
-            >
-              {paragraph ? "End Paragraph" : "Start Paragraph"}
-            </Button>
-          </div> */}
-
           <Button
             style={
               "w-full bg-darkBlue rounded-[5px] text-white py-2.5 lg:mt-5 mt-10 hover:bg-extraDarkRed text-center"
