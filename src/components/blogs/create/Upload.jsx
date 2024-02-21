@@ -9,6 +9,8 @@ import useLocalStorage from "use-local-storage";
 import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-circles";
 import "react-toastify/dist/ReactToastify.css";
 
+import Editor from "./Editor";
+
 import axios from "axios";
 
 const START_PARAGRAPH = "#SP#";
@@ -158,7 +160,8 @@ const Upload = () => {
           <p className="text-slate-950 text-base font-medium leading-loose">
             Message
           </p>
-          <textarea
+          <Editor />
+          {/* <textarea
             name="myTextArea"
             type="text"
             className="w-full h-[180px]  bg-blandGrey border px-2 py-3 font-normal resize-none focus:outline-none rounded-sm"
@@ -185,7 +188,7 @@ const Upload = () => {
             >
               {paragraph ? "End Paragraph" : "Start Paragraph"}
             </Button>
-          </div>
+          </div> */}
 
           <Button
             style={
