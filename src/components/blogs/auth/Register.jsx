@@ -45,7 +45,7 @@ const Register = () => {
 
     axios({
       method: "POST",
-      url: `https://faysolutions.com:3000/api/users/register`,
+      url: `https://faysolutions.com:3001/api/users/register`,
       data: formData,
       headers: { "Content-Type": "multipart/form-data" },
     })
