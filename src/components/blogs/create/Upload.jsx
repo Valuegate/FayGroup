@@ -46,7 +46,7 @@ const Upload = () => {
 
     axios({
       method: "GET",
-      url: "https://faysolutions.com:3000/api/users/get-user/",
+      url: "https://faysolutions.com:3001/api/users/get-user/",
       headers: { Authorization: `Bearer ${user.token}` },
     })
       .then((res) => {
