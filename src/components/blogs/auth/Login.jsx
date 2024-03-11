@@ -145,10 +145,10 @@ const Login = () => {
               </Button>
             </div>
 
-            <Link className="mt-10 " href={"/blogs/register"}>
+{/*             <Link className="mt-10 " href={"/blogs/register"}>
               Don't have an account yet?{" "}
               <span className="text-maroon">Register</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="lg:h-32 h-20" />
