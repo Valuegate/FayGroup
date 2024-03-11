@@ -20,7 +20,7 @@ const Intro = () => {
     setLoading(true);
     axios({
       method: "GET",
-      url: `https://faysolutions.com:3000/api/blog/get-blogs`,
+      url: `https://faysolutions.com:3001/api/blog/get-blogs`,
     })
       .then((res) => {
         setLoading(false);
