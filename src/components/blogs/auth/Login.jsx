@@ -34,7 +34,7 @@ const Login = () => {
     setLoading(true);
     axios({
       method: "POST",
-      url: `https://faysolutions.com:3000/api/users/sign-in`,
+      url: `https://faysolutions.com:3001/api/users/sign-in`,
       data: {
         email: document.getElementById("emailID").value,
         password: document.getElementById("passwordID").value,
