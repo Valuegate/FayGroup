@@ -69,7 +69,7 @@ const Blog = ({ id }) => {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `https://faysolutions.com:3000/api/blog/get-blog/${id}`,
+      url: `https://faysolutions.com:3001/api/blog/get-blog/${id}`,
     })
       .then((res) => {
         console.log(res.data);
