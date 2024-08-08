@@ -13,7 +13,7 @@ import SpinningCircles from "react-loading-icons/dist/esm/components/spinning-ci
 
 import parse from "html-react-parser";
 
-const axios = require("axios");
+import axios from "axios";
 
 const Blog = ({ id }) => {
   const [blog, setBlog] = useState(null);
@@ -73,7 +73,6 @@ const Blog = ({ id }) => {
     })
       .then((res) => {
         console.log(res.data);
-        //parseContent(res.data.blog.content);
         setBlog(res.data.blog);
         setLoading(false);
       })

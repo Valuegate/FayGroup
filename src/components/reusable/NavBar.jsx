@@ -127,7 +127,7 @@ const Nav = ({ active = 0, sub = 0 }) => {
 
         <div className="flex flex-col h-[100vh]">
           <div
-            className={`flex-col px-[12%] absolute lg:block h-[55vh] hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg  py-5 ${
+            className={`flex-col px-[12%] absolute lg:block h-fit hidden left-0 transform ease-linear duration-500 z-20 w-full bg-white shadow-lg  py-5 ${
               showFeature ? "top-[10vh]" : "-top-[100%]"
             } `}
           >
