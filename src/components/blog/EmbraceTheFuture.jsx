@@ -45,7 +45,7 @@ const EmbraceTheFuture = () => {
           </div>
 
           <div
-            className={`lg:w-[60%] w-full my-20 flex flex-col items-center px-0`}
+            className={`lg:w-[80%] w-full my-20 flex flex-col items-center px-0`}
           >
             <Image
               src={TransformImage}

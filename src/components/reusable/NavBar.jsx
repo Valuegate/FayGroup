@@ -120,7 +120,7 @@ const Nav = ({ active = 0, sub = 0 }) => {
     <div className="">
       <nav className="flex w-full justify-between lg:px-[10%] px-[5%] h-[10vh] items-center bg-transparent ">
         <Link href={"/"}>
-          <Image src={Logo} alt="logo" />
+          <Image src={Logo} alt="logo" className="w-[150px] h-auto" />
         </Link>
 
         {/** Desktop Nav */}
