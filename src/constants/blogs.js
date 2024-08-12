@@ -1,4 +1,4 @@
-import TransformImage from "@/public/assets/blogs/Transform_Business.svg";
+import TransformImage from "@/public/assets/blogs/transformBusiness.svg";
 
 export const allBlogs = [
   {
