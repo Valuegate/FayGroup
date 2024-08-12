@@ -5,7 +5,6 @@ import Banner from "@/src/components/reusable/Banner";
 import Footer from "@/src/components/reusable/Footer";
 import WorkInterest from "@/src/components/reusable/WorkInterest";
 import Contact from "@/src/components/reusable/Contact";
-import Image from "next/image";
 import WorkedWith from "../../reusable/WorkedWith";
 import TextWithImage from "../../reusable/TextWithImage";
 

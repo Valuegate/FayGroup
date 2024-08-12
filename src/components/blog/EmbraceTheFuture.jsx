@@ -11,7 +11,7 @@ import Pin from "@/public/assets/Pin.svg";
 import Image from "next/image";
 import MiniBlog from "../reusable/MiniBlog";
 
-import TransformImage from "@/public/assets/blogs/Transform _Business.jpg";
+import TransformImage from "@/public/assets/blogs/Transform_Business.svg";
 
 const EmbraceTheFuture = () => {
   return (
