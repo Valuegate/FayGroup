@@ -18,7 +18,7 @@ const AboutPage = () => {
   return (
     <>
       <Banner
-        active={4}
+        active={3}
         firstText={"Hello! We'd Love to"}
         secondText={"Introduce Ourself"}
         hidePinText={false}

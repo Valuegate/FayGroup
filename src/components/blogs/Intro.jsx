@@ -16,7 +16,7 @@ const Intro = () => {
         alt="shadow"
         className="absolute top-0 left-0 -z-10 w-full"
       />
-      <Nav active={3} />
+      <Nav active={2} />
       <div className="lg:mt-40 mt-20 px-[5%] flex flex-col items-center relative">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">

@@ -42,7 +42,9 @@ module.exports = {
       fontFamily: {
         body: ["Poppins"],
       },
-      
+      boxShadow: {
+        custom: "0px 0px 5px rgba(0, 0, 0, 0.15)",
+      },
     },
   },
   plugins: [],

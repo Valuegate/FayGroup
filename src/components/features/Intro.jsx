@@ -38,13 +38,14 @@ const Intro = ({
         alt="shadow"
         className="absolute top-0 left-0 -z-10 w-full h-[50%]"
       />
-      <Nav active={1} sub={subActiveNav} />
+      <Nav active={4} sub={subActiveNav} />
       <motion.div
         animate={{
           y: ["0%", "10%", "0%"],
           transition: {
-            duration: 1,
+            duration: 2.3,
             repeat: Infinity,
+            ease: "easeInOut",
           },
         }}
         className="absolute z-10 top-[30%] right-[15%] hidden lg:block"
@@ -55,8 +56,9 @@ const Intro = ({
         animate={{
           y: ["10%", "0%", "10%"],
           transition: {
-            duration: 1,
+            duration: 1.8,
             repeat: Infinity,
+            ease: "easeInOut",
           },
         }}
         className="absolute z-10 top-[30%] left-[15%] hidden lg:block"
@@ -68,8 +70,9 @@ const Intro = ({
         animate={{
           x: ["0%", "10%", "0%"],
           transition: {
-            duration: 1,
+            duration: 3,
             repeat: Infinity,
+            ease: "easeInOut",
           },
         }}
         className="absolute z-10 top-[65%] left-[25%] hidden lg:block"
@@ -81,8 +84,9 @@ const Intro = ({
         animate={{
           x: ["10%", "0%", "10%"],
           transition: {
-            duration: 1,
+            duration: 2.5,
             repeat: Infinity,
+            ease: "easeInOut",
           },
         }}
         className="absolute z-10 top-[65%] right-[25%] hidden lg:block"

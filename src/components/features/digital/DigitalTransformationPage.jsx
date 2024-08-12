@@ -19,7 +19,7 @@ const DigitalTransformationPage = () => {
   return (
     <>
       <Banner
-        active={1}
+        active={4}
         subActive={2}
         image={HeroImage}
         firstText={"Digitally Transform"}

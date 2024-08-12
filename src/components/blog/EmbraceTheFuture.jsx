@@ -720,36 +720,41 @@ const EmbraceTheFuture = () => {
                   Related Posts
                 </h2>
                 <div className="flex flex-col gap-2">
-                  <a
+                  <Link
                     href="https://valuegateconsulting.com/unlock-ai-success-human-centric-skills"
+                    target="__blank"
                     className="text-maroon"
                   >
                     https://valuegateconsulting.com/unlock-ai-success-human-centric-skills
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://www.gartner.com/en/information-technology/topics/digital-transformation"
+                    target="__blank"
                     className="text-maroon"
                   >
                     https://www.gartner.com/en/information-technology/topics/digital-transformation
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-digital-transformation"
+                    target="__blank"
                     className="text-maroon"
                   >
                     https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-digital-transformation
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://www.scnsoft.com/data/big-data/implementation"
+                    target="__blank"
                     className="text-maroon"
                   >
                     https://www.scnsoft.com/data/big-data/implementation
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://hbr.org/2022/01/the-4-pillars-of-successful-digital-transformations"
+                    target="__blank"
                     className="text-maroon"
                   >
                     https://hbr.org/2022/01/the-4-pillars-of-successful-digital-transformations
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -763,7 +768,7 @@ const EmbraceTheFuture = () => {
           postRedText="Blogs"
         />
         <WorkInterest />
-        <Footer active={3} />
+        <Footer active={-1} />
       </div>
     </>
   );

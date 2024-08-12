@@ -20,7 +20,7 @@ const ProductPage = () => {
     <>
       <div className="flex flex-col gap-10 items-start">
         <Banner
-          active={1}
+          active={4}
           subActive={1}
           image={HeroImage}
           firstText={"Use Digital Solutions for Efficient"}

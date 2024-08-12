@@ -21,7 +21,7 @@ const BusinessPage = () => {
   return (
     <>
       <Banner
-        active={1}
+        active={4}
         subActive={3}
         firstText={"Use Digital Solutions for Efficient"}
         secondText={"Business Consulting"}
