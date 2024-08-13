@@ -1,0 +1,14 @@
+about
+blogs
+blogs/embrace-the-future-transform-your-business-digitally
+contact-us
+features/business-consulting
+features/data-science
+features/digital-transformation
+features/mobile-solution
+features/product-development
+features/software-development
+features/strategy-consulting
+features/system-engineering
+features/ui-ux
+our-works
