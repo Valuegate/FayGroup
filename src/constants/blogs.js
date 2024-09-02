@@ -8,4 +8,11 @@ export const allBlogs = [
     link: "embrace-the-future-transform-your-business-digitally",
     alt: "Transform Your Business Digitally",
   },
+  {
+    title:
+      "10 Essential Tips to Design a User-Friendly Website That Drives Conversions",
+    image: TransformImage,
+    link: "user-friendly-website-design-tips",
+    alt: "10 Essential Tips to Design a User-Friendly Website That Drives Conversions",
+  },
 ];
