@@ -1,4 +1,5 @@
 import TransformImage from "@/public/assets/blogs/transformBusiness.svg";
+import Website from "@/public/assets/blogs/website.svg";
 
 export const allBlogs = [
   {
@@ -11,7 +12,7 @@ export const allBlogs = [
   {
     title:
       "10 Essential Tips to Design a User-Friendly Website That Drives Conversions",
-    image: TransformImage,
+    image: Website,
     link: "user-friendly-website-design-tips",
     alt: "10 Essential Tips to Design a User-Friendly Website That Drives Conversions",
   },
