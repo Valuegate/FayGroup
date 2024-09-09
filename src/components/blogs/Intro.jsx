@@ -17,7 +17,7 @@ const Intro = () => {
         className="absolute top-0 left-0 -z-10 w-full"
       />
       <Nav active={2} />
-      <div className="lg:mt-40 mt-20 px-[5%] flex flex-col items-center relative">
+      <div className="lg:mt-40 mt-20 lg:px-[10%] px-0 flex flex-col items-center relative">
         <div className="flex items-center gap-[10px]">
           <div className="w-[14px]">
             <Image src={Pin} alt="pin" />
@@ -36,6 +36,34 @@ const Intro = () => {
         <div
           className={`flex flex-col lg:flex-row lg:gap-24 lg:justify-between items-start w-[90%] mt-32 mb-20`}
         >
+          <div className={`flex flex-col items-start justify-start w-full`}>
+            <Image
+              src={allBlogs[0].image}
+              alt={allBlogs[0].alt}
+              className="lg:h-[700px] w-full h-auto object-cover"
+            />
+            <p
+              className={`text-slate-950 text-xl lg:text-2xl mt-5 font-medium leading-9 w-full`}
+            >
+              {allBlogs[0].title}
+            </p>
+            <p
+              className={`text-slate-950 text-base font-normal leading-loose w-full`}
+            >
+              {allBlogs[0].description}
+            </p>
+            <Link
+              href={`/blogs/${allBlogs[0].link}`}
+              className="text-maroon w-fit flex gap-2 items-center"
+            >
+              Read More
+              <FaArrowRight />
+            </Link>
+          </div>
+
+          {/* <div
+          className={`flex flex-col lg:flex-row lg:gap-24 lg:justify-between items-start w-[90%] mt-32 mb-20`}
+        >
           <div
             className={`flex flex-col items-start justify-start ${
               allBlogs.length === 1 ? "lg:w-full" : "lg:w-[60%]"
@@ -44,7 +72,7 @@ const Intro = () => {
             <Image
               src={allBlogs[0].image}
               alt={allBlogs[0].alt}
-              className="lg:h-[700px] w-full h-auto object-contain"
+              className="lg:h-[700px] w-full h-auto object-cover"
             />
             <p
               className={`text-slate-950 text-xl lg:text-2xl mt-5 font-medium leading-9 ${
@@ -62,14 +90,14 @@ const Intro = () => {
             </p>
             <Link
               href={`/blogs/${allBlogs[0].link}`}
-              className="text-maroon w-[80%] mt-5 flex gap-2 items-center"
+              className="text-maroon w-[80%] flex gap-2 items-center"
             >
               Read More
               <FaArrowRight />
             </Link>
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             className={`flex flex-col gap-20 ${
               allBlogs.length === 1 ? "hidden" : "lg:w-[40%]"
             } w-full mt-10 lg:mt-0`}
@@ -100,7 +128,7 @@ const Intro = () => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

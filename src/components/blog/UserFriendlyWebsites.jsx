@@ -77,7 +77,7 @@ const UserFriendlyWebsites = () => {
                 />
               </div>
 
-              <div className="space-y-2 mt-4">
+              <div className="space-y-4 mt-4">
                 <p>
                   1.
                   <span className="font-semibold">

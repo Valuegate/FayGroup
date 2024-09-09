@@ -66,7 +66,10 @@ const MiniBlog = ({
                 alt={blog.alt}
                 className="h-[250px] w-full object-cover"
               />
-              <p className="text-slate-950 mt-5 text-xl lg:text-2xl font-medium leading-9 w-[80%] line-clamp-2">
+              <p
+                title={blog.title}
+                className="text-slate-950 mt-5 text-xl lg:text-2xl font-medium leading-9 w-[80%] line-clamp-2"
+              >
                 {blog.title}
               </p>
               <div className="text-maroon w-[80%] mt-2 flex gap-2 items-center">
