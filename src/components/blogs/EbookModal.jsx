@@ -52,8 +52,12 @@ const EbookModal = ({ onDismiss }) => {
 
     if (name.length === 0) {
       message = "Please enter your name";
+    } else if (name.length < 3) {
+      message = "Your name must be at least 3 characters long";
     } else if (email.length === 0) {
       message = "Please enter your email";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+      message = "Invalid email address";
     }
 
     if (message.length !== 0) {
@@ -106,7 +110,7 @@ const EbookModal = ({ onDismiss }) => {
     >
       <div
         ref={dropdownRef}
-        className="lg:w-[50vw] w-[95vw] relative h-auto bg-white px-10 py-6 rounded-2xl flex flex-col gap-2 items-center"
+        className="lg:w-[50vw] w-[95vw] relative lg:h-auto h-[75vh] overflow-y-scroll lg:overflow-y-hidden bg-white lg:px-10 px-6 py-6 rounded-2xl flex flex-col gap-2 items-center"
       >
         <IoMdClose
           className="absolute text-2xl top-5 right-5 text-black cursor-pointer scale-100 hover:scale-125 duration-300 ease-in-out transition-transform"
@@ -124,16 +128,19 @@ const EbookModal = ({ onDismiss }) => {
           Check <span className="text-red-950">out our new</span> Ebook
         </h1>
 
-        <div className="flex w-full justify-between mt-3">
+        <div className="flex lg:flex-row flex-col w-full justify-between mt-3">
+          <h2 className="text-black text-lg mb-10 font-bold text-center lg:hidden">
+            {allEbooks[0].name}.pdf
+          </h2>
           <Image
             src={allEbooks[0].image}
             alt={allEbooks[0].name}
             width={300}
             height={300}
-            className="w-[250px] h-auto rounded"
+            className={`lg:w-[250px] w-full h-auto rounded`}
           />
-          <div className="flex flex-col w-[300px] gap-5 justify-center">
-            <h2 className="text-black text-lg font-bold">
+          <div className="flex flex-col lg:w-[300px] w-full lg:mt-0 mt-10 gap-5 justify-center">
+            <h2 className="text-black text-lg font-bold hidden lg:block">
               {allEbooks[0].name}.pdf
             </h2>
             {!downloading && (
@@ -165,7 +172,9 @@ const EbookModal = ({ onDismiss }) => {
             )}
 
             {downloading && (
-              <h2 className="text-black text-lg">Your download has started.</h2>
+              <h2 className="text-black text-lg text-center">
+                Your download has started.
+              </h2>
             )}
           </div>
         </div>
