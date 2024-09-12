@@ -1,6 +1,7 @@
 about
 blogs
 blogs/embrace-the-future-transform-your-business-digitally
+blogs/how-to-create-content-that-resonates
 blogs/user-friendly-website-design-tips
 contact-us
 features/business-consulting

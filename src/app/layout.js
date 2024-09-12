@@ -2,6 +2,8 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
 
+import { Toaster, toast } from "react-hot-toast";
+
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -34,7 +36,10 @@ export default function RootLayout({ children }) {
          }
        `}
       </Script>
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

@@ -4,9 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
 <url>
   <loc>https://www.mbfaygroup.com/</loc>
   <lastmod>2024-01-13T13:34:07+00:00</lastmod>
@@ -70,6 +67,16 @@
 <url>
   <loc>https://mbfaygroup.com/blogs/embrace-the-future-transform-your-business-digitally</loc>
   <lastmod>2024-08-08T13:34:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mbfaygroup.com/blogs/how-to-create-content-that-resonates</loc>
+  <lastmod>2024-09-09T13:34:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mbfaygroup.com/blogs/user-friendly-website-design-tips</loc>
+  <lastmod>2024-09-02T13:34:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>

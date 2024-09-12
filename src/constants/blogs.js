@@ -27,3 +27,13 @@ export const allBlogs = [
     alt: "How to Create Content That Resonates",
   },
 ];
+
+const baseEbookPath = "https://mbfaygroup.com/ebooks";
+
+export const allEbooks = [
+  {
+    name: "Ultimate Guide to Enhancing Your Digital Presence",
+    image: `/assets/ebooks/Ultimate Guide to Enhancing Your Digital Presence.png`,
+    path: `${baseEbookPath}/Ultimate%20Guide%20to%20Enhancing%20Your%20Digital%20Presence.pdf`,
+  },
+];
