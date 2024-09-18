@@ -3,6 +3,7 @@ blogs
 blogs/embrace-the-future-transform-your-business-digitally
 blogs/how-to-create-content-that-resonates
 blogs/user-friendly-website-design-tips
+blogs/role-of-analytics-in-enhancing-digital-presence
 contact-us
 features/business-consulting
 features/data-science
