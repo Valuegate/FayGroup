@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react"; // Import useState
 import Button from "../reusable/Button";
 
 import Pin from "@/public/assets/Pin.svg";
@@ -36,15 +36,57 @@ const Info = () => {
 };
 
 const Content = () => {
-  function sendMail() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("address").value;
-    let number = document.getElementById("number").value;
-    let message = document.getElementById("message").value;
-    let body = `Name: ${name}\nEmail: ${email}\nPhone Number: ${number}\nMessage: ${message}`;
-    //console.log(body);
-    let destination = `info@mbfaygroup.com?subject=Contact Information&body=${body}`;
-    window.location.href = `mailto:${destination}`;
+  // 1. Initialize state variables for each input field
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function sendMail() {
+    // 2. Access the values directly from state
+    console.log("✅ fullName:", fullName);
+    console.log("✅ email:", email);
+    console.log("✅ phoneNumber:", phoneNumber);
+    console.log("✅ message:", message);
+
+    // Basic validation
+    if (!fullName || !email || !phoneNumber || !message) {
+      alert("❌ Please fill in all fields.");
+      return;
+    }
+
+    const payload = {
+      fullName: fullName,
+      email: email,
+      phone: phoneNumber, // Corrected variable name to match state
+      message: message,
+    };
+    console.log("Payload being sent:", payload);
+
+    try {
+      const res = await fetch("https://scoutflair.top/scoutflair/v1/signup/faygroup/sendSupportMail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        // More specific error handling
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Failed to send message");
+      }
+
+      alert("✅ Email sent successfully!");
+      // Optionally clear the form after successful submission
+      setFullName("");
+      setEmail("");
+      setPhoneNumber("");
+      setMessage("");
+    } catch (err) {
+      alert("❌ Something went wrong: " + err.message);
+    }
   }
 
   return (
@@ -64,9 +106,11 @@ const Content = () => {
           </p>
           <input
             type="text"
-            id="name"
+            id="name" // Keep ID if needed for labels or other purposes, but not for value access
             className="w-full bg-blandGrey font-normal border px-2 py-2.5 focus:outline-none rounded-sm"
             placeholder="Enter Full Name"
+            value={fullName} // 3. Bind the value to state
+            onChange={(e) => setFullName(e.target.value)} // 4. Update state on change
           />
         </div>
         <div className="flex flex-col items-start mt-[2%] w-full">
@@ -78,6 +122,8 @@ const Content = () => {
             id="address"
             className="w-full bg-blandGrey border px-2 py-2.5 font-normal focus:outline-none rounded-sm"
             placeholder="Enter Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="flex flex-col items-start mt-[2%] w-full">
@@ -89,6 +135,8 @@ const Content = () => {
             id="number"
             className="w-full bg-blandGrey border px-2 py-2.5 font-normal focus:outline-none rounded-sm"
             placeholder="Enter Phone Number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
           />
         </div>
         <div className="flex flex-col items-start mt-[2%] w-full">
@@ -96,10 +144,11 @@ const Content = () => {
             Message
           </p>
           <textarea
-            type="text"
             id="message"
             className="w-full bg-blandGrey border px-2 py-3 lg:h-[150px] h-[100px] font-normal resize-none focus:outline-none rounded-sm"
             placeholder="Type Here..."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
         </div>
 
